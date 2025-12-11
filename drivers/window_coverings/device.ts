@@ -73,11 +73,11 @@ module.exports = class TuyaOAuth2DeviceWindowCoverings extends TuyaOAuth2Device 
       }
 
       if (['opposite', 'control_back'].includes(tuyaCapability)) {
-        await this.setSettings({ inverse: value }).catch(this.error);
+        await this.safeSetSettingValue('inverse', value);
       }
 
       if (tuyaCapability === 'control_back_mode') {
-        await this.setSettings({ inverse: value === 'back' }).catch(this.error);
+        await this.safeSetSettingValue('inverse', value === 'back');
       }
     }
   }

@@ -37,9 +37,7 @@ module.exports = class TuyaOAuth2DeviceSiren extends TuyaOAuth2Device {
       }
 
       if (constIncludes(SIREN_CAPABILITIES.setting, statusKey)) {
-        await this.setSettings({
-          [statusKey]: value,
-        }).catch(this.error);
+        await this.safeSetSettingValue(statusKey, value);
       }
     }
   }

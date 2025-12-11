@@ -27,9 +27,7 @@ async function deviceDetailsMigration(device: TuyaOAuth2Device): Promise<void> {
       data_points: dataPoints?.properties ?? '<not available>',
     };
 
-    await device.setSettings({
-      deviceSpecification: JSON.stringify(combinedSpecification),
-    });
+    await device.safeSetSettingValue('deviceSpecification', JSON.stringify(combinedSpecification));
 
     device.log('Finished initializing device details...');
   });

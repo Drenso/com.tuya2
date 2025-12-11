@@ -75,9 +75,7 @@ abstract class TuyaOAuth2DeviceWithCamera extends TuyaTimeOutAlarmDevice {
       }
 
       if (constIncludes(SIMPLE_CAMERA_CAPABILITIES.setting, statusKey)) {
-        await this.setSettings({
-          [statusKey]: value,
-        }).catch(this.error);
+        await this.safeSetSettingValue(statusKey, value);
       }
 
       // PTZ control

@@ -61,9 +61,7 @@ export default class TuyaOAuth2DeviceFan extends TuyaOAuth2DeviceWithLight {
       }
 
       if (constIncludes(FAN_CAPABILITIES.setting, tuyaCapability)) {
-        await this.setSettings({
-          [tuyaCapability]: value,
-        });
+        await this.safeSetSettingValue(tuyaCapability, value);
       }
 
       if (tuyaCapability === 'fan_speed') {

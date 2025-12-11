@@ -87,9 +87,7 @@ export default class TuyaOAuth2DeviceSocket extends TuyaOAuth2Device {
     }
 
     if (status['child_lock'] !== undefined) {
-      await this.setSettings({
-        child_lock: status['child_lock'],
-      });
+      await this.safeSetSettingValue('child_lock', status['child_lock']);
     }
 
     if (status['relay_status'] !== undefined) {
@@ -111,9 +109,7 @@ export default class TuyaOAuth2DeviceSocket extends TuyaOAuth2Device {
           mappedRelayStatus = relayStatus;
       }
 
-      await this.setSettings({
-        relay_status: mappedRelayStatus,
-      });
+      await this.safeSetSettingValue('relay_status', mappedRelayStatus);
     }
   }
 

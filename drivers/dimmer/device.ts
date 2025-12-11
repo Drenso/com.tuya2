@@ -62,21 +62,15 @@ export default class TuyaOAuth2DeviceDimmer extends TuyaOAuth2Device {
       }
 
       if (typeof brightnessMin === 'number') {
-        await this.setSettings({
-          [tuyaBrightnessMin]: brightnessMin / TUYA_PERCENTAGE_SCALING,
-        });
+        await this.safeSetSettingValue(tuyaBrightnessMin, brightnessMin / TUYA_PERCENTAGE_SCALING);
       }
 
       if (typeof brightnessMax === 'number') {
-        await this.setSettings({
-          [tuyaBrightnessMax]: brightnessMax / TUYA_PERCENTAGE_SCALING,
-        });
+        await this.safeSetSettingValue(tuyaBrightnessMax, brightnessMax / TUYA_PERCENTAGE_SCALING);
       }
 
       if (lampType !== undefined) {
-        await this.setSettings({
-          [tuyaLampType]: lampType,
-        });
+        await this.safeSetSettingValue(tuyaLampType, lampType);
       }
 
       if (typeof brightnessStatus === 'number') {

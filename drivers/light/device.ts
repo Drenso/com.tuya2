@@ -83,9 +83,7 @@ export default class TuyaOAuth2DeviceLight extends TuyaOAuth2DeviceWithLight {
     for (const pirCapability of PIR_CAPABILITIES.setting) {
       const newValue = status[pirCapability];
       if (newValue !== undefined) {
-        await this.setSettings({
-          [pirCapability]: newValue,
-        }).catch(this.error);
+        await this.safeSetSettingValue(pirCapability, newValue);
       }
     }
 

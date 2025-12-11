@@ -10,6 +10,7 @@ import {
   TuyaStatusResponse,
   TuyaWebRTC,
 } from '../types/TuyaApiTypes';
+import { getTuyaClientId } from './TuyaHaClientId';
 import * as TuyaOAuth2Util from './TuyaOAuth2Util';
 import TuyaHaToken from './TuyaHaToken';
 import {
@@ -112,10 +113,8 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       requestOptions.body = JSON.stringify({ encdata: bodyEncdata });
     }
 
-    const clientId = 'HA_3y9q4ak7g4ephrvke';
-
     const requestHeaders = {
-      'X-appKey': clientId,
+      'X-appKey': getTuyaClientId(),
       'X-requestId': rid,
       'X-sid': sid,
       'X-time': `${t}`,

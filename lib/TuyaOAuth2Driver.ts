@@ -5,6 +5,7 @@ import {
   TuyaDeviceSpecificationResponse,
 } from '../types/TuyaApiTypes';
 import type { StandardFlowArgs, Translation } from '../types/TuyaTypes';
+import { getTuyaClientId } from './TuyaHaClientId';
 import * as TuyaOAuth2Util from './TuyaOAuth2Util';
 import { sendSetting } from './TuyaOAuth2Util';
 import PairSession from 'homey/lib/PairSession';
@@ -69,7 +70,6 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
     }
 
     let waitingForQrScan = true;
-    const clientId = 'HA_3y9q4ak7g4ephrvke';
     const schema = 'haauthorize';
 
     session.setHandler('showView', async view => {
@@ -81,7 +81,7 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
 
     const waitForQrCodeScan = async (qrcode: string, userCode: string): Promise<TuyaHaClient | undefined> => {
       const url = new URL(`https://apigw.iotbing.com/v1.0/m/life/home-assistant/qrcode/tokens/${qrcode}`);
-      url.searchParams.append('clientid', clientId);
+      url.searchParams.append('clientid', getTuyaClientId());
       url.searchParams.append('usercode', userCode);
 
       const wait = async (ms: number): Promise<void> => {
@@ -148,7 +148,7 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
 
     session.setHandler('usercode', async userCode => {
       const url = new URL('https://apigw.iotbing.com/v1.0/m/life/home-assistant/qrcode/tokens');
-      url.searchParams.append('clientid', clientId);
+      url.searchParams.append('clientid', getTuyaClientId());
       url.searchParams.append('schema', schema);
       url.searchParams.append('usercode', userCode);
 

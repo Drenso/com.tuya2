@@ -48,7 +48,6 @@
 
 <script type="text/javascript">
   Homey.getViewStoreValue('qrcode', 'qrcode').then(qrcode => {
-    console.log('QR code:', qrcode);
     const image = document.getElementById('tuya-qrcode-image');
     image.src = qrcode;
   });

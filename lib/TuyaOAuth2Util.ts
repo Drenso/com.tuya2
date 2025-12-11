@@ -368,7 +368,7 @@ export function restfulSign(
   hashKey: string,
   queryEncdata: string | null,
   bodyEncdata: string | null,
-  data: Record<string, any>,
+  data: Record<string, unknown>,
 ): string {
   const headers = ['X-appKey', 'X-requestId', 'X-sid', 'X-time', 'X-token'];
   let headerSignStr = '';

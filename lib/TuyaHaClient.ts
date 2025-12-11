@@ -112,19 +112,18 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       requestOptions.body = JSON.stringify({ encdata: bodyEncdata });
     }
 
-    requestOptions.headers = {
-      'X-appKey': 'HA_3y9q4ak7g4ephrvke',
+    const clientId = 'HA_3y9q4ak7g4ephrvke';
+
+    const requestHeaders = {
+      'X-appKey': clientId,
       'X-requestId': rid,
-      'X-token': token.access_token,
       'X-sid': sid,
       'X-time': `${t}`,
-      'X-sign': TuyaOAuth2Util.restfulSign(hashKey, queryEncdata, bodyEncdata, {
-        'X-appKey': 'HA_3y9q4ak7g4ephrvke',
-        'X-requestId': rid,
-        'X-sid': sid,
-        'X-time': `${t}`,
-        'X-token': token.access_token,
-      }),
+      'X-token': token.access_token,
+    };
+    requestOptions.headers = {
+      ...requestHeaders,
+      'X-sign': TuyaOAuth2Util.restfulSign(hashKey, queryEncdata, bodyEncdata, requestHeaders),
       'Content-Type': 'application/json',
     };
 
@@ -241,6 +240,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     });
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async queryDataPoints(deviceId: string): Promise<TuyaDeviceDataPointResponse> {
     // NOTE: setting data points is not yet supported, so we don't make them available in flows
     return {
@@ -264,18 +264,20 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     };
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async setDataPoint(deviceId: string, dataPointId: string, value: unknown): Promise<void> {
     // NOTE: setting data points is not yet supported, so we don't make them available in flows
     throw new Error('Setting data points is currently not supported');
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async getWebRTCConfiguration({ deviceId }: { deviceId: string }): Promise<TuyaWebRTC> {
     throw new Error('Not implemented');
   }
 
   async getStreamingLink(
-    deviceId: string,
-    type: 'RTSP' | 'HLS',
+    deviceId: string, // eslint-disable-line @typescript-eslint/no-unused-vars
+    type: 'RTSP' | 'HLS', // eslint-disable-line @typescript-eslint/no-unused-vars
   ): Promise<{
     url: string;
   }> {
@@ -379,7 +381,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     this.mqttPromise = new Promise<void>(resolve => {
       resolveMqttPromise = resolve;
     });
-    this.log('Connecting to Mqtt');
+    this.log('Connecting to MQTT');
     const mqttConfig = await this.getMqttConfig();
     this.mqttConfig = mqttConfig;
     this.mqttClient = await mqtt.connectAsync(mqttConfig.url, {
@@ -387,7 +389,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       username: mqttConfig.username,
       password: mqttConfig.password,
     });
-    this.mqttClient.on('message', async (topic, message, packet) => {
+    this.mqttClient.on('message', async (topic, message) => {
       const json = JSON.parse(message.toString()) as TuyaMqttMessage;
 
       this.log('Incoming MQTT:', json.data);
@@ -428,8 +430,10 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     if (!this.mqttClient) {
       await this.connectToMqtt();
     }
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const topicTemplate = this.mqttConfig!.topic.devId.sub;
     const topic = topicTemplate.replace('{devId}', deviceId);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     await this.mqttClient!.subscribeAsync(topic);
     this.log('Subscribed to MQTT channel for device:', deviceId);
   }
@@ -438,9 +442,10 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     if (!this.mqttClient) {
       return;
     }
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const topicTemplate = this.mqttConfig!.topic.devId.sub;
     const topic = topicTemplate.replace('{devId}', deviceId);
-    await this.mqttClient!.unsubscribeAsync(topic);
+    await this.mqttClient.unsubscribeAsync(topic);
     this.log('Unsubscribed from MQTT channel for device:', deviceId);
   }
 }

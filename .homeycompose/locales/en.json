@@ -14,11 +14,11 @@
   "pair": {
     "qrcode": {
       "title": "Scan QR Code",
-      "body": "Open the <b>Tuya Smart</b> or <b>Smart Life</b> app.<br />\nTap <b>Me</b> in the bottom right corner.<br />\nTap the scan icon in the top-right corner.<br />\nScan the QR Code."
+      "body": "Open the <b>Tuya Smart</b> or <b>Smart Life</b> app.<br />\n<br />\nTap <b>Me</b> in the bottom right corner.<br />\n<br />\nTap the scan icon in the top-right corner.<br />\n<br />\nScan the QR Code."
     },
     "usercode": {
       "title": "Enter User Code",
-      "body": "Open the <b>Tuya Smart</b> or <b>Smart Life</b> app.<br />\nTap <b>Me</b> in the bottom right corner.<br />\nTap the cog icon in the top right corner.<br />\nThen tap <b>Account and Security</b>.<br />\nFind your <b>User Code</b> at the bottom, and enter it here."
+      "body": "Open the <b>Tuya Smart</b> or <b>Smart Life</b> app.<br />\n<br />\nTap <b>Me</b> in the bottom right corner.<br />\n<br />\nTap the cog icon in the top right corner.<br />\n<br />\nThen tap <b>Account and Security</b>.<br />\n<br />\nFind your <b>User Code</b> at the bottom, and enter it here."
     },
     "submit": "Submit"
   }

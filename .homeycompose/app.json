@@ -1,7 +1,7 @@
 {
   "id": "com.tuya2",
-  "version": "1.4.2",
-  "compatibility": ">=12.0.1",
+  "version": "0.0.0",
+  "compatibility": ">=12.2.0",
   "brandColor": "#FF4800",
   "sdk": 3,
   "platforms": [
@@ -301,9 +301,9 @@
     "xlarge": "/assets/images/xlarge.png"
   },
   "author": {
-    "name": "Athom B.V.",
-    "email": "info@athom.com"
+    "name": "Drenso",
+    "email": "homey-tuya@drenso.nl"
   },
-  "support": "https://homey.app/support",
-  "source": "https://github.com/athombv/com.tuya"
+  "homeyCommunityTopicId": 146735,
+  "support": "mailto:homey-tuya@drenso.nl"
 }

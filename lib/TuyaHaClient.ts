@@ -57,6 +57,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   async onInit(): Promise<void> {
+    this.error = this.error.bind(this);
     this.resolveReadyPromise();
   }
 
@@ -341,8 +342,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     });
     // Only subscribe once for each device, so check if device is already in the other register
     if (!this.isRegistered(productId, deviceId, !other)) {
-      // We need an anonymous function here, as the this in this.error is apparently not always bound
-      this.subscribeToMqtt(deviceId).catch(error => this.error(error));
+      this.subscribeToMqtt(deviceId).catch(this.error);
     }
   }
 
@@ -351,7 +351,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     register.delete(deviceId);
     // Only unsubscribe if there are no registrations for the device left, so check if device is still in the other register
     if (!this.isRegistered(productId, deviceId, !other)) {
-      this.unsubscribeFromMqtt(deviceId).catch(error => this.error(error));
+      this.unsubscribeFromMqtt(deviceId).catch(this.error);
     }
   }
 

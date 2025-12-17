@@ -101,4 +101,13 @@
         submit.classList.remove('is-loading');
       });
   });
+
+  Homey.emit('load_usercode').then(usercode => {
+    if (!usercode) {
+      return;
+    }
+
+    input.value = usercode;
+    submit.classList.toggle('is-disabled', input.value.trim() === '');
+  });
 </script>

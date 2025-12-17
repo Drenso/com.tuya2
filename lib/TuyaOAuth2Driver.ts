@@ -76,6 +76,7 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
       // Skip authentication if we already have a session
       if (view === 'usercode' && OAuth2SessionId !== '$new' && client.getToken() !== null) {
         session.showView('list_devices').catch(this.error);
+        return;
       }
     });
 
@@ -145,6 +146,15 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
 
       return undefined;
     };
+
+    session.setHandler('load_usercode', async () => {
+      const loadedCode = this.homey.settings.get(USER_CODE_KEY);
+      if (!loadedCode) {
+        return null;
+      }
+
+      return loadedCode;
+    });
 
     session.setHandler('usercode', async userCode => {
       const url = new URL('https://apigw.iotbing.com/v1.0/m/life/home-assistant/qrcode/tokens');

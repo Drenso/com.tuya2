@@ -7,5 +7,8 @@
   },
   "1.0.2": {
     "en": "Update slogan, fix unavailable fan issue"
+  },
+  "1.0.3": {
+    "en": "Rework fan to use modern Homey capabilities, fix token issues"
   }
 }

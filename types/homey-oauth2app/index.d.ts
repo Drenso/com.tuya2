@@ -38,7 +38,7 @@ declare module 'homey-oauth2app' {
 
     onShouldRefreshToken(args: { status: number }): Promise<boolean>;
 
-    getToken(): TToken;
+    getToken(): TToken | null;
 
     setToken({ token: TToken }): void;
 

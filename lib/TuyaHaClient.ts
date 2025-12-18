@@ -54,6 +54,10 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   // This is useful for multiple account across Tuya brands & regions.
   async onGetOAuth2SessionInformation(): Promise<OAuth2SessionInformation> {
     const token = this.getToken();
+    if (!token) {
+      throw new TuyaOAuth2Error(this.homey.__('error_no_token'));
+    }
+
     return {
       id: token.uid,
       title: token.username,
@@ -99,6 +103,9 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     }
 
     const token = this.getToken();
+    if (!token) {
+      throw new TuyaOAuth2Error(this.homey.__('error_no_token'));
+    }
 
     const requestUrl = new URL(`${token.endpoint}${path}`);
     const requestOptions = {
@@ -173,6 +180,11 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     }
     this.log('Refreshing token...');
     const token = this.getToken();
+    if (!token) {
+      // No token? No refresh possible
+      return;
+    }
+
     this._refreshingToken = this._executeRequest<TuyaTokenRefreshResponse>({
       method: 'GET',
       path: `/v1.0/m/token/${token.refresh_token}`,
@@ -476,6 +488,11 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   private refreshApiToken(): void {
     if (Date.now() - this.lastTokenSave < (this.tokenExpireTime - 100) * 1000) {
       // No need to refresh
+      return;
+    }
+
+    if (!this.getToken()) {
+      // No token? No automatic refresh!
       return;
     }
 

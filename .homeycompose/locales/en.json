@@ -10,6 +10,7 @@
   "error_retrieving_scenes": "Could not retrieve Tuya scenes.",
   "error_setting_switch": "Failed to set switch state.",
   "error_min_max_brightness": "The minimum brightness must be less than the maximum.",
+  "error_no_token": "Token not found. Try repairing one of your devices.",
   "error_refreshing_token": "Could not refresh login. Try repairing one of your devices.",
   "pair": {
     "qrcode": {

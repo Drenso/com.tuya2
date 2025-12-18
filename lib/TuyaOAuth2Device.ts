@@ -133,7 +133,9 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
 
         this.log('Add status source update code', c);
         this.tuyaStatusSourceUpdateCodes.add(c);
-        this.setStoreValue('status_source_update_codes', Array.from(this.tuyaStatusSourceUpdateCodes)).catch(this.error);
+        this.setStoreValue('status_source_update_codes', Array.from(this.tuyaStatusSourceUpdateCodes)).catch(
+          this.error,
+        );
       });
     }
 

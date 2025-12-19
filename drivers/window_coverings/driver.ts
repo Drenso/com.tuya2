@@ -43,12 +43,12 @@ module.exports = class TuyaOAuth2DriverWindowCoverings extends TuyaOAuth2Driver 
 
     // Vividstorm Specific: Explicitly add lock capabilities if 'border' is present
     if (VIVIDSTORM_PRODUCT_IDS.includes(device.product_id) && props.store.tuya_capabilities.includes('border')) {
-      if (!props.capabilities.includes('vividstorm_lock_up')) {
-        props.capabilities.push('vividstorm_lock_up');
+      const vividstormCapabilities = ['vividstorm_lock_up', 'vividstorm_lock_down'];
+      const uniqueCapabilities = new Set(props.capabilities);
+      for (const capability of vividstormCapabilities) {
+        uniqueCapabilities.add(capability);
       }
-      if (!props.capabilities.includes('vividstorm_lock_down')) {
-        props.capabilities.push('vividstorm_lock_down');
-      }
+      props.capabilities = Array.from(uniqueCapabilities);
     }
 
     return props;

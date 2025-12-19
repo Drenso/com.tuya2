@@ -1,0 +1,10 @@
+{
+    "type": "button",
+    "title": {
+        "en": "Lock Down (Set Limit)"
+    },
+    "getable": true,
+    "setable": true,
+    "uiComponent": "button",
+    "icon": "/assets/capabilities/lock.svg"
+}

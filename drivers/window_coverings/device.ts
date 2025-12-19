@@ -43,6 +43,30 @@ module.exports = class TuyaOAuth2DeviceWindowCoverings extends TuyaOAuth2Device 
         this.sendCommand({ code: code, value: Math.round(value * 100) }),
       );
     }
+
+    // Vividstorm Lock Listeners
+    if (this.hasCapability('vividstorm_lock_up')) {
+      this.registerCapabilityListener('vividstorm_lock_up', async () => {
+        return this.sendCommand({ code: 'upper_limit', value: true });
+      });
+    }
+    if (this.hasCapability('vividstorm_lock_down')) {
+      this.registerCapabilityListener('vividstorm_lock_down', async () => {
+        return this.sendCommand({ code: 'lower_limit', value: true });
+      });
+    }
+
+    // Vividstorm Lock Listeners
+    if (this.hasCapability('vividstorm_lock_up')) {
+      this.registerCapabilityListener('vividstorm_lock_up', async () => {
+        return this.sendCommand({ code: 'border', value: 'up' });
+      });
+    }
+    if (this.hasCapability('vividstorm_lock_down')) {
+      this.registerCapabilityListener('vividstorm_lock_down', async () => {
+        return this.sendCommand({ code: 'border', value: 'down' });
+      });
+    }
   }
 
   async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {

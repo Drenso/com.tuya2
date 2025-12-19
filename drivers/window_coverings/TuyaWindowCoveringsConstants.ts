@@ -6,6 +6,8 @@ export const WINDOW_COVERINGS_CAPABILITY_MAPPING = {
   position: 'windowcoverings_set',
   percent_control: 'windowcoverings_set',
   percent_state: 'windowcoverings_set',
+  // Vividstorm / Curtain Settings
+  border: 'vividstorm_lock_up', // Mapping 'border' so it passes allowlists. Logic handled in device.ts
 } as const;
 
 export const WINDOW_COVERINGS_CAPABILITIES = {

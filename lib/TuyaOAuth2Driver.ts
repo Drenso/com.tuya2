@@ -233,8 +233,6 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
       return !oAuth2Client.isRegistered(device.product_id, device.id) && this.onTuyaPairListDeviceFilter(device);
     });
 
-    // Manual injection removed
-
     const listDevices: OAuth2DeviceResult[] = [];
 
     this.log('Listing devices to pair:');

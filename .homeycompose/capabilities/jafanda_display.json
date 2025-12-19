@@ -1,0 +1,29 @@
+{
+    "type": "enum",
+    "title": {
+        "en": "Display Light"
+    },
+    "getable": true,
+    "setable": true,
+    "uiComponent": "picker",
+    "values": [
+        {
+            "id": "off",
+            "title": {
+                "en": "Off"
+            }
+        },
+        {
+            "id": "50",
+            "title": {
+                "en": "50%"
+            }
+        },
+        {
+            "id": "100",
+            "title": {
+                "en": "100%"
+            }
+        }
+    ]
+}

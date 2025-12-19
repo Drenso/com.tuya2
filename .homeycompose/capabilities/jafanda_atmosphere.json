@@ -1,0 +1,35 @@
+{
+    "type": "enum",
+    "title": {
+        "en": "Atmosphere Light"
+    },
+    "getable": true,
+    "setable": true,
+    "uiComponent": "picker",
+    "values": [
+        {
+            "id": "0",
+            "title": {
+                "en": "Off"
+            }
+        },
+        {
+            "id": "25",
+            "title": {
+                "en": "25%"
+            }
+        },
+        {
+            "id": "50",
+            "title": {
+                "en": "50%"
+            }
+        },
+        {
+            "id": "100",
+            "title": {
+                "en": "100%"
+            }
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "type": "number",
+    "title": {
+        "en": "Timer (Hours)"
+    },
+    "getable": true,
+    "setable": true,
+    "uiComponent": "slider",
+    "min": 0,
+    "max": 12,
+    "step": 1,
+    "units": {
+        "en": "h"
+    }
+}

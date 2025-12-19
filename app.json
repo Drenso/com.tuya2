@@ -2815,6 +2815,66 @@
   "drivers": [
     {
       "capabilities": [
+        "onoff",
+        "fan_speed",
+        "measure_pm25",
+        "filter_life_percentage",
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "images": {
+        "large": "/drivers/air_purifier/assets/images/large.png",
+        "small": "/drivers/air_purifier/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "welcome",
+          "navigation": {
+            "next": "usercode"
+          }
+        },
+        {
+          "id": "usercode"
+        },
+        {
+          "id": "qrcode"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "usercode"
+        },
+        {
+          "id": "qrcode"
+        }
+      ],
+      "class": "fan",
+      "name": {
+        "en": "Air Purifier"
+      },
+      "settings": [],
+      "id": "air_purifier"
+    },
+    {
+      "capabilities": [
         "measure_battery"
       ],
       "connectivity": [
@@ -6393,6 +6453,25 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "assets/capabilities/fault.svg"
+    },
+    "filter_life_percentage": {
+      "type": "number",
+      "title": {
+        "en": "Filter Life"
+      },
+      "label": {
+        "en": "Filter Life"
+      },
+      "units": {
+        "en": "%"
+      },
+      "min": 0,
+      "max": 100,
+      "chartType": "stepLine",
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
     },
     "frost_guard": {
       "title": {

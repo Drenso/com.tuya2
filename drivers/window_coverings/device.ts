@@ -44,17 +44,7 @@ module.exports = class TuyaOAuth2DeviceWindowCoverings extends TuyaOAuth2Device 
       );
     }
 
-    // Vividstorm Lock Listeners
-    if (this.hasCapability('vividstorm_lock_up')) {
-      this.registerCapabilityListener('vividstorm_lock_up', async () => {
-        return this.sendCommand({ code: 'upper_limit', value: true });
-      });
-    }
-    if (this.hasCapability('vividstorm_lock_down')) {
-      this.registerCapabilityListener('vividstorm_lock_down', async () => {
-        return this.sendCommand({ code: 'lower_limit', value: true });
-      });
-    }
+
 
     // Vividstorm Lock Listeners
     if (this.hasCapability('vividstorm_lock_up')) {

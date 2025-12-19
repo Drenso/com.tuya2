@@ -6594,7 +6594,7 @@
       "title": {
         "en": "Lock Up (Set Limit)"
       },
-      "getable": true,
+      "getable": false,
       "setable": true,
       "uiComponent": "button",
       "icon": "/assets/capabilities/lock.svg"
@@ -6604,7 +6604,7 @@
       "title": {
         "en": "Lock Down (Set Limit)"
       },
-      "getable": true,
+      "getable": false,
       "setable": true,
       "uiComponent": "button",
       "icon": "/assets/capabilities/lock.svg"

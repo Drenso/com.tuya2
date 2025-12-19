@@ -226,7 +226,7 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
     try {
       devices = await oAuth2Client.getDevices();
     } catch (err) {
-      this.error('Failed to get devices from cloud, proceeding with manual only:', err);
+      this.error('Failed to get devices from cloud. Automatic discovery unavailable; proceed with manual pairing.', err instanceof Error ? err.message : err);
     }
 
     const filteredDevices = devices.filter(device => {

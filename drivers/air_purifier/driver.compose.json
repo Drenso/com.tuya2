@@ -6,6 +6,7 @@
     },
     "capabilities": [
         "onoff",
+        "fan_mode",
         "fan_speed",
         "measure_pm25",
         "filter_life_percentage",

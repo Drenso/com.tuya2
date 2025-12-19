@@ -3,7 +3,7 @@
     "title": {
         "en": "Reset Filter"
     },
-    "getable": true,
+    "getable": false,
     "setable": true,
     "uiComponent": "button"
 }

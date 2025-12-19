@@ -2816,11 +2816,17 @@
     {
       "capabilities": [
         "onoff",
+        "fan_mode",
         "fan_speed",
         "measure_pm25",
         "filter_life_percentage",
         "measure_temperature",
-        "measure_humidity"
+        "measure_humidity",
+        "jafanda_light",
+        "jafanda_atmosphere",
+        "jafanda_display",
+        "jafanda_countdown",
+        "jafanda_reset_filter"
       ],
       "connectivity": [
         "cloud"
@@ -6423,6 +6429,76 @@
       "setable": true,
       "uiComponent": "button",
       "icon": "assets/capabilities/eco.svg"
+    },
+    "fan_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Fan Mode"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "sleep",
+          "title": {
+            "en": "Sleep"
+          }
+        },
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High"
+          }
+        }
+      ]
+    },
+    "fan_speed": {
+      "type": "enum",
+      "title": {
+        "en": "Fan Speed"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "Speed 1"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Speed 2"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Speed 3"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Speed 4"
+          }
+        }
+      ]
     },
     "fan_swing_horizontal": {
       "type": "boolean",

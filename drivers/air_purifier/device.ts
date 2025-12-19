@@ -1,5 +1,5 @@
 import { TuyaStatus } from '../../types/TuyaTypes';
-import { AIR_PURIFIER_CAPABILITIES_MAPPING } from './TuyaAirPurifierConstants';
+import { AIR_PURIFIER_CAPABILITIES, AIR_PURIFIER_CAPABILITIES_MAPPING } from './TuyaAirPurifierConstants';
 import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
 import { getFromMap } from '../../lib/TuyaOAuth2Util';
 
@@ -11,8 +11,10 @@ export default class TuyaOAuth2DeviceAirPurifier extends TuyaOAuth2Device {
         for (const [tuyaCapability, homeyCapability] of Object.entries(AIR_PURIFIER_CAPABILITIES_MAPPING)) {
             if (this.hasCapability(homeyCapability)) {
                 // We only register listeners for settable capabilities that we have mapped
-                if (['onoff', 'mode', 'fan_speed', 'child_lock', 'light', 'switch_led', 'countdown', 'countdown_1', 'filter_reset', 'bright_value', 'led_bright'].includes(tuyaCapability)) {
-                    this.registerCapabilityListener(homeyCapability, value => this.sendCommand({ code: tuyaCapability, value }));
+                if ((AIR_PURIFIER_CAPABILITIES.read_write as readonly string[]).includes(tuyaCapability)) {
+                    if (this.hasTuyaCapability(tuyaCapability)) {
+                        this.registerCapabilityListener(homeyCapability, value => this.sendCommand({ code: tuyaCapability, value }));
+                    }
                 }
             }
         }

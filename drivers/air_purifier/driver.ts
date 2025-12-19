@@ -20,9 +20,9 @@ export default class TuyaOAuth2DriverAirPurifier extends TuyaOAuth2Driver {
             return true;
         }
 
-        // 2. Fallback: Allow if category matches generic air purifier/fan
-        if (['fs', 'fsd', 'kj'].includes(device.category)) {
-            // kj = air purifier, fs/fsd = fan
+        // 2. Fallback: Allow if category matches generic air purifier
+        if (['kj'].includes(device.category)) {
+            // kj = air purifier
             return true;
         }
 

@@ -226,14 +226,14 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
     try {
       devices = await oAuth2Client.getDevices();
     } catch (err) {
-      this.log('Failed to get devices from cloud, proceeding with manual only:', err);
+      this.error('Failed to get devices from cloud, proceeding with manual only:', err);
     }
 
     const filteredDevices = devices.filter(device => {
       return !oAuth2Client.isRegistered(device.product_id, device.id) && this.onTuyaPairListDeviceFilter(device);
     });
 
-    // Manual injection removed
+
 
     const listDevices: OAuth2DeviceResult[] = [];
 

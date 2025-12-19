@@ -1,5 +1,17 @@
 export const AIR_PURIFIER_CAPABILITIES = {
-    read_write: ['onoff', 'fan_speed', 'mode', 'child_lock'],
+    read_write: [
+        'onoff',
+        'fan_speed',
+        'mode',
+        'child_lock',
+        'light',
+        'switch_led',
+        'countdown',
+        'countdown_1',
+        'filter_reset',
+        'bright_value',
+        'led_bright'
+    ],
     read_only: ['pm25', 'filter', 'temp_current', 'humidity_value'],
 } as const;
 

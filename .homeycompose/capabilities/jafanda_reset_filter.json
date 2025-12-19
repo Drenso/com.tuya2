@@ -1,0 +1,9 @@
+{
+    "type": "button",
+    "title": {
+        "en": "Reset Filter"
+    },
+    "getable": false,
+    "setable": true,
+    "uiComponent": "button"
+}

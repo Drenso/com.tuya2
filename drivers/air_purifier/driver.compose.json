@@ -1,0 +1,26 @@
+{
+    "$extends": "tuya",
+    "class": "fan",
+    "name": {
+        "en": "Air Purifier"
+    },
+    "capabilities": [
+        "onoff",
+        "fan_mode",
+        "fan_speed",
+        "measure_pm25",
+        "filter_life_percentage",
+        "measure_temperature",
+        "measure_humidity",
+        "jafanda_light",
+        "jafanda_atmosphere",
+        "jafanda_display",
+        "jafanda_countdown",
+        "jafanda_reset_filter"
+    ],
+    "images": {
+        "large": "/drivers/air_purifier/assets/images/large.png",
+        "small": "/drivers/air_purifier/assets/images/small.png"
+    },
+    "settings": []
+}

@@ -222,15 +222,22 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
   }
 
   async onPairListDevices({ oAuth2Client }: { oAuth2Client: TuyaHaClient }): Promise<OAuth2DeviceResult[]> {
-    const devices = await oAuth2Client.getDevices();
+    let devices: TuyaDeviceResponse[] = [];
+    try {
+      devices = await oAuth2Client.getDevices();
+    } catch (err) {
+      this.error('Failed to get devices from cloud. Automatic discovery unavailable; proceed with manual pairing.', err instanceof Error ? err.message : err);
+    }
+
     const filteredDevices = devices.filter(device => {
       return !oAuth2Client.isRegistered(device.product_id, device.id) && this.onTuyaPairListDeviceFilter(device);
     });
+
     const listDevices: OAuth2DeviceResult[] = [];
 
     this.log('Listing devices to pair:');
 
-    for (const device of filteredDevices) {
+    const devicePromises = filteredDevices.map(async device => {
       this.log('Device:', JSON.stringify(TuyaOAuth2Util.redactFields(device)));
       const deviceSpecs =
         (await oAuth2Client
@@ -249,15 +256,17 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
 
       const deviceProperties = this.onTuyaPairListDeviceProperties({ ...device }, deviceSpecs, dataPoints);
 
-      listDevices.push({
+      return {
         ...deviceProperties,
         name: device.name,
         data: {
           deviceId: device.id,
           productId: device.product_id,
         },
-      });
-    }
+      };
+    });
+
+    listDevices.push(...await Promise.all(devicePromises));
     return listDevices;
   }
 

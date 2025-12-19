@@ -1,7 +1,7 @@
 export const AIR_PURIFIER_CAPABILITIES = {
     read_write: [
         'onoff',
-        'fan_speed',
+        'fan_speed_enum', // tuya code is fan_speed_enum, mapped to fan_speed
         'mode',
         'child_lock',
         'light',

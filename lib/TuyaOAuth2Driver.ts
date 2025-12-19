@@ -266,7 +266,14 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
       };
     });
 
-    listDevices.push(...await Promise.all(devicePromises));
+    const results = await Promise.allSettled(devicePromises);
+    for (const result of results) {
+      if (result.status === 'fulfilled') {
+        listDevices.push(result.value);
+      } else {
+        this.error('Failed to prepare device for pairing', result.reason);
+      }
+    }
     return listDevices;
   }
 

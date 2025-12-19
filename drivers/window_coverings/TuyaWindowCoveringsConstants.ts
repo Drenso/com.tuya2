@@ -7,13 +7,20 @@ export const WINDOW_COVERINGS_CAPABILITY_MAPPING = {
   percent_control: 'windowcoverings_set',
   percent_state: 'windowcoverings_set',
   // Vividstorm / Curtain Settings
-  border: 'vividstorm_lock_up', // Mapping 'border' so it passes allowlists. Logic handled in device.ts
-  upper_limit: 'vividstorm_lock_up',
-  lower_limit: 'vividstorm_lock_down',
+  // Mapping 'border' so it passes allowlists. Logic handled in device.ts sends 'up'/'down' values for 'border' code.
+  border: 'vividstorm_lock_up',
 } as const;
 
+export const VIVIDSTORM_PRODUCT_IDS = ['lfkr93x0ukp5gaia']; // Vividstorm Motorised Screens
+
 export const WINDOW_COVERINGS_CAPABILITIES = {
-  read_write: ['control', 'position', 'mach_operate', 'percent_control'],
+  read_write: [
+    'control',
+    'position',
+    'mach_operate',
+    'percent_control',
+    'border',
+  ],
   setting: ['opposite', 'control_back'],
 } as const;
 

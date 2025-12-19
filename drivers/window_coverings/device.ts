@@ -7,6 +7,7 @@ import {
   WINDOW_COVERINGS_SETTING_LABELS,
   HomeyWindowCoveringsSettings,
   TuyaWindowCoveringsSettings,
+  VIVIDSTORM_PRODUCT_IDS,
 } from './TuyaWindowCoveringsConstants';
 
 module.exports = class TuyaOAuth2DeviceWindowCoverings extends TuyaOAuth2Device {
@@ -43,18 +44,18 @@ module.exports = class TuyaOAuth2DeviceWindowCoverings extends TuyaOAuth2Device 
         this.sendCommand({ code: code, value: Math.round(value * 100) }),
       );
     }
-
-
     // Vividstorm Lock Listeners
-    if (this.hasCapability('vividstorm_lock_up')) {
-      this.registerCapabilityListener('vividstorm_lock_up', async () => {
-        return this.sendCommand({ code: 'border', value: 'up' });
-      });
-    }
-    if (this.hasCapability('vividstorm_lock_down')) {
-      this.registerCapabilityListener('vividstorm_lock_down', async () => {
-        return this.sendCommand({ code: 'border', value: 'down' });
-      });
+    if (VIVIDSTORM_PRODUCT_IDS.includes(this.getData().productId)) {
+      if (this.hasCapability('vividstorm_lock_up')) {
+        this.registerCapabilityListener('vividstorm_lock_up', async () => {
+          return this.sendCommand({ code: 'border', value: 'up' });
+        });
+      }
+      if (this.hasCapability('vividstorm_lock_down')) {
+        this.registerCapabilityListener('vividstorm_lock_down', async () => {
+          return this.sendCommand({ code: 'border', value: 'down' });
+        });
+      }
     }
   }
 

@@ -6,14 +6,17 @@ import {
   TuyaDeviceResponse,
   TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes';
-import { WINDOW_COVERINGS_CAPABILITIES, WINDOW_COVERINGS_CAPABILITY_MAPPING } from './TuyaWindowCoveringsConstants';
+import {
+  WINDOW_COVERINGS_CAPABILITIES,
+  WINDOW_COVERINGS_CAPABILITY_MAPPING,
+  VIVIDSTORM_PRODUCT_IDS,
+} from './TuyaWindowCoveringsConstants';
 
 module.exports = class TuyaOAuth2DriverWindowCoverings extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.CURTAIN] as const;
-  VIVIDSTORM_PRODUCT_IDS = ['lfkr93x0ukp5gaia']; // Vividstorm Motorised Screens
 
   onTuyaPairListDeviceFilter(device: TuyaDeviceResponse): boolean {
-    if (this.VIVIDSTORM_PRODUCT_IDS.includes(device.product_id)) return true;
+    if (VIVIDSTORM_PRODUCT_IDS.includes(device.product_id)) return true;
     return super.onTuyaPairListDeviceFilter(device);
   }
 
@@ -35,6 +38,16 @@ module.exports = class TuyaOAuth2DriverWindowCoverings extends TuyaOAuth2Driver 
 
       if (constIncludes(WINDOW_COVERINGS_CAPABILITIES.setting, tuyaCapability) || tuyaCapability === 'percent_state') {
         props.store.tuya_capabilities.push(tuyaCapability);
+      }
+    }
+
+    // Vividstorm Specific: Explicitly add lock capabilities if 'border' is present
+    if (VIVIDSTORM_PRODUCT_IDS.includes(device.product_id) && props.store.tuya_capabilities.includes('border')) {
+      if (!props.capabilities.includes('vividstorm_lock_up')) {
+        props.capabilities.push('vividstorm_lock_up');
+      }
+      if (!props.capabilities.includes('vividstorm_lock_down')) {
+        props.capabilities.push('vividstorm_lock_down');
       }
     }
 

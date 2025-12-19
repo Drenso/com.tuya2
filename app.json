@@ -6592,7 +6592,7 @@
     "vividstorm_lock_up": {
       "type": "button",
       "title": {
-        "en": "Lock Up (Set Limit)"
+        "en": "Set Upper Limit"
       },
       "getable": false,
       "setable": true,
@@ -6602,7 +6602,7 @@
     "vividstorm_lock_down": {
       "type": "button",
       "title": {
-        "en": "Lock Down (Set Limit)"
+        "en": "Set Lower Limit"
       },
       "getable": false,
       "setable": true,

@@ -1,7 +1,7 @@
 {
     "type": "button",
     "title": {
-        "en": "Lock Down (Set Limit)"
+        "en": "Set Lower Limit"
     },
     "getable": false,
     "setable": true,

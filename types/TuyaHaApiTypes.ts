@@ -45,7 +45,7 @@ export type TuyaMqttConfigResponse = {
 
 export type TuyaMqttMessage = {
   protocol: number;
-  data: TuyaMqttMessageData & TuyaMqttOnlineData;
+  data: TuyaMqttMessageData & TuyaMqttBizMessageData;
   t: number;
 };
 
@@ -56,8 +56,8 @@ type TuyaMqttMessageData = {
   status: TuyaMqttStatus;
 };
 
-export type TuyaMqttOnlineData = {
-  bizCode: 'online' | 'offline';
+export type TuyaMqttBizMessageData = {
+  bizCode: 'online' | 'offline' | 'nameUpdate' | 'dpNameUpdate' | 'bindUser' | 'delete';
   bizData: { devId: string; time: number };
   ts: number;
 };

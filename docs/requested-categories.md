@@ -102,3 +102,12 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
 
   - zwjcy - Not documented
     - Tuya Soil Sensor
+
+## Not possible
+
+It is currently impossible to support the following categories:
+
+- IR devices
+  - Maxicool/Mitshubishi split unit Airco
+  - IR controlled airco
+  - Nedis Smart Wi-Fi Remote Control

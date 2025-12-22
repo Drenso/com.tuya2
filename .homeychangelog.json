@@ -16,5 +16,8 @@
   },
   "1.0.5": {
     "en": "Update online/offline status correctly"
+  },
+  "1.1.0": {
+    "en": "Add support for multiple new categories: CO2 detectors, humidifiers, dehumifiers, air conditioners, PM2.5 detectors, gas alarms and vibration sensors. Adds video streaming support for camera devices. Also adds power meter support to plug devices when available."
   }
 }

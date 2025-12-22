@@ -292,6 +292,27 @@ export function filterTuyaSettings<H extends T, T extends { [key: string]: unkno
   return tuyaSettingsEvent;
 }
 
+export function filterOutHomeySettings<T extends { [key: string]: unknown }>(
+  device: TuyaOAuth2Device,
+  homeySettingsEvent: SettingsEvent<T>,
+): SettingsEvent<T> {
+  // exclude internal Homey settings settings
+  function filterTuyaChangedKeys(changedKeys: (keyof T)[]): (keyof T)[] {
+    return changedKeys.filter(key => constIncludes(Object.keys(device.SETTING_LABELS), key)) as (keyof T)[];
+  }
+
+  // original settings event is immutable, so a copy is needed
+  return {
+    oldSettings: {
+      ...homeySettingsEvent.oldSettings,
+    },
+    newSettings: {
+      ...homeySettingsEvent.newSettings,
+    },
+    changedKeys: filterTuyaChangedKeys(homeySettingsEvent.changedKeys),
+  };
+}
+
 // The standard TypeScript definition of Array.includes does not work for const arrays.
 // This typing gives a boolean for an unknown S, and true if S is known to be in T from its type.
 export function constIncludes<T, S>(array: ReadonlyArray<T>, search: S): S extends T ? true : boolean {

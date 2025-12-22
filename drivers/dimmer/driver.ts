@@ -8,7 +8,7 @@ import {
 } from '../../types/TuyaApiTypes';
 import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes';
 import type TuyaOAuth2DeviceDimmer from './device';
-import { SIMPLE_DIMMER_CAPABILITIES } from './TuyaDimmerConstants';
+import { DIMMER_CAPABILITIES } from './TuyaDimmerConstants';
 import TRANSLATIONS from './translations.json';
 
 type DeviceArgs = StandardDeviceFlowArgs<TuyaOAuth2DeviceDimmer>;
@@ -61,8 +61,9 @@ module.exports = class TuyaOAuth2DriverDimmer extends TuyaOAuth2Driver {
       const tuyaCapability = status.code;
 
       if (
-        constIncludes(SIMPLE_DIMMER_CAPABILITIES.read_write, tuyaCapability) ||
-        constIncludes(SIMPLE_DIMMER_CAPABILITIES.setting, tuyaCapability)
+        constIncludes(DIMMER_CAPABILITIES.read_write, tuyaCapability) ||
+        constIncludes(DIMMER_CAPABILITIES.setting, tuyaCapability) ||
+        constIncludes(DIMMER_CAPABILITIES.setting_scaled, tuyaCapability)
       ) {
         props.store.tuya_capabilities.push(tuyaCapability);
       }

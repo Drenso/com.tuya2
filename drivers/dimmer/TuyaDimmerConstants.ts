@@ -1,17 +1,14 @@
-// Map from setting id to human-readable label
-export const SIMPLE_DIMMER_CAPABILITIES = {
+export const DIMMER_CAPABILITIES = {
   read_write: ['switch_led_1', 'bright_value_1', 'switch_led_2', 'bright_value_2', 'switch_led_3', 'bright_value_3'],
   read_only: [],
-  setting: [
+  setting: ['led_type_1', 'led_type_2', 'led_type_3'],
+  setting_scaled: [
     'brightness_min_1',
     'brightness_max_1',
     'brightness_min_2',
     'brightness_max_2',
     'brightness_min_3',
     'brightness_max_3',
-    'led_type_1',
-    'led_type_2',
-    'led_type_3',
   ],
 } as const;
 

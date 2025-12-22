@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.tuya2",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "compatibility": ">=12.2.0",
   "brandColor": "#FF4800",
   "sdk": 3,
@@ -3563,12 +3563,14 @@
         {
           "id": "welcome",
           "navigation": {
-            "next": "login_oauth2"
+            "next": "usercode"
           }
         },
         {
-          "id": "login_oauth2",
-          "template": "login_oauth2"
+          "id": "usercode"
+        },
+        {
+          "id": "qrcode"
         },
         {
           "id": "list_devices",
@@ -3584,8 +3586,10 @@
       ],
       "repair": [
         {
-          "id": "login_oauth2",
-          "template": "login_oauth2"
+          "id": "usercode"
+        },
+        {
+          "id": "qrcode"
         }
       ],
       "class": "airconditioning",

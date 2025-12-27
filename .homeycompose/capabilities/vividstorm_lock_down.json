@@ -1,0 +1,10 @@
+{
+    "type": "button",
+    "title": {
+        "en": "Set Lower Limit"
+    },
+    "getable": false,
+    "setable": true,
+    "uiComponent": "button",
+    "icon": "/assets/capabilities/lock.svg"
+}

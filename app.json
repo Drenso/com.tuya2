@@ -8552,7 +8552,9 @@
     {
       "capabilities": [
         "windowcoverings_state",
-        "windowcoverings_set"
+        "windowcoverings_set",
+        "vividstorm_lock_up",
+        "vividstorm_lock_down"
       ],
       "connectivity": [
         "cloud"
@@ -9026,6 +9028,26 @@
       "setable": true,
       "uiComponent": "button",
       "icon": "assets/capabilities/alarm_siren.svg"
+    },
+    "vividstorm_lock_up": {
+      "type": "button",
+      "title": {
+        "en": "Set Upper Limit"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/capabilities/lock.svg"
+    },
+    "vividstorm_lock_down": {
+      "type": "button",
+      "title": {
+        "en": "Set Lower Limit"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/capabilities/lock.svg"
     }
   }
 }

@@ -196,9 +196,9 @@ export async function sendSettings<T extends { [key: string]: unknown }>(
         value: newValue,
       })
       .catch(err => {
-        if (err.tuyaCode === 2008 || err.message.startsWith('[2008]')) {
+        if (err.tuyaCode === 2008) {
           unsupportedSettings.push(changedKey);
-        } else if (err.tuyaCode === 501 || err.message.startsWith('[501]')) {
+        } else if (err.tuyaCode === 501) {
           unsupportedValues.push(changedKey);
         } else {
           throw err;

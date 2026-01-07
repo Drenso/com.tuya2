@@ -25,7 +25,7 @@ module.exports = class TuyaOAuth2DriverLight extends TuyaOAuth2DriverWithLight {
     DEVICE_CATEGORIES.LIGHTING.MOTION_SENS_LIGHT,
     DEVICE_CATEGORIES.LIGHTING.CEILING_FAN_LIGHT,
     DEVICE_CATEGORIES.LIGHTING.SOLAR_LIGHT,
-    DEVICE_CATEGORIES.CUSTOM.STAR_PROJECTOR2,
+    DEVICE_CATEGORIES.UNDOCUMENTED.STAR_PROJECTOR,
     // TODO
   ] as const;
 
@@ -108,7 +108,6 @@ module.exports = class TuyaOAuth2DriverLight extends TuyaOAuth2DriverWithLight {
     // onoff
     for (const status of device.status) {
       const tuyaCapability = status.code;
-      this.log('Tuya capability found during pairing:', tuyaCapability);
 
       if (tuyaCapability === 'switch_led') {
         props.store.tuya_switches.push(tuyaCapability);

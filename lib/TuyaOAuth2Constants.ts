@@ -127,8 +127,8 @@ export const DEVICE_CATEGORIES = {
     PROJECTOR: 'tyy',
     // OUTDOOR_TRAVEL
   },
-  CUSTOM: {
-    STAR_PROJECTOR2: 'xktyd',
+  UNDOCUMENTED: {
+    STAR_PROJECTOR: 'xktyd',
   },
 } as const;
 

@@ -74,7 +74,7 @@ export default class TuyaOAuth2DriverWithLight extends TuyaOAuth2Driver {
         s: { min: 0, max: 1000, scale: 0, step: 1 },
         v: { min: 0, max: 1000, scale: 0, step: 1 },
       };
-    } else if (device.category === DEVICE_CATEGORIES.CUSTOM.STAR_PROJECTOR2) {
+    } else if (device.category === DEVICE_CATEGORIES.UNDOCUMENTED.STAR_PROJECTOR) {
       props.store.tuya_brightness_v2 = { min: 10, max: 1000, scale: 0, step: 1 };
       props.store.tuya_temperature_v2 = { min: 0, max: 1000, scale: 0, step: 1 };
       props.store.tuya_colour_v2 = {

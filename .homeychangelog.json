@@ -28,5 +28,8 @@
   },
   "1.1.3": {
     "en": "Improve error messages, fix reverse fan direction for certain fans"
+  },
+  "1.2.0": {
+    "en": "Add support for star projectors (using the light category), add additional scaling options for thermostat devices, improve pairing flow when there are large amounts of Tuya devices available, fix airco child lock flow card action."
   }
 }

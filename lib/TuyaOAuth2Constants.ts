@@ -130,6 +130,7 @@ export const DEVICE_CATEGORIES = {
   UNDOCUMENTED: {
     IRRIGATOR: 'sfkzq',
     PM25: 'pm2.5',
+    SMART_CAMERA: 'dghsxj',
     STAR_PROJECTOR: 'xktyd',
     SWITCH: 'tdq',
   },

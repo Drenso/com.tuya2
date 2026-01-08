@@ -15,7 +15,10 @@ import {
 } from './TuyaCameraConstants';
 
 class TuyaOAuth2DriverWithCamera extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.SMART_CAMERA] as const;
+  TUYA_DEVICE_CATEGORIES = [
+    DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.SMART_CAMERA,
+    DEVICE_CATEGORIES.UNDOCUMENTED.SMART_CAMERA,
+  ] as const;
 
   async onInit(): Promise<void> {
     await super.onInit();

@@ -9,8 +9,9 @@ import {
   THERMOSTAT_FLOWS,
   TuyaThermostatSettings,
 } from './TuyaThermostatConstants';
+import * as TuyaThermostatMigrations from '../../lib/migrations/TuyaThermostatMigrations';
 
-module.exports = class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
+export default class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
@@ -27,6 +28,11 @@ module.exports = class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
         return this.sendCommand({ code: 'temp_set', value: Math.round(value * scaling) });
       });
     }
+  }
+
+  async performMigrations(): Promise<void> {
+    await super.performMigrations();
+    await TuyaThermostatMigrations.performMigrations(this);
   }
 
   async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
@@ -69,6 +75,21 @@ module.exports = class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
     }
   }
 
+  async scaleCapabilityOptions(
+    event: SettingsEvent<HomeyThermostatSettings>,
+    homeyCapability: 'target_temperature' | 'measure_temperature',
+  ): Promise<void> {
+    const settingKey = `${homeyCapability}_scaling` as const;
+    if (event.changedKeys.includes(settingKey)) {
+      const unscaledRange: { min: number; max: number } = this.store[`${homeyCapability}_range`];
+      const capabilityOptions: { min: number; max: number } = this.getCapabilityOptions(homeyCapability);
+      const newScaling = computeScaleFactor(event.newSettings[settingKey]);
+      capabilityOptions.min = unscaledRange.min / newScaling;
+      capabilityOptions.max = unscaledRange.max / newScaling;
+      await this.setCapabilityOptions(homeyCapability, capabilityOptions);
+    }
+  }
+
   async onSettings(event: SettingsEvent<HomeyThermostatSettings>): Promise<string | void> {
     for (const homeyCapability of [
       'target_temperature',
@@ -79,6 +100,10 @@ module.exports = class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
       await Util.handleScaleSetting(this, event, `${homeyCapability}_scaling`, homeyCapability).catch(this.error);
     }
 
+    for (const homeyCapability of ['target_temperature', 'measure_temperature'] as const) {
+      await this.scaleCapabilityOptions(event, homeyCapability).catch(this.error);
+    }
+
     const tuyaSettings = filterTuyaSettings<HomeyThermostatSettings, TuyaThermostatSettings>(
       event,
       THERMOSTAT_CAPABILITIES.setting,
@@ -86,4 +111,6 @@ module.exports = class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
 
     return Util.onSettings(this, tuyaSettings, this.SETTING_LABELS);
   }
-};
+}
+
+module.exports = TuyaOAuth2DeviceThermostat;

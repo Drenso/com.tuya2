@@ -46,6 +46,21 @@ module.exports = class TuyaOAuth2DriverThermostat extends TuyaOAuth2Driver {
   ): ListDeviceProperties {
     const props = super.onTuyaPairListDeviceProperties(device, specifications, dataPoints);
 
+    props.store['_migrations'] = ['thermostat_capabilities_options'];
+
+    // Defaults
+    props.store = {
+      ...props.store,
+      target_temperature_range: {
+        min: 5,
+        max: 40,
+      },
+      measure_temperature_range: {
+        min: 5,
+        max: 40,
+      },
+    };
+
     let mode = false;
     let work_state = false;
 
@@ -115,6 +130,11 @@ module.exports = class TuyaOAuth2DriverThermostat extends TuyaOAuth2Driver {
         props.capabilitiesOptions[homeyCapability] = {
           min: (values.min ?? 5) / scaling,
           max: (values.max ?? 40) / scaling,
+        };
+        // Store unscaled range to avoid inaccuracies when changing scales later
+        props.store[`${homeyCapability}_range`] = {
+          min: values.min ?? 5,
+          max: values.max ?? 40,
         };
       }
 

@@ -53,6 +53,9 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
   - cwysj - Pet fountain
     - Pet Water Fountain
 
+  - dbl - Electric fireplace
+    - Generic electric fireplace
+
   - dgnbj - Multifunctional sensor
     - WiFi smart online 5 in 1 tester
 
@@ -83,15 +86,18 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
 
   - sd - Robot vacuum
     - Blaupunkt bluebot xtreme
+    - Ilife A30 pro robotstofzuiger
 
   - qccdz - Not documented
     - EV Portable Charger
+    - Axal charger
 
   - qxj - Not documented
     - T & H Sensor with external probe
 
   - wkf - Not documented
     - ZigBee Tuya TRV Temperatur regler
+    - Thermostat ME167
 
   - wsp - Cat toilet
     - Automatic Cat Litterbox

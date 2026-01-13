@@ -5,10 +5,10 @@ import {
   TuyaDeviceResponse,
   TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes';
-import { getFromMap } from '../../lib/TuyaOAuth2Util';
+import { getFromMap, sendSetting } from '../../lib/TuyaOAuth2Util';
 import { FAN_CAPABILITIES_MAPPING } from './TuyaFanConstants';
 import TuyaOAuth2DriverWithLight from '../../lib/TuyaOAuth2DriverWithLight';
-import type { StandardDeviceFlowArgs } from '../../types/TuyaTypes';
+import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes';
 import TRANSLATIONS from './translations.json';
 
 module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
@@ -32,7 +32,13 @@ module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
       return args.device.getCapabilityValue('onoff.light').catch(args.device.error);
     });
 
-    this.addSettingFlowHandler('fan_direction', this.SETTING_LABELS);
+    this.homey.flow.getActionCard('fan_fan_direction').registerRunListener(async (args: StandardFlowArgs) => {
+      if (args.value === 'backward') {
+        args.value = args.device.store['reversed_fan_direction'];
+      }
+
+      await sendSetting(args.device, 'fan_direction', args.value, this.SETTING_LABELS);
+    });
   }
 
   onTuyaPairListDeviceProperties(

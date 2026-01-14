@@ -43,5 +43,8 @@
   },
   "1.2.4": {
     "en": "Fix fan direction flow card"
+  },
+  "1.2.5": {
+    "en": "Fix 'fan light is on' flow condition"
   }
 }

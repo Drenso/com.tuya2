@@ -75,6 +75,7 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
 
   - ktkzq - Air conditioner controller
     - W'eau heat pump
+    - Ikaro AC controller
 
   - ldcg - Luminance Sensor
     - Generic light sensor

@@ -98,6 +98,9 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
     - Blaupunkt bluebot xtreme
     - Ilife A30 pro robotstofzuiger
 
+  - szjcy - Not documented
+    - Pool monitor
+
   - qccdz - Not documented
     - EV Portable Charger
     - Axal charger

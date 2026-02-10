@@ -43,6 +43,7 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
 
   - bh - Smart kettle
     - WeeKett kettle
+    - Kogan Smart kettle
 
   - cjkg - Scene switch
     - MOES 6 gang wall light + scene switch
@@ -83,6 +84,7 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
   - mal - Alarm Host
     - Supplement Staniot Security Panel 3
     - Houseguard Luma hub
+    - Staniot Alarm Panel 7
 
   - mc - Door and Window Controller
     - Window Opener (Chain Actuator)
@@ -99,7 +101,8 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
     - Ilife A30 pro robotstofzuiger
 
   - sj - Water Detector
-    -  Water sensor
+    - Water sensor
+    - Flood sensor
 
   - szjcy - Not documented
     - Pool monitor

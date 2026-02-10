@@ -15,11 +15,61 @@ import TuyaOAuth2DeviceWithLight from '../../lib/TuyaOAuth2DeviceWithLight';
 export default class TuyaOAuth2DeviceFan extends TuyaOAuth2DeviceWithLight {
   LIGHT_DIM_CAPABILITY = 'dim';
 
+  private parseStoreNumber(key: string, fallback: number): number {
+    const value = this.getStoreValue(key);
+    if (typeof value === 'number' && Number.isFinite(value)) {
+      return value;
+    }
+    if (typeof value === 'string') {
+      const parsed = Number(value);
+      if (Number.isFinite(parsed)) {
+        return parsed;
+      }
+    }
+    return fallback;
+  }
+
+  private normalizeFanSpeedPercent(value: number): number {
+    const min = this.parseStoreNumber('fan_speed_percent_min', 1);
+    const max = this.parseStoreNumber('fan_speed_percent_max', 100);
+    const step = Math.max(this.parseStoreNumber('fan_speed_percent_step', 1), 1);
+
+    // If Homey reports fan_speed in normalized range or percentage range, scale to the Tuya min/max range.
+    const scaledValue =
+      value >= min && value <= max
+        ? value
+        : value <= 1
+          ? min + value * (max - min)
+          : min + (value / 100) * (max - min);
+
+    const snappedValue = Math.round((scaledValue - min) / step) * step + min;
+    return Math.min(max, Math.max(min, snappedValue));
+  }
+
+  private normalizeFanSpeedFromTuya(value: number): number {
+    const min = this.parseStoreNumber('fan_speed_percent_min', 1);
+    const max = this.parseStoreNumber('fan_speed_percent_max', 100);
+    const step = Math.max(this.parseStoreNumber('fan_speed_percent_step', 1), 1);
+    const range = max - min;
+
+    if (range <= 0) {
+      return 0;
+    }
+
+    const snappedValue = Math.round((value - min) / step) * step + min;
+    const normalizedValue = (snappedValue - min) / range;
+    return Math.min(1, Math.max(0, normalizedValue));
+  }
+
   async onOAuth2Init(): Promise<void> {
     // superclass handles light capabilities, except onoff.light
     await super.onOAuth2Init();
 
     for (const [tuyaCapability, capability] of Object.entries(FAN_CAPABILITIES_MAPPING)) {
+      if (tuyaCapability === 'fan_speed_percent') {
+        continue;
+      }
+
       if (
         constIncludes(FAN_CAPABILITIES.read_write, tuyaCapability) &&
         this.hasCapability(capability) &&
@@ -30,12 +80,22 @@ export default class TuyaOAuth2DeviceFan extends TuyaOAuth2DeviceWithLight {
     }
 
     // fan_speed
+    if (this.hasCapability('fan_speed') && this.hasTuyaCapability('fan_speed_percent')) {
+      this.registerCapabilityListener('fan_speed', value =>
+        this.sendCommand({
+          code: 'fan_speed_percent',
+          value: this.normalizeFanSpeedPercent(Number(value)),
+        }),
+      );
+    }
+
     if (this.hasCapability('legacy_fan_speed')) {
       this.registerCapabilityListener('legacy_fan_speed', value => this.sendCommand({ code: 'fan_speed', value }));
     }
 
     if (
       this.hasCapability('fan_speed') &&
+      !this.hasTuyaCapability('fan_speed_percent') &&
       this.getStoreValue('tuya_category') === DEVICE_CATEGORIES.LIGHTING.CEILING_FAN_LIGHT
     ) {
       this.registerCapabilityListener('fan_speed', value => this.sendCommand({ code: 'fan_speed', value }));
@@ -54,6 +114,11 @@ export default class TuyaOAuth2DeviceFan extends TuyaOAuth2DeviceWithLight {
     for (const tuyaCapability in status) {
       const value = status[tuyaCapability];
       const homeyCapability = getFromMap(FAN_CAPABILITIES_MAPPING, tuyaCapability);
+
+      if (tuyaCapability === 'fan_speed_percent' && typeof value === 'number' && homeyCapability) {
+        await this.safeSetCapabilityValue(homeyCapability, this.normalizeFanSpeedFromTuya(value));
+        continue;
+      }
 
       if (
         (constIncludes(FAN_CAPABILITIES.read_write, tuyaCapability) ||

@@ -11,6 +11,29 @@ import TuyaOAuth2DriverWithLight from '../../lib/TuyaOAuth2DriverWithLight';
 import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes';
 import TRANSLATIONS from './translations.json';
 
+function parseIntegerValue(value: unknown, fallback: number): number {
+  if (typeof value === 'number' && Number.isFinite(value)) {
+    return value;
+  }
+
+  if (typeof value === 'string') {
+    const parsed = Number(value);
+    if (Number.isFinite(parsed)) {
+      return parsed;
+    }
+  }
+
+  return fallback;
+}
+
+function getNormalizedStep(min: number, max: number, step: number): number {
+  const range = max - min;
+  if (range <= 0) {
+    return 0.1;
+  }
+  return Math.max(step / range, 0.01);
+}
+
 module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
   TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.FAN,
@@ -49,7 +72,7 @@ module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
     // superclass handles light capabilities, except onoff.light
     const props = super.onTuyaPairListDeviceProperties(device, specifications, dataPoints);
 
-    props.store['_migrations'] = ['fan_tuya_capabilities', 'reversed_fan_direction'];
+    props.store['_migrations'] = ['fan_tuya_capabilities', 'reversed_fan_direction', 'fan_speed_percent_range'];
 
     for (const status of device.status) {
       const tuyaCapability = status.code;
@@ -94,11 +117,19 @@ module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
 
       // Fan
       if (tuyaCapability === 'fan_speed_percent') {
+        const min = parseIntegerValue(values.min, 1);
+        const max = parseIntegerValue(values.max, 100);
+        const step = parseIntegerValue(values.step, 1);
+        const normalizedStep = getNormalizedStep(min, max, step);
+
         props.capabilitiesOptions['fan_speed'] = {
-          min: values.min ?? 1,
-          max: values.max ?? 100,
-          step: values.step ?? 1,
+          min: 0,
+          max: 1,
+          step: normalizedStep,
         };
+        props.store['fan_speed_percent_min'] = min;
+        props.store['fan_speed_percent_max'] = max;
+        props.store['fan_speed_percent_step'] = step;
       }
 
       const speeds = values.range as string[] | undefined;

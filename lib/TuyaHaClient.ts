@@ -209,7 +209,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
         this.lastTokenSave = Date.now();
         this.tokenExpireTime = token.expire_time ?? 7200;
 
-        this.log('Refreshed token:', newToken);
+        this.log('Refreshed token:', JSON.stringify(newToken));
       })
       .finally(() => {
         this._refreshingToken = null;

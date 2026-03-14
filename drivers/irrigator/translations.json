@@ -1,0 +1,24 @@
+{
+  "capabilitiesOptions": {
+    "onoff.subSwitch": {
+      "title": {
+        "en": "Valve __index__",
+        "nl": "Klep __index__"
+      },
+      "insightsTitleTrue": {
+        "en": "Turned on (Valve __index__)",
+        "nl": "Ingeschakeld (Klep __index__)"
+      },
+      "insightsTitleFalse": {
+        "en": "Turned off (Valve __index__)",
+        "nl": "Uitgeschakeld (Klep __index__)"
+      }
+    },
+    "onoff.all": {
+      "title": {
+        "en": "All Valves",
+        "nl": "Alle Kleppen"
+      }
+    }
+  }
+}

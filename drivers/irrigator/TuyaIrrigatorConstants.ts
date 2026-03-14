@@ -25,6 +25,13 @@ export const IRRIGATOR_CAPABILITIES = {
   read_only: ['battery_percentage', 'rain_battery_percentage', 'temp_hum_battery_percentage'],
 } as const;
 
+export const IRRIGATOR_SWITCH_COUNT = 4;
+
+// Mapping of numeric DP IDs to Tuya codes for devices that report raw DP format via MQTT
+export const IRRIGATOR_DP_ID_MAPPING: Record<string, string> = {
+  '49': 'rain_sensor_state',
+} as const;
+
 export type HomeyIrrigatorSettings = {
   measure_temperature_scaling: '0' | '1' | '2' | '3';
   measure_humidity_scaling: '0' | '1' | '2' | '3';

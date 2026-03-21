@@ -1132,6 +1132,76 @@
         ]
       },
       {
+        "id": "irrigator_sub_switch_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Turned valve on",
+          "nl": "Klep ingeschakeld"
+        },
+        "titleFormatted": {
+          "en": "Turned [[switch]] on",
+          "nl": "[[switch]] ingeschakeld"
+        },
+        "hint": {
+          "en": "A specific valve on the device turned on.",
+          "nl": "Een specifieke klep op het apparaat is ingeschakeld."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=irrigator&capabilities=onoff.switch_1|onoff.switch_2|onoff.switch_3|onoff.switch_4"
+          },
+          {
+            "name": "switch",
+            "type": "autocomplete",
+            "title": {
+              "en": "Valve",
+              "nl": "Klep"
+            },
+            "placeholder": {
+              "en": "Valve 1",
+              "nl": "Klep 1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "irrigator_sub_switch_turned_off",
+        "highlight": true,
+        "title": {
+          "en": "Turned valve off",
+          "nl": "Klep uitgeschakeld"
+        },
+        "titleFormatted": {
+          "en": "Turned [[switch]] off",
+          "nl": "[[switch]] uitgeschakeld"
+        },
+        "hint": {
+          "en": "A specific valve on the device turned off.",
+          "nl": "Een specifieke klep op het apparaat is uitgeschakeld."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=irrigator&capabilities=onoff.switch_1|onoff.switch_2|onoff.switch_3|onoff.switch_4"
+          },
+          {
+            "name": "switch",
+            "type": "autocomplete",
+            "title": {
+              "en": "Valve",
+              "nl": "Klep"
+            },
+            "placeholder": {
+              "en": "Valve 1",
+              "nl": "Klep 1"
+            }
+          }
+        ]
+      },
+      {
         "id": "light_switch_led_turned_on",
         "highlight": true,
         "title": {
@@ -2865,6 +2935,76 @@
         ]
       },
       {
+        "id": "irrigator_sub_switch_on",
+        "highlight": true,
+        "title": {
+          "en": "Turn valve on",
+          "nl": "Klep inschakelen"
+        },
+        "titleFormatted": {
+          "en": "Turn [[switch]] on",
+          "nl": "[[switch]] inschakelen"
+        },
+        "hint": {
+          "en": "Turn only a specific valve on the device on.",
+          "nl": "Schakel alleen een specifieke klep op het apparaat in."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=irrigator&capabilities=onoff.switch_1|onoff.switch_2|onoff.switch_3|onoff.switch_4"
+          },
+          {
+            "name": "switch",
+            "type": "autocomplete",
+            "title": {
+              "en": "Valve",
+              "nl": "Klep"
+            },
+            "placeholder": {
+              "en": "Valve 1",
+              "nl": "Klep 1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "irrigator_sub_switch_off",
+        "highlight": true,
+        "title": {
+          "en": "Turn valve off",
+          "nl": "Klep uitschakelen"
+        },
+        "titleFormatted": {
+          "en": "Turn [[switch]] off",
+          "nl": "[[switch]] uitschakelen"
+        },
+        "hint": {
+          "en": "Turn only a specific valve on the device off.",
+          "nl": "Schakel alleen een specifieke klep op het apparaat uit."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=irrigator&capabilities=onoff.switch_1|onoff.switch_2|onoff.switch_3|onoff.switch_4"
+          },
+          {
+            "name": "switch",
+            "type": "autocomplete",
+            "title": {
+              "en": "Valve",
+              "nl": "Klep"
+            },
+            "placeholder": {
+              "en": "Valve 1",
+              "nl": "Klep 1"
+            }
+          }
+        ]
+      },
+      {
         "id": "light_switch_pir",
         "title": {
           "en": "Set motion detection"
@@ -3465,6 +3605,41 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=irrigator&capabilities=rain_sensor"
+          }
+        ]
+      },
+      {
+        "id": "irrigator_sub_switch_is_on",
+        "highlight": true,
+        "title": {
+          "en": "Valve is turned !{{on|off}}",
+          "nl": "Klep is !{{aan|uit}}"
+        },
+        "titleFormatted": {
+          "en": "[[switch]] is turned !{{on|off}}",
+          "nl": "[[switch]] is !{{aan|uit}}"
+        },
+        "hint": {
+          "en": "A specific valve on the device is turned on/off.",
+          "nl": "Een specifieke klep op het apparaat is aan/uit."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=irrigator&capabilities=onoff.switch_1|onoff.switch_2|onoff.switch_3|onoff.switch_4"
+          },
+          {
+            "name": "switch",
+            "type": "autocomplete",
+            "title": {
+              "en": "Valve",
+              "nl": "Klep"
+            },
+            "placeholder": {
+              "en": "Valve 1",
+              "nl": "Klep 1"
+            }
           }
         ]
       },

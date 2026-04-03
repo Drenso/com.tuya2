@@ -66,6 +66,9 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
   - dgnbj - Multifunctional sensor
     - WiFi smart online 5 in 1 tester
 
+  - fskg - Fan Switch
+    - TreatLife Smart Ceiling Fan Control and Dimmer Light Switch
+
   - hxd - Not documented
     - Wake Up Light
 

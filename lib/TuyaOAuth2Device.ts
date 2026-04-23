@@ -19,6 +19,8 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
    */
   initBarrier = true;
 
+  online: boolean | null = null;
+
   async onInit(): Promise<void> {
     await super.onInit();
     await this.performMigrations();
@@ -209,10 +211,22 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
 
     if (status.online === true) {
       this.setAvailable().catch(this.error);
+
+      if (this.online === false) {
+        await this.homey.flow.getDeviceTriggerCard('device_online').trigger(this).catch(this.error);
+      }
+
+      this.online = true;
     }
 
     if (status.online === false) {
       this.setUnavailable(this.homey.__('device_offline')).catch(this.error);
+
+      if (this.online === true) {
+        await this.homey.flow.getDeviceTriggerCard('device_offline').trigger(this).catch(this.error);
+      }
+
+      this.online = false;
 
       // Prevent further updates that would mark the device as available
       return;

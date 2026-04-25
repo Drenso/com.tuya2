@@ -1,0 +1,157 @@
+{
+  "device": {
+    "active_time": 1649961695,
+    "biz_type": 0,
+    "category": "kt",
+    "create_time": 1649961695,
+    "icon": "smart/product_icon2/kt_1.png",
+    "id": "71030243a4e57cb98f37",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Air conditioner",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "hw50w7qvxluhslkk",
+    "product_name": "Air conditioner",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "temp_set",
+        "value": 210
+      },
+      {
+        "code": "temp_current",
+        "value": 10
+      },
+      {
+        "code": "mode",
+        "value": "hot"
+      },
+      {
+        "code": "humidity_current",
+        "value": 0
+      },
+      {
+        "code": "temp_set_f",
+        "value": 61
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1649961695,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "kt",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":160,\"max\":880,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"cold\",\"hot\",\"wet\",\"wind\",\"auto\"]}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":61,\"max\":88,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":160,\"max\":880,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-20,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"cold\",\"hot\",\"wet\",\"wind\",\"auto\"]}"
+      },
+      {
+        "code": "humidity_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":61,\"max\":88,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "Power",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "temp_set",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":160,\"max\":880,\"scale\":1,\"step\":5}"
+    },
+    {
+      "code": "temp_current",
+      "custom_name": "",
+      "dp_id": 3,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":-20,\"max\":100,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "mode",
+      "custom_name": "",
+      "dp_id": 4,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"cold\",\"hot\",\"wet\",\"wind\",\"auto\"]}"
+    },
+    {
+      "code": "humidity_current",
+      "custom_name": "",
+      "dp_id": 18,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "temp_set_f",
+      "custom_name": "",
+      "dp_id": 136,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℉\",\"min\":61,\"max\":88,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

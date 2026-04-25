@@ -1,0 +1,416 @@
+{
+  "device": {
+    "active_time": 1767977660,
+    "biz_type": 0,
+    "category": "mk",
+    "create_time": 1767977660,
+    "icon": "smart/icon/bay1589959502650E5Q5/ff751e44b53d064ed215bb25160ef726.jpg",
+    "id": "bff05e9d1380de0a0cttjt",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "WIFI Face Access",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "td7kahmaly2odklo",
+    "product_name": "WIFI Face Access",
+    "status": [
+      {
+        "code": "unlock_method_create",
+        "value": "Af8AAAMABgAAAGU="
+      },
+      {
+        "code": "unlock_method_delete",
+        "value": "AQAAAAUABQH/"
+      },
+      {
+        "code": "unlock_method_modify",
+        "value": ""
+      },
+      {
+        "code": "synch_method",
+        "value": "AQE="
+      },
+      {
+        "code": "temporary_password_creat",
+        "value": ""
+      },
+      {
+        "code": "temporary_password_delete",
+        "value": ""
+      },
+      {
+        "code": "temporary_password_modify",
+        "value": ""
+      },
+      {
+        "code": "remote_no_pd_setkey",
+        "value": "AAAB"
+      },
+      {
+        "code": "remote_no_dp_key",
+        "value": ""
+      },
+      {
+        "code": "unlock_fingerprint_kit",
+        "value": "AAAAAQ=="
+      },
+      {
+        "code": "unlock_password_kit",
+        "value": "AAAABQAA"
+      },
+      {
+        "code": "unlock_card_kit",
+        "value": ""
+      },
+      {
+        "code": "unlock_face_kit",
+        "value": "AAAAAQ=="
+      },
+      {
+        "code": "unlock_double_kit",
+        "value": ""
+      },
+      {
+        "code": "unlock_temporary_kit",
+        "value": ""
+      },
+      {
+        "code": "unlock_offline_pd",
+        "value": ""
+      },
+      {
+        "code": "video_request_realtime",
+        "value": ""
+      },
+      {
+        "code": "unlock_phone_remote_kit",
+        "value": ""
+      },
+      {
+        "code": "lock_alarm_kit",
+        "value": "AAAA"
+      },
+      {
+        "code": "doorbell_song_kit",
+        "value": "AQAA"
+      },
+      {
+        "code": "doorbell_volume",
+        "value": "low"
+      },
+      {
+        "code": "normal_open_switch",
+        "value": false
+      },
+      {
+        "code": "normal_open_period",
+        "value": ""
+      },
+      {
+        "code": "automatic_lock",
+        "value": false
+      },
+      {
+        "code": "auto_lock_time",
+        "value": 0
+      },
+      {
+        "code": "alarm_time",
+        "value": 60
+      },
+      {
+        "code": "closed_opened_kit",
+        "value": "AQAB"
+      },
+      {
+        "code": "lock_motor_state",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1767977660,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "mk",
+    "functions": [
+      {
+        "code": "unlock_method_create",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_method_delete",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_method_modify",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "synch_method",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "temporary_password_creat",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "temporary_password_delete",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "temporary_password_modify",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "remote_no_pd_setkey",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "remote_no_dp_key",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_fingerprint_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_password_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_card_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_face_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_temporary_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "video_request_realtime",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_phone_remote_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "lock_alarm_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "doorbell_song_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "doorbell_volume",
+        "type": "Enum",
+        "values": "{\"range\":[\"mute\",\"low\",\"high\"]}"
+      },
+      {
+        "code": "normal_open_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "normal_open_period",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "automatic_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "auto_lock_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"S\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "alarm_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":180,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "closed_opened_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "lock_motor_state",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "unlock_method_create",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_method_delete",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_method_modify",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "synch_method",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "temporary_password_creat",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "temporary_password_delete",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "temporary_password_modify",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "remote_no_pd_setkey",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "remote_no_dp_key",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_fingerprint_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_password_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_card_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_face_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_double_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_temporary_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_offline_pd",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "video_request_realtime",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_phone_remote_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "lock_alarm_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "doorbell_song_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "doorbell_volume",
+        "type": "Enum",
+        "values": "{\"range\":[\"mute\",\"low\",\"high\"]}"
+      },
+      {
+        "code": "normal_open_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "normal_open_period",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "automatic_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "auto_lock_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"S\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "alarm_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":180,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "closed_opened_kit",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "lock_motor_state",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

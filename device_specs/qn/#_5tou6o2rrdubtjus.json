@@ -1,0 +1,57 @@
+{
+  "device": {
+    "active_time": 1708205331,
+    "biz_type": 18,
+    "category": "qn",
+    "create_time": 1708205331,
+    "icon": "smart/icon/ay1537434969098RHk22/0b53819dd5028d213d2d86378dde1122.png",
+    "id": "bfefe969590656eb747ezt",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Terrassevarmer",
+    "online": true,
+    "owner_id": "",
+    "product_id": "5tou6o2rrdubtjus",
+    "product_name": "5401339",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1708205331,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "qn",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1766591982,
+    "biz_type": 0,
+    "category": "qn",
+    "create_time": 1766591982,
+    "icon": "smart/icon/bay1710838351713LH8O/96ef2b9c10baaf88160a424560e48fcf.png",
+    "id": "bf69c6cc7a89b17f1eitrg",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Games Room Radiator",
+    "online": true,
+    "owner_id": "",
+    "product_id": "1ctqanpwluzqxzy7",
+    "product_name": "ECOSO Torr Electric Heater",
+    "sub": false,
+    "time_zone": "+00:00",
+    "uid": "",
+    "update_time": 1766591982,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

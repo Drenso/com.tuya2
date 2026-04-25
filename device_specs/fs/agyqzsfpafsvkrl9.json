@@ -1,0 +1,145 @@
+{
+  "device": {
+    "active_time": 1717647195,
+    "biz_type": 0,
+    "category": "fs",
+    "create_time": 1717647195,
+    "icon": "smart/icon/ay1535601660405KA72f/50bfec90efcce440ec075e664d894f76.png",
+    "id": "bf6fb59e48cf4a6ccckunc",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Lounge Fan",
+    "online": true,
+    "owner_id": "",
+    "product_id": "agyqzsfpafsvkrl9",
+    "product_name": "DC吊扇",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "fan_speed_percent",
+        "value": 3
+      },
+      {
+        "code": "light",
+        "value": false
+      },
+      {
+        "code": "bright_value",
+        "value": 1000
+      },
+      {
+        "code": "temp_value",
+        "value": 550
+      }
+    ],
+    "sub": false,
+    "time_zone": "+10:00",
+    "uid": "",
+    "update_time": 1717647195,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "fs",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fan_speed_percent",
+        "type": "Integer",
+        "values": "{\"min\":\"1\",\"max\":\"6\",\"scale\":\"0\",\"step\":\"1\"}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "bright_value",
+        "type": "Integer",
+        "values": "{\"min\":\"10\",\"max\":\"1000\",\"scale\":\"0\",\"step\":\"1\"}"
+      },
+      {
+        "code": "temp_value",
+        "type": "Integer",
+        "values": "{\"min\":\"0\",\"max\":\"1000\",\"scale\":\"0\",\"step\":\"1\"}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fan_speed_percent",
+        "type": "Integer",
+        "values": "{\"min\":\"1\",\"max\":\"6\",\"scale\":\"0\",\"step\":\"1\"}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "bright_value",
+        "type": "Integer",
+        "values": "{\"min\":\"10\",\"max\":\"1000\",\"scale\":\"0\",\"step\":\"1\"}"
+      },
+      {
+        "code": "temp_value",
+        "type": "Integer",
+        "values": "{\"min\":\"0\",\"max\":\"1000\",\"scale\":\"0\",\"step\":\"1\"}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "fan_speed",
+      "custom_name": "",
+      "dp_id": 3,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":\"1\",\"max\":\"6\",\"scale\":\"0\",\"step\":\"1\"}"
+    },
+    {
+      "code": "light",
+      "custom_name": "",
+      "dp_id": 15,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "bright_value",
+      "custom_name": "",
+      "dp_id": 16,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":\"10\",\"max\":\"1000\",\"scale\":\"0\",\"step\":\"1\"}"
+    },
+    {
+      "code": "temp_value",
+      "custom_name": "",
+      "dp_id": 17,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":\"0\",\"max\":\"1000\",\"scale\":\"0\",\"step\":\"1\"}"
+    }
+  ]
+}

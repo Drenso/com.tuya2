@@ -1,0 +1,101 @@
+{
+  "device": {
+    "active_time": 1767895995,
+    "biz_type": 0,
+    "category": "cl",
+    "create_time": 1767895995,
+    "icon": "smart/product_icon/cl.png",
+    "id": "64602661e868e76a1730",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Gordijn voor",
+    "online": true,
+    "owner_id": "",
+    "product_id": "XS76BY5Q1uKO6gjC",
+    "product_name": "Curtain",
+    "status": [
+      {
+        "code": "position",
+        "value": 100
+      },
+      {
+        "code": "mach_operate",
+        "value": "STOP"
+      },
+      {
+        "code": "opposite",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1767895995,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "cl",
+    "functions": [
+      {
+        "code": "mach_operate",
+        "type": "Enum",
+        "values": "{\"range\":[\"ZZ\",\"FZ\",\"STOP\"]}"
+      },
+      {
+        "code": "opposite",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "position",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "opposite",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mach_operate",
+        "type": "Enum",
+        "values": "{\"range\":[\"ZZ\",\"FZ\",\"STOP\"]}"
+      },
+      {
+        "code": "position",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "opposite",
+      "custom_name": "",
+      "dp_id": 103,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "mach_operate",
+      "custom_name": "",
+      "dp_id": 102,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"ZZ\",\"FZ\",\"STOP\"]}"
+    },
+    {
+      "code": "position",
+      "custom_name": "",
+      "dp_id": 101,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

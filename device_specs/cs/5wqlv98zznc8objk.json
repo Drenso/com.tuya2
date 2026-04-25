@@ -1,0 +1,91 @@
+{
+  "device": {
+    "active_time": 1770968688,
+    "biz_type": 0,
+    "category": "cs",
+    "create_time": 1770968688,
+    "icon": "smart/icon/ay1557826918513Qbvsz/d04cbf26b861f64abc654233117d5ca7.png",
+    "id": "bfc22de81da63c7f908tw9",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "DryFy Connect",
+    "online": true,
+    "owner_id": "",
+    "product_id": "5wqlv98zznc8objk",
+    "product_name": "DryFy Connect",
+    "status": [
+      {
+        "code": "anion",
+        "value": false
+      },
+      {
+        "code": "fault",
+        "value": 0
+      },
+      {
+        "code": "countdown_left",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1770968688,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "cs",
+    "functions": [
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\"]}"
+      },
+      {
+        "code": "countdown_left",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":1440,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "anion",
+      "custom_name": "",
+      "dp_id": 5,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "fault",
+      "custom_name": "",
+      "dp_id": 11,
+      "time": 0,
+      "type": "Bitmap",
+      "value": "{\"label\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\"]}"
+    },
+    {
+      "code": "countdown_left",
+      "custom_name": "",
+      "dp_id": 13,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"min\",\"min\":0,\"max\":1440,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

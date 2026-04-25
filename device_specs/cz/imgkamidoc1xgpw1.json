@@ -1,0 +1,216 @@
+{
+  "device": {
+    "active_time": 1776094608,
+    "biz_type": 0,
+    "category": "cz",
+    "create_time": 1776094608,
+    "icon": "smart/icon/bay1718672327362Llhs/7cb3e6bc8d2ffef2e77e620c2a32adba.jpg",
+    "id": "bf34f6ac9a7a09c54ci0ux",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "6-Zone Slimme Kleppen Controller",
+    "online": true,
+    "owner_id": "",
+    "product_id": "imgkamidoc1xgpw1",
+    "product_name": "6-Zone Smart Valve Controller",
+    "status": [
+      {
+        "code": "switch_1",
+        "value": false
+      },
+      {
+        "code": "switch_2",
+        "value": false
+      },
+      {
+        "code": "switch_3",
+        "value": false
+      },
+      {
+        "code": "switch_4",
+        "value": false
+      },
+      {
+        "code": "switch_5",
+        "value": false
+      },
+      {
+        "code": "switch_6",
+        "value": false
+      },
+      {
+        "code": "countdown_1",
+        "value": 1
+      },
+      {
+        "code": "countdown_2",
+        "value": 1
+      },
+      {
+        "code": "countdown_3",
+        "value": 1
+      },
+      {
+        "code": "countdown_4",
+        "value": 1
+      },
+      {
+        "code": "countdown_5",
+        "value": 1
+      },
+      {
+        "code": "countdown_6",
+        "value": 1
+      },
+      {
+        "code": "switch",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1776094608,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "cz",
+    "functions": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_2",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_3",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_4",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_5",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_6",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":1439,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_2",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_3",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_4",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_5",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_6",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_2",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_3",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_4",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_5",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_6",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":1439,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_2",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_3",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_4",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_5",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_6",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

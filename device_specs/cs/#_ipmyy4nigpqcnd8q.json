@@ -1,0 +1,91 @@
+{
+  "device": {
+    "active_time": 1757680849,
+    "biz_type": 0,
+    "category": "cs",
+    "create_time": 1757680849,
+    "icon": "smart/icon/bay1624349435424NQ8u/4f130f6b9a56534dd1e8291a2a2a1f8c.png",
+    "id": "bf32dc31080d4a3f66ar93",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Dehumidifier",
+    "online": true,
+    "owner_id": "",
+    "product_id": "ipmyy4nigpqcnd8q",
+    "product_name": "Pro Breeze 30L Compressor Dehumidifier",
+    "status": [
+      {
+        "code": "anion",
+        "value": false
+      },
+      {
+        "code": "fault",
+        "value": 0
+      },
+      {
+        "code": "countdown_left",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1757680849,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "cs",
+    "functions": [
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\"]}"
+      },
+      {
+        "code": "countdown_left",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":1440,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "anion",
+      "custom_name": "",
+      "dp_id": 5,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "fault",
+      "custom_name": "",
+      "dp_id": 11,
+      "time": 0,
+      "type": "Bitmap",
+      "value": "{\"label\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\"]}"
+    },
+    {
+      "code": "countdown_left",
+      "custom_name": "",
+      "dp_id": 13,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"min\",\"min\":0,\"max\":1440,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

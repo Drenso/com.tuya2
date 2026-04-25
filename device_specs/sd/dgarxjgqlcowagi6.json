@@ -1,0 +1,218 @@
+{
+  "device": {
+    "active_time": 1766702550,
+    "biz_type": 0,
+    "category": "sd",
+    "create_time": 1766702550,
+    "icon": "smart/icon/bay1606442683546XeAQ/1addcdb4d7f81d2640d5f9ef8aea0752.png",
+    "id": "ebd331829a640f1376ug4p",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "WAP",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "dgarxjgqlcowagi6",
+    "product_name": "",
+    "status": [
+      {
+        "code": "power_go",
+        "value": false
+      },
+      {
+        "code": "mode",
+        "value": "random"
+      },
+      {
+        "code": "direction_control",
+        "value": "stop"
+      },
+      {
+        "code": "electricity_left",
+        "value": 20
+      },
+      {
+        "code": "edge_brush",
+        "value": 69
+      },
+      {
+        "code": "roll_brush",
+        "value": 169
+      },
+      {
+        "code": "filter",
+        "value": 119
+      },
+      {
+        "code": "reset_edge_brush",
+        "value": false
+      },
+      {
+        "code": "reset_roll_brush",
+        "value": false
+      },
+      {
+        "code": "reset_filter",
+        "value": false
+      },
+      {
+        "code": "suction",
+        "value": "normal"
+      },
+      {
+        "code": "clean_record",
+        "value": "001000"
+      },
+      {
+        "code": "clean_area",
+        "value": 0
+      },
+      {
+        "code": "clean_time",
+        "value": 0
+      },
+      {
+        "code": "fault",
+        "value": 0
+      },
+      {
+        "code": "voice_switch",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "-03:00",
+    "uid": "<redacted>",
+    "update_time": 1766702550,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "sd",
+    "functions": [
+      {
+        "code": "power_go",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"random\",\"wall_follow\",\"bow\",\"spiral\",\"chargego\"]}"
+      },
+      {
+        "code": "direction_control",
+        "type": "Enum",
+        "values": "{\"range\":[\"turn_left\",\"turn_right\",\"stop\"]}"
+      },
+      {
+        "code": "reset_edge_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "reset_roll_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "reset_filter",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "suction",
+        "type": "Enum",
+        "values": "{\"range\":[\"strong\",\"normal\",\"quiet\"]}"
+      },
+      {
+        "code": "voice_switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "power_go",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"random\",\"wall_follow\",\"bow\",\"spiral\",\"chargego\"]}"
+      },
+      {
+        "code": "direction_control",
+        "type": "Enum",
+        "values": "{\"range\":[\"turn_left\",\"turn_right\",\"stop\"]}"
+      },
+      {
+        "code": "electricity_left",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "edge_brush",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":200,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "roll_brush",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":200,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "filter",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":200,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "reset_edge_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "reset_roll_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "reset_filter",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "suction",
+        "type": "Enum",
+        "values": "{\"range\":[\"strong\",\"normal\",\"quiet\"]}"
+      },
+      {
+        "code": "clean_record",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "clean_area",
+        "type": "Integer",
+        "values": "{\"unit\":\"㎡\",\"min\":0,\"max\":9999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "clean_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"分\",\"min\":0,\"max\":9999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"edge_sweep\",\"middle_sweep\",\"left_wheel\",\"right_wheel\",\"garbage_box\",\"land_check\",\"collision\"]}"
+      },
+      {
+        "code": "voice_switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

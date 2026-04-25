@@ -1,0 +1,99 @@
+{
+  "device": {
+    "active_time": 1771934212,
+    "biz_type": 0,
+    "category": "ktkzq",
+    "create_time": 1771934212,
+    "icon": "smart/icon/ay1538659416731ywVRU/54d447ad9dad88b7b0e847bd3be2fd1f.png",
+    "id": "bfb4766393a1248d61rvl9",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "MBR AC",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "hkje5f0z0vh2yzrd",
+    "product_name": "WiFiKIT-II-MRSLIM",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "temp_set",
+        "value": 25
+      },
+      {
+        "code": "temp_current",
+        "value": 26
+      },
+      {
+        "code": "mode",
+        "value": "cold"
+      },
+      {
+        "code": "fan_speed_enum",
+        "value": "level_3"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+08:00",
+    "uid": "<redacted>",
+    "update_time": 1771934212,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "ktkzq",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":15,\"max\":30,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"cold\"]}"
+      },
+      {
+        "code": "fan_speed_enum",
+        "type": "Enum",
+        "values": "{\"range\":[\"level_1\",\"level_2\",\"level_3\",\"level_4\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":15,\"max\":30,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-20,\"max\":50,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"cold\"]}"
+      },
+      {
+        "code": "fan_speed_enum",
+        "type": "Enum",
+        "values": "{\"range\":[\"level_1\",\"level_2\",\"level_3\",\"level_4\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

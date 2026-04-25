@@ -1,0 +1,118 @@
+{
+  "device": {
+    "active_time": 1716182953,
+    "biz_type": 18,
+    "category": "qn",
+    "create_time": 1716182953,
+    "icon": "smart/product_icon/qn.png",
+    "id": "ebe84630e82e4a4a8d91ep",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Bathroom Heater",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "ma3oamwzywooctul",
+    "product_name": "Smart Thermostat",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "temp_set",
+        "value": 175
+      },
+      {
+        "code": "temp_current",
+        "value": 268
+      },
+      {
+        "code": "lock",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+12:00",
+    "uid": "<redacted>",
+    "update_time": 1716182953,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "qn",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":1040,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "lock",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":1040,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":1220,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "lock",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "Power",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "TempSet",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":50,\"max\":1040,\"scale\":1,\"step\":5}"
+    },
+    {
+      "code": "TempCurrent",
+      "custom_name": "",
+      "dp_id": 3,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":0,\"max\":1220,\"scale\":1,\"step\":10}"
+    },
+    {
+      "code": "ChildLock",
+      "custom_name": "",
+      "dp_id": 6,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    }
+  ]
+}

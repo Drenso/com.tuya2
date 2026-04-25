@@ -1,0 +1,234 @@
+{
+  "device": {
+    "active_time": 1740829174,
+    "biz_type": 0,
+    "category": "jtmspro",
+    "create_time": 1740829174,
+    "icon": "smart/program_category_icon/jtmspro.png",
+    "id": "bfb92dqnlimurpqx",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "model": "C502",
+    "name": "NB2D",
+    "node_id": "4868ff10cb8186b8",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "xicdxood",
+    "product_name": "Smart Lock",
+    "status": [
+      {
+        "code": "unlock_method_create",
+        "value": "AgABAf84bNMAcrybfwAAAAAAAAAAAAAAAA=="
+      },
+      {
+        "code": "unlock_method_delete",
+        "value": "AgABAQMB"
+      },
+      {
+        "code": "unlock_method_modify",
+        "value": ""
+      },
+      {
+        "code": "residual_electricity",
+        "value": 60
+      },
+      {
+        "code": "unlock_fingerprint",
+        "value": 4
+      },
+      {
+        "code": "unlock_password",
+        "value": 11
+      },
+      {
+        "code": "unlock_dynamic",
+        "value": 0
+      },
+      {
+        "code": "unlock_card",
+        "value": 14
+      },
+      {
+        "code": "unlock_ble",
+        "value": 1
+      },
+      {
+        "code": "alarm_lock",
+        "value": "wrong_password"
+      },
+      {
+        "code": "doorbell",
+        "value": true
+      },
+      {
+        "code": "language",
+        "value": "english"
+      },
+      {
+        "code": "beep_volume",
+        "value": "high"
+      },
+      {
+        "code": "rtc_lock",
+        "value": false
+      },
+      {
+        "code": "synch_method",
+        "value": "AQI="
+      },
+      {
+        "code": "check_code_set",
+        "value": "AAH//wAAAAAAAAAAAP//AA=="
+      },
+      {
+        "code": "ble_unlock_check",
+        "value": "//8AATk4OTMyMzk5AWlALjMAAQ=="
+      }
+    ],
+    "sub": true,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1740829174,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "jtmspro",
+    "functions": [
+      {
+        "code": "unlock_method_create",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_method_delete",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_method_modify",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "language",
+        "type": "Enum",
+        "values": "{\"range\":[\"chinese_simplified\",\"english\"]}"
+      },
+      {
+        "code": "beep_volume",
+        "type": "Enum",
+        "values": "{\"range\":[\"mute\",\"low\",\"normal\",\"high\"]}"
+      },
+      {
+        "code": "rtc_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "synch_method",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "check_code_set",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "ble_unlock_check",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "unlock_method_create",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_method_delete",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "unlock_method_modify",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "residual_electricity",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "unlock_fingerprint",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "unlock_password",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "unlock_dynamic",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "unlock_card",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "unlock_ble",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "alarm_lock",
+        "type": "Enum",
+        "values": "{\"range\":[\"wrong_finger\",\"wrong_password\",\"wrong_card\",\"wrong_face\",\"tongue_bad\",\"too_hot\",\"unclosed_time\",\"tongue_not_out\",\"pry\",\"key_in\",\"low_battery\",\"power_off\",\"shock\",\"defense\"]}"
+      },
+      {
+        "code": "doorbell",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "language",
+        "type": "Enum",
+        "values": "{\"range\":[\"chinese_simplified\",\"english\"]}"
+      },
+      {
+        "code": "beep_volume",
+        "type": "Enum",
+        "values": "{\"range\":[\"mute\",\"low\",\"normal\",\"high\"]}"
+      },
+      {
+        "code": "rtc_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "synch_method",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "check_code_set",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "ble_unlock_check",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

@@ -1,0 +1,101 @@
+{
+  "device": {
+    "active_time": 1767965977,
+    "biz_type": 0,
+    "category": "qn",
+    "create_time": 1767965977,
+    "icon": "smart/icon/ay1515733470982l5jsJ/7467112fee15310edced71c186c900e5.jpg",
+    "id": "bfa295d7c2663ffa8eira6",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Heater bedroom Eva",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "igx4agetzjknlnhr",
+    "product_name": "Vonroc Smart Heater",
+    "status": [
+      {
+        "code": "lock",
+        "value": false
+      },
+      {
+        "code": "light",
+        "value": true
+      },
+      {
+        "code": "countdown_set",
+        "value": "cancel"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1767965977,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "qn",
+    "functions": [
+      {
+        "code": "lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_set",
+        "type": "Enum",
+        "values": "{\"range\":[\"cancel\",\"1h\",\"2h\",\"3h\",\"4h\",\"5h\",\"6h\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_set",
+        "type": "Enum",
+        "values": "{\"range\":[\"cancel\",\"1h\",\"2h\",\"3h\",\"4h\",\"5h\",\"6h\"]}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "child_lock",
+      "custom_name": "",
+      "dp_id": 7,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "light",
+      "custom_name": "",
+      "dp_id": 10,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "countdown_set",
+      "custom_name": "",
+      "dp_id": 19,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"cancel\",\"1h\",\"2h\",\"3h\",\"4h\",\"5h\",\"6h\"]}"
+    }
+  ]
+}

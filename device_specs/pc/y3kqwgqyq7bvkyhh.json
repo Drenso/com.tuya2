@@ -1,0 +1,182 @@
+{
+  "device": {
+    "active_time": 1763678325,
+    "biz_type": 0,
+    "category": "pc",
+    "create_time": 1763678325,
+    "icon": "smart/icon/ay1544451161651vQPZq/fb52d5e6c9889c62c2b7d680c12fc464.png",
+    "id": "3052475534987ae10a79",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "CiabattaA5",
+    "online": true,
+    "owner_id": "",
+    "product_id": "y3kqwgqyq7bvkyhh",
+    "product_name": "Smart Power StripA5",
+    "status": [
+      {
+        "code": "switch_1",
+        "value": false
+      },
+      {
+        "code": "switch_2",
+        "value": false
+      },
+      {
+        "code": "switch_3",
+        "value": true
+      },
+      {
+        "code": "switch_usb1",
+        "value": false
+      },
+      {
+        "code": "countdown_1",
+        "value": 0
+      },
+      {
+        "code": "countdown_2",
+        "value": 0
+      },
+      {
+        "code": "countdown_3",
+        "value": 0
+      },
+      {
+        "code": "countdown_usb1",
+        "value": 0
+      },
+      {
+        "code": "add_ele",
+        "value": 2
+      },
+      {
+        "code": "cur_current",
+        "value": 0
+      },
+      {
+        "code": "cur_power",
+        "value": 0
+      },
+      {
+        "code": "cur_voltage",
+        "value": 2209
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1763678325,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "pc",
+    "functions": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_2",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_3",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_usb1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_2",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_3",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_usb1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_2",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_3",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_usb1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_2",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_3",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_usb1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "add_ele",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":50000,\"scale\":3,\"step\":100}"
+      },
+      {
+        "code": "cur_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"mA\",\"min\":0,\"max\":30000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "cur_power",
+        "type": "Integer",
+        "values": "{\"unit\":\"W\",\"min\":0,\"max\":50000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "cur_voltage",
+        "type": "Integer",
+        "values": "{\"unit\":\"V\",\"min\":0,\"max\":5000,\"scale\":1,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

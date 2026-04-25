@@ -1,0 +1,118 @@
+{
+  "device": {
+    "active_time": 1758565247,
+    "biz_type": 0,
+    "category": "wk",
+    "create_time": 1758565247,
+    "icon": "smart/icon/bay1607333594402KkpA/d2bb7fe83704311384686fa93cd2c682.png",
+    "id": "153427843c6105f0e79a",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Badkamer",
+    "online": true,
+    "owner_id": "",
+    "product_id": "fy783e8g0n38ahlt",
+    "product_name": "MRC",
+    "status": [
+      {
+        "code": "temp_set",
+        "value": 76
+      },
+      {
+        "code": "temp_set_f",
+        "value": 410
+      },
+      {
+        "code": "temp_current",
+        "value": 185
+      },
+      {
+        "code": "temp_current_f",
+        "value": 320
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1758565247,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "wk",
+    "functions": [
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":400,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":410,\"max\":1040,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "factory_reset",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":400,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":410,\"max\":1040,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":450,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_current_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":320,\"max\":1130,\"scale\":1,\"step\":10}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "temp_set",
+      "custom_name": "",
+      "dp_id": 16,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":50,\"max\":400,\"scale\":1,\"step\":5}"
+    },
+    {
+      "code": "temp_set_f",
+      "custom_name": "",
+      "dp_id": 17,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℉\",\"min\":410,\"max\":1040,\"scale\":1,\"step\":10}"
+    },
+    {
+      "code": "temp_current",
+      "custom_name": "",
+      "dp_id": 24,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":0,\"max\":450,\"scale\":1,\"step\":5}"
+    },
+    {
+      "code": "temp_current_f",
+      "custom_name": "",
+      "dp_id": 29,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℉\",\"min\":320,\"max\":1130,\"scale\":1,\"step\":10}"
+    }
+  ]
+}

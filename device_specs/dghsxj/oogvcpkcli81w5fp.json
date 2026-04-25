@@ -1,0 +1,297 @@
+{
+  "device": {
+    "active_time": 1767000284,
+    "biz_type": 0,
+    "category": "dghsxj",
+    "create_time": 1767000284,
+    "icon": "smart/icon/ay1541056239985fDGjj/d891f7a6f4d326e841e814f9bc403b20.png",
+    "id": "bf42bb91d44cef2c519rer",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "FCJ - ICT",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "oogvcpkcli81w5fp",
+    "product_name": "LSC Outdoor Solar Camera",
+    "status": [
+      {
+        "code": "basic_flip",
+        "value": false
+      },
+      {
+        "code": "basic_osd",
+        "value": true
+      },
+      {
+        "code": "basic_private",
+        "value": false
+      },
+      {
+        "code": "sd_storge",
+        "value": "125095936|10660864|114435072"
+      },
+      {
+        "code": "sd_status",
+        "value": 1
+      },
+      {
+        "code": "sd_format",
+        "value": true
+      },
+      {
+        "code": "movement_detect_pic",
+        "value": "eyJidWNrZXQiOiJ0eS1ldS1zdG9yYWdlMzAtcGljIiwiZmlsZXMiOltbIi9iNjBmMmEtMjIwMDU1NzQ3LXliZ2QzY2ZmOGE3NzE1NzU0OGNkL2RldGVjdC8xNzQxMzEzNzE3LmpwZWc/cGFyYW09aXlGTGNOMTkwUmMrTDVmOS80VHZRNExjSW90L3VzM0JocVV6cFRHN3RRRT0iLCIiXV0sInYiOiIzLjAifQ=="
+      },
+      {
+        "code": "sd_format_state",
+        "value": 0
+      },
+      {
+        "code": "ipc_auto_siren",
+        "value": false
+      },
+      {
+        "code": "nightvision_mode",
+        "value": "ir_mode"
+      },
+      {
+        "code": "floodlight_switch",
+        "value": false
+      },
+      {
+        "code": "wireless_electricity",
+        "value": 100
+      },
+      {
+        "code": "wireless_powermode",
+        "value": "1"
+      },
+      {
+        "code": "wireless_lowpower",
+        "value": 10
+      },
+      {
+        "code": "wireless_awake",
+        "value": false
+      },
+      {
+        "code": "pir_switch",
+        "value": "2"
+      },
+      {
+        "code": "doorbell_pic",
+        "value": ""
+      },
+      {
+        "code": "siren_switch",
+        "value": false
+      },
+      {
+        "code": "humanoid_filter",
+        "value": true
+      },
+      {
+        "code": "alarm_message",
+        "value": "eyJ2IjoiMy4wIiwiZmlsZXMiOlt7ImRhdGEiOiJlZTEyNzE3MWEyZGE1NWUwODNhMWUwZTc0NDcyNTE4OTJjYjAyNjdjN2VjMzk1MTI1NGZhY2NjYWUwNDhiNmIzNWRmZGRmNTNhNzQ4NmQ2Zjk2YTQyMGFmNTM5N2RlOThjMDAwMzczNDVmNTJkNDIyOWE5NjcwODhkYmY2ZjdjNzNjMTBhMjM3OGMxYWQzMTk1NWZiOGRmMjg0ODgwNDFjM2MxYWJiNGJmMWViNWNiMzE0MTg2OWZiYjk2YWNjMTZiMjlkZmY2NWNiM2JiODg0NzMxZTU1YWVmNjEzNDdmOSIsImtleUlkIjoiZGVmYXVsdCIsIml2IjoiMjY5ZTg5YmFhMDViYWRlYTBlYTc0ODAzYTg4YzgzOTkifV0sImNtZCI6ImlwY19odW1hbiIsInR5cGUiOiJpbWFnZSJ9"
+      },
+      {
+        "code": "basic_anti_flicker",
+        "value": "0"
+      },
+      {
+        "code": "initiative_message",
+        "value": ""
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1767000284,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "dghsxj",
+    "functions": [
+      {
+        "code": "basic_flip",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "basic_osd",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "basic_private",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "sd_format",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "ipc_auto_siren",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "nightvision_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"ir_mode\",\"color_mode\"]}"
+      },
+      {
+        "code": "floodlight_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "wireless_lowpower",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":10,\"max\":50,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "wireless_awake",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "pir_switch",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\",\"3\"]}"
+      },
+      {
+        "code": "siren_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "humanoid_filter",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "basic_anti_flicker",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "basic_flip",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "basic_osd",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "basic_private",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "sd_storge",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "sd_status",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":1,\"max\":5,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "sd_format",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "movement_detect_pic",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "sd_format_state",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-20000,\"max\":20000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "ipc_auto_siren",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "nightvision_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"ir_mode\",\"color_mode\"]}"
+      },
+      {
+        "code": "floodlight_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "wireless_electricity",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":100,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "wireless_powermode",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\"]}"
+      },
+      {
+        "code": "wireless_lowpower",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":10,\"max\":50,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "wireless_awake",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "pir_switch",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\",\"3\"]}"
+      },
+      {
+        "code": "doorbell_pic",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "siren_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "humanoid_filter",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "alarm_message",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "basic_anti_flicker",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\"]}"
+      },
+      {
+        "code": "initiative_message",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

@@ -1,0 +1,52 @@
+{
+  "device": {
+    "active_time": 1766525714,
+    "biz_type": 0,
+    "category": "szjcy",
+    "create_time": 1766525714,
+    "icon": "smart/icon/bay1606811370355JFJM/80df8bead2f6c2487ea14ef97f94c10c.jpg",
+    "id": "bf616ce0f7251ff5e9tnqf",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "model": "BLE-YL01",
+    "name": "PoolMonitor",
+    "node_id": "781c9dfffe1a689d",
+    "online": true,
+    "owner_id": "",
+    "product_id": "v1jqz5cy",
+    "product_name": "智能太阳能余氯",
+    "status": [
+      {
+        "code": "tds_in",
+        "value": 4942
+      },
+      {
+        "code": "temp_current",
+        "value": 274
+      },
+      {
+        "code": "battery_percentage",
+        "value": 100
+      }
+    ],
+    "sub": true,
+    "time_zone": "+10:00",
+    "uid": "",
+    "update_time": 1766525714,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "szjcy",
+    "functions": [],
+    "status": [
+      {
+        "code": "tds_in",
+        "type": "Integer",
+        "values": "{\"unit\":\"ppm\",\"min\":0,\"max\":10000,\"scale\":0,\"step\":1}\"},{\"code\":\"temp_current\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"℃\",\"min\":0,\"max\":1000,\"scale\":1,\"step\":1}\"},{\"code\":\"battery_percentage\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

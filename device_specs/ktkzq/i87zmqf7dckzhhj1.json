@@ -1,0 +1,85 @@
+{
+  "device": {
+    "active_time": 1762779037,
+    "biz_type": 0,
+    "category": "ktkzq",
+    "create_time": 1762779037,
+    "icon": "smart/icon/bay1665994981833bTeS/c401ceab4dd0e58e30ca3e68b5a749f1.png",
+    "id": "bfe83143e738376363vc2k",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Guest AC",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "i87zmqf7dckzhhj1",
+    "product_name": "Ikaro",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "temp_set",
+        "value": 27
+      },
+      {
+        "code": "temp_current",
+        "value": 0
+      },
+      {
+        "code": "mode",
+        "value": "hot"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1762779037,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "ktkzq",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":8,\"max\":32,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"hot\",\"cold\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":8,\"max\":32,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-20,\"max\":50,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"hot\",\"cold\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

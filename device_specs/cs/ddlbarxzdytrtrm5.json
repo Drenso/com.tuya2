@@ -1,0 +1,114 @@
+{
+  "device": {
+    "active_time": 1764520008,
+    "biz_type": 18,
+    "category": "cs",
+    "create_time": 1764520008,
+    "icon": "smart/icon/ay1522402928101YW8FM/d1ee258798d9c582114caa072513a589.png",
+    "id": "bfe0af63b0a91178a4yjpw",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "model": "DH-CSK03W",
+    "name": "dehumidifier DH-CSK03W",
+    "online": true,
+    "owner_id": "",
+    "product_id": "ddlbarxzdytrtrm5",
+    "product_name": "dehumidifier DH-CSK03W",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "dehumidify_set_value",
+        "value": 50
+      },
+      {
+        "code": "humidity_indoor",
+        "value": 51
+      },
+      {
+        "code": "temp_indoor",
+        "value": 20
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1764520008,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "cs",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "dehumidify_set_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":40,\"max\":70,\"scale\":0,\"step\":5}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "dehumidify_set_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":40,\"max\":70,\"scale\":0,\"step\":5}"
+      },
+      {
+        "code": "humidity_indoor",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_indoor",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "dehumidify_set_value",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"%\",\"min\":40,\"max\":70,\"scale\":0,\"step\":5}"
+    },
+    {
+      "code": "humidity_indoor",
+      "custom_name": "",
+      "dp_id": 6,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "temp_indoor",
+      "custom_name": "",
+      "dp_id": 7,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

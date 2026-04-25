@@ -1,0 +1,31 @@
+{
+  "device": {
+    "active_time": 1767373813,
+    "biz_type": 18,
+    "category": "jsq",
+    "create_time": 1767373813,
+    "icon": "smart/icon/bay1647258892363WRU8/8e108b7fe7a8cd231aa73dfa91b97649.jpg",
+    "id": "bfe88167dfb6b2e1edmyxp",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "KLARTA HUMEA GRANDE",
+    "online": true,
+    "owner_id": "",
+    "product_id": "oi4ntqm3pc2g0cod",
+    "product_name": "KLARTA HUMEA GRANDE",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1767373813,
+    "uuid": "",
+    "status": []
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

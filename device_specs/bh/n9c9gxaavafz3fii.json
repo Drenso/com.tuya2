@@ -1,0 +1,145 @@
+{
+  "device": {
+    "active_time": 1755524330,
+    "biz_type": 0,
+    "category": "bh",
+    "create_time": 1755524330,
+    "icon": "smart/icon/ay1525674518576sZ8gy/2aebbafd047ea3c7ed57f613e3446de6.png",
+    "id": "bf3a5d8a5e45058c27xkj6",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Kettle",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "n9c9gxaavafz3fii",
+    "product_name": "Kettle",
+    "status": [
+      {
+        "code": "start",
+        "value": false
+      },
+      {
+        "code": "temp_current",
+        "value": 63
+      },
+      {
+        "code": "temp_current_f",
+        "value": 144
+      },
+      {
+        "code": "temp_set",
+        "value": 100
+      },
+      {
+        "code": "temp_set_f",
+        "value": 212
+      },
+      {
+        "code": "temp_unit_convert",
+        "value": "c"
+      },
+      {
+        "code": "warm",
+        "value": false
+      },
+      {
+        "code": "status",
+        "value": "standby"
+      },
+      {
+        "code": "work_type",
+        "value": "temp_setting"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1755524330,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "bh",
+    "functions": [
+      {
+        "code": "start",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":40,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":104,\"max\":212,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "warm",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_type",
+        "type": "Enum",
+        "values": "{\"range\":[\"setting_quick\",\"boiling_quick\",\"temp_setting\",\"temp_boiling\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "start",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":32,\"max\":212,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":40,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":104,\"max\":212,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "warm",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "status",
+        "type": "Enum",
+        "values": "{\"range\":[\"standby\",\"heating\",\"cooling\",\"warm\",\"heating_temp\",\"boiling_temp\",\"reserve_1\",\"reserve_2\",\"reserve_3\"]}"
+      },
+      {
+        "code": "work_type",
+        "type": "Enum",
+        "values": "{\"range\":[\"setting_quick\",\"boiling_quick\",\"temp_setting\",\"temp_boiling\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

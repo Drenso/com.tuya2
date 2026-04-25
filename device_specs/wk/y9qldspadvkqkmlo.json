@@ -1,0 +1,201 @@
+{
+  "device": {
+    "active_time": 1772550114,
+    "biz_type": 18,
+    "category": "wk",
+    "create_time": 1772550114,
+    "icon": "smart/icon/bay16309323357809ayo/66a974e133c5cded170b8cffa085110b.png",
+    "id": "bf5c836922d0c8968fqzxn",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Detská izba 1",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "y9qldspadvkqkmlo",
+    "product_name": "Thermostat_knob",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "mode",
+        "value": "manual"
+      },
+      {
+        "code": "temp_set",
+        "value": 200
+      },
+      {
+        "code": "temp_current",
+        "value": 205
+      },
+      {
+        "code": "temp_correction",
+        "value": -3
+      },
+      {
+        "code": "valve_state",
+        "value": "close"
+      },
+      {
+        "code": "child_lock",
+        "value": false
+      },
+      {
+        "code": "backlight",
+        "value": 10
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1772550114,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "wk",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\",\"manual\"]}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":450,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_correction",
+        "type": "Integer",
+        "values": "{\"unit\":\"°C\",\"min\":-9,\"max\":9,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "backlight",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\",\"manual\"]}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":450,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":900,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_correction",
+        "type": "Integer",
+        "values": "{\"unit\":\"°C\",\"min\":-9,\"max\":9,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "valve_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"open\",\"close\"]}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "backlight",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "mode",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"auto\",\"manual\"]}"
+    },
+    {
+      "code": "temp_set",
+      "custom_name": "",
+      "dp_id": 16,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":50,\"max\":450,\"scale\":1,\"step\":5}"
+    },
+    {
+      "code": "temp_current",
+      "custom_name": "",
+      "dp_id": 24,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":0,\"max\":900,\"scale\":1,\"step\":5}"
+    },
+    {
+      "code": "temp_correction",
+      "custom_name": "",
+      "dp_id": 27,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"°C\",\"min\":-9,\"max\":9,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "valve_state",
+      "custom_name": "",
+      "dp_id": 36,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"open\",\"close\"]}"
+    },
+    {
+      "code": "child_lock",
+      "custom_name": "",
+      "dp_id": 40,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "backlight",
+      "custom_name": "",
+      "dp_id": 44,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "device": {
+    "active_time": 1773912014,
+    "biz_type": 18,
+    "category": "jsq",
+    "create_time": 1773912014,
+    "icon": "smart/icon/bay1622636970661d2Uf/16563251498c2e8c02249.png",
+    "id": "bfff059b99ddc107d6uw28",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Air Humidifier CA-605B Smart",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "7mijurr4i9e0ewat",
+    "product_name": "Air Humidifier CA-605B Smart",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1773912014,
+    "uuid": "<redacted>",
+    "status": []
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

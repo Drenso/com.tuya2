@@ -1,0 +1,132 @@
+{
+  "device": {
+    "active_time": 1770087343,
+    "biz_type": 0,
+    "category": "kg",
+    "create_time": 1770087343,
+    "icon": "smart/icon/ay1555059089863sMgqv/87850bceb89324189d88bf61f9cbe151.png",
+    "id": "eb61d6d9a67aec218cbhcw",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Entry light",
+    "online": true,
+    "owner_id": "",
+    "product_id": "xrota7mh9jjjcmzx",
+    "product_name": "1 gang smart switch",
+    "status": [
+      {
+        "code": "switch_1",
+        "value": true
+      },
+      {
+        "code": "countdown_1",
+        "value": 0
+      },
+      {
+        "code": "relay_status",
+        "value": "power_off"
+      },
+      {
+        "code": "light_mode",
+        "value": "relay"
+      },
+      {
+        "code": "cycle_time",
+        "value": ""
+      },
+      {
+        "code": "random_time",
+        "value": ""
+      },
+      {
+        "code": "switch_inching",
+        "value": ""
+      }
+    ],
+    "sub": false,
+    "time_zone": "-08:00",
+    "uid": "",
+    "update_time": 1770087343,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "kg",
+    "functions": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "relay_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"power_off\",\"power_on\",\"last\"]}"
+      },
+      {
+        "code": "light_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"relay\",\"pos\",\"none\"]}"
+      },
+      {
+        "code": "cycle_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "random_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "switch_inching",
+        "type": "String",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "relay_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"power_off\",\"power_on\",\"last\"]}"
+      },
+      {
+        "code": "light_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"relay\",\"pos\",\"none\"]}"
+      },
+      {
+        "code": "cycle_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "random_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "switch_inching",
+        "type": "String",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

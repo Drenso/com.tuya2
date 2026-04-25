@@ -1,0 +1,33 @@
+{
+  "device": {
+    "active_time": 1760719858,
+    "biz_type": 0,
+    "category": "sfkzq",
+    "create_time": 1760719858,
+    "icon": "smart/icon/ay1544430136334pWhMn/2efd91a5547f4a4259c44a74a8c0050f.png",
+    "id": "bf826994bed9ff8cfbfu0m",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "model": "473000100, 473000110",
+    "name": "QN-WWR01.1",
+    "node_id": "1C1",
+    "online": true,
+    "owner_id": "",
+    "product_id": "aafsm7uztyzkwgha",
+    "product_name": "",
+    "sub": true,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1760719858,
+    "uuid": "",
+    "status": []
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

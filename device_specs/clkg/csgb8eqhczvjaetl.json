@@ -1,0 +1,49 @@
+{
+  "device": {
+    "active_time": 1721402186,
+    "biz_type": 18,
+    "category": "clkg",
+    "create_time": 1721402186,
+    "icon": "smart/icon/ay1542973872423dSoao/0c1089ca309f4db8a5fdef4d099b8013.png",
+    "id": "bf8bec13db9ea36b45cbow",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "model": "W01",
+    "name": "Rollade links",
+    "online": true,
+    "owner_id": "",
+    "product_id": "csgb8eqhczvjaetl",
+    "product_name": "6Gen Roller Shutter Switch",
+    "status": [
+      {
+        "code": "control",
+        "value": "stop"
+      },
+      {
+        "code": "percent_control",
+        "value": 100
+      },
+      {
+        "code": "cur_calibration",
+        "value": "end"
+      },
+      {
+        "code": "switch_backlight",
+        "value": false
+      },
+      {
+        "code": "control_back_mode",
+        "value": "back"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1721402186,
+    "uuid": ""
+  },
+  "specifications": "",
+  "data_points": ""
+}

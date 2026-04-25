@@ -1,0 +1,71 @@
+{
+  "device": {
+    "id": "bfbbf86447348c5ba3w5yv",
+    "name": "BOOSTER Wall Heater",
+    "product_id": "fbizsf2qakvovwkk",
+    "category": "qn",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "temp_set",
+        "value": 360
+      },
+      {
+        "code": "temp_current",
+        "value": 110
+      },
+      {
+        "code": "mode",
+        "value": "manual"
+      },
+      {
+        "code": "level",
+        "value": "3"
+      },
+      {
+        "code": "work_state",
+        "value": "heating"
+      },
+      {
+        "code": "countdown_left",
+        "value": 0
+      }
+    ]
+  },
+  "specifications": {
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"comfortable\",\"eco\"]}"
+      },
+      {
+        "code": "level",
+        "type": "Enum",
+        "values": "{\"range\":[\"1\",\"2\",\"3\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "temp_current",
+        "type": "Integer"
+      },
+      {
+        "code": "work_state",
+        "type": "Enum"
+      }
+    ]
+  },
+  "data_points": []
+}

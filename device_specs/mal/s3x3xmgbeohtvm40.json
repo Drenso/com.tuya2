@@ -1,0 +1,187 @@
+{
+  "data_points": [],
+  "device": {
+    "active_time": 1767473498,
+    "biz_type": 0,
+    "category": "mal",
+    "create_time": 1767473498,
+    "icon": "smart/icon/ay1523863664200blDVo/96483cb6cf492104faace9218b69ff65.png",
+    "id": "bf65fd353f7f48e61demvk",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Alarmsentral",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "s3x3xmgbeohtvm40",
+    "product_name": "Wireless Interlink Gateway",
+    "status": [
+      {
+        "code": "master_mode",
+        "value": "disarmed"
+      },
+      {
+        "code": "alarm_time",
+        "value": 1
+      },
+      {
+        "code": "alarm_msg",
+        "value": "AEsAbwBuAHQAbwByAGUAdAAgAFQAZQBzAHQAIABFAHYAZQBuAHQAIABTAE4AOgAwADIAMAAxADEAMAAxADQ="
+      },
+      {
+        "code": "switch_alarm_propel",
+        "value": false
+      },
+      {
+        "code": "alarm_delay_time",
+        "value": 0
+      },
+      {
+        "code": "master_state",
+        "value": "normal"
+      },
+      {
+        "code": "master_information",
+        "value": ""
+      },
+      {
+        "code": "sub_class",
+        "value": "detector"
+      },
+      {
+        "code": "sub_type",
+        "value": "motion_sensor"
+      },
+      {
+        "code": "sub_admin",
+        "value": "AQgA"
+      },
+      {
+        "code": "sub_state",
+        "value": "normal"
+      },
+      {
+        "code": "sos_state",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1767473498,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "mal",
+    "functions": [
+      {
+        "code": "master_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"disarmed\",\"arm\",\"home\",\"sos\",\"work\",\"play\"]}"
+      },
+      {
+        "code": "alarm_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":1,\"max\":60,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "switch_alarm_propel",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "alarm_delay_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":300,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "master_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"normal\",\"alarm\"]}"
+      },
+      {
+        "code": "sub_class",
+        "type": "Enum",
+        "values": "{\"range\":[\"detector\",\"remote_controller\",\"wired_detector\",\"rfid\",\"doorbell_door_lock\",\"alarm\",\"others\"]}"
+      },
+      {
+        "code": "sub_type",
+        "type": "Enum",
+        "values": "{\"range\":[\"motion_sensor\",\"contact_sensor\",\"smoke_alarm\",\"gas_alarm\",\"co_alarm\",\"vibration_detector\",\"water_leak_sensor\",\"infrared_emission_detector\",\"glass_break_detector\",\"sos_button\",\"remote_controller\",\"keypad\",\"doorbell\",\"door_lock\",\"rfid\",\"alarm\",\"environment_detector\",\"others\"]}"
+      },
+      {
+        "code": "sub_admin",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "sos_state",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "master_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"disarmed\",\"arm\",\"home\",\"sos\",\"work\",\"play\"]}"
+      },
+      {
+        "code": "alarm_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":1,\"max\":60,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "alarm_msg",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "switch_alarm_propel",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "alarm_delay_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":300,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "master_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"normal\",\"alarm\"]}"
+      },
+      {
+        "code": "master_information",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "sub_class",
+        "type": "Enum",
+        "values": "{\"range\":[\"detector\",\"remote_controller\",\"wired_detector\",\"rfid\",\"doorbell_door_lock\",\"alarm\",\"others\"]}"
+      },
+      {
+        "code": "sub_type",
+        "type": "Enum",
+        "values": "{\"range\":[\"motion_sensor\",\"contact_sensor\",\"smoke_alarm\",\"gas_alarm\",\"co_alarm\",\"vibration_detector\",\"water_leak_sensor\",\"infrared_emission_detector\",\"glass_break_detector\",\"sos_button\",\"remote_controller\",\"keypad\",\"doorbell\",\"door_lock\",\"rfid\",\"alarm\",\"environment_detector\",\"others\"]}"
+      },
+      {
+        "code": "sub_admin",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "sub_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"normal\",\"alarm\",\"fault\",\"others\"]}"
+      },
+      {
+        "code": "sos_state",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  }
+}

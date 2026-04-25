@@ -1,0 +1,32 @@
+{
+  "device": {
+    "active_time": 1773227214,
+    "biz_type": 0,
+    "category": "xxj",
+    "create_time": 1773227214,
+    "icon": "smart/icon/bay1582872903709da5F/16547565784cdf9c7978b.jpg",
+    "id": "bf754aahiivrz49t",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "model": "",
+    "name": "🧸💦 Diffusor",
+    "node_id": "5edfa3709ac48d1d",
+    "online": true,
+    "owner_id": "",
+    "product_id": "if1nolcm",
+    "product_name": "T2190A",
+    "sub": true,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1773227214,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

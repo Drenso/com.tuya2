@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1774707907,
+    "biz_type": 0,
+    "category": "xfj",
+    "create_time": 1774707907,
+    "icon": "smart/icon/ay1544150887897dC991/97f018a09fd97eb9194ed937c42decd8.png",
+    "id": "bf18e4daa3eb34b7fbmgdy",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "ERV Heat pump",
+    "online": true,
+    "owner_id": "",
+    "product_id": "fgahx8jfarzd3mty",
+    "product_name": "Fresh Air Heat Pump",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1774707907,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

@@ -1,0 +1,86 @@
+{
+  "device": {
+    "active_time": 1775807006,
+    "biz_type": 0,
+    "category": "zwjcy",
+    "create_time": 1775807006,
+    "icon": "smart/icon/ay1545813662186VvWHx/40720d35abc79cae48bd9e3576c76f66.jpg",
+    "id": "bfee7905b036ad47210fjd",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "model": "QT-07S-Zigbee",
+    "name": "Soil sensor 5",
+    "node_id": "a4c1385745e06535",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "myd45weu",
+    "product_name": "Soil sensor",
+    "status": [
+      {
+        "code": "humidity",
+        "value": 0
+      },
+      {
+        "code": "temp_current",
+        "value": 30
+      },
+      {
+        "code": "temp_unit_convert",
+        "value": "c"
+      },
+      {
+        "code": "battery_state",
+        "value": "high"
+      },
+      {
+        "code": "battery_percentage",
+        "value": 100
+      }
+    ],
+    "sub": true,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1775807006,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "zwjcy",
+    "functions": [
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "humidity",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-30,\"max\":70,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "battery_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\",\"middle\",\"high\"]}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

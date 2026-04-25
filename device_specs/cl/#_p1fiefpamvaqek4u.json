@@ -1,0 +1,31 @@
+{
+  "device": {
+    "active_time": 1768503729,
+    "biz_type": 0,
+    "category": "cl",
+    "create_time": 1768503729,
+    "icon": "smart/icon/ay1529376107687pwiLb/4fcdd29eebd945d6748f7e027ecf2ae3.png",
+    "id": "bfaadf8ce8708a86e7lthq",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Gordijn woonkamer",
+    "online": true,
+    "owner_id": "",
+    "product_id": "p1fiefpamvaqek4u",
+    "product_name": "窗帘电动轨道",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1768503729,
+    "uuid": "",
+    "status": []
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

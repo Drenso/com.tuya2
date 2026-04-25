@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1753712168,
+    "biz_type": 0,
+    "category": "tdq",
+    "create_time": 1753712168,
+    "icon": "smart/icon/ay1573546958261faWcj/1925c7da8ff2ac474e0af51991a6f24c.png",
+    "id": "bfe9401af2de2b3de61bca",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Temperatuur & Luchtvochtigheid Sensor (TH-01)",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "x3o8epevyeo3z3oa",
+    "product_name": "T & H Sensor",
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1753712168,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

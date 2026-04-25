@@ -1,0 +1,71 @@
+{
+  "device": {
+    "active_time": 1756986349,
+    "biz_type": 0,
+    "category": "cobj",
+    "create_time": 1756986349,
+    "icon": "smart/icon/ay1554259787582Cu9Nf/97be547d4bb3a3fb8389ecc9865400ec.png",
+    "id": "ebd57c3f194cd23f70dtb6",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Basement CO Alarm",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "1jyx4yztm7waqyc5",
+    "product_name": "CO Alarm",
+    "status": [
+      {
+        "code": "co_value",
+        "value": 0
+      },
+      {
+        "code": "battery_state",
+        "value": "high"
+      },
+      {
+        "code": "muffling",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+03:00",
+    "uid": "<redacted>",
+    "update_time": 1756986349,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "cobj",
+    "functions": [
+      {
+        "code": "muffling",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "co_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"normal\",\"alarm\"]}"
+      },
+      {
+        "code": "co_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"ppm\",\"min\":0,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "battery_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\",\"middle\",\"high\"]}"
+      },
+      {
+        "code": "muffling",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

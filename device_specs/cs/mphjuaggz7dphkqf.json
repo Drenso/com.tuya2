@@ -1,0 +1,210 @@
+{
+  "device": {
+    "active_time": 1770363777,
+    "biz_type": 0,
+    "category": "cs",
+    "create_time": 1770363777,
+    "icon": "smart/icon/ay1557729981006PuUuE/16569411795defbe9975b.jpg",
+    "id": "60403054483fda4504a2",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Dehumidifier",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "mphjuaggz7dphkqf",
+    "product_name": "ROHAN-Air and Me",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "mode",
+        "value": "continuous"
+      },
+      {
+        "code": "humidity_indoor",
+        "value": 90
+      },
+      {
+        "code": "dehumidify_set_value",
+        "value": 50
+      },
+      {
+        "code": "anion",
+        "value": false
+      },
+      {
+        "code": "fan_speed_enum",
+        "value": "high"
+      },
+      {
+        "code": "fan_speed_enum",
+        "value": "high"
+      },
+      {
+        "code": "child_lock",
+        "value": false
+      },
+      {
+        "code": "swing",
+        "value": true
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1770363777,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "cs",
+    "functions": [
+      {
+        "code": "fan_speed_enum",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\" ,\"high\"]}"
+      },
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "dehumidify_set_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":35,\"max\":80,\"scale\":0,\"step\":5}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"drying\",\"continuous\"]}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "swing",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "fan_speed_enum",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\" ,\"high\"]}"
+      },
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "dehumidify_set_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":35,\"max\":80,\"scale\":0,\"step\":5}"
+      },
+      {
+        "code": "humidity_indoor",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"drying\",\"continuous\"]}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "swing",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "windspeed",
+      "custom_name": "",
+      "dp_id": 6,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"low\" ,\"high\"]}"
+    },
+    {
+      "code": "anion",
+      "custom_name": "",
+      "dp_id": 5,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "humidity",
+      "custom_name": "",
+      "dp_id": 4,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"%\",\"min\":35,\"max\":80,\"scale\":0,\"step\":5}"
+    },
+    {
+      "code": "envhumid",
+      "custom_name": "",
+      "dp_id": 3,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "mode",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"drying\",\"continuous\"]}"
+    },
+    {
+      "code": "Power",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "shake",
+      "custom_name": "",
+      "dp_id": 8,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "lock",
+      "custom_name": "",
+      "dp_id": 7,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    }
+  ]
+}

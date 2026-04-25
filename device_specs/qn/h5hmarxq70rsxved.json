@@ -1,0 +1,157 @@
+{
+  "device": {
+    "active_time": 1764335330,
+    "biz_type": 0,
+    "category": "qn",
+    "create_time": 1764335330,
+    "icon": "smart/icon/ay1541056239985fDGjj/3bccd9774cca3668f334c23e548f21ca.jpg",
+    "id": "bfbfe29c5308334f32g6kg",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "LSC Glass Panel Heater 2000W",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "h5hmarxq70rsxved",
+    "product_name": "LSC Glass Panel Heater 2000W\t",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "temp_set",
+        "value": 19
+      },
+      {
+        "code": "temp_current",
+        "value": 16
+      },
+      {
+        "code": "lock",
+        "value": false
+      },
+      {
+        "code": "countdown_set",
+        "value": "cancel"
+      },
+      {
+        "code": "countdown_left",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1764335330,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "qn",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":1,\"max\":35,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_set",
+        "type": "Enum",
+        "values": "{\"range\":[\"cancel\",\"1h\",\"2h\",\"3h\",\"4h\",\"5h\",\"6h\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":1,\"max\":35,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-20,\"max\":50,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_set",
+        "type": "Enum",
+        "values": "{\"range\":[\"cancel\",\"1h\",\"2h\",\"3h\",\"4h\",\"5h\",\"6h\"]}"
+      },
+      {
+        "code": "countdown_left",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":1440,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "temp_set",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":1,\"max\":35,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "temp_current",
+      "custom_name": "",
+      "dp_id": 3,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":-20,\"max\":50,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "child_lock",
+      "custom_name": "",
+      "dp_id": 7,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "countdown_set",
+      "custom_name": "",
+      "dp_id": 19,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"cancel\",\"1h\",\"2h\",\"3h\",\"4h\",\"5h\",\"6h\"]}"
+    },
+    {
+      "code": "countdown_left",
+      "custom_name": "",
+      "dp_id": 20,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"min\",\"min\":0,\"max\":1440,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

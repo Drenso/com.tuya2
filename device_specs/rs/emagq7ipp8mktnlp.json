@@ -1,0 +1,96 @@
+{
+  "device": {
+    "active_time": 1758308876,
+    "biz_type": 0,
+    "category": "rs",
+    "create_time": 1758308876,
+    "icon": "smart/icon/ay1524831691838LKBMs/15991910020af595ec1bc.jpg",
+    "id": "bf84883d6f2799b102mtbn",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Boilervat",
+    "online": true,
+    "owner_id": "",
+    "product_id": "emagq7ipp8mktnlp",
+    "product_name": "WF96C-TD Controller",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "temp_set",
+        "value": 0
+      },
+      {
+        "code": "temp_current",
+        "value": 281
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1758308876,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "rs",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-990,\"max\":1990,\"scale\":1,\"step\":5}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-990,\"max\":1990,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-2000,\"max\":2000,\"scale\":1,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "Power",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "temp_set",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":-990,\"max\":1990,\"scale\":1,\"step\":5}"
+    },
+    {
+      "code": "temp_current",
+      "custom_name": "",
+      "dp_id": 3,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":-2000,\"max\":2000,\"scale\":1,\"step\":1}"
+    }
+  ]
+}

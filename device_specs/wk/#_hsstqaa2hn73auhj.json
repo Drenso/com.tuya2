@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1771497059,
+    "biz_type": 0,
+    "category": "wk",
+    "create_time": 1771497059,
+    "icon": "smart/icon/ay15157410971057cPZi/8873aad6af0488d0501deaff8818ba3e.png",
+    "id": "bf5f635ad3ca5c65a8slin",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "IHC-200-WIFI",
+    "online": true,
+    "owner_id": "",
+    "product_id": "hsstqaa2hn73auhj",
+    "product_name": "IHC-200-WIFI",
+    "sub": false,
+    "time_zone": "+00:00",
+    "uid": "",
+    "update_time": 1771497059,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

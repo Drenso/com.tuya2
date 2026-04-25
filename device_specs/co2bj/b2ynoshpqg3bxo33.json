@@ -1,0 +1,85 @@
+{
+  "device": {
+    "active_time": 1720626427,
+    "biz_type": 18,
+    "category": "co2bj",
+    "create_time": 1720626427,
+    "icon": "smart/icon/ay15107356719526e3ps/7dbac385b78ff39283394e3ec5e6024e.png",
+    "id": "bf41e6452f371a9637qzjh",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "WiFi CO2 air box 2",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "b2ynoshpqg3bxo33",
+    "product_name": "WiFi CO2 air box 2",
+    "status": [
+      {
+        "code": "co2_value",
+        "value": 611
+      },
+      {
+        "code": "temp_current",
+        "value": 18
+      },
+      {
+        "code": "humidity_value",
+        "value": 50
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1720626427,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "co2bj",
+    "functions": [],
+    "status": [
+      {
+        "code": "co2_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"ppm\",\"min\":0,\"max\":6000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-40,\"max\":125,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "humidity_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "co2_value",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"ppm\",\"min\":0,\"max\":6000,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "temp_current",
+      "custom_name": "",
+      "dp_id": 18,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":-40,\"max\":125,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "humidity_value",
+      "custom_name": "",
+      "dp_id": 19,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

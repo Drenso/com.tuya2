@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1751297136,
+    "biz_type": 0,
+    "category": "sfkzq",
+    "create_time": 1751297136,
+    "icon": "smart/icon/ay1513061730920i97zP/b839fe5cf4535c3d7410f86eb58f02da.jpg",
+    "id": "bff0c957a5d016aaddiuha",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Smart Sprinkler Controller",
+    "online": true,
+    "owner_id": "",
+    "product_id": "krvsermlavj3lypv",
+    "product_name": "Smart Sprinkler Controller",
+    "sub": false,
+    "time_zone": "+03:00",
+    "uid": "",
+    "update_time": 1751297136,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

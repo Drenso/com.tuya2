@@ -1,0 +1,359 @@
+{
+  "device": {
+    "active_time": 1761574170,
+    "biz_type": 0,
+    "category": "mal",
+    "create_time": 1761574170,
+    "icon": "smart/icon/ay1569410984379VeGPj/681d8051d1a5e5221b305a1532752582.jpg",
+    "id": "bff0d5322fe8ecb80345oe",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Smart Security Panel",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "du5wifdsr8btglrl",
+    "product_name": "Smart Security Panel",
+    "status": [
+      {
+        "code": "master_mode",
+        "value": "disarmed"
+      },
+      {
+        "code": "delay_set",
+        "value": 0
+      },
+      {
+        "code": "alarm_time",
+        "value": 3
+      },
+      {
+        "code": "switch_alarm_sound",
+        "value": false
+      },
+      {
+        "code": "switch_alarm_light",
+        "value": false
+      },
+      {
+        "code": "switch_mode_sound",
+        "value": false
+      },
+      {
+        "code": "switch_mode_light",
+        "value": true
+      },
+      {
+        "code": "switch_kb_light",
+        "value": true
+      },
+      {
+        "code": "charge_state",
+        "value": true
+      },
+      {
+        "code": "battery_percentage",
+        "value": 100
+      },
+      {
+        "code": "switch_low_battery",
+        "value": true
+      },
+      {
+        "code": "alarm_call_number",
+        "value": ""
+      },
+      {
+        "code": "switch_alarm_call",
+        "value": false
+      },
+      {
+        "code": "switch_alarm_sms",
+        "value": true
+      },
+      {
+        "code": "telnet_state",
+        "value": "signal_level_5"
+      },
+      {
+        "code": "muffling",
+        "value": false
+      },
+      {
+        "code": "alarm_msg",
+        "value": ""
+      },
+      {
+        "code": "switch_alarm_propel",
+        "value": true
+      },
+      {
+        "code": "alarm_delay_time",
+        "value": 0
+      },
+      {
+        "code": "switch_mode_dl_sound",
+        "value": true
+      },
+      {
+        "code": "master_state",
+        "value": "normal"
+      },
+      {
+        "code": "master_information",
+        "value": ""
+      },
+      {
+        "code": "sub_type",
+        "value": "motion_sensor"
+      },
+      {
+        "code": "sub_admin",
+        "value": "BgAA/wAA/wAA"
+      },
+      {
+        "code": "master_language",
+        "value": "german"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1761574170,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "mal",
+    "functions": [
+      {
+        "code": "master_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"arm\",\"home\",\"sos\",\"disarmed\"]}"
+      },
+      {
+        "code": "delay_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":181,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "alarm_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":31,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "switch_alarm_sound",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_alarm_light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_mode_sound",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_mode_light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_kb_light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_low_battery",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "alarm_call_number",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "switch_alarm_call",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_alarm_sms",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "muffling",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_alarm_propel",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "alarm_delay_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":181,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "switch_mode_dl_sound",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "master_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"normal\",\"alarm\"]}"
+      },
+      {
+        "code": "sub_type",
+        "type": "Enum",
+        "values": "{\"range\":[\"motion_sensor\",\"contact_sensor\",\"smoke_alarm\",\"gas_alarm\",\"co_alarm\",\"vibration_detector\",\"water_leak_sensor\",\"infrared_emission_detector\",\"glass_break_detector\",\"sos_button\",\"remote_controller\",\"keypad\",\"doorbell\",\"door_lock\",\"rfid\",\"alarm\",\"environment_detector\",\"others\"]}"
+      },
+      {
+        "code": "sub_admin",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "master_language",
+        "type": "Enum",
+        "values": "{\"range\":[\"english\",\"german\",\"russian\",\"french\",\"portuguese\",\"spanish\",\"italian\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "master_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"arm\",\"home\",\"sos\",\"disarmed\"]}"
+      },
+      {
+        "code": "delay_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":181,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "alarm_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":31,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "switch_alarm_sound",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_alarm_light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_mode_sound",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_mode_light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_kb_light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "charge_state",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "switch_low_battery",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "alarm_call_number",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "switch_alarm_call",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_alarm_sms",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "telnet_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"normal\",\"network_no\",\"phone_no\",\"sim_card_no\",\"network_search\",\"signal_level_1\",\"signal_level_2\",\"signal_level_3\",\"signal_level_4\",\"signal_level_5\"]}"
+      },
+      {
+        "code": "muffling",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "alarm_msg",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "switch_alarm_propel",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "alarm_delay_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":181,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "switch_mode_dl_sound",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "master_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"normal\",\"alarm\"]}"
+      },
+      {
+        "code": "master_information",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "sub_type",
+        "type": "Enum",
+        "values": "{\"range\":[\"motion_sensor\",\"contact_sensor\",\"smoke_alarm\",\"gas_alarm\",\"co_alarm\",\"vibration_detector\",\"water_leak_sensor\",\"infrared_emission_detector\",\"glass_break_detector\",\"sos_button\",\"remote_controller\",\"keypad\",\"doorbell\",\"door_lock\",\"rfid\",\"alarm\",\"environment_detector\",\"others\"]}"
+      },
+      {
+        "code": "sub_admin",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "master_language",
+        "type": "Enum",
+        "values": "{\"range\":[\"english\",\"german\",\"russian\",\"french\",\"portuguese\",\"spanish\",\"italian\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

@@ -1,0 +1,118 @@
+{
+  "device": {
+    "active_time": 1764788798,
+    "biz_type": 0,
+    "category": "xktyd",
+    "create_time": 1764788798,
+    "icon": "smart/icon/ay1545636899384HRpFz/99b0d5d7353a41ebfac969834de3b8ff.jpg",
+    "id": "bf3c66cd30560ed099yxa8",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Smart-Star-Projector",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "4sgpxbypfkfiveru",
+    "product_name": "Smart-Star-Projector",
+    "status": [
+      {
+        "code": "switch_led",
+        "value": false
+      },
+      {
+        "code": "work_mode",
+        "value": "white"
+      },
+      {
+        "code": "bright_value_v2",
+        "value": 10
+      },
+      {
+        "code": "colour_data_v2",
+        "value": "{\"h\":346,\"s\":668,\"v\":10}"
+      },
+      {
+        "code": "scene_data_v2",
+        "value": "{\"scene_num\":8,\"scene_units\":[{\"bright\":0,\"h\":0,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000},{\"bright\":0,\"h\":120,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000},{\"bright\":0,\"h\":240,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000},{\"bright\":0,\"h\":61,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000},{\"bright\":0,\"h\":174,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000},{\"bright\":0,\"h\":275,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000}]}"
+      },
+      {
+        "code": "countdown_1",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1764788798,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "xktyd",
+    "functions": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "bright_value_v2",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":10,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "colour_data_v2",
+        "type": "Json",
+        "values": "{}"
+      },
+      {
+        "code": "scene_data_v2",
+        "type": "Json",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "bright_value_v2",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":10,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "colour_data_v2",
+        "type": "Json",
+        "values": "{}"
+      },
+      {
+        "code": "scene_data_v2",
+        "type": "Json",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

@@ -1,0 +1,96 @@
+{
+  "device": {
+    "active_time": 1764359856,
+    "biz_type": 0,
+    "category": "wkf",
+    "create_time": 1764359856,
+    "icon": "smart/icon/bay158538245316590My/c68a1ebc17257bb813021747cdd489d8.jpg",
+    "id": "bff73e6f4dfb87bfadifgl",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "model": "TRV06",
+    "name": "zolder verwarming",
+    "node_id": "a4c13825086fbb04",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "rxq4iti9",
+    "product_name": "Zigbee Smart TRV - TRV06",
+    "status": [
+      {
+        "code": "mode",
+        "value": "manual"
+      },
+      {
+        "code": "work_state",
+        "value": "closed"
+      },
+      {
+        "code": "temp_set",
+        "value": 120
+      },
+      {
+        "code": "temp_current",
+        "value": 150
+      },
+      {
+        "code": "child_lock",
+        "value": false
+      }
+    ],
+    "sub": true,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1764359856,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "wkf",
+    "functions": [
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\",\"manual\",\"off\"]}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":350,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\",\"manual\",\"off\"]}"
+      },
+      {
+        "code": "work_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"opened\",\"closed\"]}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":350,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":500,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

@@ -1,0 +1,136 @@
+{
+  "device": {
+    "active_time": 1764370947,
+    "biz_type": 0,
+    "category": "sd",
+    "create_time": 1764370947,
+    "icon": "smart/icon/ay1557228281794AAASq/1438fae07237ef97fb4d70cabc65167a.png",
+    "id": "bf9efbdeb0e2b45e40omvk",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "BLUEBOT XTREME ",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "cfq9n2spr1aqjkhy",
+    "product_name": "BLUEBOT XTREME ",
+    "status": [
+      {
+        "code": "power",
+        "value": false
+      },
+      {
+        "code": "power_go",
+        "value": false
+      },
+      {
+        "code": "mode",
+        "value": "standby"
+      },
+      {
+        "code": "seek",
+        "value": false
+      },
+      {
+        "code": "total_clean_time",
+        "value": 2144515
+      },
+      {
+        "code": "total_clean_area",
+        "value": 29630
+      },
+      {
+        "code": "clean_count",
+        "value": 1242
+      },
+      {
+        "code": "device_info",
+        "value": "eyJkSW5mbyI6eyJ0cyI6IjQ2OTgwIiwidXNlcklkIjoiMCJ9LCJkYXRhIjp7ImFwSWQiOiJTbWFydExpZmUtNzM4Mi1jMjlmNTc4ZiIsImFwSXAiOiIxOTIuMTY4Ljc4LjEiLCJjb21waWxlVmVyIjoyNjQ3LCJtY3VWZXIiOiJoMTUydjEzNF8yMCIsInN0YUlkIjoiSlNOX0d1ZXN0Iiwic3RhSXAiOiIxOTIuMTY4LjY4LjEwMCIsInN0YU1hYyI6IjBDOkNGOjg5OjBEOjczOjgyIiwic3RhU2lnbmFsIjoxMDB9LCJpbmZvVHlwZSI6MjEwMTksIm1lc3NhZ2UiOiJvayJ9"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1764370947,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "sd",
+    "functions": [
+      {
+        "code": "power",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "power_go",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"standby\",\"random\",\"smart\",\"wall_follow\",\"mop\",\"spiral\",\"left_spiral\",\"right_spiral\",\"right_bow\",\"left_bow\",\"partial_bow\",\"chargego\"]}"
+      },
+      {
+        "code": "seek",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "reset_map",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "device_info",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "power",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "power_go",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"standby\",\"random\",\"smart\",\"wall_follow\",\"mop\",\"spiral\",\"left_spiral\",\"right_spiral\",\"right_bow\",\"left_bow\",\"partial_bow\",\"chargego\"]}"
+      },
+      {
+        "code": "seek",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "total_clean_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":2147483647,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "total_clean_area",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":2147483647,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "clean_count",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":2147483647,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "device_info",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

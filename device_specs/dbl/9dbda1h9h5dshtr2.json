@@ -1,0 +1,76 @@
+{
+  "device": {
+    "active_time": 1737874053,
+    "biz_type": 0,
+    "category": "dbl",
+    "create_time": 1737874053,
+    "icon": "smart/icon/bay1587035467926U7Xs/dddba1a3534fe35ddbf2e3981164e922.png",
+    "id": "ebcc00ea0bee63cfc5w4e9",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "2103 Electric fireplace",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "9dbda1h9h5dshtr2",
+    "product_name": "2103 3D Water Vapor Fireplace",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "child_lock",
+        "value": false
+      },
+      {
+        "code": "light",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "-08:00",
+    "uid": "<redacted>",
+    "update_time": 1737874053,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "dbl",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

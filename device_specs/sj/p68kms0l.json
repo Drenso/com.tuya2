@@ -1,0 +1,53 @@
+{
+  "device": {
+    "active_time": 1774257994,
+    "biz_type": 0,
+    "category": "sj",
+    "create_time": 1774257994,
+    "icon": "smart/icon/bay160585829854911MU/0776123daa3268448529313a88bbd85d.png",
+    "id": "bf7bb38e1ebe3a0ccbtxor",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "model": "HH-SRAIN01",
+    "name": "Regensensor",
+    "node_id": "a4c1381279b469f6",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "p68kms0l",
+    "product_name": "Rain Sensor",
+    "status": [
+      {
+        "code": "watersensor_state",
+        "value": "normal"
+      },
+      {
+        "code": "battery_percentage",
+        "value": 97
+      }
+    ],
+    "sub": true,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1774257994,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "sj",
+    "functions": [],
+    "status": [
+      {
+        "code": "watersensor_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"alarm\",\"normal\"]}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

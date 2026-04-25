@@ -1,0 +1,117 @@
+{
+  "device": {
+    "active_time": 1768327608,
+    "biz_type": 0,
+    "category": "cwwsq",
+    "create_time": 1768327608,
+    "icon": "smart/icon/ay1541396207188PFb5m/c50b0fac7f3c6eae01362542b44992c2.png",
+    "id": "bf4a216d6f0107fe49p9iw",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Cleverio PF100",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "wfkzyy0evslzsmoi",
+    "product_name": "Cleverio PF100",
+    "status": [
+      {
+        "code": "meal_plan",
+        "value": ""
+      },
+      {
+        "code": "manual_feed",
+        "value": 2
+      },
+      {
+        "code": "factory_reset",
+        "value": false
+      },
+      {
+        "code": "battery_percentage",
+        "value": 70
+      },
+      {
+        "code": "charge_state",
+        "value": true
+      },
+      {
+        "code": "feed_report",
+        "value": 2
+      },
+      {
+        "code": "light",
+        "value": true
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1768327608,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "cwwsq",
+    "functions": [
+      {
+        "code": "meal_plan",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "manual_feed",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":1,\"max\":20,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "factory_reset",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "meal_plan",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "manual_feed",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":1,\"max\":20,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "factory_reset",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "charge_state",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "feed_report",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":20,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

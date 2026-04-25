@@ -1,0 +1,66 @@
+{
+  "device": {
+    "active_time": 1647691905,
+    "biz_type": 0,
+    "category": "wsdcg",
+    "create_time": 1647691905,
+    "icon": "smart/program_category_icon/wsdcg.png",
+    "id": "177316368cce4ef39b51",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "WiFi temperature and humidityclock",
+    "online": true,
+    "owner_id": "",
+    "product_id": "8wustw6905xii0d6",
+    "product_name": "WiFi temperature and humidityclock",
+    "status": [
+      {
+        "code": "va_temperature",
+        "value": 34
+      },
+      {
+        "code": "va_humidity",
+        "value": 38
+      },
+      {
+        "code": "temp_unit_convert",
+        "value": "c"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1647691905,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "wsdcg",
+    "functions": [
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "va_temperature",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-9,\"max\":300,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "va_humidity",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":20,\"max\":95,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

@@ -1,0 +1,31 @@
+{
+  "device": {
+    "active_time": 1771871996,
+    "biz_type": 0,
+    "category": "jsq",
+    "create_time": 1771871996,
+    "icon": "smart/icon/bay1587626762461kaYd/8e5bcbed37ef117ee7e451d6aec269c8.png",
+    "id": "bf2ce6f94cb6363a64nm2z",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Arida Eva",
+    "online": true,
+    "owner_id": "",
+    "product_id": "gsn2b1cgyeivpjka",
+    "product_name": "Arida Eva",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1771871996,
+    "uuid": "",
+    "status": []
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

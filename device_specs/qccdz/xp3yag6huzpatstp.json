@@ -1,0 +1,153 @@
+{
+  "device": {
+    "active_time": 1749632108,
+    "biz_type": 0,
+    "category": "qccdz",
+    "create_time": 1749632108,
+    "icon": "smart/icon/bay1691482211915JYpQ/0e43bc8fa37ddc971121f6c8ddf13a3c.png",
+    "id": "bf6198196e1691bb14e0f3",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Axal laadpaal",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "xp3yag6huzpatstp",
+    "product_name": "charger",
+    "status": [
+      {
+        "code": "forward_energy_total",
+        "value": 99925
+      },
+      {
+        "code": "work_state",
+        "value": "charger_free"
+      },
+      {
+        "code": "charge_cur_set",
+        "value": 16
+      },
+      {
+        "code": "power_total",
+        "value": 3522
+      },
+      {
+        "code": "connection_state",
+        "value": "controlpi_12v_pwm"
+      },
+      {
+        "code": "work_mode",
+        "value": "charge_energy"
+      },
+      {
+        "code": "balance_energy",
+        "value": 300
+      },
+      {
+        "code": "energy_charge",
+        "value": 13
+      },
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "temp_current",
+        "value": 26
+      },
+      {
+        "code": "charge_energy_once",
+        "value": 1051
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1749632108,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "qccdz",
+    "functions": [
+      {
+        "code": "charge_cur_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"A\",\"min\":6,\"max\":32,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"charge_now\",\"charge_pct\",\"charge_energy\",\"charge_schedule\"]}"
+      },
+      {
+        "code": "energy_charge",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW·h\",\"min\":1,\"max\":2000000,\"scale\":2,\"step\":1}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "forward_energy_total",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW·h\",\"min\":0,\"max\":99999999,\"scale\":2,\"step\":1}"
+      },
+      {
+        "code": "work_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"charger_free\",\"charger_insert\",\"charger_free_fault\",\"charger_wait\",\"charger_charging\",\"charger_pause\",\"charger_end\",\"charger_fault\"]}"
+      },
+      {
+        "code": "charge_cur_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"A\",\"min\":6,\"max\":32,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "power_total",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW\",\"min\":0,\"max\":99999999,\"scale\":3,\"step\":1}"
+      },
+      {
+        "code": "connection_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"controlpi_12v\",\"controlpi_12v_pwm\",\"controlpi_9v\",\"controlpi_9v_pwm\",\"controlpi_6v\",\"controlpi_6v_pwm\",\"controlpi_error\"]}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"charge_now\",\"charge_pct\",\"charge_energy\",\"charge_schedule\"]}"
+      },
+      {
+        "code": "balance_energy",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW·h\",\"min\":0,\"max\":99999999,\"scale\":2,\"step\":1}"
+      },
+      {
+        "code": "energy_charge",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW·h\",\"min\":1,\"max\":2000000,\"scale\":2,\"step\":1}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-40,\"max\":200,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "charge_energy_once",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW·h\",\"min\":1,\"max\":999999,\"scale\":2,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

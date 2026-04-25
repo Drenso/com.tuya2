@@ -1,0 +1,167 @@
+{
+  "device": {
+    "active_time": 1714706192,
+    "biz_type": 18,
+    "category": "fsd",
+    "create_time": 1714706192,
+    "icon": "smart/icon/ay15259177940092jIQE/730c660d540c2e83fa436e15e420d5b4.jpg",
+    "id": "ebfc9cfcfc39706318rkb5",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Master Bedroom Ceiling Fan",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "afcgb439awama7v8",
+    "product_name": "Smart Ceiling Fan ",
+    "status": [
+      {
+        "code": "switch_led",
+        "value": false
+      },
+      {
+        "code": "countdown",
+        "value": 0
+      },
+      {
+        "code": "fan_switch",
+        "value": false
+      },
+      {
+        "code": "fan_speed",
+        "value": 1
+      },
+      {
+        "code": "countdown_left_fan",
+        "value": 0
+      },
+      {
+        "code": "fan_beep",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "-04:00",
+    "uid": "<redacted>",
+    "update_time": 1714706192,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "fsd",
+    "functions": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fan_speed",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":1,\"max\":3,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_left_fan",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":540,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_beep",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fan_speed",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":1,\"max\":3,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_left_fan",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":540,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_beep",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch_led",
+      "custom_name": "",
+      "dp_id": 20,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "countdown",
+      "custom_name": "",
+      "dp_id": 26,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "fan_switch",
+      "custom_name": "",
+      "dp_id": 60,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "fan_speed",
+      "custom_name": "",
+      "dp_id": 62,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"\",\"min\":1,\"max\":3,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "fan_countdown_left",
+      "custom_name": "",
+      "dp_id": 64,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"min\",\"min\":0,\"max\":540,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "fan_beep",
+      "custom_name": "",
+      "dp_id": 66,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    }
+  ]
+}

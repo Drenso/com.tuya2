@@ -1,0 +1,76 @@
+{
+  "device": {
+    "active_time": 1775113731,
+    "biz_type": 0,
+    "category": "fskg",
+    "create_time": 1775113731,
+    "icon": "smart/icon/bay1616579773630CxDi/62d23a8c038dcfb71f2e395bc62c6912.jpg",
+    "id": "eb38649e6d8d756f6b2trg",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Bedroom Fan Dimmer Switch",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "ea88zei7auxu48s6",
+    "product_name": "Fan Dimmer Switch",
+    "status": [
+      {
+        "code": "switch_fan",
+        "value": true
+      },
+      {
+        "code": "bright_value",
+        "value": 100
+      },
+      {
+        "code": "countdown_fan",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "-07:00",
+    "uid": "<redacted>",
+    "update_time": 1775113731,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "fskg",
+    "functions": [
+      {
+        "code": "switch_fan",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "bright_value",
+        "type": "Integer",
+        "values": "{\"min\":10,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_fan",
+        "type": "Integer",
+        "values": "{\"unit\":\"分钟\",\"min\":0,\"max\":1440,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_fan",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "bright_value",
+        "type": "Integer",
+        "values": "{\"min\":10,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_fan",
+        "type": "Integer",
+        "values": "{\"unit\":\"分钟\",\"min\":0,\"max\":1440,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

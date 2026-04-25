@@ -1,0 +1,146 @@
+{
+  "device": {
+    "active_time": 1683793025,
+    "biz_type": 0,
+    "category": "jsq",
+    "create_time": 1683793025,
+    "icon": "smart/icon/ay1525833075368tsInS/77f0736b8c453f712f88b6d048ee4fa6.png",
+    "id": "bf45ebfdc284d4e650uuie",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Diffuser",
+    "online": true,
+    "owner_id": "",
+    "product_id": "venoaj75waptukdf",
+    "product_name": "",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "switch_led",
+        "value": false
+      },
+      {
+        "code": "fault",
+        "value": 0
+      },
+      {
+        "code": "countdown_set",
+        "value": "cancel"
+      },
+      {
+        "code": "countdown_left",
+        "value": 0
+      },
+      {
+        "code": "colour_data",
+        "value": "ff3c00000effff"
+      },
+      {
+        "code": "work_mode",
+        "value": "white"
+      },
+      {
+        "code": "bright_value",
+        "value": 255
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02: 00",
+    "uid": "",
+    "update_time": 1683793025,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "jsq",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_set",
+        "type": "Enum",
+        "values": "{\"range\": [\"cancel\",\"1h\",\"3h\",\"6h\"]}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\": [\"small\",\"large\"]}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\": [\"white\",\"colour\"]}"
+      },
+      {
+        "code": "bright_value",
+        "type": "Integer",
+        "values": "{\"unit\": \"\",\"min\": 0,\"max\": 255,\"scale\": 0,\"step\": 1}"
+      },
+      {
+        "code": "colour_data",
+        "type": "Integer",
+        "values": "{\"min\": 0,\"unit\": \"\",\"scale\": 0,\"max\": 255,\"step\": 1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\": [\"1\"]}"
+      },
+      {
+        "code": "countdown_set",
+        "type": "Enum",
+        "values": "{\"range\": [\"cancel\",\"1h\",\"3h\",\"6h\"]}"
+      },
+      {
+        "code": "countdown_left",
+        "type": "Integer",
+        "values": "{\"unit\": \"分钟\",\"min\": 0,\"max\": 360,\"scale\": 0,\"step\": 1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\": [\"small\",\"large\"]}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\": [\"white\",\"colour\"]}"
+      },
+      {
+        "code": "bright_value",
+        "type": "Integer",
+        "values": "{\"unit\": \"\",\"min\": 0,\"max\": 255,\"scale\": 0,\"step\": 1}"
+      },
+      {
+        "code": "colour_data",
+        "type": "Integer",
+        "values": "{\"min\": 0,\"unit\": \"\",\"scale\": 0,\"max\": 255,\"step\": 1}"
+      }
+    ]
+  },
+  "data_points": []
+}

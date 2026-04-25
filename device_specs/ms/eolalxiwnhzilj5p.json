@@ -1,0 +1,98 @@
+{
+  "device": {
+    "active_time": 1739144899,
+    "biz_type": 0,
+    "category": "ms",
+    "create_time": 1739144899,
+    "icon": "smart/icon/1550569125vendxtv95e_0.jpg",
+    "id": "553326214c11ae0fc560",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Porta de Serviço ",
+    "online": true,
+    "owner_id": "",
+    "product_id": "eolalxiwnhzilj5p",
+    "product_name": "WiFi Door Lock",
+    "status": [
+      {
+        "code": "unlock_fingerprint",
+        "value": 2
+      },
+      {
+        "code": "unlock_password",
+        "value": 4
+      },
+      {
+        "code": "unlock_temporary",
+        "value": 910
+      },
+      {
+        "code": "unlock_dynamic",
+        "value": 301
+      },
+      {
+        "code": "unlock_card",
+        "value": 11
+      },
+      {
+        "code": "unlock_face",
+        "value": 0
+      },
+      {
+        "code": "unlock_key",
+        "value": 0
+      },
+      {
+        "code": "alarm_lock",
+        "value": "wrong_finger"
+      },
+      {
+        "code": "unlock_request",
+        "value": 0
+      },
+      {
+        "code": "battery_state",
+        "value": "medium"
+      },
+      {
+        "code": "residual_electricity",
+        "value": 0
+      },
+      {
+        "code": "unlock_app",
+        "value": 97
+      },
+      {
+        "code": "hijack",
+        "value": false
+      },
+      {
+        "code": "open_inside",
+        "value": false
+      },
+      {
+        "code": "doorbell",
+        "value": true
+      }
+    ],
+    "sub": false,
+    "time_zone": "-03:00",
+    "uid": "",
+    "update_time": 1739144899,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "ms",
+    "functions": [],
+    "status": [
+      {
+        "code": "unlock_fingerprint",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}\"},{\"code\":\"unlock_password\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}\"},{\"code\":\"unlock_temporary\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}\"},{\"code\":\"unlock_dynamic\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}\"},{\"code\":\"unlock_card\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}\"},{\"code\":\"unlock_face\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}\"},{\"code\":\"unlock_key\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}\"},{\"code\":\"alarm_lock\",\"type\":\"Enum\",\"values\":\"{\"range\":[\"wrong_finger\",\"wrong_password\",\"wrong_card\",\"wrong_face\",\"tongue_bad\",\"too_hot\",\"unclosed_time\",\"tongue_not_out\",\"pry\",\"key_in\",\"low_battery\",\"power_off\",\"shock\"]}\"},{\"code\":\"unlock_request\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"\",\"min\":0,\"max\":90,\"scale\":0,\"step\":1}\"},{\"code\":\"battery_state\",\"type\":\"Enum\",\"values\":\"{\"range\":[\"high\",\"medium\",\"low\",\"poweroff\"]}\"},{\"code\":\"residual_electricity\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}\"},{\"code\":\"unlock_app\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}\"},{\"code\":\"hijack\",\"type\":\"Boolean\",\"values\":\"{}\"},{\"code\":\"open_inside\",\"type\":\"Boolean\",\"values\":\"{}\"},{\"code\":\"doorbell\",\"type\":\"Boolean\",\"values\":\"{}"
+      }
+    ]
+  },
+  "data_points": []
+}

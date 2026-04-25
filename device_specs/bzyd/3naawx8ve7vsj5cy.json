@@ -1,0 +1,155 @@
+{
+  "device": {
+    "active_time": 1750411513,
+    "biz_type": 0,
+    "category": "bzyd",
+    "create_time": 1750411513,
+    "icon": "smart/icon/ay1537951214269t5wj4/78cdce5a33c041598f9d46122a750683.png",
+    "id": "bf6db05381917ca51cxjox",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Billie's Sound Machine",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "3naawx8ve7vsj5cy",
+    "product_name": "Nodiee Sleep Assist Smart PRO",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "work_mode",
+        "value": "scene"
+      },
+      {
+        "code": "switch_led",
+        "value": false
+      },
+      {
+        "code": "colour_data",
+        "value": "{\"h\":122,\"s\":1000,\"v\":500}"
+      },
+      {
+        "code": "switch_music",
+        "value": true
+      },
+      {
+        "code": "volume_set",
+        "value": 48
+      },
+      {
+        "code": "stop",
+        "value": false
+      },
+      {
+        "code": "status",
+        "value": "manual"
+      },
+      {
+        "code": "countdown",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+10:00",
+    "uid": "<redacted>",
+    "update_time": 1750411513,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "bzyd",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"scene\",\"customize_scene\",\"colour\"]}"
+      },
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "colour_data",
+        "type": "Json",
+        "values": "{}"
+      },
+      {
+        "code": "switch_music",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "volume_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "stop",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":1440,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"scene\",\"customize_scene\",\"colour\"]}"
+      },
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "colour_data",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "switch_music",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "volume_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "stop",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "status",
+        "type": "Enum",
+        "values": "{\"range\":[\"manual\",\"wake_up_1\",\"wake_up_2\",\"wake_up_3\",\"wake_up_4\",\"sleep_1\",\"sleep_2\",\"sleep_3\",\"sleep_4\"]}"
+      },
+      {
+        "code": "countdown",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":1440,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

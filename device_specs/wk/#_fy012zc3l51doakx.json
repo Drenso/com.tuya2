@@ -1,0 +1,31 @@
+{
+  "device": {
+    "active_time": 1777141455,
+    "biz_type": 18,
+    "category": "wk",
+    "create_time": 1777141455,
+    "icon": "smart/icon/ay1557480848074dO17I/79a63b574b490bf9a12d14e69840a2a3.png",
+    "id": "bfd8941117cf044846tyml",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Thermostat Wi-Fi",
+    "online": true,
+    "owner_id": "",
+    "product_id": "fy012zc3l51doakx",
+    "product_name": "Thermostat Wi-Fi",
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1777141455,
+    "uuid": "",
+    "status": []
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

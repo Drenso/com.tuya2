@@ -1,0 +1,174 @@
+{
+  "device": {
+    "active_time": 1768339486,
+    "biz_type": 0,
+    "category": "qn",
+    "create_time": 1768339486,
+    "icon": "smart/icon/bay1628517322743pfvY/32f277096fb0f973f68a09ff490d542e.png",
+    "id": "bf9f435bb01c045359p4x2",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Convector Heater with Wi-Fi",
+    "online": true,
+    "owner_id": "",
+    "product_id": "8axigg3icem6telp",
+    "product_name": "Convector Heater with Wi-Fi",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "temp_set",
+        "value": 20
+      },
+      {
+        "code": "temp_current",
+        "value": 18
+      },
+      {
+        "code": "mode",
+        "value": "auto"
+      },
+      {
+        "code": "level",
+        "value": "1"
+      },
+      {
+        "code": "anion",
+        "value": false
+      },
+      {
+        "code": "countdown_left",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1768339486,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "qn",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"°C\",\"min\":5,\"max\":37,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"smart\",\"auto\"]}"
+      },
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"°C\",\"min\":5,\"max\":37,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"°C\",\"min\":-20,\"max\":50,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"smart\",\"auto\"]}"
+      },
+      {
+        "code": "level",
+        "type": "Enum",
+        "values": "{\"range\":[\"1\",\"2\",\"3\",\"4\"]}"
+      },
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_left",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "temp_set",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"°C\",\"min\":5,\"max\":37,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "temp_current",
+      "custom_name": "",
+      "dp_id": 3,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"°C\",\"min\":-20,\"max\":50,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "mode",
+      "custom_name": "",
+      "dp_id": 4,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"smart\",\"auto\"]}"
+    },
+    {
+      "code": "level",
+      "custom_name": "",
+      "dp_id": 5,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"1\",\"2\",\"3\",\"4\"]}"
+    },
+    {
+      "code": "anion",
+      "custom_name": "",
+      "dp_id": 9,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "countdown_left",
+      "custom_name": "",
+      "dp_id": 12,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

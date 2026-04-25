@@ -1,0 +1,62 @@
+{
+  "device": {
+    "active_time": 1624553767,
+    "biz_type": 0,
+    "category": "clkg",
+    "create_time": 1624553767,
+    "icon": "smart/icon/ay15327721968035jwx9/ece8073642f12b8a34a1bbb39d0a3428.jpg",
+    "id": "bfa2637e5b04ff1584xdv3",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Zonnescherm",
+    "online": true,
+    "owner_id": "",
+    "product_id": "aacztutbu69gdpdf",
+    "product_name": "Curtain smart switch",
+    "status": [
+      {
+        "code": "control",
+        "value": "stop"
+      },
+      {
+        "code": "switch_backlight",
+        "value": true
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1624553767,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "clkg",
+    "functions": [
+      {
+        "code": "control",
+        "type": "Enum",
+        "values": "{\"range\":[\"open\",\"stop\",\"close\"]}"
+      },
+      {
+        "code": "switch_backlight",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "control",
+        "type": "Enum",
+        "values": "{\"range\":[\"open\",\"stop\",\"close\"]}"
+      },
+      {
+        "code": "switch_backlight",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

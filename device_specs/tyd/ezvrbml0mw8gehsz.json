@@ -1,0 +1,226 @@
+{
+  "device": {
+    "active_time": 1773916834,
+    "biz_type": 0,
+    "category": "tyd",
+    "create_time": 1773916834,
+    "icon": "smart/icon/bay1655084720525HXRv/be9a88feacac7744186386d5b0690a57.png",
+    "id": "bf00b0e78ed322040cloya",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Lamp",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "ezvrbml0mw8gehsz",
+    "product_name": "RGB+CW 小苹果投光灯",
+    "status": [
+      {
+        "code": "switch_led",
+        "value": true
+      },
+      {
+        "code": "work_mode",
+        "value": "white"
+      },
+      {
+        "code": "bright_value",
+        "value": 1000
+      },
+      {
+        "code": "temp_value",
+        "value": 1000
+      },
+      {
+        "code": "colour_data",
+        "value": "{\"h\":0,\"s\":1000,\"v\":1000}"
+      },
+      {
+        "code": "scene_data",
+        "value": "{\"scene_num\":1,\"scene_units\":[{\"bright\":200,\"h\":0,\"s\":0,\"temperature\":0,\"unit_change_mode\":\"static\",\"unit_gradient_duration\":13,\"unit_switch_duration\":14,\"v\":0}]}"
+      },
+      {
+        "code": "countdown",
+        "value": 0
+      },
+      {
+        "code": "rhythm_mode",
+        "value": "AAAAAAA="
+      },
+      {
+        "code": "wakeup_mode",
+        "value": "AAA="
+      },
+      {
+        "code": "power_memory",
+        "value": "AAEAAAPoA+gD6APo"
+      },
+      {
+        "code": "do_not_disturb",
+        "value": false
+      },
+      {
+        "code": "cycle_timing",
+        "value": "AAAA"
+      },
+      {
+        "code": "random_timing",
+        "value": "AAAA"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1773916834,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "tyd",
+    "functions": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "bright_value",
+        "type": "Integer",
+        "values": "{\"min\":10,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_value",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "colour_data",
+        "type": "Json",
+        "values": "{}"
+      },
+      {
+        "code": "scene_data",
+        "type": "Json",
+        "values": "{}"
+      },
+      {
+        "code": "countdown",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "music_data",
+        "type": "Json",
+        "values": "{}"
+      },
+      {
+        "code": "control_data",
+        "type": "Json",
+        "values": "{}"
+      },
+      {
+        "code": "rhythm_mode",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "wakeup_mode",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "power_memory",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "do_not_disturb",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "cycle_timing",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "random_timing",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "bright_value",
+        "type": "Integer",
+        "values": "{\"min\":10,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_value",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "colour_data",
+        "type": "Json",
+        "values": "{}"
+      },
+      {
+        "code": "scene_data",
+        "type": "Json",
+        "values": "{}"
+      },
+      {
+        "code": "countdown",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "rhythm_mode",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "wakeup_mode",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "power_memory",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "do_not_disturb",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "cycle_timing",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "random_timing",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

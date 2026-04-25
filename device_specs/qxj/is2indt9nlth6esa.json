@@ -1,0 +1,44 @@
+{
+  "device": {
+    "active_time": 1766079698,
+    "biz_type": 0,
+    "category": "qxj",
+    "create_time": 1766079698,
+    "icon": "smart/icon/ay1525749833414yotNt/9cd3838591ea6f1d58524a1842f63dc7.png",
+    "id": "bf0c3496266aa6078eabu6",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "T & H Sensor with external probe",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "is2indt9nlth6esa",
+    "product_name": "T & H Sensor with external probe",
+    "status": [
+      {
+        "code": "temp_current",
+        "value": 249
+      },
+      {
+        "code": "humidity_value",
+        "value": 44
+      },
+      {
+        "code": "battery_state",
+        "value": "high"
+      },
+      {
+        "code": "temp_current_external",
+        "value": 255
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1766079698,
+    "uuid": "<redacted>"
+  },
+  "specifications": "<not available>",
+  "data_points": "<not available>"
+}

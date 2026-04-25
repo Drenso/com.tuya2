@@ -1,0 +1,48 @@
+{
+  "device": {
+    "active_time": 1775900103,
+    "biz_type": 0,
+    "category": "rs",
+    "create_time": 1775900103,
+    "icon": "smart/icon/153785790222h8aik6ryx_0.png",
+    "id": "bf75ba814368306ea9rdtg",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Warmtepomp zwembad",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "ceBCvy4V2acJ6UsV",
+    "product_name": "Inverter Pool Heat Pump",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1775900103,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "rs",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

@@ -1,0 +1,163 @@
+{
+  "device": {
+    "active_time": 1695278969,
+    "biz_type": 0,
+    "category": "sd",
+    "create_time": 1695278969,
+    "icon": "smart/icon/bay161882653798888bv/1657091153e8d67f3753b.png",
+    "id": "bfd4c63f871843b961accp",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Støvsuger ",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "vsohwgbxfgbq729v",
+    "product_name": "Neatsvor X520",
+    "status": [
+      {
+        "code": "power",
+        "value": false
+      },
+      {
+        "code": "power_go",
+        "value": false
+      },
+      {
+        "code": "mode",
+        "value": "standby"
+      },
+      {
+        "code": "direction_control",
+        "value": "forward"
+      },
+      {
+        "code": "electricity_left",
+        "value": 100
+      },
+      {
+        "code": "suction",
+        "value": "max"
+      },
+      {
+        "code": "clean_record",
+        "value": "06504700000"
+      },
+      {
+        "code": "clean_area",
+        "value": 0
+      },
+      {
+        "code": "clean_time",
+        "value": 0
+      },
+      {
+        "code": "fault",
+        "value": 0
+      },
+      {
+        "code": "voice_switch",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1695278969,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "sd",
+    "functions": [
+      {
+        "code": "power",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "power_go",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"standby\",\"smart\",\"wall_follow\",\"mop\",\"spiral\",\"chargego\"]}"
+      },
+      {
+        "code": "direction_control",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"backward\",\"turn_left\",\"turn_right\",\"stop\"]}"
+      },
+      {
+        "code": "suction",
+        "type": "Enum",
+        "values": "{\"range\":[\"strong\",\"normal\"]}"
+      },
+      {
+        "code": "voice_switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "power",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "power_go",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"standby\",\"smart\",\"wall_follow\",\"mop\",\"spiral\",\"chargego\"]}"
+      },
+      {
+        "code": "direction_control",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"backward\",\"turn_left\",\"turn_right\",\"stop\"]}"
+      },
+      {
+        "code": "electricity_left",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "suction",
+        "type": "Enum",
+        "values": "{\"range\":[\"strong\",\"normal\"]}"
+      },
+      {
+        "code": "clean_record",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "clean_area",
+        "type": "Integer",
+        "values": "{\"unit\":\"㎡\",\"min\":0,\"max\":9999,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "clean_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"分\",\"min\":0,\"max\":9999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\"]}"
+      },
+      {
+        "code": "voice_switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

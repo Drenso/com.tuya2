@@ -1,0 +1,71 @@
+{
+  "device": {
+    "active_time": 1749401746,
+    "biz_type": 0,
+    "category": "rs",
+    "create_time": 1749401746,
+    "icon": "smart/icon/ay1550805891852JK2nW/f5462ab22ff556090cce12d8901cff9e.png",
+    "id": "bf458793d2981e9b84iwzx",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Heat pump",
+    "online": true,
+    "owner_id": "",
+    "product_id": "srnqa4nxazncppjb",
+    "product_name": "Heat pump",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "temp_set",
+        "value": 35
+      },
+      {
+        "code": "temp_current",
+        "value": 34
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1749401746,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "rs",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":8,\"max\":60,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":8,\"max\":60,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-40,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

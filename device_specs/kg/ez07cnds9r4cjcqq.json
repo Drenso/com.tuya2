@@ -1,0 +1,146 @@
+{
+  "device": {
+    "active_time": 1775114186,
+    "biz_type": 0,
+    "category": "kg",
+    "create_time": 1775114186,
+    "icon": "smart/icon/ay14906729310721fNjn/e1f6826013691d385c63862c806f7f37.jpg",
+    "id": "eb4f444ce67d33db39yfzo",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Front Porch Light",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "ez07cnds9r4cjcqq",
+    "product_name": "Smart Light Switch",
+    "status": [
+      {
+        "code": "switch_1",
+        "value": false
+      },
+      {
+        "code": "countdown_1",
+        "value": 0
+      },
+      {
+        "code": "relay_status",
+        "value": "power_off"
+      },
+      {
+        "code": "light_mode",
+        "value": "relay"
+      },
+      {
+        "code": "child_lock",
+        "value": false
+      },
+      {
+        "code": "cycle_time",
+        "value": ""
+      },
+      {
+        "code": "random_time",
+        "value": ""
+      },
+      {
+        "code": "switch_inching",
+        "value": ""
+      }
+    ],
+    "sub": false,
+    "time_zone": "-07:00",
+    "uid": "<redacted>",
+    "update_time": 1775114186,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "kg",
+    "functions": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "relay_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"power_off\",\"power_on\",\"last\"]}"
+      },
+      {
+        "code": "light_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"relay\",\"pos\",\"none\"]}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "cycle_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "random_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "switch_inching",
+        "type": "String",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "relay_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"power_off\",\"power_on\",\"last\"]}"
+      },
+      {
+        "code": "light_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"relay\",\"pos\",\"none\"]}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "cycle_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "random_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "switch_inching",
+        "type": "String",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

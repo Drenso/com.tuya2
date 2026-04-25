@@ -1,0 +1,66 @@
+{
+  "device": {
+    "active_time": 1716555137,
+    "biz_type": 0,
+    "category": "ywbj",
+    "create_time": 1716555137,
+    "icon": "smart/icon/ay15427647462366edzT/13e5f1cb7df593e6b812947b9566d939.png",
+    "id": "eb6e647ee2539d7c48norc",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Basement Smoke sensor",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "fzb5up2iehjcrnqy",
+    "product_name": "WIFI TH&Smoke sensor",
+    "status": [
+      {
+        "code": "smoke_sensor_status",
+        "value": "normal"
+      },
+      {
+        "code": "battery_percentage",
+        "value": 13
+      },
+      {
+        "code": "muffling",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+03:00",
+    "uid": "<redacted>",
+    "update_time": 1716555137,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "ywbj",
+    "functions": [
+      {
+        "code": "muffling",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "smoke_sensor_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"alarm\",\"normal\"]}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "muffling",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

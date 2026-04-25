@@ -1,0 +1,201 @@
+{
+  "device": {
+    "active_time": 1733175373,
+    "biz_type": 0,
+    "category": "cs",
+    "create_time": 1733175373,
+    "icon": "smart/icon/bay1607411890044P8BP/bc03174918cfb6f005b2037a8c4bbfee.jpg",
+    "id": "bf31028160472fcf5cgl11",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Otto Dehumidifier",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "ma3oq4onxxwg91ky",
+    "product_name": "",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "dehumidify_set_value",
+        "value": 50
+      },
+      {
+        "code": "humidity_indoor",
+        "value": 50
+      },
+      {
+        "code": "swing",
+        "value": false
+      },
+      {
+        "code": "anion",
+        "value": false
+      },
+      {
+        "code": "child_lock",
+        "value": false
+      },
+      {
+        "code": "countdown_set",
+        "value": "cancel"
+      },
+      {
+        "code": "fault",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1733175373,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "cs",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "dehumidify_set_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":25,\"max\":80,\"scale\":0,\"step\":5}"
+      },
+      {
+        "code": "swing",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_set",
+        "type": "Enum",
+        "values": "{\"range\":[\"cancel\",\"1h\",\"2h\",\"3h\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "dehumidify_set_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":25,\"max\":80,\"scale\":0,\"step\":5}"
+      },
+      {
+        "code": "humidity_indoor",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "swing",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_set",
+        "type": "Enum",
+        "values": "{\"range\":[\"cancel\",\"1h\",\"2h\",\"3h\"]}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"E1\",\"E2\"]}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "dehumidify_set_value",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"%\",\"min\":25,\"max\":80,\"scale\":0,\"step\":5}"
+    },
+    {
+      "code": "humidity_indoor",
+      "custom_name": "",
+      "dp_id": 6,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "swing",
+      "custom_name": "",
+      "dp_id": 8,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "anion",
+      "custom_name": "",
+      "dp_id": 10,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "child_lock",
+      "custom_name": "",
+      "dp_id": 16,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "countdown_set",
+      "custom_name": "",
+      "dp_id": 17,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"cancel\",\"1h\",\"2h\",\"3h\"]}"
+    },
+    {
+      "code": "fault",
+      "custom_name": "",
+      "dp_id": 19,
+      "time": 0,
+      "type": "Bitmap",
+      "value": "{\"label\":[\"E1\",\"E2\"]}"
+    }
+  ]
+}

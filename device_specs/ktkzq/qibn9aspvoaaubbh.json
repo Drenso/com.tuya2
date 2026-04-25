@@ -1,0 +1,85 @@
+{
+  "device": {
+    "active_time": 1735633079,
+    "biz_type": 0,
+    "category": "ktkzq",
+    "create_time": 1735633079,
+    "icon": "smart/program_category_icon/ktkzq.png",
+    "id": "17155087a4e57c96532b",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Warmtepomp tub",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "qibn9aspvoaaubbh",
+    "product_name": "热泵控制器",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "temp_set",
+        "value": 38
+      },
+      {
+        "code": "temp_current",
+        "value": 5
+      },
+      {
+        "code": "mode",
+        "value": "hot"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1735633079,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "ktkzq",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":7,\"max\":60,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"hot\",\"cold\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":7,\"max\":60,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-30,\"max\":150,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"hot\",\"cold\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

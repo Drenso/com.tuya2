@@ -1,0 +1,174 @@
+{
+  "device": {
+    "active_time": 1769139211,
+    "biz_type": 18,
+    "category": "rs",
+    "create_time": 1769139211,
+    "icon": "smart/icon/ay1571192283894kns46/e2cf0e56db041b617e7d29b98c074206.jpg",
+    "id": "eb176652853821f4f6dow5",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Rinnai Enviroflo GR",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "svhcpdyj8gvgagyg",
+    "product_name": "Rinnai Heat Pump",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "temp_current",
+        "value": 44
+      },
+      {
+        "code": "temp_set",
+        "value": 45
+      },
+      {
+        "code": "work_state",
+        "value": "warm"
+      },
+      {
+        "code": "child_lock",
+        "value": true
+      },
+      {
+        "code": "timer",
+        "value": "AwEKAA8AAAoADwAAFQAXAA=="
+      },
+      {
+        "code": "fault",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+13:00",
+    "uid": "<redacted>",
+    "update_time": 1769139211,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "rs",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":15,\"max\":70,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "timer",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":15,\"max\":70,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "work_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"standby\",\"heating\",\"warm\"]}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "timer",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "fault",
+        "type": "bitmap",
+        "values": "{\"label\":[\"E01AmbientTempSensorFault\",\"E02UpperTankTempSensorFaul\",\"E03DischargeTempSensorFault\",\"E04EvaporatorTempSensorFault\",\"E05SuctionTempSensorFault\",\"E06LowerTankTempSensorFault\",\"E07HighPressureProtection\",\"E08DischargeTempTooHigh\",\"E09LowVoltageProtection\",\"E10HighVoltageProtection\",\"E11FanFault\",\"E12Communicationfault\"]}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "temp_current",
+      "custom_name": "",
+      "dp_id": 3,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "temp_set",
+      "custom_name": "",
+      "dp_id": 5,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":15,\"max\":70,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "work_state",
+      "custom_name": "",
+      "dp_id": 8,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"standby\",\"heating\",\"warm\"]}"
+    },
+    {
+      "code": "child_lock",
+      "custom_name": "",
+      "dp_id": 12,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "timer",
+      "custom_name": "",
+      "dp_id": 15,
+      "time": 0,
+      "type": "Raw",
+      "value": "{}"
+    },
+    {
+      "code": "fault",
+      "custom_name": "",
+      "dp_id": 18,
+      "time": 0,
+      "type": "bitmap",
+      "value": "{\"label\":[\"E01AmbientTempSensorFault\",\"E02UpperTankTempSensorFaul\",\"E03DischargeTempSensorFault\",\"E04EvaporatorTempSensorFault\",\"E05SuctionTempSensorFault\",\"E06LowerTankTempSensorFault\",\"E07HighPressureProtection\",\"E08DischargeTempTooHigh\",\"E09LowVoltageProtection\",\"E10HighVoltageProtection\",\"E11FanFault\",\"E12Communicationfault\"]}"
+    }
+  ]
+}

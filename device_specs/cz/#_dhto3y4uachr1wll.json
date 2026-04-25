@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1773843350,
+    "biz_type": 0,
+    "category": "cz",
+    "create_time": 1773843350,
+    "icon": "smart/icon/ay1504535816017oOfFp/83c23784bd9de7a38177f17b8d22d7a8.png",
+    "id": "bf36c188daa8324e49ucww",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Double Digital Meter",
+    "online": true,
+    "owner_id": "",
+    "product_id": "dhto3y4uachr1wll",
+    "product_name": "Double Digital Meter",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1773843350,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

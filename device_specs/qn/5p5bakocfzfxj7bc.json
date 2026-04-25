@@ -1,0 +1,142 @@
+{
+  "device": {
+    "active_time": 1739128248,
+    "biz_type": 0,
+    "category": "qn",
+    "create_time": 1739128248,
+    "icon": "smart/icon/ay1539244260287RY0l6/155918433529057715cda.png",
+    "id": "bf22714fc742efb3demcxi",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "model": "ETOP-HT-CH",
+    "name": "-1 Lavanderia",
+    "node_id": "EDCE",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "5p5bakocfzfxj7bc",
+    "product_name": "HeatingThermostat",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "temp_set",
+        "value": 230
+      },
+      {
+        "code": "temp_current",
+        "value": 210
+      },
+      {
+        "code": "mode_eco",
+        "value": false
+      },
+      {
+        "code": "lock",
+        "value": false
+      }
+    ],
+    "sub": true,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1739128248,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "qn",
+    "functions": [
+      {
+        "code": "lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode_eco",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":350,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "lock",
+        "type": "",
+        "values": "{}"
+      },
+      {
+        "code": "mode_eco",
+        "type": "",
+        "values": "{}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":500,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":350,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "switch",
+        "type": "",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "child_lock",
+      "custom_name": "",
+      "dp_id": 7,
+      "time": 0,
+      "type": "",
+      "value": "{}"
+    },
+    {
+      "code": "eco",
+      "custom_name": "",
+      "dp_id": 6,
+      "time": 0,
+      "type": "",
+      "value": "{}"
+    },
+    {
+      "code": "temp_current",
+      "custom_name": "",
+      "dp_id": 3,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":0,\"max\":500,\"scale\":1,\"step\":5}"
+    },
+    {
+      "code": "temp_set",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":50,\"max\":350,\"scale\":1,\"step\":5}"
+    },
+    {
+      "code": "switch",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "",
+      "value": "{}"
+    }
+  ]
+}

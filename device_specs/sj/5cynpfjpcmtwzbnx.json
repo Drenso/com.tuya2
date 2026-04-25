@@ -1,0 +1,51 @@
+{
+  "device": {
+    "active_time": 1769610346,
+    "biz_type": 0,
+    "category": "sj",
+    "create_time": 1769610346,
+    "icon": "smart/icon/ay1503986080106Gppjy/1655262390a0b7a0f3e5e.png",
+    "id": "eb5d24a309e9a2dbe2pbys",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Kitchen Water Sensor",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "5cynpfjpcmtwzbnx",
+    "product_name": "Water Sensor",
+    "status": [
+      {
+        "code": "watersensor_state",
+        "value": "normal"
+      },
+      {
+        "code": "battery_percentage",
+        "value": 100
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1769610346,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "sj",
+    "functions": [],
+    "status": [
+      {
+        "code": "watersensor_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"alarm\",\"normal\"]}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

@@ -1,0 +1,187 @@
+{
+  "device": {
+    "active_time": 1703194563,
+    "biz_type": 0,
+    "category": "kt",
+    "create_time": 1703194563,
+    "icon": "smart/icon/ay1575969668871ZWdvr/f8a48da0d8dd0abbd9db579e602b7661.jpg",
+    "id": "bfaf2ec5d563d1928a2por",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Varmepumpe Skagen",
+    "online": true,
+    "owner_id": "",
+    "product_id": "gbwuki0thdvwzewn",
+    "product_name": "",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "temp_set",
+        "value": 21
+      },
+      {
+        "code": "temp_current",
+        "value": 22
+      },
+      {
+        "code": "mode",
+        "value": "hot"
+      },
+      {
+        "code": "fan_speed_enum",
+        "value": "auto"
+      },
+      {
+        "code": "mode_eco",
+        "value": false
+      },
+      {
+        "code": "swing",
+        "value": true
+      },
+      {
+        "code": "temp_unit_convert",
+        "value": "c"
+      },
+      {
+        "code": "fault",
+        "value": 0
+      },
+      {
+        "code": "temp_current_f",
+        "value": 0
+      },
+      {
+        "code": "temp_set_f",
+        "value": 60
+      },
+      {
+        "code": "switch_vertical",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1703194563,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "kt",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":16,\"max\":30,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\",\"cold\",\"wet\",\"wind\",\"hot\"]}"
+      },
+      {
+        "code": "fan_speed_enum",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\",\"low\",\"middle\",\"high\",\"strong\"]}"
+      },
+      {
+        "code": "mode_eco",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "swing",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":60,\"max\":86,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "switch_vertical",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":16,\"max\":30,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-18,\"max\":50,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\",\"cold\",\"wet\",\"wind\",\"hot\"]}"
+      },
+      {
+        "code": "fan_speed_enum",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\",\"low\",\"middle\",\"high\",\"strong\"]}"
+      },
+      {
+        "code": "mode_eco",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "swing",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"sensor_fault\",\"temp_fault\"]}"
+      },
+      {
+        "code": "temp_current_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":0,\"max\":122,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":60,\"max\":86,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "switch_vertical",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

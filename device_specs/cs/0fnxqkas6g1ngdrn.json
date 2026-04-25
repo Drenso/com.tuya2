@@ -1,0 +1,196 @@
+{
+  "device": {
+    "active_time": 1755098875,
+    "biz_type": 0,
+    "category": "cs",
+    "create_time": 1755098875,
+    "icon": "smart/icon/bay1660725958050ZyQT/bbd8d32384df50bd54daf7c1fe30f83c.jpeg",
+    "id": "bf044860200618be03luoe",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "DEHUMIDIFIER 20L ",
+    "online": true,
+    "owner_id": "",
+    "product_id": "0fnxqkas6g1ngdrn",
+    "product_name": "DEHUMIDIFIER 20L ",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "dehumidify_set_value",
+        "value": 55
+      },
+      {
+        "code": "fan_speed_enum",
+        "value": "low"
+      },
+      {
+        "code": "humidity_indoor",
+        "value": 45
+      },
+      {
+        "code": "temp_indoor",
+        "value": 19
+      },
+      {
+        "code": "anion",
+        "value": false
+      },
+      {
+        "code": "child_lock",
+        "value": false
+      },
+      {
+        "code": "countdown_set",
+        "value": "cancel"
+      },
+      {
+        "code": "fault",
+        "value": 0
+      },
+      {
+        "code": "filter_reset",
+        "value": false
+      },
+      {
+        "code": "filter_life",
+        "value": 0
+      },
+      {
+        "code": "temp_unit_convert",
+        "value": "c"
+      },
+      {
+        "code": "runtime_total_reset",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1755098875,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "cs",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "dehumidify_set_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":30,\"max\":80,\"scale\":0,\"step\":5}"
+      },
+      {
+        "code": "fan_speed_enum",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\",\"high\"]}"
+      },
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_set",
+        "type": "Enum",
+        "values": "{\"range\":[\"cancel\",\"1h\",\"2h\",\"3h\"]}"
+      },
+      {
+        "code": "filter_reset",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "runtime_total_reset",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "dehumidify_set_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":30,\"max\":80,\"scale\":0,\"step\":5}"
+      },
+      {
+        "code": "fan_speed_enum",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\",\"high\"]}"
+      },
+      {
+        "code": "humidity_indoor",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":20,\"max\":90,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_indoor",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":5,\"max\":38,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "anion",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_set",
+        "type": "Enum",
+        "values": "{\"range\":[\"cancel\",\"1h\",\"2h\",\"3h\"]}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"FULL\",\"Cleaning\",\"E1\",\"CL\",\"CH\",\"LO\"]}"
+      },
+      {
+        "code": "filter_reset",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "filter_life",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "runtime_total_reset",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

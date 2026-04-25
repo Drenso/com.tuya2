@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1761583303,
+    "biz_type": 0,
+    "category": "kj",
+    "create_time": 1761583303,
+    "icon": "smart/icon/ay155203288163267RMp/fb31df8af9a62e11cbc12e0a66615921.jpg",
+    "id": "bf590464d2d5ce48a4rksp",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Vibrix Vortex20 Woonkamer",
+    "online": true,
+    "owner_id": "",
+    "product_id": "apb05rvdo1vc9sn6",
+    "product_name": "Vibrix Vortex20",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1761583303,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

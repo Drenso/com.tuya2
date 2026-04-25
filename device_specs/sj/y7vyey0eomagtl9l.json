@@ -1,0 +1,51 @@
+{
+  "device": {
+    "active_time": 1723908491,
+    "biz_type": 0,
+    "category": "sj",
+    "create_time": 1723908491,
+    "icon": "smart/icon/ay1537847617560vAgbw/08e96effb20485002fdd08c1ced2b77c.png",
+    "id": "bf54d22ef4b2d21747oand",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Flood sensor",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "y7vyey0eomagtl9l",
+    "product_name": "Flood sensor",
+    "status": [
+      {
+        "code": "watersensor_state",
+        "value": "normal"
+      },
+      {
+        "code": "battery_percentage",
+        "value": 88
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1723908491,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "sj",
+    "functions": [],
+    "status": [
+      {
+        "code": "watersensor_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"alarm\",\"normal\"]}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

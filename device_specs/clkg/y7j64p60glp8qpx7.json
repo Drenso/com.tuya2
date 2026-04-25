@@ -1,0 +1,160 @@
+{
+  "device": {
+    "active_time": 1699356016,
+    "biz_type": 0,
+    "category": "clkg",
+    "create_time": 1699356016,
+    "icon": "smart/icon/ay15327721968035jwx9/760933e38a9cc76598e319635f792844.jpg",
+    "id": "bfa88e5f89073d9803aiae",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Gordijnschakelaar",
+    "online": true,
+    "owner_id": "",
+    "product_id": "y7j64p60glp8qpx7",
+    "product_name": "Curtain switch",
+    "status": [
+      {
+        "code": "control",
+        "value": "stop"
+      },
+      {
+        "code": "percent_control",
+        "value": 0
+      },
+      {
+        "code": "cur_calibration",
+        "value": "start"
+      },
+      {
+        "code": "control_back_mode",
+        "value": "back"
+      },
+      {
+        "code": "tr_timecon",
+        "value": 22
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1699356016,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "clkg",
+    "functions": [
+      {
+        "code": "control",
+        "type": "Enum",
+        "values": {
+          "range": [
+            "open",
+            "stop",
+            "close"
+          ]
+        }
+      },
+      {
+        "code": "percent_control",
+        "type": "Integer",
+        "values": {
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "scale": 0,
+          "step": 10
+        }
+      },
+      {
+        "code": "cur_calibration",
+        "type": "Enum",
+        "values": {
+          "range": [
+            "start",
+            "end"
+          ]
+        }
+      },
+      {
+        "code": "control_back_mode",
+        "type": "Enum",
+        "values": {
+          "range": [
+            "forward",
+            "back"
+          ]
+        }
+      },
+      {
+        "code": "tr_timecon",
+        "type": "Integer",
+        "values": {
+          "unit": "s",
+          "min": 10,
+          "max": 120,
+          "scale": 0,
+          "step": 1
+        }
+      }
+    ],
+    "status": [
+      {
+        "code": "control",
+        "type": "Enum",
+        "values": {
+          "range": [
+            "open",
+            "stop",
+            "close"
+          ]
+        }
+      },
+      {
+        "code": "percent_control",
+        "type": "Integer",
+        "values": {
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "scale": 0,
+          "step": 10
+        }
+      },
+      {
+        "code": "cur_calibration",
+        "type": "Enum",
+        "values": {
+          "range": [
+            "start",
+            "end"
+          ]
+        }
+      },
+      {
+        "code": "control_back_mode",
+        "type": "Enum",
+        "values": {
+          "range": [
+            "forward",
+            "back"
+          ]
+        }
+      },
+      {
+        "code": "tr_timecon",
+        "type": "Integer",
+        "values": {
+          "unit": "s",
+          "min": 10,
+          "max": 120,
+          "scale": 0,
+          "step": 1
+        }
+      }
+    ]
+  },
+  "data_points": []
+}

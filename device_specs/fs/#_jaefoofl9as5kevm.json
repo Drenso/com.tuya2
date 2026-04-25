@@ -1,0 +1,57 @@
+{
+  "device": {
+    "active_time": 1774794158,
+    "biz_type": 0,
+    "category": "fs",
+    "create_time": 1774794158,
+    "icon": "smart/icon/ay1541396207188PFb5m/a0d244e9debd4e0f9a865980bacc2bbd.png",
+    "id": "bf19cdedf29c875da31ynw",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Cleverio AF-F100 ",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "jaefoofl9as5kevm",
+    "product_name": "Cleverio AF-F100 ",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1774794158,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "fs",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "Power",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    }
+  ]
+}

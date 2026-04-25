@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1773153569,
+    "biz_type": 0,
+    "category": "tdq",
+    "create_time": 1773153569,
+    "icon": "smart/icon/ay1573546958261faWcj/c14e3daf4103973aea19c8a28a59ec6d.png",
+    "id": "bf18e8bd8921dd71e3pcuu",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Smartlife 1",
+    "online": true,
+    "owner_id": "",
+    "product_id": "xeagimantb7d7apb",
+    "product_name": "T & H Sensor",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1773153569,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

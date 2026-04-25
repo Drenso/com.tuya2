@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1771525136,
+    "biz_type": 0,
+    "category": "zndsj",
+    "create_time": 1771525136,
+    "icon": "smart/icon/bay1598606323802kNLH/ce52dc801cd92ced2a627b5578882d95.png",
+    "id": "bf94d15c29f17e2e3badbs",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Motorized TV Solution",
+    "online": true,
+    "owner_id": "",
+    "product_id": "ejr6szbimwutiaqp",
+    "product_name": "Motorized TV Solution",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1771525136,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

@@ -1,0 +1,130 @@
+{
+  "device": {
+    "active_time": 1747761620,
+    "biz_type": 0,
+    "category": "qccdz",
+    "create_time": 1747761620,
+    "icon": "smart/icon/bay1638249083185DGu3/0c2bc7fc2700ec93735905a3c18a15b8.jpg",
+    "id": "bf8fef0a2873780a9e6gja",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "EV Charger",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "dsmsam7xpb3ht7rl",
+    "product_name": "EV Charger",
+    "status": [
+      {
+        "code": "forward_energy_total",
+        "value": 267451
+      },
+      {
+        "code": "work_state",
+        "value": "charger_charging"
+      },
+      {
+        "code": "charge_cur_set",
+        "value": 16
+      },
+      {
+        "code": "sigle_phase_power",
+        "value": 0
+      },
+      {
+        "code": "power_total",
+        "value": 0
+      },
+      {
+        "code": "work_mode",
+        "value": "charge_now"
+      },
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "temp_current",
+        "value": 9
+      },
+      {
+        "code": "charge_energy_once",
+        "value": 668
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1747761620,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "qccdz",
+    "functions": [
+      {
+        "code": "charge_cur_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"A\",\"min\":1,\"max\":255,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"charge_now\",\"charge_pct\",\"charge_energy\",\"charge_schedule\"]}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "forward_energy_total",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW·h\",\"min\":0,\"max\":99999999,\"scale\":2,\"step\":1}"
+      },
+      {
+        "code": "work_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"charger_free\",\"charger_insert\",\"charger_free_fault\",\"charger_wait\",\"charger_charging\",\"charger_pause\",\"charger_end\",\"charger_fault\"]}"
+      },
+      {
+        "code": "charge_cur_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"A\",\"min\":1,\"max\":255,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "sigle_phase_power",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW\",\"min\":0,\"max\":99999999,\"scale\":3,\"step\":1}"
+      },
+      {
+        "code": "power_total",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW\",\"min\":0,\"max\":99999999,\"scale\":3,\"step\":1}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"charge_now\",\"charge_pct\",\"charge_energy\",\"charge_schedule\"]}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-40,\"max\":200,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "charge_energy_once",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW·h\",\"min\":0,\"max\":999999,\"scale\":2,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

@@ -1,0 +1,51 @@
+{
+  "device": {
+    "active_time": 1741186357,
+    "biz_type": 0,
+    "category": "sj",
+    "create_time": 1741186357,
+    "icon": "smart/icon/ay1537847617560vAgbw/fe41a3b3b86d809807c3b0d0ae6a3480.png",
+    "id": "eb3391873e6fa5d2597yww",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Cinema Room Water Sensor",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "fiw6widv6xqjolsi",
+    "product_name": "Water leak sensor",
+    "status": [
+      {
+        "code": "watersensor_state",
+        "value": "normal"
+      },
+      {
+        "code": "battery_percentage",
+        "value": 27
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1741186357,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "sj",
+    "functions": [],
+    "status": [
+      {
+        "code": "watersensor_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"alarm\",\"normal\"]}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

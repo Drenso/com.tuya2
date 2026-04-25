@@ -1,0 +1,81 @@
+{
+  "device": {
+    "active_time": 1766783731,
+    "biz_type": 0,
+    "category": "kj",
+    "create_time": 1766783731,
+    "icon": "smart/icon/ay1533718828917HNmxD/a3e668b59876ecc867bd34f5bac69b04.png",
+    "id": "bfdd38b273e1754bcfi9hm",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Air-Filter",
+    "online": true,
+    "owner_id": "",
+    "product_id": "giwqfeiezesbkkbe",
+    "product_name": "",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "pm25",
+        "value": 4
+      },
+      {
+        "code": "filter",
+        "value": 99
+      },
+      {
+        "code": "lock",
+        "value": false
+      },
+      {
+        "code": "light",
+        "value": false
+      },
+      {
+        "code": "filter_reset",
+        "value": true
+      },
+      {
+        "code": "filter_days",
+        "value": 2999
+      },
+      {
+        "code": "total_time",
+        "value": 0
+      },
+      {
+        "code": "total_pm",
+        "value": 0
+      },
+      {
+        "code": "air_quality",
+        "value": "mild"
+      },
+      {
+        "code": "fault",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1766783731,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "kj",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}\"},{\"code\":\"lock\",\"type\":\"Boolean\",\"values\":\"{}\"},{\"code\":\"light\",\"type\":\"Boolean\",\"values\":\"{}\"},{\"code\":\"filter_reset\",\"type\":\"Boolean\",\"values\":\"{}\"}],\"status\":[{\"code\":\"switch\",\"type\":\"Boolean\",\"values\":\"{}\"},{\"code\":\"pm25\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}\"},{\"code\":\"filter\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}\"},{\"code\":\"lock\",\"type\":\"Boolean\",\"values\":\"{}\"},{\"code\":\"light\",\"type\":\"Boolean\",\"values\":\"{}\"},{\"code\":\"filter_reset\",\"type\":\"Boolean\",\"values\":\"{}\"},{\"code\":\"filter_days\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"h\",\"min\":0,\"max\":3000,\"scale\":0,\"step\":1}\"},{\"code\":\"total_time\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"min\",\"min\":0,\"max\":5256000,\"scale\":0,\"step\":1}\"},{\"code\":\"total_pm\",\"type\":\"Integer\",\"values\":\"{\"unit\":\"mg\",\"min\":0,\"max\":10000000,\"scale\":0,\"step\":1}\"},{\"code\":\"air_quality\",\"type\":\"Enum\",\"values\":\"{\"range\":[\"great\",\"mild\",\"good\",\"medium\",\"severe\"]}\"},{\"code\":\"fault\",\"type\":\"Bitmap\",\"values\":\"{\"label\":[\"e1\",\"e2\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

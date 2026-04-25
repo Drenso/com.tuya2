@@ -1,0 +1,145 @@
+{
+  "device": {
+    "active_time": 1740590577,
+    "biz_type": 0,
+    "category": "wk",
+    "create_time": 1740590577,
+    "icon": "smart/icon/15264583415nnlzwfs1qd2wqz6i937op3nmi_0.png",
+    "id": "bf6c71a9e9eece512fim6u",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Hobbykeller",
+    "online": true,
+    "owner_id": "",
+    "product_id": "IAYz2WK1th0cMLmL",
+    "product_name": "thermostat",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "temp_set",
+        "value": 42
+      },
+      {
+        "code": "upper_temp",
+        "value": 41
+      },
+      {
+        "code": "eco",
+        "value": false
+      },
+      {
+        "code": "child_lock",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1740590577,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "wk",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":10,\"max\":70,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "eco",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "upper_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":100,\"scale\":0,\"step\":5}"
+      }
+    ],
+    "status": [
+      {
+        "code": "eco",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":10,\"max\":70,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "upper_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":100,\"scale\":0,\"step\":5}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "ECO",
+      "custom_name": "",
+      "dp_id": 5,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "TempSet",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":10,\"max\":70,\"scale\":1,\"step\":5}"
+    },
+    {
+      "code": "Power",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "ChildLock",
+      "custom_name": "",
+      "dp_id": 6,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "TempCurrent",
+      "custom_name": "",
+      "dp_id": 3,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℃\",\"min\":0,\"max\":100,\"scale\":0,\"step\":5}"
+    }
+  ]
+}

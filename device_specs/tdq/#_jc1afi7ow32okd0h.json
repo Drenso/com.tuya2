@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1776939450,
+    "biz_type": 0,
+    "category": "tdq",
+    "create_time": 1776939450,
+    "icon": "smart/icon/ay1573546958261faWcj/bc094eaf43f3ea7ba12dfc9b92dbf397.png",
+    "id": "bfa7c3ca1800e031d2qtxd",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "T & H Sensor VV",
+    "online": true,
+    "owner_id": "",
+    "product_id": "jc1afi7ow32okd0h",
+    "product_name": "T & H Sensor with external probe",
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1776939450,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

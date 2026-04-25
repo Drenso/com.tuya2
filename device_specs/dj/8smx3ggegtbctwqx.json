@@ -1,0 +1,238 @@
+{
+  "device": {
+    "active_time": 1768563112,
+    "biz_type": 0,
+    "category": "dj",
+    "create_time": 1768563112,
+    "icon": "smart/icon/ay1531739836474naEnL/0e7fa98a29d6e3b51ed651f4bf8f9157.png",
+    "id": "bf26e2976d8a1e5614fqv2",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "00176643 & 00176644",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "8smx3ggegtbctwqx",
+    "product_name": "00176643 & 00176644",
+    "status": [
+      {
+        "code": "work_mode",
+        "value": "white"
+      },
+      {
+        "code": "scene_data_v2",
+        "value": "{\"scene_num\":1,\"scene_units\":[{\"bright\":200,\"h\":0,\"s\":0,\"temperature\":0,\"unit_change_mode\":\"static\",\"unit_gradient_duration\":13,\"unit_switch_duration\":14,\"v\":0}]}"
+      },
+      {
+        "code": "countdown_1",
+        "value": 0
+      },
+      {
+        "code": "rhythm_mode",
+        "value": "AAAAAAA="
+      },
+      {
+        "code": "sleep_mode",
+        "value": "AAA="
+      },
+      {
+        "code": "wakeup_mode",
+        "value": "AAA="
+      },
+      {
+        "code": "power_memory",
+        "value": "AAEAAAPoA+gD6APo"
+      },
+      {
+        "code": "do_not_disturb",
+        "value": false
+      },
+      {
+        "code": "random_timing",
+        "value": "AAw="
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1768563112,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "dj",
+    "functions": [
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "scene_data_v2",
+        "type": "Json",
+        "values": "{\"scene_num\":{\"min\":1,\"scale\":0,\"max\":8,\"step\":1},\"scene_units\": {\"unit_change_mode\":{\"range\":[\"static\",\"jump\",\"gradient\"]},\"unit_switch_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"unit_gradient_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"bright\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"temperature\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "control_data",
+        "type": "Json",
+        "values": "{\"change_mode\":{\"range\":[\"direct\",\"gradient\"]}, \"bright\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}, \"temperature\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}, \"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":255,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":255,\"step\":1}}"
+      },
+      {
+        "code": "rhythm_mode",
+        "type": "Raw",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "sleep_mode",
+        "type": "Raw",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "wakeup_mode",
+        "type": "Raw",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "power_memory",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "do_not_disturb",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "random_timing",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "scene_data_v2",
+        "type": "Json",
+        "values": "{\"scene_num\":{\"min\":1,\"scale\":0,\"max\":8,\"step\":1},\"scene_units\": {\"unit_change_mode\":{\"range\":[\"static\",\"jump\",\"gradient\"]},\"unit_switch_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"unit_gradient_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"bright\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"temperature\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "rhythm_mode",
+        "type": "Raw",
+        "values": "{\"maxlen\":\"255\"}"
+      },
+      {
+        "code": "sleep_mode",
+        "type": "Raw",
+        "values": "{\"maxlen\":\"255\"}"
+      },
+      {
+        "code": "wakeup_mode",
+        "type": "Raw",
+        "values": "{\"maxlen\":\"255\"}"
+      },
+      {
+        "code": "power_memory",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "do_not_disturb",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "random_timing",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "work_mode",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+    },
+    {
+      "code": "scene_data",
+      "custom_name": "",
+      "dp_id": 6,
+      "time": 0,
+      "type": "Json",
+      "value": "{\"scene_num\":{\"min\":1,\"scale\":0,\"max\":8,\"step\":1},\"scene_units\": {\"unit_change_mode\":{\"range\":[\"static\",\"jump\",\"gradient\"]},\"unit_switch_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"unit_gradient_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"bright\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"temperature\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}}"
+    },
+    {
+      "code": "countdown",
+      "custom_name": "",
+      "dp_id": 7,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "rhythm_mode",
+      "custom_name": "",
+      "dp_id": 30,
+      "time": 0,
+      "type": "Raw",
+      "value": "{\"maxlen\":\"255\"}"
+    },
+    {
+      "code": "sleep_mode",
+      "custom_name": "",
+      "dp_id": 31,
+      "time": 0,
+      "type": "Raw",
+      "value": "{\"maxlen\":\"255\"}"
+    },
+    {
+      "code": "wakeup_mode",
+      "custom_name": "",
+      "dp_id": 32,
+      "time": 0,
+      "type": "Raw",
+      "value": "{\"maxlen\":\"255\"}"
+    },
+    {
+      "code": "power_memory",
+      "custom_name": "",
+      "dp_id": 33,
+      "time": 0,
+      "type": "Raw",
+      "value": "{}"
+    },
+    {
+      "code": "do_not_disturb",
+      "custom_name": "",
+      "dp_id": 34,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "random_timing",
+      "custom_name": "",
+      "dp_id": 210,
+      "time": 0,
+      "type": "Raw",
+      "value": "{}"
+    }
+  ]
+}

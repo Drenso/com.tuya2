@@ -1,0 +1,316 @@
+{
+  "device": {
+    "active_time": 1752680034,
+    "biz_type": 0,
+    "category": "dghsxj",
+    "create_time": 1752680034,
+    "icon": "smart/icon/ay1541056239985fDGjj/bbdb6ac1dd2a665444fd6cacddd48094.jpg",
+    "id": "bfea144d30c7ee15e27rnp",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "FCJ - Zwembad",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "kqkjpqgjcs7ngriq",
+    "product_name": "LSC Smart Solar Outdoor PTZ Camera",
+    "status": [
+      {
+        "code": "basic_indicator",
+        "value": true
+      },
+      {
+        "code": "basic_flip",
+        "value": false
+      },
+      {
+        "code": "basic_osd",
+        "value": true
+      },
+      {
+        "code": "basic_private",
+        "value": false
+      },
+      {
+        "code": "sd_storge",
+        "value": "61022208|39346176|21676032"
+      },
+      {
+        "code": "sd_status",
+        "value": 1
+      },
+      {
+        "code": "sd_format",
+        "value": true
+      },
+      {
+        "code": "movement_detect_pic",
+        "value": "eyJidWNrZXQiOiJ0eS1ldS1zdG9yYWdlMzAtcGljIiwiZmlsZXMiOltbIi9mY2Y3ZDQtMjIwMDU1NzQ3LXliZ2RmNjc3YjYwZGQ5Yjg2YWU0L2RldGVjdC8xNzUzMTA5MzMzLmpwZWc/cGFyYW09a3BnVTlvdnAzd2hUQUE1aXQyOExpODg2ZzRla3BhVE5ENC94T3Q0dHh1MD0iLCIiXV0sInYiOiIzLjAifQ=="
+      },
+      {
+        "code": "ptz_stop",
+        "value": true
+      },
+      {
+        "code": "sd_format_state",
+        "value": 0
+      },
+      {
+        "code": "ptz_control",
+        "value": "7"
+      },
+      {
+        "code": "nightvision_mode",
+        "value": "ir_mode"
+      },
+      {
+        "code": "wireless_electricity",
+        "value": 100
+      },
+      {
+        "code": "wireless_powermode",
+        "value": "1"
+      },
+      {
+        "code": "wireless_lowpower",
+        "value": 10
+      },
+      {
+        "code": "wireless_awake",
+        "value": false
+      },
+      {
+        "code": "record_switch",
+        "value": true
+      },
+      {
+        "code": "record_mode",
+        "value": "1"
+      },
+      {
+        "code": "pir_switch",
+        "value": "1"
+      },
+      {
+        "code": "siren_switch",
+        "value": false
+      },
+      {
+        "code": "humanoid_filter",
+        "value": false
+      },
+      {
+        "code": "alarm_message",
+        "value": "eyJ2IjoiMy4wIiwiZmlsZXMiOlt7ImRhdGEiOiJjMzM5MDYzMWIyOTlmNWMzN2UwNDk0MjhjYmJiODA0MmY5NGM5Y2YyN2E3YjlkNDU1Nzk2MzBjNTUxN2E0Y2I0NTc5YTYxMDFjNzc3ZjU2ZTlhNzE0NDU1Mzg3MjBhY2U2YzIxZWU0ZjBiN2UwMmRmNGE1NmYyODRjOTVkZjY0ZGNjOTk1ZGQyODdlYzk2MmQ1ODMzZmE3YWYzNzI1YzhhNTk5ZTQzN2IzMzIxMThlYWE1YTBhNjQ0MDc2ZDJkZDkxNDg2NjdmNWFlZWU0NWFkYjRmMzZmMjQxOTNhYWNmMCIsImtleUlkIjoiZGVmYXVsdCIsIml2IjoiNzU0ODEwNWIwNTI2YmVjMjJjMmJjOThmYTlmMjNhMjYifV0sImNtZCI6ImlwY19odW1hbiIsInR5cGUiOiJpbWFnZSJ9"
+      },
+      {
+        "code": "initiative_message",
+        "value": "eyJ2IjoiNC4wIiwiZmlsZXMiOlt7ImRhdGEiOiIxZjdkZDQ0N2E0NzQ2MTU5NjhlYWZjZjA3MGQ3ZmQ1NjBkNjU5NmMzOTc0YzY4NWM3N2I3NTcyNTAzODUxYjQ0MDY3Njg4MTE3MWU2YjE3OWE4MjEwNmJlYmYwMmI4NWViYjI4ZjVlNDVmMzYxYzc0YjE5ZjM5YWZmMmY2MTBlOWJhMTJiMDM5ODI4Y2QxODY0YWYxMzFlNTVkMzZjYTA2YjRhMjQ0ODViOWM3MTJjMjhjZTUzOWE4OTI0YWFkMDM2NTQwZGNhOWI4ZjA4MzY0N2RiMjRjODUwNzZlNTI5MyIsImtleUlkIjoiZGVmYXVsdCIsIml2IjoiNTc1NjNlYTg2ZDhmNTdhZGUxZjI4NWRlM2MzNWQzODcifV0sImNtZCI6ImlwY19tb3Rpb24iLCJ0eXBlIjoiaW1hZ2UifQ=="
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1752680034,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "dghsxj",
+    "functions": [
+      {
+        "code": "basic_indicator",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "basic_flip",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "basic_osd",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "basic_private",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "sd_format",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "ptz_stop",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "ptz_control",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+      },
+      {
+        "code": "nightvision_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"ir_mode\",\"color_mode\"]}"
+      },
+      {
+        "code": "wireless_lowpower",
+        "type": "Integer",
+        "values": "{\"min\":10,\"max\":50,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "wireless_awake",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "record_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "record_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"1\",\"2\"]}"
+      },
+      {
+        "code": "pir_switch",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\",\"3\"]}"
+      },
+      {
+        "code": "siren_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "humanoid_filter",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "basic_indicator",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "basic_flip",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "basic_osd",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "basic_private",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "sd_storge",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "sd_status",
+        "type": "Integer",
+        "values": "{\"min\":1,\"max\":5,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "sd_format",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "movement_detect_pic",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "ptz_stop",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "sd_format_state",
+        "type": "Integer",
+        "values": "{\"min\":-20000,\"max\":200000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "ptz_control",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\"]}"
+      },
+      {
+        "code": "nightvision_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"ir_mode\",\"color_mode\"]}"
+      },
+      {
+        "code": "wireless_electricity",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "wireless_powermode",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\"]}"
+      },
+      {
+        "code": "wireless_lowpower",
+        "type": "Integer",
+        "values": "{\"min\":10,\"max\":50,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "wireless_awake",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "record_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "record_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"1\",\"2\"]}"
+      },
+      {
+        "code": "pir_switch",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\",\"3\"]}"
+      },
+      {
+        "code": "siren_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "humanoid_filter",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "alarm_message",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "initiative_message",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

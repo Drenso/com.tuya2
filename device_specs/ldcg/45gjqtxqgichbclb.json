@@ -1,0 +1,51 @@
+{
+  "device": {
+    "active_time": 1759951250,
+    "biz_type": 0,
+    "category": "ldcg",
+    "create_time": 1759951250,
+    "icon": "smart/icon/ay1576116878587LZIVo/271ed3fad8f8863648832b5dba746986.png",
+    "id": "bf587414106c3e30aciwmd",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Lichtsensor 1",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "45gjqtxqgichbclb",
+    "product_name": "亮度传感器",
+    "status": [
+      {
+        "code": "bright_value",
+        "value": 0
+      },
+      {
+        "code": "battery_percentage",
+        "value": 50
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1759951250,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "ldcg",
+    "functions": [],
+    "status": [
+      {
+        "code": "bright_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"lux\",\"min\":0,\"max\":10000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

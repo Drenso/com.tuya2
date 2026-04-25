@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1755430224,
+    "biz_type": 0,
+    "category": "rs",
+    "create_time": 1755430224,
+    "icon": "smart/icon/bay16800554807994Nun/44c72cfb56afd8266d0e311b354d4456.png",
+    "id": "bfc02b6afd9b34dbb3cmqo",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Jacuzzi",
+    "online": true,
+    "owner_id": "",
+    "product_id": "m7qtzuouc2cvnekt",
+    "product_name": "SPA PRODUCT WITH BUBBLE ",
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1755430224,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

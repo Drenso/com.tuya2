@@ -1,0 +1,31 @@
+{
+  "device": {
+    "active_time": 1766502574,
+    "biz_type": 0,
+    "category": "jsq",
+    "create_time": 1766502574,
+    "icon": "smart/icon/bay1584431705184P5CX/28f3af733c77933249cb02ab2c7425cc.png",
+    "id": "bf597d205c7a9b71cecnqs",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Stadler Form Noah Pro",
+    "online": true,
+    "owner_id": "",
+    "product_id": "9b04osuhopcmasq0",
+    "product_name": "Stadler Form Noah Pro",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1766502574,
+    "uuid": "",
+    "status": []
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

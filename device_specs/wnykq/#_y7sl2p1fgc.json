@@ -1,0 +1,51 @@
+{
+  "device": {
+    "active_time": 1644616970,
+    "biz_type": 0,
+    "category": "wnykq",
+    "create_time": 1644616970,
+    "icon": "smart/icon/ay1525749833414yotNt/6b9c8b165096c8b58bb73953a95b986e.png",
+    "id": "bfb152e6fcbd8f6904qmt2",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Ir intelligente",
+    "online": true,
+    "owner_id": "",
+    "product_id": "y7sl2p1fgcbuh6lu",
+    "product_name": "Smart IR",
+    "status": [
+      {
+        "code": "va_temperature",
+        "value": 225
+      },
+      {
+        "code": "va_humidity",
+        "value": 41
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1644616970,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "wnykq",
+    "functions": [],
+    "status": [
+      {
+        "code": "va_humidity",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "va_temperature",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-200,\"max\":800,\"scale\":1,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

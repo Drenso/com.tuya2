@@ -1,0 +1,254 @@
+{
+  "device": {
+    "active_time": 1752313886,
+    "biz_type": 0,
+    "category": "cz",
+    "create_time": 1752313886,
+    "icon": "smart/icon/ay1543545711987sBjE8/59f7caf3e563eb2b87d279eabc441e23.png",
+    "id": "bf45c4e1fc833c4950hcl4",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Wasmachine",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "wfo3nciuwuowjaqu",
+    "product_name": "Calex Power Plug",
+    "status": [
+      {
+        "code": "switch_1",
+        "value": true
+      },
+      {
+        "code": "countdown_1",
+        "value": 0
+      },
+      {
+        "code": "add_ele",
+        "value": 1
+      },
+      {
+        "code": "cur_current",
+        "value": 0
+      },
+      {
+        "code": "cur_power",
+        "value": 0
+      },
+      {
+        "code": "cur_voltage",
+        "value": 2304
+      },
+      {
+        "code": "voltage_coe",
+        "value": 553
+      },
+      {
+        "code": "electric_coe",
+        "value": 27513
+      },
+      {
+        "code": "power_coe",
+        "value": 14794
+      },
+      {
+        "code": "electricity_coe",
+        "value": 2810
+      },
+      {
+        "code": "fault",
+        "value": 0
+      },
+      {
+        "code": "relay_status",
+        "value": "power_on"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1752313886,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "cz",
+    "functions": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "relay_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"power_off\",\"power_on\",\"last\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "add_ele",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":50000,\"scale\":3,\"step\":100}"
+      },
+      {
+        "code": "cur_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"mA\",\"min\":0,\"max\":30000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "cur_power",
+        "type": "Integer",
+        "values": "{\"unit\":\"W\",\"min\":0,\"max\":80000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "cur_voltage",
+        "type": "Integer",
+        "values": "{\"unit\":\"V\",\"min\":0,\"max\":5000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "voltage_coe",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "electric_coe",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "power_coe",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "electricity_coe",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"ov_cr\",\"ov_vol\",\"ov_pwr\",\"ls_cr\",\"ls_vol\",\"ls_pow\"]}"
+      },
+      {
+        "code": "relay_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"power_off\",\"power_on\",\"last\"]}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch_1",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "countdown_1",
+      "custom_name": "",
+      "dp_id": 9,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "add_ele",
+      "custom_name": "",
+      "dp_id": 17,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":0,\"max\":50000,\"scale\":3,\"step\":100}"
+    },
+    {
+      "code": "cur_current",
+      "custom_name": "",
+      "dp_id": 18,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"mA\",\"min\":0,\"max\":30000,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "cur_power",
+      "custom_name": "",
+      "dp_id": 19,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"W\",\"min\":0,\"max\":80000,\"scale\":1,\"step\":1}"
+    },
+    {
+      "code": "cur_voltage",
+      "custom_name": "",
+      "dp_id": 20,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"V\",\"min\":0,\"max\":5000,\"scale\":1,\"step\":1}"
+    },
+    {
+      "code": "voltage_coe",
+      "custom_name": "",
+      "dp_id": 22,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "electric_coe",
+      "custom_name": "",
+      "dp_id": 23,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "power_coe",
+      "custom_name": "",
+      "dp_id": 24,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "electricity_coe",
+      "custom_name": "",
+      "dp_id": 25,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "fault",
+      "custom_name": "",
+      "dp_id": 26,
+      "time": 0,
+      "type": "Bitmap",
+      "value": "{\"label\":[\"ov_cr\",\"ov_vol\",\"ov_pwr\",\"ls_cr\",\"ls_vol\",\"ls_pow\"]}"
+    },
+    {
+      "code": "relay_status",
+      "custom_name": "",
+      "dp_id": 38,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"power_off\",\"power_on\",\"last\"]}"
+    }
+  ]
+}

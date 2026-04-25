@@ -1,0 +1,396 @@
+{
+  "device": {
+    "active_time": 1719305148,
+    "biz_type": 0,
+    "category": "sp",
+    "create_time": 1719305148,
+    "icon": "smart/icon/ay1539690257727HoKMt/2b88ffadfcdc2f885e8fb8781c626c75.png",
+    "id": "bfdbfdd95d1a61fc7dadyn",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Gate 7",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "emvreoc7jpscvggu",
+    "product_name": "Panel ",
+    "status": [
+      {
+        "code": "motion_sensitivity",
+        "value": "0"
+      },
+      {
+        "code": "basic_nightvision",
+        "value": "0"
+      },
+      {
+        "code": "sd_storge",
+        "value": "31154688|4288|31150400"
+      },
+      {
+        "code": "sd_status",
+        "value": 1
+      },
+      {
+        "code": "sd_format",
+        "value": false
+      },
+      {
+        "code": "movement_detect_pic",
+        "value": "$"
+      },
+      {
+        "code": "sd_format_state",
+        "value": -20000
+      },
+      {
+        "code": "motion_switch",
+        "value": false
+      },
+      {
+        "code": "doorbell_active",
+        "value": ""
+      },
+      {
+        "code": "record_switch1",
+        "value": false
+      },
+      {
+        "code": "record_switch",
+        "value": false
+      },
+      {
+        "code": "record_mode",
+        "value": "1"
+      },
+      {
+        "code": "doorbell_pic",
+        "value": ""
+      },
+      {
+        "code": "basic_device_volume",
+        "value": 100
+      },
+      {
+        "code": "motion_area_switch",
+        "value": false
+      },
+      {
+        "code": "motion_area",
+        "value": ""
+      },
+      {
+        "code": "humanoid_filter",
+        "value": false
+      },
+      {
+        "code": "alarm_message",
+        "value": "eyJ2IjoiMy4wIiwiZmlsZXMiOlt7ImRhdGEiOiJjYmE0MWRkNWZiMDVmZTRlYTI4Zjg0ZGU1MGYzNjg0NmY5NWZjNDM2OWI0NTM5NjAzMWY1ZDJmMWJkZGJiZTliOGYzODkwMTEyZTNjMmM2MzIyYjI4MTYzOGMwNDFkOTJhYjkyZTY2NGRiMmE0ZGRlYzY5MTE0NjY4MDAyNzcxMTgwNWI0YzBmYWJkYjM2NDg0Mzc1ODMxZTdiNjJiNDVmMzE3MjM2YmEzNGY4NGQ1YjRjNTg3NjNiNDlhMWIxOWYwMTkzN2Y1MWJiOTMyZTE1NjBhNzI5OGRjOTAwNGJhZCIsImtleUlkIjoiZGVmYXVsdCIsIml2IjoiYTdkMzcyNzhhYzY0ZjI4Yjc4MTJmZWYxMzQ4ZjE0ZWIifV0sImNtZCI6ImlwY19hbnRpYnJlYWsiLCJ0eXBlIjoiaW1hZ2UifQ=="
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1719305148,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "sp",
+    "functions": [
+      {
+        "code": "motion_sensitivity",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\"]}"
+      },
+      {
+        "code": "basic_nightvision",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\"]}"
+      },
+      {
+        "code": "sd_format",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "motion_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "record_switch1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "record_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "record_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"1\",\"2\"]}"
+      },
+      {
+        "code": "basic_device_volume",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":1,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "motion_area_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "motion_area",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "humanoid_filter",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "motion_sensitivity",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\"]}"
+      },
+      {
+        "code": "basic_nightvision",
+        "type": "Enum",
+        "values": "{\"range\":[\"0\",\"1\",\"2\"]}"
+      },
+      {
+        "code": "sd_storge",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "sd_status",
+        "type": "Integer",
+        "values": "{\"min\":1,\"max\":5,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "sd_format",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "movement_detect_pic",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "sd_format_state",
+        "type": "Integer",
+        "values": "{\"min\":-20000,\"max\":200000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "motion_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "doorbell_active",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "record_switch1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "record_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "record_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"1\",\"2\"]}"
+      },
+      {
+        "code": "doorbell_pic",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "basic_device_volume",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":1,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "motion_area_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "motion_area",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "humanoid_filter",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "alarm_message",
+        "type": "String",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "motion_sensitivity",
+      "custom_name": "",
+      "dp_id": 106,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"0\",\"1\",\"2\"]}"
+    },
+    {
+      "code": "basic_nightvision",
+      "custom_name": "",
+      "dp_id": 108,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"0\",\"1\",\"2\"]}"
+    },
+    {
+      "code": "sd_storge",
+      "custom_name": "",
+      "dp_id": 109,
+      "time": 0,
+      "type": "String",
+      "value": "{\"maxlen\":255}"
+    },
+    {
+      "code": "sd_status",
+      "custom_name": "",
+      "dp_id": 110,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":1,\"max\":5,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "sd_format",
+      "custom_name": "",
+      "dp_id": 111,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "movement_detect_pic",
+      "custom_name": "",
+      "dp_id": 115,
+      "time": 0,
+      "type": "Raw",
+      "value": "{}"
+    },
+    {
+      "code": "sd_format_state",
+      "custom_name": "",
+      "dp_id": 117,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":-20000,\"max\":200000,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "motion_switch",
+      "custom_name": "",
+      "dp_id": 134,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "doorbell_active",
+      "custom_name": "",
+      "dp_id": 136,
+      "time": 0,
+      "type": "String",
+      "value": "{\"maxlen\":255}"
+    },
+    {
+      "code": "record_switch1",
+      "custom_name": "",
+      "dp_id": 137,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "record_switch",
+      "custom_name": "",
+      "dp_id": 150,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "record_mode",
+      "custom_name": "",
+      "dp_id": 151,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"1\",\"2\"]}"
+    },
+    {
+      "code": "doorbell_pic",
+      "custom_name": "",
+      "dp_id": 154,
+      "time": 0,
+      "type": "Raw",
+      "value": "{}"
+    },
+    {
+      "code": "basic_device_volume",
+      "custom_name": "",
+      "dp_id": 160,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"\",\"min\":1,\"max\":100,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "motion_area_switch",
+      "custom_name": "",
+      "dp_id": 168,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "motion_area",
+      "custom_name": "",
+      "dp_id": 169,
+      "time": 0,
+      "type": "String",
+      "value": "{\"maxlen\":255}"
+    },
+    {
+      "code": "humanoid_filter",
+      "custom_name": "",
+      "dp_id": 170,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "alarm_message",
+      "custom_name": "",
+      "dp_id": 185,
+      "time": 0,
+      "type": "String",
+      "value": "{}"
+    }
+  ]
+}

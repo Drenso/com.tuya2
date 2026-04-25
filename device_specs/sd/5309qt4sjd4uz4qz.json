@@ -1,0 +1,427 @@
+{
+  "device": {
+    "active_time": 1765006826,
+    "biz_type": 0,
+    "category": "sd",
+    "create_time": 1765006826,
+    "icon": "smart/icon/bay1681355577681asVz/8bae04671dbca4662f41948fbb419841.png",
+    "id": "bf7924a3752660fdca2hgr",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Snuifje",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "5309qt4sjd4uz4qz",
+    "product_name": "ILIFE A30 Pro",
+    "status": [
+      {
+        "code": "power_go",
+        "value": false
+      },
+      {
+        "code": "pause",
+        "value": false
+      },
+      {
+        "code": "switch_charge",
+        "value": false
+      },
+      {
+        "code": "mode",
+        "value": "smart"
+      },
+      {
+        "code": "status",
+        "value": "base_sleeping"
+      },
+      {
+        "code": "clean_time",
+        "value": 0
+      },
+      {
+        "code": "clean_area",
+        "value": 0
+      },
+      {
+        "code": "electricity_left",
+        "value": 100
+      },
+      {
+        "code": "suction",
+        "value": "max"
+      },
+      {
+        "code": "cistern",
+        "value": "low"
+      },
+      {
+        "code": "seek",
+        "value": false
+      },
+      {
+        "code": "direction_control",
+        "value": "foward"
+      },
+      {
+        "code": "reset_map",
+        "value": false
+      },
+      {
+        "code": "path_data",
+        "value": ""
+      },
+      {
+        "code": "command_trans",
+        "value": "qgABFxc="
+      },
+      {
+        "code": "request",
+        "value": "get_map"
+      },
+      {
+        "code": "edge_brush",
+        "value": 873
+      },
+      {
+        "code": "reset_edge_brush",
+        "value": false
+      },
+      {
+        "code": "roll_brush",
+        "value": 1764
+      },
+      {
+        "code": "reset_roll_brush",
+        "value": false
+      },
+      {
+        "code": "filter",
+        "value": 864
+      },
+      {
+        "code": "reset_filter",
+        "value": false
+      },
+      {
+        "code": "switch_disturb",
+        "value": false
+      },
+      {
+        "code": "volume_set",
+        "value": 8
+      },
+      {
+        "code": "break_clean",
+        "value": true
+      },
+      {
+        "code": "fault",
+        "value": 0
+      },
+      {
+        "code": "total_clean_area",
+        "value": 328
+      },
+      {
+        "code": "total_clean_count",
+        "value": 20
+      },
+      {
+        "code": "total_clean_time",
+        "value": 370
+      },
+      {
+        "code": "voice_data",
+        "value": "qgAHNQAAAAAAADU="
+      },
+      {
+        "code": "dust_collection_num",
+        "value": 1
+      },
+      {
+        "code": "dust_collection_switch",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1765006826,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "sd",
+    "functions": [
+      {
+        "code": "power_go",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "pause",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_charge",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"smart\",\"chargego\",\"zone\",\"pose\",\"part\"]}"
+      },
+      {
+        "code": "suction",
+        "type": "Enum",
+        "values": "{\"range\":[\"strong\",\"normal\",\"gentle\"]}"
+      },
+      {
+        "code": "cistern",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\",\"middle\",\"high\"]}"
+      },
+      {
+        "code": "seek",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "direction_control",
+        "type": "Enum",
+        "values": "{\"range\":[\"backward\",\"turn_left\",\"turn_right\",\"stop\"]}"
+      },
+      {
+        "code": "reset_map",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "path_data",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "command_trans",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "request",
+        "type": "Enum",
+        "values": "{\"range\":[\"get_map\",\"get_path\",\"get_both\"]}"
+      },
+      {
+        "code": "reset_edge_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "reset_roll_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "reset_filter",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_disturb",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "volume_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":10,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "break_clean",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "voice_data",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "dust_collection_num",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":4,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "dust_collection_switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "power_go",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "pause",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_charge",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"smart\",\"chargego\",\"zone\",\"pose\",\"part\"]}"
+      },
+      {
+        "code": "status",
+        "type": "Enum",
+        "values": "{\"range\":[\"standby\",\"zone_clean\",\"part_clean\",\"cleaning\",\"paused\",\"goto_pos\",\"pos_arrived\",\"pos_unarrive\",\"goto_charge\",\"charging\",\"charge_done\",\"sleep\"]}"
+      },
+      {
+        "code": "clean_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":9999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "clean_area",
+        "type": "Integer",
+        "values": "{\"unit\":\"㎡\",\"min\":0,\"max\":9999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "electricity_left",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "suction",
+        "type": "Enum",
+        "values": "{\"range\":[\"strong\",\"normal\",\"gentle\",\"closed\"]}"
+      },
+      {
+        "code": "cistern",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\",\"middle\",\"high\",\"closed\"]}"
+      },
+      {
+        "code": "seek",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "direction_control",
+        "type": "Enum",
+        "values": "{\"range\":[\"backward\",\"turn_left\",\"turn_right\",\"stop\"]}"
+      },
+      {
+        "code": "reset_map",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "path_data",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "command_trans",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "request",
+        "type": "Enum",
+        "values": "{\"range\":[\"get_map\",\"get_path\",\"get_both\"]}"
+      },
+      {
+        "code": "edge_brush",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":900,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "reset_edge_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "roll_brush",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":1800,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "reset_roll_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "filter",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":900,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "reset_filter",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_disturb",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "volume_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":10,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "break_clean",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"bumper_fault\",\"obs_fault\",\"wall_fault\",\"cliff_fault\",\"land_fault\",\"nosewheel_fault\",\"l_brush_fault\",\"r_brush_fault\",\"brush_fault\",\"l_wheel_fault\",\"r_wheel_fault\",\"m_brush_fault\",\"fan_fault\",\"waterpump_fault\",\"air_pump_fault\",\"garbage_fault\",\"water_box_fault\",\"filter_fault\",\"battery_fault\",\"gyro_fault\",\"radar_fault\",\"camera_fault\",\"stuck_fault\",\"flow_fault\",\"other_fault\",\"low_light_fault\",\"water1_fault\",\"water2_fault\",\"explore_fault\"]}"
+      },
+      {
+        "code": "total_clean_area",
+        "type": "Integer",
+        "values": "{\"unit\":\"㎡\",\"min\":0,\"max\":2073741824,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "total_clean_count",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":2073741824,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "total_clean_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":2073741824,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "voice_data",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "dust_collection_num",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":4,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "dust_collection_switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

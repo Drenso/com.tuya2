@@ -1,0 +1,202 @@
+{
+  "device": {
+    "active_time": 1684151556,
+    "biz_type": 0,
+    "category": "kg",
+    "create_time": 1684151556,
+    "icon": "smart/icon/ay1508403450857Syedg/1693478c8364b6bff4ff723abfd19b1f.png",
+    "id": "bfb1138a1c9475b4a1sngi",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Sala Principal",
+    "online": true,
+    "owner_id": "",
+    "product_id": "azuyxdn5lgvpxpxz",
+    "product_name": "三路开关WB加强版",
+    "status": [
+      {
+        "code": "switch_1",
+        "value": true
+      },
+      {
+        "code": "switch_2",
+        "value": false
+      },
+      {
+        "code": "switch_3",
+        "value": false
+      },
+      {
+        "code": "countdown_1",
+        "value": 0
+      },
+      {
+        "code": "countdown_2",
+        "value": 0
+      },
+      {
+        "code": "countdown_3",
+        "value": 0
+      },
+      {
+        "code": "relay_status",
+        "value": "last"
+      },
+      {
+        "code": "light_mode",
+        "value": "relay"
+      },
+      {
+        "code": "switch_backlight",
+        "value": true
+      },
+      {
+        "code": "cycle_time",
+        "value": ""
+      },
+      {
+        "code": "random_time",
+        "value": ""
+      },
+      {
+        "code": "switch_inching",
+        "value": ""
+      }
+    ],
+    "sub": false,
+    "time_zone": "-05:00",
+    "uid": "",
+    "update_time": 1684151556,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "kg",
+    "functions": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_2",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_3",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_2",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_3",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "relay_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"power_off\",\"power_on\",\"last\"]}"
+      },
+      {
+        "code": "light_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"relay\",\"pos\",\"none\"]}"
+      },
+      {
+        "code": "switch_backlight",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "cycle_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "random_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "switch_inching",
+        "type": "String",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_2",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_3",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_2",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_3",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "relay_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"power_off\",\"power_on\",\"last\"]}"
+      },
+      {
+        "code": "light_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"relay\",\"pos\",\"none\"]}"
+      },
+      {
+        "code": "switch_backlight",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "cycle_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "random_time",
+        "type": "String",
+        "values": "{}"
+      },
+      {
+        "code": "switch_inching",
+        "type": "String",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

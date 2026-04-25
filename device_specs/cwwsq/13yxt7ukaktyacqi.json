@@ -1,0 +1,94 @@
+{
+  "device": {
+    "active_time": 1764066540,
+    "biz_type": 0,
+    "category": "cwwsq",
+    "create_time": 1764066540,
+    "icon": "smart/icon/bay16900246722677Dqk/081cc51f90e1f628525fd92ba2c4464b.png",
+    "id": "bf3d9ea7e871a1f827adyc",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Sucha karma",
+    "online": true,
+    "owner_id": "",
+    "product_id": "13yxt7ukaktyacqi",
+    "product_name": "DR喂食器",
+    "status": [
+      {
+        "code": "meal_plan",
+        "value": "AA=="
+      },
+      {
+        "code": "manual_feed",
+        "value": 1
+      },
+      {
+        "code": "feed_state",
+        "value": "standby"
+      },
+      {
+        "code": "feed_report",
+        "value": 1
+      },
+      {
+        "code": "factory_reset",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01: 00",
+    "uid": "",
+    "update_time": 1764066540,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "cwwsq",
+    "functions": [
+      {
+        "code": "meal_plan",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "manual_feed",
+        "type": "Integer",
+        "values": "{\"unit\": \"\",\"min\": 1,\"max\": 40,\"scale\": 0,\"step\": 1}"
+      },
+      {
+        "code": "factory_reset",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "meal_plan",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "manual_feed",
+        "type": "Integer",
+        "values": "{\"unit\": \"\",\"min\": 1,\"max\": 40,\"scale\": 0,\"step\": 1}"
+      },
+      {
+        "code": "feed_state",
+        "type": "Enum",
+        "values": "{\"range\": [\"standby\",\"feeding\",\"done\"]}"
+      },
+      {
+        "code": "feed_report",
+        "type": "Integer",
+        "values": "{\"unit\": \"\",\"min\": 0,\"max\": 40,\"scale\": 0,\"step\": 1}"
+      },
+      {
+        "code": "factory_reset",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

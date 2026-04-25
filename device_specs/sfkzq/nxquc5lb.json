@@ -1,0 +1,198 @@
+{
+  "device": {
+    "active_time": 1755233495,
+    "biz_type": 18,
+    "category": "sfkzq",
+    "create_time": 1755233495,
+    "icon": "smart/icon/ay1501578980436KOuNc/f922fa59436bd4ac23527b9a062b4365.png",
+    "id": "bf1cf79fdb3ca172ddcamu",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "model": "SOP10",
+    "name": "Zwembad bijvullen ",
+    "node_id": "639d51be9ba586cc",
+    "online": true,
+    "owner_id": "",
+    "product_id": "nxquc5lb",
+    "product_name": "Smart Water Timer",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "battery_percentage",
+        "value": 83
+      },
+      {
+        "code": "time_use",
+        "value": 27626
+      },
+      {
+        "code": "weather_delay",
+        "value": "cancel"
+      },
+      {
+        "code": "countdown",
+        "value": 0
+      },
+      {
+        "code": "work_state",
+        "value": "idle"
+      },
+      {
+        "code": "smart_weather",
+        "value": "sunny"
+      },
+      {
+        "code": "use_time_one",
+        "value": 4
+      }
+    ],
+    "sub": true,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1755233495,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "sfkzq",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "time_use",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":2592000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "weather_delay",
+        "type": "Enum",
+        "values": "{\"range\":[\"cancel\",\"24h\",\"48h\",\"72h\"]}"
+      },
+      {
+        "code": "countdown",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "smart_weather",
+        "type": "Enum",
+        "values": "{\"range\":[\"sunny\",\"cloudy\",\"rainy\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "time_use",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":2592000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "weather_delay",
+        "type": "Enum",
+        "values": "{\"range\":[\"cancel\",\"24h\",\"48h\",\"72h\"]}"
+      },
+      {
+        "code": "countdown",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "work_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\",\"manual\",\"idle\"]}"
+      },
+      {
+        "code": "smart_weather",
+        "type": "Enum",
+        "values": "{\"range\":[\"sunny\",\"cloudy\",\"rainy\"]}"
+      },
+      {
+        "code": "use_time_one",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "battery_percentage",
+      "custom_name": "",
+      "dp_id": 7,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "time_use",
+      "custom_name": "",
+      "dp_id": 9,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"s\",\"min\":0,\"max\":2592000,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "weather_delay",
+      "custom_name": "",
+      "dp_id": 10,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"cancel\",\"24h\",\"48h\",\"72h\"]}"
+    },
+    {
+      "code": "countdown",
+      "custom_name": "",
+      "dp_id": 11,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "work_state",
+      "custom_name": "",
+      "dp_id": 12,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"auto\",\"manual\",\"idle\"]}"
+    },
+    {
+      "code": "smart_weather",
+      "custom_name": "",
+      "dp_id": 13,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"sunny\",\"cloudy\",\"rainy\"]}"
+    },
+    {
+      "code": "use_time_one",
+      "custom_name": "",
+      "dp_id": 15,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "device": {
+    "active_time": 1735480430,
+    "biz_type": 0,
+    "category": "wk",
+    "create_time": 1735480430,
+    "icon": "smart/icon/ay1539244260287RY0l6/8428bab70066b247951df5cb891eb995.png",
+    "id": "bfe6461a8089a3a3eaq2lt",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "model": "TH-10R",
+    "name": "atrium-komp",
+    "node_id": "847127fffea8444f",
+    "online": true,
+    "owner_id": "",
+    "product_id": "0hg58wyk",
+    "product_name": "",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "window_check",
+        "value": true
+      },
+      {
+        "code": "frost",
+        "value": true
+      },
+      {
+        "code": "temp_set",
+        "value": 185
+      },
+      {
+        "code": "temp_current",
+        "value": 230
+      },
+      {
+        "code": "temp_correction",
+        "value": 10
+      },
+      {
+        "code": "child_lock",
+        "value": false
+      },
+      {
+        "code": "fault",
+        "value": 0
+      }
+    ],
+    "sub": true,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1735480430,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "wk",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "window_check",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "frost",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":350,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_correction",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-80,\"max\":80,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "window_check",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "frost",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":350,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":500,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_correction",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-80,\"max\":80,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"e1\",\"e2\",\"e3\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

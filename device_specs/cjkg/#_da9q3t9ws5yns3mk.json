@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1761330330,
+    "biz_type": 0,
+    "category": "cjkg",
+    "create_time": 1761330330,
+    "icon": "smart/icon/bay1623902286577l4WK/8be7bb29a38dec4f58386a9ef08d1e2f.png",
+    "id": "bfaa4ae1188be97081vzvp",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "GT Controller",
+    "online": true,
+    "owner_id": "",
+    "product_id": "da9q3t9ws5yns3mk",
+    "product_name": "GT Controller",
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1761330330,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

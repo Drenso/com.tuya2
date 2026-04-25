@@ -1,0 +1,155 @@
+{
+  "device": {
+    "active_time": 1763855609,
+    "biz_type": 18,
+    "category": "dd",
+    "create_time": 1763855609,
+    "icon": "smart/icon/ay1572836370796htGWH/be02c58410372f64362ecb4b1b4cb6ca.png",
+    "id": "eb90cd7aadd2eac56aognz",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Raile Light",
+    "online": false,
+    "owner_id": "<redacted>",
+    "product_id": "v4ljs1o4niico1sd",
+    "product_name": "Raile Light",
+    "status": [
+      {
+        "code": "switch_led",
+        "value": true
+      },
+      {
+        "code": "work_mode",
+        "value": "white"
+      },
+      {
+        "code": "bright_value",
+        "value": 1000
+      },
+      {
+        "code": "colour_data",
+        "value": "{\"h\":60,\"s\":400,\"v\":391}"
+      },
+      {
+        "code": "countdown",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "-06:00",
+    "uid": "<redacted>",
+    "update_time": 1763855609,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "dd",
+    "functions": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "bright_value",
+        "type": "Integer",
+        "values": "{\"min\":10,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "colour_data",
+        "type": "Json",
+        "values": "{\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}"
+      },
+      {
+        "code": "countdown",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "music_data",
+        "type": "Json",
+        "values": "{\"change_mode\":{\"range\":[\"direct\",\"gradient\"]}, \"bright\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}, \"temperature\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}, \"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":255,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":255,\"step\":1}}"
+      },
+      {
+        "code": "control_data",
+        "type": "Json",
+        "values": "{\"change_mode\":{\"range\":[\"direct\",\"gradient\"]}, \"bright\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}, \"temperature\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}, \"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":255,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":255,\"step\":1}}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "bright_value",
+        "type": "Integer",
+        "values": "{\"min\":10,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "colour_data",
+        "type": "Json",
+        "values": "{\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}"
+      },
+      {
+        "code": "countdown",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch_led",
+      "custom_name": "",
+      "dp_id": 20,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "work_mode",
+      "custom_name": "",
+      "dp_id": 21,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+    },
+    {
+      "code": "bright_value",
+      "custom_name": "",
+      "dp_id": 22,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":10,\"max\":1000,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "colour_data",
+      "custom_name": "",
+      "dp_id": 24,
+      "time": 0,
+      "type": "Json",
+      "value": "{\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}"
+    },
+    {
+      "code": "countdown",
+      "custom_name": "",
+      "dp_id": 26,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

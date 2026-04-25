@@ -1,0 +1,53 @@
+{
+  "device": {
+    "active_time": 1769175385,
+    "biz_type": 0,
+    "category": "sj",
+    "create_time": 1769175385,
+    "icon": "smart/icon/15345116513lvofckvboq_0.png",
+    "id": "bf2b9359c5e2c419ad3bif",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "model": "",
+    "name": "WATER SENSOR 2",
+    "node_id": "a4c138d7e08db6ca",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "rzeSU2h9uoklxEwq",
+    "product_name": "WATER SENSOR",
+    "status": [
+      {
+        "code": "watersensor_state",
+        "value": "2"
+      },
+      {
+        "code": "battery_percentage",
+        "value": 100
+      }
+    ],
+    "sub": true,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1769175385,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "sj",
+    "functions": [],
+    "status": [
+      {
+        "code": "watersensor_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"1\",\"2\"]}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

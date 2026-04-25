@@ -1,0 +1,31 @@
+{
+  "device": {
+    "active_time": 1773778349,
+    "biz_type": 18,
+    "category": "jsq",
+    "create_time": 1773778349,
+    "icon": "smart/icon/bay1588748519485ONZw/246c77aa2af4b3b0a26a2daf8551a0d4.png",
+    "id": "bff8eb976e742b6fa1wwyq",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Wilfa Haze Humidifier",
+    "online": true,
+    "owner_id": "",
+    "product_id": "7naqdm8whbezn28v",
+    "product_name": "",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1773778349,
+    "uuid": "",
+    "status": []
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

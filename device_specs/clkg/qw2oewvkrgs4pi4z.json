@@ -1,0 +1,104 @@
+{
+  "device": {
+    "active_time": 1742747837,
+    "biz_type": 0,
+    "category": "clkg",
+    "create_time": 1742747837,
+    "icon": "smart/icon/bay1585121120954aiB1/1652249464e3547d55dab.png",
+    "id": "bf067f6828291309c9s77x",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "ZöldFürdőA",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "qw2oewvkrgs4pi4z",
+    "product_name": "Kanlux S SWITCH SHUTTER",
+    "status": [
+      {
+        "code": "control",
+        "value": "open"
+      },
+      {
+        "code": "percent_control",
+        "value": 100
+      },
+      {
+        "code": "cur_calibration",
+        "value": "start"
+      },
+      {
+        "code": "control_back_mode",
+        "value": "forward"
+      },
+      {
+        "code": "tr_timecon",
+        "value": 30
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1742747837,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "clkg",
+    "functions": [
+      {
+        "code": "control",
+        "type": "Enum",
+        "values": "{\"range\":[\"open\",\"stop\",\"close\"]}"
+      },
+      {
+        "code": "percent_control",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":10}"
+      },
+      {
+        "code": "cur_calibration",
+        "type": "Enum",
+        "values": "{\"range\":[\"start\",\"end\"]}"
+      },
+      {
+        "code": "control_back_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"back\"]}"
+      },
+      {
+        "code": "tr_timecon",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":10,\"max\":120,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "control",
+        "type": "Enum",
+        "values": "{\"range\":[\"open\",\"stop\",\"close\"]}"
+      },
+      {
+        "code": "percent_control",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":10}"
+      },
+      {
+        "code": "cur_calibration",
+        "type": "Enum",
+        "values": "{\"range\":[\"start\",\"end\"]}"
+      },
+      {
+        "code": "control_back_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"back\"]}"
+      },
+      {
+        "code": "tr_timecon",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":10,\"max\":120,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

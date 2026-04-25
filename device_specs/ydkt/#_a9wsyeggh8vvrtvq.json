@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1751992868,
+    "biz_type": 0,
+    "category": "ydkt",
+    "create_time": 1751992868,
+    "icon": "smart/icon/bay1740473801605z2cN/acf72f5d41e3588053ae878f99c9e980.png",
+    "id": "bf4fea2cea515b5472gpwi",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Evolar Mobiele Airco (EVO-14000CHW)",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "a9wsyeggh8vvrtvq",
+    "product_name": "EVO-14000CHW",
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1751992868,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

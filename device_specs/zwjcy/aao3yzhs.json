@@ -1,86 +1,86 @@
 {
-	"device": {
-		"active_time": 1775806171,
-		"biz_type": 0,
-		"category": "zwjcy",
-		"create_time": 1775806171,
-		"icon": "smart/icon/ay1501578980436KOuNc/79867f2e2b8dcc592417e84ca766d851.png",
-		"id": "bf1eb06124a03cb3531ty5",
-		"ip": "<redacted>",
-		"lat": "<redacted>",
-		"local_key": "<redacted>",
-		"lon": "<redacted>",
-		"model": "SGS01Z",
-		"name": "Smart Soil 1",
-		"node_id": "a4c138242191c679",
-		"online": true,
-		"owner_id": "<redacted>",
-		"product_id": "aao3yzhs",
-		"product_name": "Smart Soil Tester",
-		"status": [
-			{
-				"code": "humidity",
-				"value": 0
-			},
-			{
-				"code": "temp_current",
-				"value": 259
-			},
-			{
-				"code": "temp_unit_convert",
-				"value": "c"
-			},
-			{
-				"code": "battery_state",
-				"value": "middle"
-			},
-			{
-				"code": "battery_percentage",
-				"value": 67
-			}
-		],
-		"sub": true,
-		"time_zone": "+02:00",
-		"uid": "<redacted>",
-		"update_time": 1775806171,
-		"uuid": "<redacted>"
-	},
-	"specifications": {
-		"category": "zwjcy",
-		"functions": [
-			{
-				"code": "temp_unit_convert",
-				"type": "Enum",
-				"values": "{\"range\":[\"c\",\"f\"]}"
-			}
-		],
-		"status": [
-			{
-				"code": "humidity",
-				"type": "Integer",
-				"values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
-			},
-			{
-				"code": "temp_current",
-				"type": "Integer",
-				"values": "{\"unit\":\"℃\",\"min\":-200,\"max\":1400,\"scale\":1,\"step\":1}"
-			},
-			{
-				"code": "temp_unit_convert",
-				"type": "Enum",
-				"values": "{\"range\":[\"c\",\"f\"]}"
-			},
-			{
-				"code": "battery_state",
-				"type": "Enum",
-				"values": "{\"range\":[\"low\",\"middle\",\"high\"]}"
-			},
-			{
-				"code": "battery_percentage",
-				"type": "Integer",
-				"values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
-			}
-		]
-	},
-	"data_points": []
+  "device": {
+    "active_time": 1775806171,
+    "biz_type": 0,
+    "category": "zwjcy",
+    "create_time": 1775806171,
+    "icon": "smart/icon/ay1501578980436KOuNc/79867f2e2b8dcc592417e84ca766d851.png",
+    "id": "bf1eb06124a03cb3531ty5",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "model": "SGS01Z",
+    "name": "Smart Soil 1",
+    "node_id": "a4c138242191c679",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "aao3yzhs",
+    "product_name": "Smart Soil Tester",
+    "status": [
+      {
+        "code": "humidity",
+        "value": 0
+      },
+      {
+        "code": "temp_current",
+        "value": 259
+      },
+      {
+        "code": "temp_unit_convert",
+        "value": "c"
+      },
+      {
+        "code": "battery_state",
+        "value": "middle"
+      },
+      {
+        "code": "battery_percentage",
+        "value": 67
+      }
+    ],
+    "sub": true,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1775806171,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "zwjcy",
+    "functions": [
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "humidity",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-200,\"max\":1400,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "battery_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\",\"middle\",\"high\"]}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
 }

@@ -50,11 +50,7 @@
         "code": "control",
         "type": "Enum",
         "values": {
-          "range": [
-            "open",
-            "stop",
-            "close"
-          ]
+          "range": ["open", "stop", "close"]
         }
       },
       {
@@ -72,20 +68,14 @@
         "code": "cur_calibration",
         "type": "Enum",
         "values": {
-          "range": [
-            "start",
-            "end"
-          ]
+          "range": ["start", "end"]
         }
       },
       {
         "code": "control_back_mode",
         "type": "Enum",
         "values": {
-          "range": [
-            "forward",
-            "back"
-          ]
+          "range": ["forward", "back"]
         }
       },
       {
@@ -105,11 +95,7 @@
         "code": "control",
         "type": "Enum",
         "values": {
-          "range": [
-            "open",
-            "stop",
-            "close"
-          ]
+          "range": ["open", "stop", "close"]
         }
       },
       {
@@ -127,20 +113,14 @@
         "code": "cur_calibration",
         "type": "Enum",
         "values": {
-          "range": [
-            "start",
-            "end"
-          ]
+          "range": ["start", "end"]
         }
       },
       {
         "code": "control_back_mode",
         "type": "Enum",
         "values": {
-          "range": [
-            "forward",
-            "back"
-          ]
+          "range": ["forward", "back"]
         }
       },
       {

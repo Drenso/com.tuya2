@@ -16,3 +16,4 @@ env.json.dev
 env.json.prod
 README.MD
 docs
+device_specs

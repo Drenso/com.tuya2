@@ -1,0 +1,255 @@
+{
+  "device": {
+    "active_time": 1721494536,
+    "biz_type": 0,
+    "category": "sd",
+    "create_time": 1721494536,
+    "icon": "smart/icon/bay1629691503948lHE0/1706259037e6e5a6764cd.png",
+    "id": "bf04ff87cb90bee918zp4x",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Aspirateur",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "3afemazuejknjbcx",
+    "product_name": "Evol 3",
+    "status": [
+      {
+        "code": "power_go",
+        "value": false
+      },
+      {
+        "code": "mode",
+        "value": "standby"
+      },
+      {
+        "code": "direction_control",
+        "value": "forward"
+      },
+      {
+        "code": "status",
+        "value": "charge_done"
+      },
+      {
+        "code": "electricity_left",
+        "value": 100
+      },
+      {
+        "code": "edge_brush",
+        "value": 61
+      },
+      {
+        "code": "roll_brush",
+        "value": 81
+      },
+      {
+        "code": "filter",
+        "value": 61
+      },
+      {
+        "code": "reset_edge_brush",
+        "value": false
+      },
+      {
+        "code": "reset_roll_brush",
+        "value": false
+      },
+      {
+        "code": "reset_filter",
+        "value": false
+      },
+      {
+        "code": "seek",
+        "value": false
+      },
+      {
+        "code": "suction",
+        "value": "strong"
+      },
+      {
+        "code": "clean_record",
+        "value": "02601614329"
+      },
+      {
+        "code": "clean_area",
+        "value": 0
+      },
+      {
+        "code": "clean_time",
+        "value": 0
+      },
+      {
+        "code": "fault",
+        "value": 0
+      },
+      {
+        "code": "cistern",
+        "value": "middle"
+      },
+      {
+        "code": "language",
+        "value": "french"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1721494536,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "sd",
+    "functions": [
+      {
+        "code": "power_go",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"standby\",\"smart\",\"wall_follow\",\"spiral\",\"chargego\",\"random\"]}"
+      },
+      {
+        "code": "direction_control",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"backward\",\"turn_left\",\"turn_right\",\"stop\"]}"
+      },
+      {
+        "code": "reset_edge_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "reset_roll_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "reset_filter",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "seek",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "suction",
+        "type": "Enum",
+        "values": "{\"range\":[\"gentle\",\"normal\",\"strong\"]}"
+      },
+      {
+        "code": "cistern",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\",\"middle\",\"high\"]}"
+      },
+      {
+        "code": "language",
+        "type": "Enum",
+        "values": "{\"range\":[\"english\",\"german\",\"french\",\"italian\",\"spanish\",\"japanese\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "power_go",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"standby\",\"smart\",\"wall_follow\",\"spiral\",\"chargego\",\"random\"]}"
+      },
+      {
+        "code": "direction_control",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"backward\",\"turn_left\",\"turn_right\",\"stop\"]}"
+      },
+      {
+        "code": "status",
+        "type": "Enum",
+        "values": "{\"range\":[\"standby\",\"cleaning\",\"goto_charge\",\"charging\",\"charge_done\",\"smart_clean\",\"wall_clean\",\"spot_clean\",\"sleep\"]}"
+      },
+      {
+        "code": "electricity_left",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "edge_brush",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "roll_brush",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "filter",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "reset_edge_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "reset_roll_brush",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "reset_filter",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "seek",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "suction",
+        "type": "Enum",
+        "values": "{\"range\":[\"gentle\",\"normal\",\"strong\"]}"
+      },
+      {
+        "code": "clean_record",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "clean_area",
+        "type": "Integer",
+        "values": "{\"unit\":\"㎡\",\"min\":0,\"max\":9999,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "clean_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":9999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"edge_sweep\",\"middle_sweep\",\"left_wheel\",\"right_wheel\",\"garbage_box\",\"land_check\",\"collision\",\"give_up\",\"low_power\",\"fan\",\"dwheel\",\"uwheel\"]}"
+      },
+      {
+        "code": "cistern",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\",\"middle\",\"high\"]}"
+      },
+      {
+        "code": "language",
+        "type": "Enum",
+        "values": "{\"range\":[\"english\",\"german\",\"french\",\"italian\",\"spanish\",\"japanese\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

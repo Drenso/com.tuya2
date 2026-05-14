@@ -1,0 +1,248 @@
+{
+  "device": {
+    "active_time": 1775920238,
+    "biz_type": 0,
+    "category": "wkcz",
+    "create_time": 1775920238,
+    "icon": "smart/icon/ay1547209623516pqlXf/0a772e3b6c6842ecd6458871e5571e26.png",
+    "id": "bf47e757934d4c902efooi",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Socket Thermostat",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "msclnsfe0q3yd39q",
+    "product_name": "Socket Thermostat",
+    "status": [
+      {
+        "code": "switch_all",
+        "value": true
+      },
+      {
+        "code": "switch_1",
+        "value": false
+      },
+      {
+        "code": "temp_unit_convert",
+        "value": "c"
+      },
+      {
+        "code": "temp_current",
+        "value": 194
+      },
+      {
+        "code": "upper_temp",
+        "value": 1100
+      },
+      {
+        "code": "upper_temp_switch",
+        "value": true
+      },
+      {
+        "code": "upper_alarm_temp",
+        "value": 400
+      },
+      {
+        "code": "lower_temp",
+        "value": -300
+      },
+      {
+        "code": "lower_temp_switch",
+        "value": true
+      },
+      {
+        "code": "lower_alarm_temp",
+        "value": 150
+      },
+      {
+        "code": "cold_delay_switch",
+        "value": false
+      },
+      {
+        "code": "cold_delay",
+        "value": 1
+      },
+      {
+        "code": "countdown_1",
+        "value": 0
+      },
+      {
+        "code": "temp_set",
+        "value": 185
+      },
+      {
+        "code": "temp_correction",
+        "value": 0
+      },
+      {
+        "code": "fault",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1775920238,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "wkcz",
+    "functions": [
+      {
+        "code": "switch_all",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "upper_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-500,\"max\":3000,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "upper_temp_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "upper_alarm_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-500,\"max\":3000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "lower_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-500,\"max\":3000,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "lower_temp_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "lower_alarm_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-500,\"max\":3000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "cold_delay_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "cold_delay",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":10,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-500,\"max\":3000,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_correction",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-150,\"max\":150,\"scale\":1,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_all",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "switch_1",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-300,\"max\":9000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "upper_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-500,\"max\":3000,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "upper_temp_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "upper_alarm_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-500,\"max\":3000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "lower_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-500,\"max\":3000,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "lower_temp_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "lower_alarm_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-500,\"max\":3000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "cold_delay_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "cold_delay",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":10,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-500,\"max\":3000,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_correction",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":-150,\"max\":150,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"fault_er0\",\"fault_ah\",\"fault_al\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

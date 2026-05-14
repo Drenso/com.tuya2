@@ -1,0 +1,118 @@
+{
+  "device": {
+    "active_time": 1609604258,
+    "biz_type": 0,
+    "category": "dj",
+    "create_time": 1609604258,
+    "icon": "smart/icon/ay149682747096840kwW/56df5e11d53922816403db387309e9fc.png",
+    "id": "bf521235e2d9b76f92aecz",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Sterren Projector",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "cw7kinnselbesfp9",
+    "product_name": "Smart-Star-Projector ",
+    "status": [
+      {
+        "code": "switch_led",
+        "value": true
+      },
+      {
+        "code": "work_mode",
+        "value": "colour"
+      },
+      {
+        "code": "bright_value_v2",
+        "value": 1000
+      },
+      {
+        "code": "colour_data_v2",
+        "value": "{\"h\":300,\"s\":1000,\"v\":1000}"
+      },
+      {
+        "code": "scene_data_v2",
+        "value": "{\"scene_num\":8,\"scene_units\":[{\"bright\":0,\"h\":0,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000},{\"bright\":0,\"h\":120,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000},{\"bright\":0,\"h\":240,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000},{\"bright\":0,\"h\":61,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000},{\"bright\":0,\"h\":174,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000},{\"bright\":0,\"h\":275,\"s\":1000,\"temperature\":0,\"unit_change_mode\":\"gradient\",\"unit_gradient_duration\":70,\"unit_switch_duration\":70,\"v\":1000}]}"
+      },
+      {
+        "code": "countdown_1",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1609604258,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "dj",
+    "functions": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "bright_value_v2",
+        "type": "Integer",
+        "values": "{\"min\":10,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "colour_data_v2",
+        "type": "Json",
+        "values": "{\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}"
+      },
+      {
+        "code": "scene_data_v2",
+        "type": "Json",
+        "values": "{\"scene_num\":{\"min\":1,\"scale\":0,\"max\":8,\"step\":1},\"scene_units\": {\"unit_change_mode\":{\"range\":[\"static\",\"jump\",\"gradient\"]},\"unit_switch_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"unit_gradient_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"bright\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"temperature\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "bright_value_v2",
+        "type": "Integer",
+        "values": "{\"min\":10,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "colour_data_v2",
+        "type": "Json",
+        "values": "{\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}"
+      },
+      {
+        "code": "scene_data_v2",
+        "type": "Json",
+        "values": "{\"scene_num\":{\"min\":1,\"scale\":0,\"max\":8,\"step\":1},\"scene_units\": {\"unit_change_mode\":{\"range\":[\"static\",\"jump\",\"gradient\"]},\"unit_switch_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"unit_gradient_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"bright\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"temperature\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

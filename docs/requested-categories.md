@@ -69,6 +69,9 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
   - fskg - Fan Switch
     - TreatLife Smart Ceiling Fan Control and Dimmer Light Switch
 
+  - hjjcy - Environmental detector
+    - Air Quality Monitor 15in1
+
   - hxd - Not documented
     - Wake Up Light
 
@@ -121,6 +124,9 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
 
   - qxj - Not documented
     - T & H Sensor with external probe
+
+  - wkcz - Not documented
+    - Socket Thermostat
 
   - wkf - Not documented
     - ZigBee Tuya TRV Temperatur regler

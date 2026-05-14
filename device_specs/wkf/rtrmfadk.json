@@ -1,0 +1,156 @@
+{
+  "device": {
+    "active_time": 1767338373,
+    "biz_type": 0,
+    "category": "wkf",
+    "create_time": 1767338373,
+    "icon": "smart/icon/ay1547209623516pqlXf/851897e06a3322f6d3209ec16b7884cc.png",
+    "id": "bf6ec95272199bd521gcny",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "model": "TRV605/606",
+    "name": "radiateur du salon",
+    "node_id": "a4c138ed251742e2",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "rtrmfadk",
+    "product_name": "ZigBee Smart TRV",
+    "status": [
+      {
+        "code": "mode",
+        "value": "off"
+      },
+      {
+        "code": "temp_set",
+        "value": 185
+      },
+      {
+        "code": "temp_current",
+        "value": 216
+      },
+      {
+        "code": "work_state",
+        "value": "closed"
+      },
+      {
+        "code": "window_state",
+        "value": "closed"
+      },
+      {
+        "code": "window_check",
+        "value": false
+      },
+      {
+        "code": "child_lock",
+        "value": false
+      },
+      {
+        "code": "battery_percentage",
+        "value": 62
+      },
+      {
+        "code": "lower_temp",
+        "value": 50
+      },
+      {
+        "code": "upper_temp",
+        "value": 260
+      }
+    ],
+    "sub": true,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1767338373,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "wkf",
+    "functions": [
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\",\"manual\",\"off\"]}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":350,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "window_check",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "lower_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":150,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "upper_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":200,\"max\":350,\"scale\":1,\"step\":10}"
+      }
+    ],
+    "status": [
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\",\"manual\",\"off\"]}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":350,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-100,\"max\":500,\"scale\":1,\"step\":5}"
+      },
+      {
+        "code": "work_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"closed\",\"opened\"]}"
+      },
+      {
+        "code": "window_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"closed\",\"opened\"]}"
+      },
+      {
+        "code": "window_check",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "lower_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":50,\"max\":150,\"scale\":1,\"step\":10}"
+      },
+      {
+        "code": "upper_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":200,\"max\":350,\"scale\":1,\"step\":10}"
+      }
+    ]
+  },
+  "data_points": []
+}

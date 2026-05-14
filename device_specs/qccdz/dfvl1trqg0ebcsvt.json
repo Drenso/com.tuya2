@@ -1,0 +1,121 @@
+{
+  "device": {
+    "active_time": 1774434685,
+    "biz_type": 0,
+    "category": "qccdz",
+    "create_time": 1774434685,
+    "icon": "smart/icon/bay164213988943346MA/212ed86a1beef92b9ee10564c02b5eca.png",
+    "id": "bf420988fac57a74ebv9cb",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Elbilsladdare",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "dfvl1trqg0ebcsvt",
+    "product_name": "BL893_M2_16ss",
+    "status": [
+      {
+        "code": "forward_energy_total",
+        "value": 199
+      },
+      {
+        "code": "work_state",
+        "value": "charger_charging"
+      },
+      {
+        "code": "charge_cur_set",
+        "value": 8
+      },
+      {
+        "code": "connection_state",
+        "value": "controlpi_6v"
+      },
+      {
+        "code": "work_mode",
+        "value": "charge_now"
+      },
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "temp_current",
+        "value": 51
+      },
+      {
+        "code": "charge_energy_once",
+        "value": 10
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1774434685,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "qccdz",
+    "functions": [
+      {
+        "code": "charge_cur_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"A\",\"min\":1,\"max\":255,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"charge_now\",\"charge_pct\",\"charge_energy\",\"charge_schedule\"]}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "forward_energy_total",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW·h\",\"min\":0,\"max\":99999999,\"scale\":2,\"step\":1}"
+      },
+      {
+        "code": "work_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"charger_free\",\"charger_insert\",\"charger_free_fault\",\"charger_wait\",\"charger_charging\",\"charger_pause\",\"charger_end\",\"charger_fault\"]}"
+      },
+      {
+        "code": "charge_cur_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"A\",\"min\":1,\"max\":255,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "connection_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"controlpi_12v\",\"controlpi_12v_pwm\",\"controlpi_9v\",\"controlpi_9v_pwm\",\"controlpi_6v\",\"controlpi_6v_pwm\",\"controlpi_error\"]}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"charge_now\",\"charge_pct\",\"charge_energy\",\"charge_schedule\"]}"
+      },
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-40,\"max\":200,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "charge_energy_once",
+        "type": "Integer",
+        "values": "{\"unit\":\"kW·h\",\"min\":1,\"max\":999999,\"scale\":2,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

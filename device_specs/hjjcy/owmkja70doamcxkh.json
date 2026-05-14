@@ -1,0 +1,138 @@
+{
+  "device": {
+    "active_time": 1737206896,
+    "biz_type": 0,
+    "category": "hjjcy",
+    "create_time": 1737206896,
+    "icon": "smart/icon/ay15107356719526e3ps/23bb96bb4fb0e526abfef8b9c1bcfa8e.jpg",
+    "id": "bfbadca5414cc8679cxucz",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Air Quality Monitor",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "owmkja70doamcxkh",
+    "product_name": "MT15/MT29",
+    "status": [
+      {
+        "code": "air_quality_index",
+        "value": "level_1"
+      },
+      {
+        "code": "temp_current",
+        "value": 25
+      },
+      {
+        "code": "humidity_value",
+        "value": 43
+      },
+      {
+        "code": "co2_value",
+        "value": 491
+      },
+      {
+        "code": "ch2o_value",
+        "value": 23
+      },
+      {
+        "code": "pm25_value",
+        "value": 13
+      },
+      {
+        "code": "pm1",
+        "value": 19
+      },
+      {
+        "code": "pm10",
+        "value": 17
+      },
+      {
+        "code": "battery_percentage",
+        "value": 100
+      },
+      {
+        "code": "charge_state",
+        "value": false
+      },
+      {
+        "code": "alarm_volume",
+        "value": "middle"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "<redacted>",
+    "update_time": 1737206896,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "hjjcy",
+    "functions": [
+      {
+        "code": "alarm_volume",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\",\"middle\",\"high\",\"mute\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "air_quality_index",
+        "type": "Enum",
+        "values": "{\"range\":[\"level_1\",\"level_2\",\"level_3\"]}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-400,\"max\":2000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "humidity_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "co2_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"ppm\",\"min\":0,\"max\":10000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "ch2o_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"mg/m³\",\"min\":0,\"max\":9999,\"scale\":3,\"step\":1}"
+      },
+      {
+        "code": "pm25_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"ug/m³\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "pm1",
+        "type": "Integer",
+        "values": "{\"unit\":\"ug/m³\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "pm10",
+        "type": "Integer",
+        "values": "{\"unit\":\"ug/m³\",\"min\":0,\"max\":999,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "charge_state",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "alarm_volume",
+        "type": "Enum",
+        "values": "{\"range\":[\"low\",\"middle\",\"high\",\"mute\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

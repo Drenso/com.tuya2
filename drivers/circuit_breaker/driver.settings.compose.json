@@ -81,6 +81,16 @@
     "value": "1"
   },
   {
+    "$extends": "scaledProperty",
+    "id": "meter_power_scaling",
+    "label": {
+      "en": "Energy Measurement Scale"
+    },
+    "hint": {
+      "en": "By how much the energy reported by the device is scaled."
+    }
+  },
+  {
     "$extends": "deviceSpecification"
   }
 ]

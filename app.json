@@ -4175,9 +4175,10 @@
     {
       "capabilities": [
         "onoff",
-        "measure_current",
         "measure_power",
-        "measure_voltage"
+        "measure_current",
+        "measure_voltage",
+        "meter_power"
       ],
       "connectivity": [
         "cloud"
@@ -4372,6 +4373,43 @@
           },
           "value": "1",
           "type": "dropdown",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "1"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "1/10"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "1/100"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "1/1000"
+              }
+            }
+          ]
+        },
+        {
+          "id": "meter_power_scaling",
+          "label": {
+            "en": "Energy Measurement Scale"
+          },
+          "hint": {
+            "en": "By how much the energy reported by the device is scaled."
+          },
+          "type": "dropdown",
+          "value": "0",
           "values": [
             {
               "id": "0",
@@ -8086,6 +8124,8 @@
       "capabilities": [
         "onoff",
         "measure_power",
+        "measure_current",
+        "measure_voltage",
         "meter_power"
       ],
       "connectivity": [
@@ -8235,43 +8275,6 @@
           ]
         },
         {
-          "id": "meter_power_scaling",
-          "label": {
-            "en": "Energy Measurement Scale"
-          },
-          "hint": {
-            "en": "By how much the energy reported by the device is scaled."
-          },
-          "type": "dropdown",
-          "value": "0",
-          "values": [
-            {
-              "id": "0",
-              "label": {
-                "en": "1"
-              }
-            },
-            {
-              "id": "1",
-              "label": {
-                "en": "1/10"
-              }
-            },
-            {
-              "id": "2",
-              "label": {
-                "en": "1/100"
-              }
-            },
-            {
-              "id": "3",
-              "label": {
-                "en": "1/1000"
-              }
-            }
-          ]
-        },
-        {
           "id": "cur_current_scaling",
           "label": {
             "en": "Current Measurement Scale"
@@ -8318,6 +8321,43 @@
           },
           "value": "1",
           "type": "dropdown",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "1"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "1/10"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "1/100"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "1/1000"
+              }
+            }
+          ]
+        },
+        {
+          "id": "meter_power_scaling",
+          "label": {
+            "en": "Energy Measurement Scale"
+          },
+          "hint": {
+            "en": "By how much the energy reported by the device is scaled."
+          },
+          "type": "dropdown",
+          "value": "0",
           "values": [
             {
               "id": "0",

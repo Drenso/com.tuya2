@@ -1,0 +1,222 @@
+{
+  "device": {
+    "active_time": 1778339729,
+    "biz_type": 0,
+    "category": "dlq",
+    "create_time": 1778339729,
+    "icon": "smart/icon/bay16570761439434Ehc/0fa11f27c86648d5000766a161634917.jpg",
+    "id": "bfc12d113b52592c8eiq0g",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Din Rail Wi-Fi Switch with metering 2",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "jdj6ccklup7btq3a",
+    "product_name": "Din Rail Wi-Fi Switch with metering",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "countdown_1",
+        "value": 0
+      },
+      {
+        "code": "add_ele",
+        "value": 1
+      },
+      {
+        "code": "cur_current",
+        "value": 0
+      },
+      {
+        "code": "cur_power",
+        "value": 0
+      },
+      {
+        "code": "cur_voltage",
+        "value": 2375
+      },
+      {
+        "code": "test_bit",
+        "value": 1
+      },
+      {
+        "code": "voltage_coe",
+        "value": 15801
+      },
+      {
+        "code": "electric_coe",
+        "value": 12304
+      },
+      {
+        "code": "power_coe",
+        "value": 3015
+      },
+      {
+        "code": "electricity_coe",
+        "value": 2587
+      },
+      {
+        "code": "fault",
+        "value": 0
+      },
+      {
+        "code": "relay_status",
+        "value": "last"
+      },
+      {
+        "code": "light_mode",
+        "value": "relay"
+      },
+      {
+        "code": "child_lock",
+        "value": false
+      },
+      {
+        "code": "cycle_time",
+        "value": ""
+      },
+      {
+        "code": "online_state",
+        "value": "online"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1778339729,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "dlq",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "relay_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"power_off\",\"power_on\",\"last\"]}"
+      },
+      {
+        "code": "light_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"relay\",\"pos\",\"none\",\"on\"]}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "cycle_time",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "online_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"online\",\"offline\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "countdown_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "add_ele",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":9999999,\"scale\":3,\"step\":100}"
+      },
+      {
+        "code": "cur_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"mA\",\"min\":0,\"max\":100000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "cur_power",
+        "type": "Integer",
+        "values": "{\"unit\":\"W\",\"min\":0,\"max\":999999,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "cur_voltage",
+        "type": "Integer",
+        "values": "{\"unit\":\"V\",\"min\":0,\"max\":5000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "test_bit",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":5,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "voltage_coe",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "electric_coe",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "power_coe",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "electricity_coe",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fault",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"ov_cr\",\"ov_vol\",\"ov_pwr\",\"ls_cr\",\"ls_vol\",\"ls_pow\"]}"
+      },
+      {
+        "code": "relay_status",
+        "type": "Enum",
+        "values": "{\"range\":[\"power_off\",\"power_on\",\"last\"]}"
+      },
+      {
+        "code": "light_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"relay\",\"pos\",\"none\",\"on\"]}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "cycle_time",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "online_state",
+        "type": "Enum",
+        "values": "{\"range\":[\"online\",\"offline\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

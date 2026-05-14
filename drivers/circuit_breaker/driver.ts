@@ -23,6 +23,7 @@ module.exports = class TuyaOAuth2DriverCircuitBreaker extends TuyaOAuth2Driver {
     dataPoints?: TuyaDeviceDataPointResponse,
   ): ListDeviceProperties {
     const props = super.onTuyaPairListDeviceProperties(device, specifications, dataPoints);
+    props.store['_migrations'] = ['meter_power_capability'];
 
     for (const status of device.status) {
       const tuyaCapability = status.code;
@@ -46,6 +47,14 @@ module.exports = class TuyaOAuth2DriverCircuitBreaker extends TuyaOAuth2Driver {
       const tuyaCapability = specification.code;
       const values = JSON.parse(specification.values);
       const homeyCapability = getFromMap(CIRCUIT_BREAKER_CAPABILITIES_MAPPING, tuyaCapability);
+
+      if (tuyaCapability === 'add_ele') {
+        if ([0, 1, 2, 3].includes(values.scale)) {
+          props.settings['meter_power_scaling'] = `${values.scale}`;
+        } else {
+          this.error('Unsupported energy scale:', values.scale);
+        }
+      }
 
       if (constIncludes(CIRCUIT_BREAKER_CAPABILITIES.read_only_scaled, tuyaCapability) && homeyCapability) {
         const setting = `${homeyCapability}_scaling`;

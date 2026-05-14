@@ -1,5 +1,6 @@
 export const CIRCUIT_BREAKER_CAPABILITIES_MAPPING = {
   switch: 'onoff',
+  add_ele: 'meter_power',
   cur_current: 'measure_current',
   cur_power: 'measure_power',
   cur_voltage: 'measure_voltage',

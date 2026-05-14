@@ -61,16 +61,6 @@
   },
   {
     "$extends": "scaledProperty",
-    "id": "meter_power_scaling",
-    "label": {
-      "en": "Energy Measurement Scale"
-    },
-    "hint": {
-      "en": "By how much the energy reported by the device is scaled."
-    }
-  },
-  {
-    "$extends": "scaledProperty",
     "id": "cur_current_scaling",
     "label": {
       "en": "Current Measurement Scale"
@@ -89,6 +79,16 @@
       "en": "By how much the voltage reported by the device is scaled."
     },
     "value": "1"
+  },
+  {
+    "$extends": "scaledProperty",
+    "id": "meter_power_scaling",
+    "label": {
+      "en": "Energy Measurement Scale"
+    },
+    "hint": {
+      "en": "By how much the energy reported by the device is scaled."
+    }
   },
   {
     "$extends": "deviceSpecification"

@@ -5,5 +5,5 @@
     "en": "Circuit Breaker",
     "nl": "Zekering"
   },
-  "capabilities": ["onoff", "measure_current", "measure_power", "measure_voltage"]
+  "capabilities": ["onoff", "measure_power", "measure_current", "measure_voltage", "meter_power"]
 }

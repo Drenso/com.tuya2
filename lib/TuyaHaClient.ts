@@ -486,13 +486,17 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       const changedStatusCodes: string[] = [];
 
       for (const dataPoint of dataPoints) {
-        const unknownDatapoint = dataPoint as Record<`${number}`, unknown>;
+        const unknownDatapoint = dataPoint as Record<string, unknown>;
+        const keys = Object.keys(unknownDatapoint);
         if (
           typeof unknownDatapoint === 'object' &&
-          Object.keys(unknownDatapoint).length === 1 &&
-          Number.isInteger(Object.keys(unknownDatapoint)[0])
+          keys.length === 1 &&
+          !isNaN(Number(keys[0]))
         ) {
-          // When in form of `{"4":"low"}`, skip.
+          // When in form of `{"49":"rain"}`, resolve using numeric DP ID as code
+          const dpId = keys[0];
+          status[dpId] = unknownDatapoint[dpId];
+          changedStatusCodes.push(dpId);
           continue;
         }
 

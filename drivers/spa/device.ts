@@ -62,5 +62,27 @@ module.exports = class TuyaOAuth2DeviceSpa extends TuyaOAuth2Device {
       const value = this.isFahrenheit() ? fahrenheitToCelsius(status['water_tempture']) : status['water_tempture'];
       await this.safeSetCapabilityValue('measure_temperature', Math.round(value * 10) / 10);
     }
+
+    // Error / fault reporting. error_code is a Tuya bitmap: each set bit maps to
+    // the label at that index in the stored spec labels.
+    if (this.hasCapability('fault') && status['error_code'] !== undefined) {
+      const labels: string[] = this.store?.tuya_spa_error_labels ?? [];
+      const raw = status['error_code'];
+      const bitmap = typeof raw === 'number' ? raw : parseInt(`${raw}`, 10);
+
+      let faultString: string | null = null;
+
+      if (!Number.isNaN(bitmap) && bitmap > 0) {
+        const faults: string[] = [];
+        for (let i = 0; i < labels.length; i++) {
+          if (bitmap & (1 << i)) {
+            faults.push(labels[i]);
+          }
+        }
+        faultString = faults.length > 0 ? faults.join(', ') : `${bitmap}`;
+      }
+
+      await this.safeSetCapabilityValue('fault', faultString);
+    }
   }
 };

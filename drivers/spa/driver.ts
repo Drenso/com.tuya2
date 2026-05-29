@@ -55,6 +55,12 @@ module.exports = class TuyaOAuth2DriverSpa extends TuyaOAuth2Driver {
           props.capabilitiesOptions[subCapability] = fillTranslatableObject(translation, {});
         }
       }
+
+      // Error / fault reporting
+      if (tuyaCapability === 'error_code') {
+        props.store.tuya_capabilities.push(tuyaCapability);
+        props.capabilities.push('fault');
+      }
     }
 
     if (!specifications || !specifications.status) {
@@ -62,28 +68,32 @@ module.exports = class TuyaOAuth2DriverSpa extends TuyaOAuth2Driver {
     }
 
     for (const spec of specifications.status) {
-      if (spec.code !== 'tempture_set') {
-        continue;
+      const values = JSON.parse(spec.values);
+
+      if (spec.code === 'tempture_set') {
+        const scale = 10 ** (values.scale ?? 0);
+        const isFahrenheit = values.unit === 'F' || values.unit === '℉';
+
+        const min = values.min / scale;
+        const max = values.max / scale;
+        const step = values.step / scale;
+
+        // Homey target_temperature is expressed in °C; convert if the device reports °F.
+        props.capabilitiesOptions['target_temperature'] = isFahrenheit
+          ? {
+              min: Math.round(fahrenheitToCelsius(min) * 2) / 2,
+              max: Math.round(fahrenheitToCelsius(max) * 2) / 2,
+              step: 0.5,
+            }
+          : { min, max, step };
+
+        props.store.tuya_temperature_unit = isFahrenheit ? 'F' : 'C';
       }
 
-      const values = JSON.parse(spec.values);
-      const scale = 10 ** (values.scale ?? 0);
-      const isFahrenheit = values.unit === 'F' || values.unit === '℉';
-
-      const min = values.min / scale;
-      const max = values.max / scale;
-      const step = values.step / scale;
-
-      // Homey target_temperature is expressed in °C; convert if the device reports °F.
-      props.capabilitiesOptions['target_temperature'] = isFahrenheit
-        ? {
-            min: Math.round(fahrenheitToCelsius(min) * 2) / 2,
-            max: Math.round(fahrenheitToCelsius(max) * 2) / 2,
-            step: 0.5,
-          }
-        : { min, max, step };
-
-      props.store.tuya_temperature_unit = isFahrenheit ? 'F' : 'C';
+      // Store the bitmap labels so reported error codes can be mapped to readable values.
+      if (spec.code === 'error_code' && Array.isArray(values.label)) {
+        props.store.tuya_spa_error_labels = [...values.label];
+      }
     }
 
     return props;

@@ -1,0 +1,29 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Heating status",
+    "nl": "Verwarmingsstatus"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "assets/capabilities/spa_heat_state.svg",
+  "values": [
+    {
+      "id": "off",
+      "title": { "en": "Off", "nl": "Uit" }
+    },
+    {
+      "id": "heat",
+      "title": { "en": "Heating", "nl": "Verwarmen" }
+    },
+    {
+      "id": "warm",
+      "title": { "en": "Warm", "nl": "Warm" }
+    },
+    {
+      "id": "warmflash",
+      "title": { "en": "Keeping warm", "nl": "Warmhouden" }
+    }
+  ]
+}

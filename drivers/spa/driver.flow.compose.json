@@ -1,0 +1,105 @@
+{
+  "triggers": [
+    {
+      "id": "spa_heat_state_changed",
+      "$filter": "capabilities=spa_heat_state",
+      "title": {
+        "en": "Heating status changed",
+        "nl": "Verwarmingsstatus gewijzigd"
+      },
+      "tokens": [
+        {
+          "name": "state",
+          "type": "string",
+          "title": { "en": "Status", "nl": "Status" },
+          "example": { "en": "heat" }
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "spa_heater_is_on",
+      "$filter": "capabilities=onoff.heater",
+      "title": {
+        "en": "Heater is !{{on|off}}",
+        "nl": "Verwarming is !{{aan|uit}}"
+      }
+    },
+    {
+      "id": "spa_bubble_is_on",
+      "$filter": "capabilities=onoff.bubble",
+      "title": {
+        "en": "Bubbles are !{{on|off}}",
+        "nl": "Bubbels zijn !{{aan|uit}}"
+      }
+    },
+    {
+      "id": "spa_filter_is_on",
+      "$filter": "capabilities=onoff.filter",
+      "title": {
+        "en": "Filter pump is !{{on|off}}",
+        "nl": "Filterpomp is !{{aan|uit}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "spa_set_heater",
+      "$filter": "capabilities=onoff.heater",
+      "title": {
+        "en": "Set heater",
+        "nl": "Verwarming instellen"
+      },
+      "titleFormatted": {
+        "en": "Set heater [[value]]",
+        "nl": "Verwarming [[value]]"
+      },
+      "args": [
+        {
+          "name": "value",
+          "type": "checkbox",
+          "title": { "en": "Value", "nl": "Waarde" }
+        }
+      ]
+    },
+    {
+      "id": "spa_set_bubble",
+      "$filter": "capabilities=onoff.bubble",
+      "title": {
+        "en": "Set bubbles",
+        "nl": "Bubbels instellen"
+      },
+      "titleFormatted": {
+        "en": "Set bubbles [[value]]",
+        "nl": "Bubbels [[value]]"
+      },
+      "args": [
+        {
+          "name": "value",
+          "type": "checkbox",
+          "title": { "en": "Value", "nl": "Waarde" }
+        }
+      ]
+    },
+    {
+      "id": "spa_set_filter",
+      "$filter": "capabilities=onoff.filter",
+      "title": {
+        "en": "Set filter pump",
+        "nl": "Filterpomp instellen"
+      },
+      "titleFormatted": {
+        "en": "Set filter pump [[value]]",
+        "nl": "Filterpomp [[value]]"
+      },
+      "args": [
+        {
+          "name": "value",
+          "type": "checkbox",
+          "title": { "en": "Value", "nl": "Waarde" }
+        }
+      ]
+    }
+  ]
+}

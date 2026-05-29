@@ -1,15 +1,22 @@
+import { Device, FlowCardTriggerDevice } from 'homey';
 import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
 import { TuyaStatus } from '../../types/TuyaTypes';
 import { SPA_SUB_SWITCHES } from './TuyaSpaConstants';
 import { celsiusToFahrenheit, fahrenheitToCelsius } from './TuyaSpaUtil';
 
 module.exports = class TuyaOAuth2DeviceSpa extends TuyaOAuth2Device {
+  heatStateChangedTrigger?: FlowCardTriggerDevice;
+
   isFahrenheit(): boolean {
     return this.store?.tuya_temperature_unit === 'F';
   }
 
   async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
+
+    if (this.hasCapability('spa_heat_state')) {
+      this.heatStateChangedTrigger = this.homey.flow.getDeviceTriggerCard('spa_heat_state_changed');
+    }
 
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', value => this.sendCommand({ code: 'power_switch', value }));
@@ -83,6 +90,17 @@ module.exports = class TuyaOAuth2DeviceSpa extends TuyaOAuth2Device {
       }
 
       await this.safeSetCapabilityValue('fault', faultString);
+    }
+
+    // Heating status indicator (off / heat / warm / warmflash)
+    if (this.hasCapability('spa_heat_state') && typeof status['heat_indicator'] === 'string') {
+      await this.safeSetCapabilityValue('spa_heat_state', status['heat_indicator']);
+
+      if (changedStatusCodes.includes('heat_indicator')) {
+        this.heatStateChangedTrigger
+          ?.trigger(this as Device, { state: status['heat_indicator'] }, {})
+          .catch(this.error);
+      }
     }
   }
 };

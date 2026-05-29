@@ -1306,6 +1306,33 @@
         ]
       },
       {
+        "id": "spa_heat_state_changed",
+        "title": {
+          "en": "Heating status changed",
+          "nl": "Verwarmingsstatus gewijzigd"
+        },
+        "tokens": [
+          {
+            "name": "state",
+            "type": "string",
+            "title": {
+              "en": "Status",
+              "nl": "Status"
+            },
+            "example": {
+              "en": "heat"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=spa&capabilities=spa_heat_state"
+          }
+        ]
+      },
+      {
         "id": "thermostat_open_window_sensor_true",
         "title": {
           "en": "Open Window Detected"
@@ -3219,6 +3246,84 @@
         ]
       },
       {
+        "id": "spa_set_heater",
+        "title": {
+          "en": "Set heater",
+          "nl": "Verwarming instellen"
+        },
+        "titleFormatted": {
+          "en": "Set heater [[value]]",
+          "nl": "Verwarming [[value]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=spa&capabilities=onoff.heater"
+          },
+          {
+            "name": "value",
+            "type": "checkbox",
+            "title": {
+              "en": "Value",
+              "nl": "Waarde"
+            }
+          }
+        ]
+      },
+      {
+        "id": "spa_set_bubble",
+        "title": {
+          "en": "Set bubbles",
+          "nl": "Bubbels instellen"
+        },
+        "titleFormatted": {
+          "en": "Set bubbles [[value]]",
+          "nl": "Bubbels [[value]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=spa&capabilities=onoff.bubble"
+          },
+          {
+            "name": "value",
+            "type": "checkbox",
+            "title": {
+              "en": "Value",
+              "nl": "Waarde"
+            }
+          }
+        ]
+      },
+      {
+        "id": "spa_set_filter",
+        "title": {
+          "en": "Set filter pump",
+          "nl": "Filterpomp instellen"
+        },
+        "titleFormatted": {
+          "en": "Set filter pump [[value]]",
+          "nl": "Filterpomp [[value]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=spa&capabilities=onoff.filter"
+          },
+          {
+            "name": "value",
+            "type": "checkbox",
+            "title": {
+              "en": "Value",
+              "nl": "Waarde"
+            }
+          }
+        ]
+      },
+      {
         "id": "thermostat_night_mode",
         "title": {
           "en": "Set night mode"
@@ -3572,6 +3677,48 @@
             "placeholder": {
               "en": "Switch 1"
             }
+          }
+        ]
+      },
+      {
+        "id": "spa_heater_is_on",
+        "title": {
+          "en": "Heater is !{{on|off}}",
+          "nl": "Verwarming is !{{aan|uit}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=spa&capabilities=onoff.heater"
+          }
+        ]
+      },
+      {
+        "id": "spa_bubble_is_on",
+        "title": {
+          "en": "Bubbles are !{{on|off}}",
+          "nl": "Bubbels zijn !{{aan|uit}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=spa&capabilities=onoff.bubble"
+          }
+        ]
+      },
+      {
+        "id": "spa_filter_is_on",
+        "title": {
+          "en": "Filter pump is !{{on|off}}",
+          "nl": "Filterpomp is !{{aan|uit}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=spa&capabilities=onoff.filter"
           }
         ]
       }
@@ -9400,6 +9547,47 @@
       "setable": true,
       "uiComponent": "button",
       "icon": "assets/capabilities/alarm_siren.svg"
+    },
+    "spa_heat_state": {
+      "type": "enum",
+      "title": {
+        "en": "Heating status",
+        "nl": "Verwarmingsstatus"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "assets/capabilities/spa_heat_state.svg",
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Heating",
+            "nl": "Verwarmen"
+          }
+        },
+        {
+          "id": "warm",
+          "title": {
+            "en": "Warm",
+            "nl": "Warm"
+          }
+        },
+        {
+          "id": "warmflash",
+          "title": {
+            "en": "Keeping warm",
+            "nl": "Warmhouden"
+          }
+        }
+      ]
     }
   }
 }

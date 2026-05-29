@@ -6,13 +6,43 @@ import {
   TuyaDeviceResponse,
   TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes';
-import type { Translation } from '../../types/TuyaTypes';
+import type { StandardFlowArgs, Translation } from '../../types/TuyaTypes';
 import { SPA_CAPABILITIES_MAPPING, SPA_SUB_SWITCHES } from './TuyaSpaConstants';
 import { fahrenheitToCelsius } from './TuyaSpaUtil';
 import TRANSLATIONS from './translations.json';
 
 module.exports = class TuyaOAuth2DriverSpa extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.LARGE_HOME_APPLIANCES.HEATER] as const;
+
+  async onInit(): Promise<void> {
+    await super.onInit();
+
+    const subSwitchCards: Record<string, string> = {
+      spa_set_heater: 'onoff.heater',
+      spa_set_bubble: 'onoff.bubble',
+      spa_set_filter: 'onoff.filter',
+    };
+
+    for (const [cardId, capability] of Object.entries(subSwitchCards)) {
+      this.homey.flow
+        .getActionCard(cardId)
+        .registerRunListener((args: StandardFlowArgs) => args.device.triggerCapabilityListener(capability, args.value));
+    }
+
+    const conditionCards: Record<string, string> = {
+      spa_heater_is_on: 'onoff.heater',
+      spa_bubble_is_on: 'onoff.bubble',
+      spa_filter_is_on: 'onoff.filter',
+    };
+
+    for (const [cardId, capability] of Object.entries(conditionCards)) {
+      this.homey.flow
+        .getConditionCard(cardId)
+        .registerRunListener((args: { device: { getCapabilityValue: (c: string) => boolean } }) =>
+          args.device.getCapabilityValue(capability),
+        );
+    }
+  }
 
   // Category `rs` is shared with regular heaters/heat pumps. Only treat a device
   // as a spa when it exposes the spa-specific DP codes, so heaters keep working.
@@ -60,6 +90,12 @@ module.exports = class TuyaOAuth2DriverSpa extends TuyaOAuth2Driver {
       if (tuyaCapability === 'error_code') {
         props.store.tuya_capabilities.push(tuyaCapability);
         props.capabilities.push('fault');
+      }
+
+      // Heating status indicator (read-only)
+      if (tuyaCapability === 'heat_indicator') {
+        props.store.tuya_capabilities.push(tuyaCapability);
+        props.capabilities.push('spa_heat_state');
       }
     }
 

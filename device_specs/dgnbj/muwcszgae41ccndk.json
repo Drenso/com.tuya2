@@ -1,0 +1,42 @@
+{
+  "device": {
+    "active_time": 1779106103,
+    "biz_type": 0,
+    "category": "dgnbj",
+    "create_time": 1779106103,
+    "icon": "smart/icon/bay1620787138798I6P6/1a65ce90504a45beee9b2be07b491d94.png",
+    "id": "bfe2c67de2b8b403ebgihw",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "WiFi Online Control Monitor",
+    "online": true,
+    "owner_id": "",
+    "product_id": "muwcszgae41ccndk",
+    "product_name": "WiFi Online Control Monitor",
+    "status": [
+      {
+        "code": "temp_current",
+        "value": 250
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1779106103,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "dgnbj",
+    "functions": [],
+    "status": [
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-100,\"max\":1100,\"scale\":1,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

@@ -1,0 +1,187 @@
+{
+  "device": {
+    "active_time": 1672855078,
+    "biz_type": 0,
+    "category": "bh",
+    "create_time": 1672855078,
+    "icon": "smart/icon/ay1513237774906SMBA3/9cc5e64fec32e4c224d23d41c8a7e4fb.png",
+    "id": "bfb4458241a8ee080bvytc",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Vattenkokaren",
+    "online": true,
+    "owner_id": "",
+    "product_id": "c83jkzjgvmnxu1ov",
+    "product_name": "Electric Kettle",
+    "status": [
+      {
+        "code": "start",
+        "value": false
+      },
+      {
+        "code": "temp_current",
+        "value": 23
+      },
+      {
+        "code": "temp_current_f",
+        "value": 73
+      },
+      {
+        "code": "temp_set",
+        "value": 90
+      },
+      {
+        "code": "temp_set_f",
+        "value": 194
+      },
+      {
+        "code": "temp_boiling_c",
+        "value": 90
+      },
+      {
+        "code": "temp_boiling_f",
+        "value": 194
+      },
+      {
+        "code": "temp_unit_convert",
+        "value": "c"
+      },
+      {
+        "code": "warm",
+        "value": false
+      },
+      {
+        "code": "warm_time",
+        "value": 24
+      },
+      {
+        "code": "status",
+        "value": "standby"
+      },
+      {
+        "code": "work_type",
+        "value": "temp_setting"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1672855078,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "bh",
+    "functions": [
+      {
+        "code": "start",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":40,\"max\":100,\"scale\":0,\"step\":2}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":104,\"max\":212,\"scale\":0,\"step\":2}"
+      },
+      {
+        "code": "temp_boiling_c",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":40,\"max\":100,\"scale\":0,\"step\":2}"
+      },
+      {
+        "code": "temp_boiling_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":104,\"max\":212,\"scale\":0,\"step\":2}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "warm",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "warm_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":15,\"max\":360,\"scale\":0,\"step\":5}"
+      },
+      {
+        "code": "work_type",
+        "type": "Enum",
+        "values": "{\"range\":[\"setting_quick\",\"boiling_quick\",\"temp_setting\",\"temp_boiling\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "start",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current_f",
+        "type": "Integer",
+        "values": "\"unit\":\"℉\",\"min\":32,\"max\":212,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":40,\"max\":100,\"scale\":0,\"step\":2}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":104,\"max\":212,\"scale\":0,\"step\":2}"
+      },
+      {
+        "code": "temp_boiling_c",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":40,\"max\":100,\"scale\":0,\"step\":2}"
+      },
+      {
+        "code": "temp_boiling_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":104,\"max\":212,\"scale\":0,\"step\":2}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "warm",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "warm_time",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":15,\"max\":360,\"scale\":0,\"step\":5}"
+      },
+      {
+        "code": "status",
+        "type": "Enum",
+        "values": "{\"range\":[\"standby\",\"warm\",\"heating_temp\",\"boiling_temp\"]}"
+      },
+      {
+        "code": "work_type",
+        "type": "Enum",
+        "values": "{\"range\":[\"setting_quick\",\"boiling_quick\",\"temp_setting\",\"temp_boiling\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

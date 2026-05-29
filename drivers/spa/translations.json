@@ -1,0 +1,22 @@
+{
+  "capabilitiesOptions": {
+    "onoff.heater": {
+      "title": {
+        "en": "Heater",
+        "nl": "Verwarming"
+      }
+    },
+    "onoff.bubble": {
+      "title": {
+        "en": "Bubbles",
+        "nl": "Bubbels"
+      }
+    },
+    "onoff.filter": {
+      "title": {
+        "en": "Filter pump",
+        "nl": "Filterpomp"
+      }
+    }
+  }
+}

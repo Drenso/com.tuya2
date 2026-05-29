@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="960" viewBox="0 0 960 960">
+  <g fill="#000000">
+    <!-- Rising bubbles / steam -->
+    <circle cx="360" cy="300" r="34"/>
+    <circle cx="372" cy="196" r="22"/>
+    <circle cx="500" cy="268" r="42"/>
+    <circle cx="512" cy="146" r="26"/>
+    <circle cx="640" cy="300" r="34"/>
+    <circle cx="628" cy="196" r="22"/>
+    <!-- Hot tub basin walls (frame via even-odd) -->
+    <path fill-rule="evenodd" d="
+      M120 430
+      L840 430
+      L840 700
+      Q840 800 740 800
+      L220 800
+      Q120 800 120 700
+      Z
+      M200 510
+      L760 510
+      L760 690
+      Q760 720 730 720
+      L230 720
+      Q200 720 200 690
+      Z
+    "/>
+    <!-- Water wave inside the tub -->
+    <path d="
+      M200 600
+      q 70 -45 140 0
+      t 140 0
+      t 140 0
+      t 140 0
+      l 0 42
+      q -70 45 -140 0
+      t -140 0
+      t -140 0
+      t -140 0
+      z
+    "/>
+  </g>
+</svg>

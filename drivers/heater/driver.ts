@@ -15,6 +15,18 @@ module.exports = class TuyaOAuth2DriverHeater extends TuyaOAuth2Driver {
     DEVICE_CATEGORIES.LARGE_HOME_APPLIANCES.HEATER,
   ] as const;
 
+  // Category `rs` is shared with spas, which are handled by the dedicated `spa`
+  // driver. Skip those here so a spa is not listed under both drivers.
+  onTuyaPairListDeviceFilter(device: TuyaDeviceResponse): boolean {
+    if (!super.onTuyaPairListDeviceFilter(device)) {
+      return false;
+    }
+
+    return !(device.status ?? []).some(
+      status => status.code === 'power_switch' || status.code === 'bubble_switch',
+    );
+  }
+
   async onInit(): Promise<void> {
     await super.onInit();
 

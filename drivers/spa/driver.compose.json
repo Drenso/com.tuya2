@@ -1,0 +1,9 @@
+{
+  "$extends": "tuya",
+  "class": "heater",
+  "name": {
+    "en": "Spa",
+    "nl": "Spa"
+  },
+  "capabilities": ["onoff", "target_temperature", "measure_temperature"]
+}

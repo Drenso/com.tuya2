@@ -1,0 +1,147 @@
+{
+  "device": {
+    "active_time": 1755430224,
+    "biz_type": 0,
+    "category": "rs",
+    "create_time": 1755430224,
+    "icon": "smart/icon/bay16800554807994Nun/44c72cfb56afd8266d0e311b354d4456.png",
+    "id": "bfc02b6afd9b34dbb3cmqo",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Jacuzzi",
+    "online": true,
+    "owner_id": "",
+    "product_id": "m7qtzuouc2cvnekt",
+    "product_name": "SPA PRODUCT WITH BUBBLE ",
+    "status": [
+      {
+        "code": "power_switch",
+        "value": false
+      },
+      {
+        "code": "filter_switch",
+        "value": false
+      },
+      {
+        "code": "bubble_switch",
+        "value": false
+      },
+      {
+        "code": "heater_switch",
+        "value": false
+      },
+      {
+        "code": "tempture_set",
+        "value": 50
+      },
+      {
+        "code": "water_tempture",
+        "value": 32
+      },
+      {
+        "code": "heat_indicator",
+        "value": "off"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1755430224,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "rs",
+    "functions": [
+      {
+        "code": "power_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "filter_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "bubble_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "heater_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "tempture_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"F\",\"min\":50,\"max\":104,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "skdl_heat",
+        "type": "Raw",
+        "values": "{\"maxlen\":128}"
+      },
+      {
+        "code": "skdl_filter",
+        "type": "Raw",
+        "values": "{\"maxlen\":128}"
+      }
+    ],
+    "status": [
+      {
+        "code": "power_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "filter_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "bubble_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "heater_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "tempture_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"F\",\"min\":50,\"max\":104,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "water_tempture",
+        "type": "Integer",
+        "values": "{\"unit\":\"F\",\"min\":32,\"max\":255,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "skdl_heat",
+        "type": "Raw",
+        "values": "{\"maxlen\":128}"
+      },
+      {
+        "code": "error_code",
+        "type": "Bitmap",
+        "values": "{\"label\":[\"181\",\"180\",\"190\",\"191\",\"192\",\"193\",\"194\",\"195\",\"196\",\"199\",\"200\",\"197\"],\"maxlen\":12}"
+      },
+      {
+        "code": "skdl_filter",
+        "type": "Raw",
+        "values": "{\"maxlen\":128}"
+      },
+      {
+        "code": "heat_indicator",
+        "type": "Enum",
+        "values": "{\"range\":[\"off\",\"heat\",\"warm\",\"warmflash\"]}"
+      }
+    ]
+  },
+  "data_points": []
+}

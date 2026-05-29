@@ -8400,6 +8400,84 @@
     },
     {
       "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/spa/assets/images/small.png",
+        "large": "/drivers/spa/assets/images/large.png",
+        "xlarge": "/drivers/spa/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "welcome",
+          "navigation": {
+            "next": "usercode"
+          }
+        },
+        {
+          "id": "usercode"
+        },
+        {
+          "id": "qrcode"
+        },
+        {
+          "id": "retrieve_devices",
+          "template": "loading",
+          "options": {
+            "text": "pair.loading_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "usercode"
+        },
+        {
+          "id": "qrcode"
+        }
+      ],
+      "class": "heater",
+      "name": {
+        "en": "Spa",
+        "nl": "Spa"
+      },
+      "id": "spa",
+      "settings": [
+        {
+          "id": "deviceSpecification",
+          "type": "label",
+          "label": {
+            "en": "Device Specification"
+          },
+          "hint": {
+            "en": "The Tuya specification of this device"
+          },
+          "value": "<not available>"
+        }
+      ]
+    },
+    {
+      "capabilities": [
         "measure_temperature",
         "target_temperature"
       ],

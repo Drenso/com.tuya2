@@ -2,10 +2,12 @@ import { Device, FlowCardTriggerDevice } from 'homey';
 import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
 import { TuyaStatus } from '../../types/TuyaTypes';
 import { SPA_SUB_SWITCHES } from './TuyaSpaConstants';
-import { celsiusToFahrenheit, fahrenheitToCelsius } from './TuyaSpaUtil';
+import { celsiusToFahrenheit, describeSpaError, fahrenheitToCelsius } from './TuyaSpaUtil';
 
 module.exports = class TuyaOAuth2DeviceSpa extends TuyaOAuth2Device {
   heatStateChangedTrigger?: FlowCardTriggerDevice;
+  faultOccurredTrigger?: FlowCardTriggerDevice;
+  faultClearedTrigger?: FlowCardTriggerDevice;
 
   isFahrenheit(): boolean {
     return this.store?.tuya_temperature_unit === 'F';
@@ -16,6 +18,11 @@ module.exports = class TuyaOAuth2DeviceSpa extends TuyaOAuth2Device {
 
     if (this.hasCapability('spa_heat_state')) {
       this.heatStateChangedTrigger = this.homey.flow.getDeviceTriggerCard('spa_heat_state_changed');
+    }
+
+    if (this.hasCapability('fault')) {
+      this.faultOccurredTrigger = this.homey.flow.getDeviceTriggerCard('spa_fault_occurred');
+      this.faultClearedTrigger = this.homey.flow.getDeviceTriggerCard('spa_fault_cleared');
     }
 
     if (this.hasCapability('onoff')) {
@@ -71,25 +78,40 @@ module.exports = class TuyaOAuth2DeviceSpa extends TuyaOAuth2Device {
     }
 
     // Error / fault reporting. error_code is a Tuya bitmap: each set bit maps to
-    // the label at that index in the stored spec labels.
+    // the label at that index in the stored spec labels. Each label is then
+    // translated to a human-readable description (e.g. "No or insufficient
+    // water flow (E90)").
     if (this.hasCapability('fault') && status['error_code'] !== undefined) {
       const labels: string[] = this.store?.tuya_spa_error_labels ?? [];
+      const language = this.homey.i18n.getLanguage();
       const raw = status['error_code'];
       const bitmap = typeof raw === 'number' ? raw : parseInt(`${raw}`, 10);
 
       let faultString: string | null = null;
+      const faultCodes: string[] = [];
 
       if (!Number.isNaN(bitmap) && bitmap > 0) {
         const faults: string[] = [];
         for (let i = 0; i < labels.length; i++) {
           if (bitmap & (1 << i)) {
-            faults.push(labels[i]);
+            faultCodes.push(labels[i]);
+            faults.push(describeSpaError(labels[i], language));
           }
         }
         faultString = faults.length > 0 ? faults.join(', ') : `${bitmap}`;
       }
 
+      const previousFault = this.getCapabilityValue('fault');
       await this.safeSetCapabilityValue('fault', faultString);
+
+      // Fire flow triggers on transitions (no fault -> fault, fault -> cleared).
+      if (faultString && faultString !== previousFault) {
+        this.faultOccurredTrigger
+          ?.trigger(this as Device, { error: faultString, code: faultCodes.join(', ') }, {})
+          .catch(this.error);
+      } else if (!faultString && previousFault) {
+        this.faultClearedTrigger?.trigger(this as Device, {}, {}).catch(this.error);
+      }
     }
 
     // Heating status indicator (off / heat / warm / warmflash)

@@ -15,6 +15,36 @@
           "example": { "en": "heat" }
         }
       ]
+    },
+    {
+      "id": "spa_fault_occurred",
+      "$filter": "capabilities=fault",
+      "title": {
+        "en": "An error occurred",
+        "nl": "Er is een fout opgetreden"
+      },
+      "tokens": [
+        {
+          "name": "error",
+          "type": "string",
+          "title": { "en": "Error", "nl": "Fout" },
+          "example": { "en": "No or insufficient water flow (E90)" }
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "title": { "en": "Error code", "nl": "Foutcode" },
+          "example": { "en": "190" }
+        }
+      ]
+    },
+    {
+      "id": "spa_fault_cleared",
+      "$filter": "capabilities=fault",
+      "title": {
+        "en": "All errors cleared",
+        "nl": "Alle fouten verholpen"
+      }
     }
   ],
   "conditions": [
@@ -41,6 +71,39 @@
         "en": "Filter pump is !{{on|off}}",
         "nl": "Filterpomp is !{{aan|uit}}"
       }
+    },
+    {
+      "id": "spa_has_fault",
+      "$filter": "capabilities=fault",
+      "title": {
+        "en": "An error !{{is|is not}} active",
+        "nl": "Er is !{{wel|geen}} fout actief"
+      }
+    },
+    {
+      "id": "spa_heat_state_is",
+      "$filter": "capabilities=spa_heat_state",
+      "title": {
+        "en": "Heating status !{{is|is not}} [[state]]",
+        "nl": "Verwarmingsstatus !{{is|is niet}} [[state]]"
+      },
+      "titleFormatted": {
+        "en": "Heating status !{{is|is not}} [[state]]",
+        "nl": "Verwarmingsstatus !{{is|is niet}} [[state]]"
+      },
+      "args": [
+        {
+          "name": "state",
+          "type": "dropdown",
+          "title": { "en": "Status", "nl": "Status" },
+          "values": [
+            { "id": "off", "title": { "en": "Off", "nl": "Uit" } },
+            { "id": "heat", "title": { "en": "Heating", "nl": "Verwarmen" } },
+            { "id": "warm", "title": { "en": "Warm", "nl": "Warm" } },
+            { "id": "warmflash", "title": { "en": "Keeping warm", "nl": "Warmhouden" } }
+          ]
+        }
+      ]
     }
   ],
   "actions": [

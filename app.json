@@ -1333,6 +1333,58 @@
         ]
       },
       {
+        "id": "spa_fault_occurred",
+        "title": {
+          "en": "An error occurred",
+          "nl": "Er is een fout opgetreden"
+        },
+        "tokens": [
+          {
+            "name": "error",
+            "type": "string",
+            "title": {
+              "en": "Error",
+              "nl": "Fout"
+            },
+            "example": {
+              "en": "No or insufficient water flow (E90)"
+            }
+          },
+          {
+            "name": "code",
+            "type": "string",
+            "title": {
+              "en": "Error code",
+              "nl": "Foutcode"
+            },
+            "example": {
+              "en": "190"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=spa&capabilities=fault"
+          }
+        ]
+      },
+      {
+        "id": "spa_fault_cleared",
+        "title": {
+          "en": "All errors cleared",
+          "nl": "Alle fouten verholpen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=spa&capabilities=fault"
+          }
+        ]
+      },
+      {
         "id": "thermostat_open_window_sensor_true",
         "title": {
           "en": "Open Window Detected"
@@ -3719,6 +3771,76 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=spa&capabilities=onoff.filter"
+          }
+        ]
+      },
+      {
+        "id": "spa_has_fault",
+        "title": {
+          "en": "An error !{{is|is not}} active",
+          "nl": "Er is !{{wel|geen}} fout actief"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=spa&capabilities=fault"
+          }
+        ]
+      },
+      {
+        "id": "spa_heat_state_is",
+        "title": {
+          "en": "Heating status !{{is|is not}} [[state]]",
+          "nl": "Verwarmingsstatus !{{is|is niet}} [[state]]"
+        },
+        "titleFormatted": {
+          "en": "Heating status !{{is|is not}} [[state]]",
+          "nl": "Verwarmingsstatus !{{is|is niet}} [[state]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=spa&capabilities=spa_heat_state"
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "title": {
+              "en": "Status",
+              "nl": "Status"
+            },
+            "values": [
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "heat",
+                "title": {
+                  "en": "Heating",
+                  "nl": "Verwarmen"
+                }
+              },
+              {
+                "id": "warm",
+                "title": {
+                  "en": "Warm",
+                  "nl": "Warm"
+                }
+              },
+              {
+                "id": "warmflash",
+                "title": {
+                  "en": "Keeping warm",
+                  "nl": "Warmhouden"
+                }
+              }
+            ]
           }
         ]
       }

@@ -42,6 +42,22 @@ module.exports = class TuyaOAuth2DriverSpa extends TuyaOAuth2Driver {
           args.device.getCapabilityValue(capability),
         );
     }
+
+    // "An error is active" condition: true when the fault capability holds a value.
+    this.homey.flow
+      .getConditionCard('spa_has_fault')
+      .registerRunListener(
+        (args: { device: { getCapabilityValue: (c: string) => string | null } }) =>
+          !!args.device.getCapabilityValue('fault'),
+      );
+
+    // "Heating status is X" condition.
+    this.homey.flow
+      .getConditionCard('spa_heat_state_is')
+      .registerRunListener(
+        (args: { device: { getCapabilityValue: (c: string) => string | null }; state: string }) =>
+          args.device.getCapabilityValue('spa_heat_state') === args.state,
+      );
   }
 
   // Category `rs` is shared with regular heaters/heat pumps. Only treat a device

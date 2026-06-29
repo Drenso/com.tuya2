@@ -87,9 +87,6 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
     - Flient Smart door Lock
     - RAYKUBE K20
 
-  - kg - Undocumented
-    - 2G SMART ZIGBEE SWITCH
-
   - kj - Air purifier
     - Proscenic A9
     - Zedar L600
@@ -110,9 +107,6 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
   - mc - Door and Window Controller
     - Window Opener (Chain Actuator)
     - Smart Windows and doors
-
-  - mcs - Contact Sensor
-    - Door Window Contact Sensor
 
   - mk - Access control
     - Access Control TF1/TF2/TF3 AliExpress

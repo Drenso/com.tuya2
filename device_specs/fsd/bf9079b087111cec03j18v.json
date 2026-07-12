@@ -1,0 +1,145 @@
+{
+  "device": {
+    "active_time": 1783617163,
+    "biz_type": 0,
+    "category": "fsd",
+    "create_time": 1783617163,
+    "icon": "smart/icon/ay1564458733639x1LBu/d797720cdb34dd8cf89284af79d44897.png",
+    "id": "bf9079b087111cec03j18v",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Plafondventilator woonkamer",
+    "online": true,
+    "owner_id": "",
+    "product_id": "ifj19h1aa9xjmrci",
+    "product_name": "",
+    "status": [
+      {
+        "code": "fan_switch",
+        "value": true
+      },
+      {
+        "code": "fan_speed",
+        "value": 3
+      },
+      {
+        "code": "fan_direction",
+        "value": "forward"
+      },
+      {
+        "code": "countdown_left_fan",
+        "value": 0
+      },
+      {
+        "code": "fan_beep",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1783617163,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "fsd",
+    "functions": [
+      {
+        "code": "fan_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fan_speed",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":1,\"max\":6,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_direction",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"reverse\"]}"
+      },
+      {
+        "code": "countdown_left_fan",
+        "type": "Integer",
+        "values": "\"unit\":\"min\",\"min\":0,\"max\":540,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_beep",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "fan_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fan_speed",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":1,\"max\":6,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_direction",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"reverse\"]}"
+      },
+      {
+        "code": "countdown_left_fan",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":540,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_beep",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "fan_switch",
+      "custom_name": "",
+      "dp_id": 60,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "fan_speed",
+      "custom_name": "",
+      "dp_id": 62,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"\",\"min\":1,\"max\":6,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "fan_direction",
+      "custom_name": "",
+      "dp_id": 63,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"forward\",\"reverse\"]}"
+    },
+    {
+      "code": "fan_countdown_left",
+      "custom_name": "",
+      "dp_id": 64,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"min\",\"min\":0,\"max\":540,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "fan_beep",
+      "custom_name": "",
+      "dp_id": 66,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    }
+  ]
+}

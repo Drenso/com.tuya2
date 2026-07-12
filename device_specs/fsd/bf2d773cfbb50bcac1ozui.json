@@ -1,0 +1,233 @@
+{
+  "device": {
+    "active_time": 1782929103,
+    "biz_type": 0,
+    "category": "fsd",
+    "create_time": 1782929103,
+    "icon": "smart/icon/non-session-user/15940421018c0440494b5.png",
+    "id": "bf2d773cfbb50bcac1ozui",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "ceiling fan/Light v2",
+    "online": true,
+    "owner_id": "",
+    "product_id": "9ecs16c53uqskxw6",
+    "product_name": "ceiling fan/Light v2",
+    "status": [
+      {
+        "code": "switch_led",
+        "value": true
+      },
+      {
+        "code": "work_mode",
+        "value": "white"
+      },
+      {
+        "code": "temp_value",
+        "value": 1000
+      },
+      {
+        "code": "scene_data",
+        "value": ""
+      },
+      {
+        "code": "fan_switch",
+        "value": true
+      },
+      {
+        "code": "fan_speed",
+        "value": 6
+      },
+      {
+        "code": "fan_direction",
+        "value": "forward"
+      },
+      {
+        "code": "countdown_left_fan",
+        "value": 0
+      },
+      {
+        "code": "fan_beep",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1782929103,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "fsd",
+    "functions": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "temp_value",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "scene_data",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "fan_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fan_speed",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":1,\"max\":6,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_direction",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"reverse\"]}"
+      },
+      {
+        "code": "countdown_left_fan",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":540,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_beep",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch_led",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "work_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+      },
+      {
+        "code": "temp_value",
+        "type": "Integer",
+        "values": "{\"min\":0,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "scene_data",
+        "type": "String",
+        "values": "{\"maxlen\":255}"
+      },
+      {
+        "code": "fan_switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fan_speed",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":1,\"max\":6,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_direction",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"reverse\"]}"
+      },
+      {
+        "code": "countdown_left_fan",
+        "type": "Integer",
+        "values": "{\"unit\":\"min\",\"min\":0,\"max\":540,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "fan_beep",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch_led",
+      "custom_name": "",
+      "dp_id": 20,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "work_mode",
+      "custom_name": "",
+      "dp_id": 21,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"white\",\"colour\",\"scene\",\"music\"]}"
+    },
+    {
+      "code": "temp_value",
+      "custom_name": "",
+      "dp_id": 23,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"min\":0,\"max\":1000,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "scene_data",
+      "custom_name": "",
+      "dp_id": 25,
+      "time": 0,
+      "type": "String",
+      "value": "{\"maxlen\":255}"
+    },
+    {
+      "code": "fan_switch",
+      "custom_name": "",
+      "dp_id": 60,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "fan_speed",
+      "custom_name": "",
+      "dp_id": 62,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"\",\"min\":1,\"max\":6,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "fan_direction",
+      "custom_name": "",
+      "dp_id": 63,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"forward\",\"reverse\"]}"
+    },
+    {
+      "code": "fan_countdown_left",
+      "custom_name": "",
+      "dp_id": 64,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"min\",\"min\":0,\"max\":540,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "fan_beep",
+      "custom_name": "",
+      "dp_id": 66,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    }
+  ]
+}

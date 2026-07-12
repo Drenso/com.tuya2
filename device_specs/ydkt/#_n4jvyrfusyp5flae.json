@@ -1,0 +1,28 @@
+{
+  "active_time": 1782690481,
+  "biz_type": 0,
+  "category": "ydkt",
+  "create_time": 1782690481,
+  "icon": "smart/icon/bay1628517322743pfvY/2eb3948ae6ab95245d977ae923fb75ab.png",
+  "id": "bf0fef7591b9bc74edxqjc",
+  "ip": "",
+  "lat": "",
+  "local_key": "",
+  "lon": "",
+  "name": " Air Conditioner with Wi-Fi",
+  "online": true,
+  "owner_id": "",
+  "product_id": "n4jvyrfusyp5flae",
+  "product_name": " Air Conditioner with Wi-Fi",
+  "sub": false,
+  "time_zone": "+02:00",
+  "uid": "",
+  "update_time": 1782690481,
+  "uuid": "",
+  "specifications": {
+    "category": "",
+    "functions": [],
+    "status": []
+  },
+  "data_points": []
+}

@@ -153,6 +153,7 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
 
   - ydkt - Not documented
     - Evolar EVO-14000CHW mobile airco
+    - Air Conditioner with Wi-Fi
 
   - ywcgq - Not documented
     - Water level monitor
@@ -161,6 +162,7 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
   - znrb - Not documented
     - Smart Heat Pump
     - Power World DC Air/Water Heatpump
+    - INVERPAC
 
   - zwjcy - Not documented
     - Tuya Soil Sensor

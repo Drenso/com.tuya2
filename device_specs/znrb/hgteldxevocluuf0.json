@@ -1,0 +1,121 @@
+{
+  "device": {
+    "active_time": 1780998883,
+    "biz_type": 0,
+    "category": "znrb",
+    "create_time": 1780998883,
+    "icon": "smart/icon/bay1627974241259URmF/9b4092420b5400667654afd3a7677736.jpg",
+    "id": "bf2e0fc6c0666bbb2142bs",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": " INVERPAC",
+    "online": true,
+    "owner_id": "",
+    "product_id": "hgteldxevocluuf0",
+    "product_name": " INVERPAC",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "temp_set",
+        "value": 280
+      },
+      {
+        "code": "timer",
+        "value": ""
+      },
+      {
+        "code": "compressor_strength",
+        "value": 75
+      },
+      {
+        "code": "temp_coiler",
+        "value": 9
+      },
+      {
+        "code": "temp_venting",
+        "value": 57
+      },
+      {
+        "code": "temp_effluent",
+        "value": 260
+      },
+      {
+        "code": "temp_around",
+        "value": 24
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1780998883,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "znrb",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":60,\"max\":410,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "timer",
+        "type": "Raw",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":60,\"max\":410,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "timer",
+        "type": "Raw",
+        "values": "{}"
+      },
+      {
+        "code": "compressor_strength",
+        "type": "Integer",
+        "values": "{\"unit\":\"Hz\",\"min\":0,\"max\":1000,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_coiler",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-30,\"max\":99,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_venting",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":150,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_effluent",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-200,\"max\":990,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "temp_around",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-30,\"max\":99,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": []
+}

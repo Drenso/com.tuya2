@@ -1,5 +1,56 @@
 {
-  "actions": [],
+  "actions": [
+    {
+      "id": "irrigator_sub_switch_on",
+      "$filter": "capabilities=onoff.switch_1|onoff.switch_2|onoff.switch_3|onoff.switch_4",
+      "highlight": true,
+      "title": {
+        "en": "Turn valve on",
+        "nl": "Klep inschakelen"
+      },
+      "titleFormatted": {
+        "en": "Turn [[switch]] on",
+        "nl": "[[switch]] inschakelen"
+      },
+      "hint": {
+        "en": "Turn only a specific valve on the device on.",
+        "nl": "Schakel alleen een specifieke klep op het apparaat in."
+      },
+      "args": [
+        {
+          "name": "switch",
+          "type": "autocomplete",
+          "title": { "en": "Valve", "nl": "Klep" },
+          "placeholder": { "en": "Valve 1", "nl": "Klep 1" }
+        }
+      ]
+    },
+    {
+      "id": "irrigator_sub_switch_off",
+      "$filter": "capabilities=onoff.switch_1|onoff.switch_2|onoff.switch_3|onoff.switch_4",
+      "highlight": true,
+      "title": {
+        "en": "Turn valve off",
+        "nl": "Klep uitschakelen"
+      },
+      "titleFormatted": {
+        "en": "Turn [[switch]] off",
+        "nl": "[[switch]] uitschakelen"
+      },
+      "hint": {
+        "en": "Turn only a specific valve on the device off.",
+        "nl": "Schakel alleen een specifieke klep op het apparaat uit."
+      },
+      "args": [
+        {
+          "name": "switch",
+          "type": "autocomplete",
+          "title": { "en": "Valve", "nl": "Klep" },
+          "placeholder": { "en": "Valve 1", "nl": "Klep 1" }
+        }
+      ]
+    }
+  ],
   "conditions": [
     {
       "id": "irrigator_rain_sensor_is_true",
@@ -7,6 +58,31 @@
         "en": "Rain !{{is|is not}} detected"
       },
       "$filter": "capabilities=rain_sensor"
+    },
+    {
+      "id": "irrigator_sub_switch_is_on",
+      "$filter": "capabilities=onoff.switch_1|onoff.switch_2|onoff.switch_3|onoff.switch_4",
+      "highlight": true,
+      "title": {
+        "en": "Valve is turned !{{on|off}}",
+        "nl": "Klep is !{{aan|uit}}"
+      },
+      "titleFormatted": {
+        "en": "[[switch]] is turned !{{on|off}}",
+        "nl": "[[switch]] is !{{aan|uit}}"
+      },
+      "hint": {
+        "en": "A specific valve on the device is turned on/off.",
+        "nl": "Een specifieke klep op het apparaat is aan/uit."
+      },
+      "args": [
+        {
+          "name": "switch",
+          "type": "autocomplete",
+          "title": { "en": "Valve", "nl": "Klep" },
+          "placeholder": { "en": "Valve 1", "nl": "Klep 1" }
+        }
+      ]
     }
   ],
   "triggers": [
@@ -55,6 +131,56 @@
           },
           "type": "number",
           "example": 99
+        }
+      ]
+    },
+    {
+      "id": "irrigator_sub_switch_turned_on",
+      "$filter": "capabilities=onoff.switch_1|onoff.switch_2|onoff.switch_3|onoff.switch_4",
+      "highlight": true,
+      "title": {
+        "en": "Turned valve on",
+        "nl": "Klep ingeschakeld"
+      },
+      "titleFormatted": {
+        "en": "Turned [[switch]] on",
+        "nl": "[[switch]] ingeschakeld"
+      },
+      "hint": {
+        "en": "A specific valve on the device turned on.",
+        "nl": "Een specifieke klep op het apparaat is ingeschakeld."
+      },
+      "args": [
+        {
+          "name": "switch",
+          "type": "autocomplete",
+          "title": { "en": "Valve", "nl": "Klep" },
+          "placeholder": { "en": "Valve 1", "nl": "Klep 1" }
+        }
+      ]
+    },
+    {
+      "id": "irrigator_sub_switch_turned_off",
+      "$filter": "capabilities=onoff.switch_1|onoff.switch_2|onoff.switch_3|onoff.switch_4",
+      "highlight": true,
+      "title": {
+        "en": "Turned valve off",
+        "nl": "Klep uitgeschakeld"
+      },
+      "titleFormatted": {
+        "en": "Turned [[switch]] off",
+        "nl": "[[switch]] uitgeschakeld"
+      },
+      "hint": {
+        "en": "A specific valve on the device turned off.",
+        "nl": "Een specifieke klep op het apparaat is uitgeschakeld."
+      },
+      "args": [
+        {
+          "name": "switch",
+          "type": "autocomplete",
+          "title": { "en": "Valve", "nl": "Klep" },
+          "placeholder": { "en": "Valve 1", "nl": "Klep 1" }
         }
       ]
     }

@@ -28,7 +28,7 @@
     "@drenso/homey-log": "10.6600.0",
     "homey-oauth2app": "3.7.2",
     "mqtt": "5.15.2",
-    "nanoid": "3.3.15",
+    "nanoid": "3.3.16",
     "node-cache": "5.1.2",
     "node-fetch": "3.3.2",
     "qrcode": "1.5.4",

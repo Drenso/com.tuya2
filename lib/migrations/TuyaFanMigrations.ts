@@ -17,7 +17,8 @@ async function tuyaCapabilitiesMigration(device: TuyaOAuth2DeviceFan): Promise<v
     const tuyaCapabilities = [];
 
     const status = await device.getStatus();
-    for (const tuyaCapability in status) {
+    for (const statusEntry of status) {
+      const tuyaCapability = statusEntry.code;
       if (tuyaCapability === 'switch' || tuyaCapability === 'fan_speed_percent') {
         tuyaCapabilities.push(tuyaCapability);
       }

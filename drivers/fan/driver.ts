@@ -49,7 +49,7 @@ module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
     // superclass handles light capabilities, except onoff.light
     const props = super.onTuyaPairListDeviceProperties(device, specifications, dataPoints);
 
-    props.store['_migrations'] = ['fan_tuya_capabilities', 'reversed_fan_direction'];
+    props.store['_migrations'] = ['fan_tuya_capabilities', 'reversed_fan_direction', 'fan_speed_steps'];
 
     let fanSpeedTuyaCapability = '';
 

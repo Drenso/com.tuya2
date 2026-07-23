@@ -84,6 +84,29 @@ module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
     props.store['fan_speed_tuya_capability'] = fanSpeedTuyaCapability;
 
     if (!specifications || !specifications.status) {
+      // Assume the spec defaults
+      if (fanSpeedTuyaCapability === 'fan_speed' && device.category !== DEVICE_CATEGORIES.LIGHTING.CEILING_FAN_LIGHT) {
+        const legacyFanSpeedsEnum = ['1', '2', '3', '4'].map(value => ({
+          id: value,
+          title: value,
+        }));
+        props.capabilities.push('legacy_fan_speed');
+        props.capabilitiesOptions['legacy_fan_speed'] = {
+          values: legacyFanSpeedsEnum,
+        };
+      }
+
+      if (
+        (fanSpeedTuyaCapability === 'fan_speed' && device.category === DEVICE_CATEGORIES.LIGHTING.CEILING_FAN_LIGHT) ||
+        fanSpeedTuyaCapability === 'fan_speed_percent'
+      ) {
+        props.store['fan_speed_scale'] = { min: 1, max: 100, step: 1, scale: 0 };
+        props.capabilities.push('fan_speed');
+        props.capabilitiesOptions['fan_speed'] = {
+          step: 0.01,
+        };
+      }
+
       return props;
     }
 

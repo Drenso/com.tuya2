@@ -1,7 +1,7 @@
 export const FAN_CAPABILITIES_MAPPING = {
   switch: 'onoff',
   fan_switch: 'onoff',
-  fan_speed_percent: 'fan_speed',
+  // fan_speed_percent can be both fan_speed and legacy_fan_speed
   // fan_speed can be both fan_speed and legacy_fan_speed
   switch_vertical: 'fan_swing_vertical',
   switch_horizontal: 'fan_swing_horizontal',

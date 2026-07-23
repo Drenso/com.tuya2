@@ -30,15 +30,28 @@ export default class TuyaOAuth2DeviceFan extends TuyaOAuth2DeviceWithLight {
     }
 
     // fan_speed
+    const fanSpeedTuyaCapability = this.getStoreValue('fan_speed_tuya_capability');
+    const fanSpeedRange = this.getStoreValue('fan_speed_scale') as
+      | { min: number; max: number; step: number; scale: number }
+      | undefined;
+
     if (this.hasCapability('legacy_fan_speed')) {
-      this.registerCapabilityListener('legacy_fan_speed', value => this.sendCommand({ code: 'fan_speed', value }));
+      this.registerCapabilityListener('legacy_fan_speed', (value: string) => {
+        // parse if the tuya capability expects a numeric value
+        const parsedValue = fanSpeedRange === undefined ? value : parseFloat(value);
+        return this.sendCommand({
+          code: fanSpeedTuyaCapability,
+          value: parsedValue,
+        });
+      });
     }
 
-    if (
-      this.hasCapability('fan_speed') &&
-      this.getStoreValue('tuya_category') === DEVICE_CATEGORIES.LIGHTING.CEILING_FAN_LIGHT
-    ) {
-      this.registerCapabilityListener('fan_speed', value => this.sendCommand({ code: 'fan_speed', value }));
+    if (this.hasCapability('fan_speed')) {
+      const { min = 0, max = 100 } = fanSpeedRange ?? {};
+      this.registerCapabilityListener('fan_speed', (value: number) => {
+        const scaledValue = min + value * (max - min);
+        return this.sendCommand({ code: 'fan_speed', value: scaledValue });
+      });
     }
   }
 

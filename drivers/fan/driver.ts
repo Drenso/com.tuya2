@@ -51,6 +51,8 @@ module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
 
     props.store['_migrations'] = ['fan_tuya_capabilities', 'reversed_fan_direction'];
 
+    let fanSpeedTuyaCapability = '';
+
     for (const status of device.status) {
       const tuyaCapability = status.code;
 
@@ -60,13 +62,9 @@ module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
         props.capabilities.push(homeyCapability);
       }
 
-      if (tuyaCapability === 'fan_speed') {
+      if (tuyaCapability === 'fan_speed' || tuyaCapability === 'fan_speed_percent') {
         props.store.tuya_capabilities.push(tuyaCapability);
-        if (device.category === DEVICE_CATEGORIES.LIGHTING.CEILING_FAN_LIGHT) {
-          props.capabilities.push('fan_speed');
-        } else {
-          props.capabilities.push('legacy_fan_speed');
-        }
+        fanSpeedTuyaCapability = tuyaCapability;
       }
 
       if (tuyaCapability === 'colour_data') {
@@ -83,6 +81,7 @@ module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
     }
 
     props.store['reversed_fan_direction'] = 'backward';
+    props.store['fan_speed_tuya_capability'] = fanSpeedTuyaCapability;
 
     if (!specifications || !specifications.status) {
       return props;
@@ -92,25 +91,47 @@ module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
       const tuyaCapability = statusSpecification.code;
       const values: Record<string, unknown> = JSON.parse(statusSpecification.values);
 
-      // Fan
-      if (tuyaCapability === 'fan_speed_percent') {
-        props.capabilitiesOptions['fan_speed'] = {
-          min: values.min ?? 1,
-          max: values.max ?? 100,
-          step: values.step ?? 1,
-        };
-      }
-
       const speeds = values.range as string[] | undefined;
+      const { min = 1, max = 100, step = 1, scale = 0 } = values as Record<string, number | undefined>;
 
-      if (tuyaCapability === 'fan_speed' && speeds) {
-        const legacyFanSpeedsEnum = speeds.map(value => ({
-          id: value,
-          title: value,
-        }));
-        props.capabilitiesOptions['legacy_fan_speed'] = {
-          values: legacyFanSpeedsEnum,
-        };
+      // Fan
+      if (tuyaCapability === fanSpeedTuyaCapability) {
+        if (speeds !== undefined) {
+          const legacyFanSpeedsEnum = speeds.map(value => ({
+            id: value,
+            title: value,
+          }));
+          props.capabilities.push('legacy_fan_speed');
+          props.capabilitiesOptions['legacy_fan_speed'] = {
+            values: legacyFanSpeedsEnum,
+          };
+        } else {
+          props.store['fan_speed_scale'] = { min, max, step, scale };
+          const scaledMax = max * 10 ** scale;
+
+          if (scaledMax === 100) {
+            props.capabilities.push('fan_speed');
+            // Homey has hardcoded 0-1 range, so scale accordingly
+            const scaledStep = step / (max - min);
+            props.capabilitiesOptions['fan_speed'] = {
+              step: scaledStep,
+            };
+          } else {
+            const legacyFanSpeedsEnum = [];
+            for (let speed = min; speed <= max; speed += step) {
+              const speedPrecision = Math.max(0, -Math.floor(Math.log10(step)));
+              const speedString = speed.toFixed(speedPrecision);
+              legacyFanSpeedsEnum.push({
+                id: speedString,
+                title: speedString,
+              });
+            }
+            props.capabilities.push('legacy_fan_speed');
+            props.capabilitiesOptions['legacy_fan_speed'] = {
+              values: legacyFanSpeedsEnum,
+            };
+          }
+        }
       }
 
       if (tuyaCapability === 'fan_direction') {

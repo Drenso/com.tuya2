@@ -1,8 +1,10 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
+  "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
     "outDir": ".homeybuild/",
     "sourceMap": true,
+    "moduleResolution": "NodeNext",
+    "verbatimModuleSyntax": true,
     "resolveJsonModule": true
   }
 }

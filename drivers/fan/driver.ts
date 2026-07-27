@@ -12,12 +12,12 @@ import TRANSLATIONS from './translations.json' with { type: 'json' };
 import { FAN_CAPABILITIES_MAPPING } from './TuyaFanConstants.js';
 
 export default class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
-  TUYA_DEVICE_CATEGORIES = [
+  protected TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.FAN,
     DEVICE_CATEGORIES.LIGHTING.CEILING_FAN_LIGHT,
   ] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     this.homey.flow.getActionCard('fan_light_on').registerRunListener(async (args: StandardDeviceFlowArgs) => {
@@ -41,7 +41,7 @@ export default class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
     });
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

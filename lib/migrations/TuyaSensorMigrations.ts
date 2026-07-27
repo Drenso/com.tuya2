@@ -1,5 +1,5 @@
 import { HUMAN_SENSOR_CAPABILITIES } from '../../drivers/sensor_human/TuyaHumanSensorConstants.js';
-import TuyaOAuth2DeviceSensor from '../sensor/TuyaOAuth2DeviceSensor.js';
+import type TuyaOAuth2DeviceSensor from '../sensor/TuyaOAuth2DeviceSensor.js';
 import { constIncludes } from '../TuyaOAuth2Util.js';
 import { executeMigration } from './MigrationStore.js';
 

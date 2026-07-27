@@ -10,7 +10,7 @@ import {
 } from './TuyaSirenConstants.js';
 
 export default class TuyaOAuth2DeviceSiren extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     for (const [tuyaCapability, capability] of Object.entries(SIREN_CAPABILITIES_MAPPING)) {
@@ -20,7 +20,7 @@ export default class TuyaOAuth2DeviceSiren extends TuyaOAuth2Device {
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
     await super.onTuyaStatus(status, changed);
 
     for (const statusKey in status) {
@@ -41,7 +41,7 @@ export default class TuyaOAuth2DeviceSiren extends TuyaOAuth2Device {
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeSirenSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeSirenSettings>): Promise<string | void> {
     return await TuyaOAuth2Util.onSettings<TuyaSirenSettings>(this, event, this.SETTING_LABELS);
   }
 }

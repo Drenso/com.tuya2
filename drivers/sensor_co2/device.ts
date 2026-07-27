@@ -5,13 +5,13 @@ import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import { SENSOR_CO2_CAPABILITY_MAPPING } from './SensorCo2Constants.js';
 
 export default class TuyaOAuth2DeviceSensorCO2 extends TuyaOAuth2DeviceSensor {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await this.initAlarm('alarm_smoke').catch(this.error);
 
     return super.onOAuth2Init();
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     await super.onTuyaStatus(status, changedStatusCodes);
 
     for (const tuyaCapability in status) {
@@ -32,7 +32,7 @@ export default class TuyaOAuth2DeviceSensorCO2 extends TuyaOAuth2DeviceSensor {
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeySensorSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeySensorSettings>): Promise<string | void> {
     const [unsupportedSettings, unsupportedValues] = await super.onAlarmSettings(event);
     return Util.reportUnsupportedSettings(this, unsupportedSettings, unsupportedValues, SENSOR_SETTING_LABELS);
   }

@@ -11,12 +11,12 @@ import {
 } from './TuyaLightConstants.js';
 
 export default class TuyaOAuth2DeviceLight extends TuyaOAuth2DeviceWithLight {
-  async performMigrations(): Promise<void> {
+  protected async performMigrations(): Promise<void> {
     await super.performMigrations();
     await TuyaLightMigrations.performMigrations(this);
   }
 
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     if (this.getStoreValue('tuya_category') === DEVICE_CATEGORIES.LIGHTING.LIGHT) {
       // Check if we need to use v2 Tuya capabilities
       if (this.hasTuyaCapability('bright_value_v2')) {
@@ -51,7 +51,7 @@ export default class TuyaOAuth2DeviceLight extends TuyaOAuth2DeviceWithLight {
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     // superclass handles all light capabilities, except for onoff
     await super.onTuyaStatus(status, changedStatusCodes);
 
@@ -126,7 +126,7 @@ export default class TuyaOAuth2DeviceLight extends TuyaOAuth2DeviceWithLight {
     }
   }
 
-  async allOnOff(value: boolean): Promise<void> {
+  public async allOnOff(value: boolean): Promise<void> {
     const tuyaSwitches = this.getStore().tuya_switches;
     const commands = [];
 
@@ -140,14 +140,14 @@ export default class TuyaOAuth2DeviceLight extends TuyaOAuth2DeviceWithLight {
     await this.sendCommands(commands);
   }
 
-  async switchOnOff(value: boolean, tuya_switch: string): Promise<void> {
+  public async switchOnOff(value: boolean, tuya_switch: string): Promise<void> {
     await this.sendCommand({
       code: tuya_switch,
       value: value,
     });
   }
 
-  async onSettings(event: SettingsEvent<HomeyLightSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyLightSettings>): Promise<string | void> {
     const nonStandbySettings = filterTuyaSettings<HomeyLightSettings, TuyaLightSettings>(event, [
       'switch_pir',
       'pir_sensitivity',

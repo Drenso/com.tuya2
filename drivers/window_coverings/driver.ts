@@ -9,9 +9,9 @@ import type {
 import { WINDOW_COVERINGS_CAPABILITIES, WINDOW_COVERINGS_CAPABILITY_MAPPING } from './TuyaWindowCoveringsConstants.js';
 
 export default class TuyaOAuth2DriverWindowCoverings extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.CURTAIN] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.CURTAIN] as const;
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

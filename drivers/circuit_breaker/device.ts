@@ -11,7 +11,7 @@ import {
 } from './TuyaCircuitBreakerConstants.js';
 
 export default class TuyaOAuth2DeviceCircuitBreaker extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     if (this.hasCapability('onoff')) {
@@ -19,12 +19,12 @@ export default class TuyaOAuth2DeviceCircuitBreaker extends TuyaOAuth2Device {
     }
   }
 
-  async performMigrations(): Promise<void> {
+  protected async performMigrations(): Promise<void> {
     await super.performMigrations();
     await CircuitBreakerMigrations.performMigrations(this);
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     await super.onTuyaStatus(status, changedStatusCodes);
 
     for (const tuyaCapability in status) {
@@ -59,7 +59,7 @@ export default class TuyaOAuth2DeviceCircuitBreaker extends TuyaOAuth2Device {
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeyCircuitBreakerSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyCircuitBreakerSettings>): Promise<string | void> {
     for (const tuyaCapability of CIRCUIT_BREAKER_CAPABILITIES.read_only_scaled) {
       const homeyCapability = CIRCUIT_BREAKER_CAPABILITIES_MAPPING[tuyaCapability];
       if (!homeyCapability) continue;

@@ -10,12 +10,12 @@ import {
 } from './SensorPm25Constants.js';
 
 export default class TuyaOAuth2DeviceSensorPM25 extends TuyaOAuth2DeviceSensor {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await this.initAlarm('alarm_pm25').catch(this.error);
     return super.onOAuth2Init();
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     await super.onTuyaStatus(status, changedStatusCodes);
 
     for (const tuyaCapability in status) {
@@ -42,7 +42,7 @@ export default class TuyaOAuth2DeviceSensorPM25 extends TuyaOAuth2DeviceSensor {
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeyPM25SensorSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyPM25SensorSettings>): Promise<string | void> {
     for (const tuyaCapability of SENSOR_PM25_CAPABILITIES.read_only_scaled) {
       const homeyCapability = SENSOR_PM25_CAPABILITY_MAPPING[tuyaCapability];
       await Util.handleScaleSetting(this, event, `${homeyCapability}_scaling`, homeyCapability);

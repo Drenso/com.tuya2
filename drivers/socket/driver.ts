@@ -1,4 +1,4 @@
-import { FlowCard } from 'homey';
+import type { FlowCard } from 'homey';
 import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
 import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
 import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util.js';
@@ -16,14 +16,14 @@ type SwitchArgs = { switch: { name: string; id: string } };
 type TuyaCapabilityState = { tuyaCapability: string };
 
 export default class TuyaOAuth2DriverSocket extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [
+  protected TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.SOCKET,
     DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.POWER_STRIP,
     DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.SWITCH,
     DEVICE_CATEGORIES.UNDOCUMENTED.SWITCH,
   ] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     const switchAutocompleteListener = (query: string, args: DeviceArgs): FlowCard.ArgumentAutocompleteResults => {
@@ -100,7 +100,7 @@ export default class TuyaOAuth2DriverSocket extends TuyaOAuth2Driver {
       );
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

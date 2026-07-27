@@ -9,13 +9,13 @@ import type {
 import { GARAGE_DOOR_CAPABILITIES, GRAGE_DOOR_CAPABILITIES_MAPPING } from './TuyaGarageDoorConstants.js';
 
 export default class TuyaOAuth2DriverGarageDoor extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.GARAGE_DOOR_OPEN] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.GARAGE_DOOR_OPEN] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

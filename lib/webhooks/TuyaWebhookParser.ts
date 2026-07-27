@@ -36,7 +36,7 @@ export type TuyaWebhookData = OnlineEvent | OfflineEvent | StatusEvent | IotCore
 export default class TuyaWebhookParser {
   private readonly logContext;
 
-  constructor(logContext: SimpleClass) {
+  public constructor(logContext: SimpleClass) {
     this.logContext = logContext;
   }
 

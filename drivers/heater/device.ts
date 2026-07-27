@@ -5,7 +5,7 @@ import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import { HEATER_CAPABILITIES_MAPPING, type HomeyHeaterSettings } from './TuyaHeaterConstants.js';
 
 export default class TuyaOAuth2DeviceHeater extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     if (this.hasCapability('onoff')) {
@@ -25,7 +25,7 @@ export default class TuyaOAuth2DeviceHeater extends TuyaOAuth2Device {
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     await super.onTuyaStatus(status, changedStatusCodes);
 
     if (typeof status['switch'] === 'boolean') {
@@ -80,14 +80,14 @@ export default class TuyaOAuth2DeviceHeater extends TuyaOAuth2Device {
     }
   }
 
-  async onOffCapabilityListener(value: boolean): Promise<void> {
+  public async onOffCapabilityListener(value: boolean): Promise<void> {
     await this.sendCommand({
       code: 'switch',
       value: value,
     });
   }
 
-  async targetTemperatureCapabilityListener(value: number): Promise<void> {
+  public async targetTemperatureCapabilityListener(value: number): Promise<void> {
     const scaling = computeScaleFactor(this.getSetting('temp_set_scaling'));
     await this.sendCommand({
       code: 'temp_set',
@@ -95,7 +95,7 @@ export default class TuyaOAuth2DeviceHeater extends TuyaOAuth2Device {
     });
   }
 
-  async childLockCapabilityListener(value: boolean): Promise<void> {
+  public async childLockCapabilityListener(value: boolean): Promise<void> {
     if (this.hasTuyaCapability('lock')) {
       await this.sendCommand({
         code: 'lock',
@@ -109,7 +109,7 @@ export default class TuyaOAuth2DeviceHeater extends TuyaOAuth2Device {
     }
   }
 
-  async ecoModeCapabilityListener(value: boolean): Promise<void> {
+  public async ecoModeCapabilityListener(value: boolean): Promise<void> {
     if (this.hasTuyaCapability('eco')) {
       await this.sendCommand({
         code: 'eco',
@@ -123,7 +123,7 @@ export default class TuyaOAuth2DeviceHeater extends TuyaOAuth2Device {
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeyHeaterSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyHeaterSettings>): Promise<string | void> {
     for (const tuyaCapability of ['temp_set', 'temp_current', 'work_power'] as const) {
       const homeyCapability = HEATER_CAPABILITIES_MAPPING[tuyaCapability];
       await TuyaOAuth2Util.handleScaleSetting(this, event, `${tuyaCapability}_scaling`, homeyCapability).catch(

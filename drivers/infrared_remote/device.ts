@@ -1,7 +1,7 @@
 import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
 
 export default class TuyaOAuth2DeviceIrController extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     if (this.hasCapability('on_button')) {
@@ -23,13 +23,13 @@ export default class TuyaOAuth2DeviceIrController extends TuyaOAuth2Device {
     }
   }
 
-  async sendKeyCommand(keyId?: number, keyString?: string): Promise<boolean> {
+  public async sendKeyCommand(keyId?: number, keyString?: string): Promise<boolean> {
     const { deviceId, controllerId } = this.getData();
     const categoryId = this.getStoreValue('tuya_remote_category') as number;
     return this.oAuth2Client.sendKeyCommand(controllerId, deviceId, categoryId, keyId, keyString);
   }
 
-  async sendAircoCommand(code: string, value: number): Promise<boolean> {
+  public async sendAircoCommand(code: string, value: number): Promise<boolean> {
     const { deviceId, controllerId } = this.getData();
     return this.oAuth2Client.sendAircoCommand(controllerId, deviceId, code, value);
   }

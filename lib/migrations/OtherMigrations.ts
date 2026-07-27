@@ -1,4 +1,4 @@
-import TuyaOAuth2Device from '../TuyaOAuth2Device.js';
+import type TuyaOAuth2Device from '../TuyaOAuth2Device.js';
 import * as TuyaOAuth2Util from '../TuyaOAuth2Util.js';
 import { executeMigration } from './MigrationStore.js';
 

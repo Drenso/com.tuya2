@@ -10,9 +10,9 @@ import type {
 import { SENSOR_GAS_CAPABILITY_MAPPING } from './SensorGasConstants.js';
 
 export default class TuyaOAuth2DriverSensorGas extends TuyaOAuth2DriverSensor {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.GAS_ALARM] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.GAS_ALARM] as const;
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

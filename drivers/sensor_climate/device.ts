@@ -9,7 +9,7 @@ import {
 } from './TuyaClimateSensorConstants.js';
 
 export default class TuyaOAuth2DeviceSensorClimate extends TuyaOAuth2DeviceSensor {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     if (this.hasCapability('onoff')) {
@@ -17,7 +17,7 @@ export default class TuyaOAuth2DeviceSensorClimate extends TuyaOAuth2DeviceSenso
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     // battery_state, battery_percentage and temper_alarm are handled by the superclass
     await super.onTuyaStatus(status, changedStatusCodes);
 
@@ -51,7 +51,7 @@ export default class TuyaOAuth2DeviceSensorClimate extends TuyaOAuth2DeviceSenso
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeyClimateSensorSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyClimateSensorSettings>): Promise<string | void> {
     for (const tuyaCapability of ['va_temperature', 'va_humidity', 'bright_value'] as const) {
       const homeyCapability = CLIMATE_CAPABILITY_MAPPING[tuyaCapability];
       await TuyaOAuth2Util.handleScaleSetting(this, event, `${tuyaCapability}_scaling`, homeyCapability).catch(

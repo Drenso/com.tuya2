@@ -9,9 +9,9 @@ import type {
 import { SIREN_CAPABILITIES_MAPPING, SIREN_FLOWS } from './TuyaSirenConstants.js';
 
 export default class TuyaOAuth2DriverSiren extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.SIREN_ALARM] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.SIREN_ALARM] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     for (const setting of SIREN_FLOWS.setting) {
@@ -19,7 +19,7 @@ export default class TuyaOAuth2DriverSiren extends TuyaOAuth2Driver {
     }
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

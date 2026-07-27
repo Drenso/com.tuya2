@@ -29,7 +29,7 @@ export function convertStatusArrayToStatusObject(statuses?: TuyaStatusResponse):
     if (typeof obj[item.code] === 'string' && hasJsonStructure(obj[item.code] as string)) {
       try {
         obj[item.code] = JSON.parse(obj[item.code] as string);
-      } catch (err) {
+      } catch {
         /* empty */
       }
     }
@@ -109,7 +109,7 @@ export function hasJsonStructure(str: unknown): boolean {
     const result = JSON.parse(str);
     const type = Object.prototype.toString.call(result);
     return type === '[object Object]' || type === '[object Array]';
-  } catch (err) {
+  } catch {
     return false;
   }
 }

@@ -1,58 +1,58 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare module 'homey-oauth2app' {
   import Homey, { SimpleClass } from 'homey';
-  import { Log } from 'homey-log';
-  import PairSession from 'homey/lib/PairSession';
+  import type { Log } from 'homey-log';
+  import type PairSession from 'homey/lib/PairSession';
   export { fetch } from 'node-fetch';
 
   export class OAuth2App extends Homey.App {
-    onOAuth2Init(): Promise<void>;
+    public onOAuth2Init(): Promise<void>;
 
-    getFirstSavedOAuth2Client(): OAuth2Client;
+    public getFirstSavedOAuth2Client(): OAuth2Client;
 
-    getSavedOAuth2Sessions(): Record<string, unknown>;
+    public getSavedOAuth2Sessions(): Record<string, unknown>;
 
-    homeyLog: Log;
+    public homeyLog: Log;
   }
 
   export class OAuth2Client<TToken extends OAuth2Token> extends SimpleClass {
-    static API_URL: string;
-    static TOKEN_URL: string;
-    static AUTHORIZATION_URL: string;
-    static SCOPES: string[];
+    protected static API_URL: string;
+    protected static TOKEN_URL: string;
+    protected static AUTHORIZATION_URL: string;
+    protected static SCOPES: string[];
 
-    _token?: TToken;
-    _clientId!: string;
-    _clientSecret!: string;
-    _refreshingToken: Promise<void> | null;
+    public _token?: TToken;
+    public _clientId!: string;
+    public _clientSecret!: string;
+    public _refreshingToken: Promise<void> | null;
 
-    homey: Homey;
+    public homey: Homey;
 
-    get<T>(data: { path: string; query?: any; headers?: any }): Promise<T>;
+    public get<T>(data: { path: string; query?: any; headers?: any }): Promise<T>;
 
-    delete<T>(data: { path: string; query?: any; headers?: any }): Promise<T>;
+    public delete<T>(data: { path: string; query?: any; headers?: any }): Promise<T>;
 
-    post<T>(data: { path: string; query?: any; json?: any; body?: any; headers?: any }): Promise<T>;
+    public post<T>(data: { path: string; query?: any; json?: any; body?: any; headers?: any }): Promise<T>;
 
-    put<T>(data: { path: string; query?: any; json?: any; body?: any; headers?: any }): Promise<T>;
+    public put<T>(data: { path: string; query?: any; json?: any; body?: any; headers?: any }): Promise<T>;
 
-    onShouldRefreshToken(args: { status: number }): Promise<boolean>;
+    public onShouldRefreshToken(args: { status: number }): Promise<boolean>;
 
-    getToken(): TToken | null;
+    public getToken(): TToken | null;
 
-    setToken({ token: TToken }): void;
+    public setToken({ token: TToken }): void;
 
-    getTitle(): string;
+    public getTitle(): string;
 
-    setTitle({ title: string }): void;
+    public setTitle({ title: string }): void;
 
-    async refreshToken(...args): Promise<void>;
+    public async refreshToken(...args): Promise<void>;
 
-    save(): void;
+    public save(): void;
 
-    destroy(): void;
+    public destroy(): void;
 
-    async onBuildRequest(args: {
+    public async onBuildRequest(args: {
       method: string;
       path: string;
       json: object;
@@ -70,38 +70,38 @@ declare module 'homey-oauth2app' {
   }
 
   export class OAuth2Device<T extends OAuth2Client> extends Homey.Device {
-    oAuth2Client: T;
+    public oAuth2Client: T;
 
-    onOAuth2Init(): Promise<void>;
+    public onOAuth2Init(): Promise<void>;
 
-    onOAuth2Uninit(): Promise<void>;
+    public onOAuth2Uninit(): Promise<void>;
 
-    onOAuth2Saved(): Promise<void>;
+    public onOAuth2Saved(): Promise<void>;
 
-    onOAuth2Added(): Promise<void>;
+    public onOAuth2Added(): Promise<void>;
 
-    onOAuth2Deleted(): Promise<void>;
+    public onOAuth2Deleted(): Promise<void>;
 
-    homey: Homey;
+    public homey: Homey;
 
-    ready(): Promise<void>;
+    public ready(): Promise<void>;
 
-    setCameraVideo(id: string, title: string, video: unknown): Promise<void>;
+    public setCameraVideo(id: string, title: string, video: unknown): Promise<void>;
   }
 
   export class OAuth2Driver<T extends OAuth2Client> extends Homey.Driver {
-    onOAuth2Init(): Promise<void>;
+    public onOAuth2Init(): Promise<void>;
 
-    onPairListDevices(payload: { oAuth2Client: T }): Promise<OAuth2DeviceResult[]>;
+    public onPairListDevices(payload: { oAuth2Client: T }): Promise<OAuth2DeviceResult[]>;
 
-    getOAuth2ConfigId(): string;
+    public getOAuth2ConfigId(): string;
 
-    homey: Homey;
+    public homey: Homey;
 
-    onPair(session: PairSession, device?: OAuth2Device<T>): Promise<void>;
-    onRepair(session: PairSession, device?: OAuth2Device<T>): Promise<void>;
+    public onPair(session: PairSession, device?: OAuth2Device<T>): Promise<void>;
+    public onRepair(session: PairSession, device?: OAuth2Device<T>): Promise<void>;
 
-    ready(): Promise<void>;
+    public ready(): Promise<void>;
   }
 
   export interface OAuth2DeviceResult {
@@ -126,16 +126,21 @@ declare module 'homey-oauth2app' {
   }
 
   export class OAuth2Token {
-    access_token: string;
-    refresh_token: string;
-    token_type?: string;
-    expires_in?: number;
+    public access_token: string;
+    public refresh_token: string;
+    public token_type?: string;
+    public expires_in?: number;
 
-    constructor(param: { access_token: string; refresh_token: string; token_type?: string; expires_in?: number });
+    public constructor(param: {
+      access_token: string;
+      refresh_token: string;
+      token_type?: string;
+      expires_in?: number;
+    });
 
-    isRefreshable(): boolean;
+    public isRefreshable(): boolean;
 
-    toJSON(): {
+    public toJSON(): {
       access_token: string;
       refresh_token: string;
       token_type?: string;
@@ -144,10 +149,10 @@ declare module 'homey-oauth2app' {
   }
 
   export class OAuth2Error {
-    constructor(message: string, statusCode?: number);
+    public constructor(message: string, statusCode?: number);
   }
 
   export class OAuth2Util {
-    static getRandomId(): string;
+    public static getRandomId(): string;
   }
 }

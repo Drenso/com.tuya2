@@ -3,7 +3,7 @@ import { computeScaleFactor } from '../../lib/TuyaOAuth2Util.js';
 import type { TuyaStatus } from '../../types/TuyaTypes.js';
 
 export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     if (this.hasCapability('onoff')) {
@@ -23,7 +23,7 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     await super.onTuyaStatus(status, changedStatusCodes);
 
     if (typeof status['switch'] === 'boolean') {
@@ -55,14 +55,14 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
     }
   }
 
-  async onOffCapabilityListener(value: boolean): Promise<void> {
+  public async onOffCapabilityListener(value: boolean): Promise<void> {
     await this.sendCommand({
       code: 'switch',
       value: value,
     });
   }
 
-  async targetTemperatureCapabilityListener(value: number): Promise<void> {
+  public async targetTemperatureCapabilityListener(value: number): Promise<void> {
     const scaling = computeScaleFactor(this.getSetting('temp_set_scaling'));
     await this.sendCommand({
       code: 'temp_set',
@@ -70,7 +70,7 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
     });
   }
 
-  async targetHumidityCapabilityListener(value: number): Promise<void> {
+  public async targetHumidityCapabilityListener(value: number): Promise<void> {
     const scaling = computeScaleFactor(this.getSetting('humidity_set_scaling'));
     await this.sendCommand({
       code: 'humidity_set',
@@ -78,7 +78,7 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
     });
   }
 
-  async childLockCapabilityListener(value: boolean): Promise<void> {
+  public async childLockCapabilityListener(value: boolean): Promise<void> {
     await this.sendCommand({
       code: 'lock',
       value: value,

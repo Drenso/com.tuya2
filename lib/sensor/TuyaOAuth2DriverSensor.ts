@@ -8,7 +8,7 @@ import { SENSOR_CAPABILITIES, SENSOR_CAPABILITY_MAPPING } from './TuyaSensorCons
 import { constIncludes, getFromMap } from '../TuyaOAuth2Util.js';
 
 export default class TuyaOAuth2DriverSensor extends TuyaOAuth2Driver {
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

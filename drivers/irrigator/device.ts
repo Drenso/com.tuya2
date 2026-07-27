@@ -8,7 +8,7 @@ import {
 } from './TuyaIrrigatorConstants.js';
 
 export default class TuyaOAuth2DeviceIrrigator extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     if (this.hasCapability('onoff')) {
@@ -16,7 +16,7 @@ export default class TuyaOAuth2DeviceIrrigator extends TuyaOAuth2Device {
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     await super.onTuyaStatus(status, changedStatusCodes);
 
     for (const tuyaCapability in status) {
@@ -56,7 +56,7 @@ export default class TuyaOAuth2DeviceIrrigator extends TuyaOAuth2Device {
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeyIrrigatorSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyIrrigatorSettings>): Promise<string | void> {
     for (const tuyaCapability of IRRIGATOR_CAPABILITIES.read_only_scaled) {
       const homeyCapability = IRRIGATOR_CAPABILITIES_MAPPING[tuyaCapability];
       await handleScaleSetting(this, event, `${homeyCapability}_scaling`, homeyCapability).catch(this.error);

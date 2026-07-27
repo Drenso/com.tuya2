@@ -8,7 +8,7 @@ type PtzControlFlowArgs = {
 };
 
 export default class TuyaOAuth2DriverCamera extends TuyaDriverWithCamera {
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     this.homey.flow.getActionCard(`${this.id}_ptz_control`).registerRunListener(async (args: PtzControlFlowArgs) => {

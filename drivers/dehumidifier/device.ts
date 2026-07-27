@@ -9,7 +9,7 @@ import {
 } from './DehumidifierConstants.js';
 
 export default class TuyaOAuth2DeviceDehumidifier extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     for (const tuyaCapability of DEHUMIDIFIER_CAPABILITIES.read_write) {
@@ -18,7 +18,7 @@ export default class TuyaOAuth2DeviceDehumidifier extends TuyaOAuth2Device {
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
     await super.onTuyaStatus(status, changed);
 
     for (const tuyaCapability in status) {
@@ -36,7 +36,7 @@ export default class TuyaOAuth2DeviceDehumidifier extends TuyaOAuth2Device {
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeyDehumidifierSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyDehumidifierSettings>): Promise<string | void> {
     for (const tuyaCapability of DEHUMIDIFIER_CAPABILITIES.read_only_scaled) {
       const homeyCapability = DEHUMIDIFIER_CAPABILITY_MAPPING[tuyaCapability];
       await Util.handleScaleSetting(this, event, `${homeyCapability}_scaling`, homeyCapability).catch(this.error);

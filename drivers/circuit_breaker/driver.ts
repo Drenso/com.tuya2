@@ -9,15 +9,15 @@ import type {
 import { CIRCUIT_BREAKER_CAPABILITIES, CIRCUIT_BREAKER_CAPABILITIES_MAPPING } from './TuyaCircuitBreakerConstants.js';
 
 export default class TuyaOAuth2DriverCircuitBreaker extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.ENERGY.CIRCUIT_BREAKER] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.ENERGY.CIRCUIT_BREAKER] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     this.addSettingFlowHandler('child_lock', this.SETTING_LABELS);
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

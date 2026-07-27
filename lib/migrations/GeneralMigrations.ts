@@ -1,4 +1,4 @@
-import TuyaOAuth2Device from '../TuyaOAuth2Device.js';
+import type TuyaOAuth2Device from '../TuyaOAuth2Device.js';
 
 export async function performMigrations(device: TuyaOAuth2Device): Promise<void> {
   await tuyaCategoryMigration(device).catch(device.error);

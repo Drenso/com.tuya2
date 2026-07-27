@@ -16,7 +16,7 @@ type DeviceArgs = StandardDeviceFlowArgs<TuyaOAuth2DeviceLight>;
 type FlowArgs = StandardFlowArgs<TuyaOAuth2DeviceLight>;
 
 export default class TuyaOAuth2DriverLight extends TuyaOAuth2DriverWithLight {
-  TUYA_DEVICE_CATEGORIES = [
+  protected TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.LIGHTING.LIGHT,
     DEVICE_CATEGORIES.LIGHTING.CEILING_LIGHT,
     DEVICE_CATEGORIES.LIGHTING.AMBIENCE_LIGHT,
@@ -28,7 +28,7 @@ export default class TuyaOAuth2DriverLight extends TuyaOAuth2DriverWithLight {
     DEVICE_CATEGORIES.UNDOCUMENTED.STAR_PROJECTOR,
   ] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     this.homey.flow
@@ -85,7 +85,7 @@ export default class TuyaOAuth2DriverLight extends TuyaOAuth2DriverWithLight {
     }
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

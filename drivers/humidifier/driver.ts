@@ -11,9 +11,9 @@ import driver_compose from './driver.compose.json' with { type: 'json' };
 import { HUMIDIFIER_CAPABILITY_MAPPING, HUMIDIFIER_FLOWS } from './TuyaHumidifierConstants.js';
 
 export default class TuyaOAuth2DriverHumidifier extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.HUMIDIFIER] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.HUMIDIFIER] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     // onoff
@@ -48,7 +48,7 @@ export default class TuyaOAuth2DriverHumidifier extends TuyaOAuth2Driver {
     }
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

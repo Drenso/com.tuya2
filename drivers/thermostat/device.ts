@@ -12,7 +12,7 @@ import {
 } from './TuyaThermostatConstants.js';
 
 export default class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     for (const tuyaCapability of THERMOSTAT_CAPABILITIES.read_write) {
@@ -30,12 +30,12 @@ export default class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
     }
   }
 
-  async performMigrations(): Promise<void> {
+  protected async performMigrations(): Promise<void> {
     await super.performMigrations();
     await TuyaThermostatMigrations.performMigrations(this);
   }
 
-  async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
     await super.onTuyaStatus(status, changed);
 
     for (const tuyaCapability in status) {
@@ -75,7 +75,7 @@ export default class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
     }
   }
 
-  async scaleCapabilityOptions(
+  public async scaleCapabilityOptions(
     event: SettingsEvent<HomeyThermostatSettings>,
     homeyCapability: 'target_temperature' | 'measure_temperature',
   ): Promise<void> {
@@ -90,7 +90,7 @@ export default class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeyThermostatSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyThermostatSettings>): Promise<string | void> {
     for (const homeyCapability of [
       'target_temperature',
       'measure_temperature',

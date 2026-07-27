@@ -6,7 +6,7 @@ import TuyaTimeOutAlarmDevice from '../TuyaTimeOutAlarmDevice.js';
 import { type HomeySensorSettings, SENSOR_CAPABILITIES, type TuyaSensorSettings } from './TuyaSensorConstants.js';
 
 export default class TuyaOAuth2DeviceSensor extends TuyaTimeOutAlarmDevice {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await this.initAlarm('alarm_tamper', false).catch(this.error);
 
     if (this.hasCapability('onoff.alarm_switch')) {
@@ -16,12 +16,12 @@ export default class TuyaOAuth2DeviceSensor extends TuyaTimeOutAlarmDevice {
     return super.onOAuth2Init();
   }
 
-  async performMigrations(): Promise<void> {
+  protected async performMigrations(): Promise<void> {
     await super.performMigrations();
     await TuyaSensorMigrations.performMigrations(this);
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     await super.onTuyaStatus(status, changedStatusCodes);
 
     // alarm_battery
@@ -55,7 +55,7 @@ export default class TuyaOAuth2DeviceSensor extends TuyaTimeOutAlarmDevice {
     }
   }
 
-  async setAlarmCapabilityValue(capability: string, value: boolean): Promise<void> {
+  public async setAlarmCapabilityValue(capability: string, value: boolean): Promise<void> {
     if (this.getSetting('use_alarm_timeout')) {
       if (value) {
         await this.setAlarm(
@@ -72,7 +72,7 @@ export default class TuyaOAuth2DeviceSensor extends TuyaTimeOutAlarmDevice {
     }
   }
 
-  async onAlarmSettings(
+  public async onAlarmSettings(
     event: SettingsEvent<HomeySensorSettings>,
   ): Promise<[(keyof TuyaSensorSettings)[], (keyof TuyaSensorSettings)[]]> {
     const tuyaSettings = filterTuyaSettings<HomeySensorSettings, TuyaSensorSettings>(

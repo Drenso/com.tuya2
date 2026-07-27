@@ -1,4 +1,4 @@
-import TuyaOAuth2DeviceSocket from '../../drivers/socket/device.js';
+import type TuyaOAuth2DeviceSocket from '../../drivers/socket/device.js';
 import { executeMigration } from './MigrationStore.js';
 
 export async function performMigrations(device: TuyaOAuth2DeviceSocket): Promise<void> {

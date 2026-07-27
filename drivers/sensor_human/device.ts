@@ -9,13 +9,13 @@ import {
 } from './TuyaHumanSensorConstants.js';
 
 export default class TuyaOAuth2DeviceSensorHuman extends TuyaOAuth2DeviceSensor {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await this.initAlarm('alarm_human').catch(this.error);
 
     return super.onOAuth2Init();
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     await super.onTuyaStatus(status, changedStatusCodes);
 
     // alarm_human
@@ -35,7 +35,7 @@ export default class TuyaOAuth2DeviceSensorHuman extends TuyaOAuth2DeviceSensor 
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeyHumanSensorSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyHumanSensorSettings>): Promise<string | void> {
     const tuyaSettings = filterTuyaSettings<HomeyHumanSensorSettings, TuyaHumanSensorSettings>(event, [
       'sensitivity',
       'near_detection',

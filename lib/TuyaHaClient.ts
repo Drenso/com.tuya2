@@ -31,18 +31,18 @@ import * as TuyaOAuth2Util from './TuyaOAuth2Util.js';
 type OAuth2SessionInformation = { id: string; title: string };
 
 export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
-  static TOKEN = TuyaHaToken;
-  static API_URL = '<dummy>';
-  static TOKEN_URL = '<dummy>';
-  static AUTHORIZATION_URL = 'https://openapi.tuyaus.com/login';
-  static REDIRECT_URL = 'https://tuya.athom.com/callback';
+  protected static TOKEN = TuyaHaToken;
+  protected static API_URL = '<dummy>';
+  protected static TOKEN_URL = '<dummy>';
+  protected static AUTHORIZATION_URL = 'https://openapi.tuyaus.com/login';
+  protected static REDIRECT_URL = 'https://tuya.athom.com/callback';
 
-  mqttPromise?: Promise<void>;
-  mqttConfig?: TuyaMqttConfigResponse;
-  mqttClient?: mqtt.MqttClient;
+  private mqttPromise?: Promise<void>;
+  private mqttConfig?: TuyaMqttConfigResponse;
+  private mqttClient?: mqtt.MqttClient;
 
-  resolveReadyPromise!: () => void;
-  readyPromise = new Promise<void>(resolve => {
+  private resolveReadyPromise!: () => void;
+  private readyPromise = new Promise<void>(resolve => {
     this.resolveReadyPromise = resolve;
   });
 
@@ -53,7 +53,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   // We save this information to eventually enable OAUTH2_MULTI_SESSION.
   // We can then list all authenticated users by name, e-mail and country flag.
   // This is useful for multiple account across Tuya brands & regions.
-  async onGetOAuth2SessionInformation(): Promise<OAuth2SessionInformation> {
+  public async onGetOAuth2SessionInformation(): Promise<OAuth2SessionInformation> {
     const token = this.getToken();
     if (!token) {
       throw new TuyaOAuth2Error(this.homey.__('error_no_token'));
@@ -65,7 +65,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     };
   }
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     this.error = this.error.bind(this);
     this.resolveReadyPromise();
 
@@ -73,14 +73,14 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     this.tokenRefresher = this.homey.setInterval(() => this.refreshApiToken(), 30 * 1000);
   }
 
-  async onUninit(): Promise<void> {
+  public async onUninit(): Promise<void> {
     if (this.tokenRefresher) {
       this.homey.clearInterval(this.tokenRefresher);
     }
   }
 
   // Sign the request
-  async _executeRequest<T>(
+  private async _executeRequest<T>(
     {
       method,
       path,
@@ -178,7 +178,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     return JSON.parse(responseBodyDecrypted);
   }
 
-  async refreshToken(): Promise<void> {
+  public async refreshToken(): Promise<void> {
     if (this._refreshingToken) {
       return await this._refreshingToken;
     }
@@ -220,25 +220,25 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
    * API Methods
    */
 
-  async getMqttConfig(): Promise<TuyaMqttConfigResponse> {
+  public async getMqttConfig(): Promise<TuyaMqttConfigResponse> {
     const linkId = crypto.randomUUID();
     return this._post('/v1.0/m/life/ha/access/config', {
       linkId: `tuya-device-sharing-sdk-python.${linkId}`,
     });
   }
 
-  async getHomeDevices({ ownerId }: { ownerId: string }): Promise<TuyaDeviceResponse[]> {
+  public async getHomeDevices({ ownerId }: { ownerId: string }): Promise<TuyaDeviceResponse[]> {
     return this.get({
       path: `/v1.0/m/life/ha/home/devices`,
       query: { homeId: ownerId },
     });
   }
 
-  async getHasHomes(): Promise<TuyaHaHome[]> {
+  public async getHasHomes(): Promise<TuyaHaHome[]> {
     return this._get(`/v1.0/m/life/users/homes`);
   }
 
-  async getDevices(): Promise<TuyaDeviceResponse[]> {
+  public async getDevices(): Promise<TuyaDeviceResponse[]> {
     const devices: TuyaDeviceResponse[] = [];
     const hasHomes = await this.getHasHomes();
     for (const hasHome of hasHomes) {
@@ -249,7 +249,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     return devices;
   }
 
-  async getDevice({ deviceId }: { deviceId: string }): Promise<TuyaDeviceResponse> {
+  public async getDevice({ deviceId }: { deviceId: string }): Promise<TuyaDeviceResponse> {
     const devices = await this.get<TuyaDeviceResponse[]>({
       path: '/v1.0/m/life/ha/devices/detail',
       query: {
@@ -259,32 +259,32 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     return devices[0];
   }
 
-  async getHasScenes(spaceId: string | number): Promise<TuyaHaScenesResponse> {
+  public async getHasScenes(spaceId: string | number): Promise<TuyaHaScenesResponse> {
     return this.get({
       path: '/v1.0/m/scene/ha/home/scenes',
       query: { homeId: spaceId },
     });
   }
 
-  async triggerHasScene(ownerId: string, sceneId: string): Promise<boolean> {
+  public async triggerHasScene(ownerId: string, sceneId: string): Promise<boolean> {
     return this._post('/v1.0/m/scene/ha/trigger', { homeId: ownerId, sceneId: sceneId });
   }
 
-  async getSpecification(deviceId: string): Promise<TuyaDeviceSpecificationResponse> {
+  public async getSpecification(deviceId: string): Promise<TuyaDeviceSpecificationResponse> {
     return this.get({
       path: `/v1.1/m/life/${deviceId}/specifications`,
     });
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async queryDataPoints(deviceId: string): Promise<TuyaDeviceDataPointResponse> {
+  public async queryDataPoints(deviceId: string): Promise<TuyaDeviceDataPointResponse> {
     // NOTE: setting data points is not yet supported, so we don't make them available in flows
     return {
       properties: [],
     };
   }
 
-  async queryDataPointsSpecification(deviceId: string): Promise<TuyaDeviceDataPointResponse> {
+  public async queryDataPointsSpecification(deviceId: string): Promise<TuyaDeviceDataPointResponse> {
     const response = await this.get<TuyaHaStatusResponse>({
       path: `/v1.0/m/life/devices/${deviceId}/status`,
     });
@@ -301,17 +301,17 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async setDataPoint(deviceId: string, dataPointId: string, value: unknown): Promise<void> {
+  public async setDataPoint(deviceId: string, dataPointId: string, value: unknown): Promise<void> {
     // NOTE: setting data points is not yet supported, so we don't make them available in flows
     throw new Error('Setting data points is currently not supported');
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async getWebRTCConfiguration({ deviceId }: { deviceId: string }): Promise<TuyaWebRTC> {
+  public async getWebRTCConfiguration({ deviceId }: { deviceId: string }): Promise<TuyaWebRTC> {
     throw new Error('Not implemented');
   }
 
-  async getStreamingLink(
+  public async getStreamingLink(
     deviceId: string,
     type: 'RTSP' | 'HLS' | 'FLV' | 'RTMP',
   ): Promise<{
@@ -322,12 +322,18 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     });
   }
 
-  async getDeviceStatus({ deviceId }: { deviceId: string }): Promise<TuyaStatusResponse> {
+  public async getDeviceStatus({ deviceId }: { deviceId: string }): Promise<TuyaStatusResponse> {
     const response = await this.getDevice({ deviceId });
     return response.status;
   }
 
-  async sendCommands({ deviceId, commands = [] }: { deviceId: string; commands: TuyaCommand[] }): Promise<boolean> {
+  public async sendCommands({
+    deviceId,
+    commands = [],
+  }: {
+    deviceId: string;
+    commands: TuyaCommand[];
+  }): Promise<boolean> {
     return this._post(`/v1.1/m/thing/${deviceId}/commands`, {
       commands: commands,
     });
@@ -356,18 +362,20 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
    * Infrared
    */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async getRemotes(infraredControllerId: string): Promise<TuyaIrRemoteResponse[]> {
+  public async getRemotes(infraredControllerId: string): Promise<TuyaIrRemoteResponse[]> {
     return [];
     // return this._get(`/v2.0/infrareds/${infraredControllerId}/remotes`);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async getRemoteKeys(infraredControllerId: string, infraredRemoteId: string): Promise<TuyaIrRemoteKeysResponse> {
+  public async getRemoteKeys(
+    infraredControllerId: string, // eslint-disable-line @typescript-eslint/no-unused-vars
+    infraredRemoteId: string, // eslint-disable-line @typescript-eslint/no-unused-vars
+  ): Promise<TuyaIrRemoteKeysResponse> {
     throw new Error('Not implemented');
     // return this._get(`/v2.0/infrareds/${infraredControllerId}/remotes/${infraredRemoteId}/keys`);
   }
 
-  async sendKeyCommand(
+  public async sendKeyCommand(
     infraredControllerId: string, // eslint-disable-line @typescript-eslint/no-unused-vars
     infraredRemoteId: string, // eslint-disable-line @typescript-eslint/no-unused-vars
     categoryId: number, // eslint-disable-line @typescript-eslint/no-unused-vars
@@ -382,7 +390,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     // });
   }
 
-  async sendAircoCommand(
+  public async sendAircoCommand(
     infraredControllerId: string,
     infraredRemoteId: string,
     code: string,
@@ -401,7 +409,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   // Devices that are added as 'other' may be duplicates
   private registeredOtherDevices = new Map<string, DeviceRegistration>();
 
-  registerDevice(
+  public registerDevice(
     {
       productId,
       deviceId,
@@ -423,7 +431,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     }
   }
 
-  unregisterDevice({ productId, deviceId }: { productId: string; deviceId: string }, other = false): void {
+  public unregisterDevice({ productId, deviceId }: { productId: string; deviceId: string }, other = false): void {
     const register = other ? this.registeredOtherDevices : this.registeredDevices;
     register.delete(deviceId);
     // Only unsubscribe if there are no registrations for the device left, so check if device is still in the other register
@@ -432,12 +440,12 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     }
   }
 
-  isRegistered(productId: string, deviceId: string, other = false): boolean {
+  public isRegistered(productId: string, deviceId: string, other = false): boolean {
     const register = other ? this.registeredOtherDevices : this.registeredDevices;
     return register.has(deviceId);
   }
 
-  save(): void {
+  public save(): void {
     // Reset MQTT to force reconnect
     this.resetMqtt();
 
@@ -449,13 +457,13 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     super.save();
   }
 
-  resetMqtt(): void {
+  public resetMqtt(): void {
     this.mqttClient?.end(true);
     this.mqttClient = undefined;
     this.mqttPromise = undefined;
   }
 
-  async connectToMqtt(): Promise<void> {
+  public async connectToMqtt(): Promise<void> {
     if (this.mqttPromise !== undefined) {
       return this.mqttPromise;
     }
@@ -525,23 +533,23 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     resolveMqttPromise();
   }
 
-  async subscribeToMqtt(deviceId: string): Promise<void> {
+  public async subscribeToMqtt(deviceId: string): Promise<void> {
     if (!this.mqttClient) {
       await this.connectToMqtt();
     }
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
     const topicTemplate = this.mqttConfig!.topic.devId.sub;
     const topic = topicTemplate.replace('{devId}', deviceId);
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
     await this.mqttClient!.subscribeAsync(topic);
     this.log('Subscribed to MQTT channel for device:', deviceId);
   }
 
-  async unsubscribeFromMqtt(deviceId: string): Promise<void> {
+  public async unsubscribeFromMqtt(deviceId: string): Promise<void> {
     if (!this.mqttClient) {
       return;
     }
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
     const topicTemplate = this.mqttConfig!.topic.devId.sub;
     const topic = topicTemplate.replace('{devId}', deviceId);
     await this.mqttClient.unsubscribeAsync(topic);

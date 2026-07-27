@@ -9,7 +9,7 @@ import {
 } from './TuyaWindowCoveringsConstants.js';
 
 export default class TuyaOAuth2DeviceWindowCoverings extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     if (this.hasCapability('windowcoverings_state')) {
@@ -44,7 +44,7 @@ export default class TuyaOAuth2DeviceWindowCoverings extends TuyaOAuth2Device {
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
     await super.onTuyaStatus(status, changed);
 
     for (const tuyaCapability in status) {
@@ -81,7 +81,7 @@ export default class TuyaOAuth2DeviceWindowCoverings extends TuyaOAuth2Device {
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeyWindowCoveringsSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyWindowCoveringsSettings>): Promise<string | void> {
     const tuyaSettings: SettingsEvent<Partial<TuyaWindowCoveringsSettings>> = {
       newSettings: {},
       oldSettings: {},

@@ -8,9 +8,9 @@ import type {
 } from '../../types/TuyaApiTypes.js';
 
 export default class TuyaOAuth2DriverSensorMotion extends TuyaOAuth2DriverSensor {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.MOTION_SENSOR] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.MOTION_SENSOR] as const;
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

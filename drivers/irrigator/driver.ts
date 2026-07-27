@@ -10,12 +10,12 @@ import type { StandardDeviceFlowArgs } from '../../types/TuyaTypes.js';
 import { IRRIGATOR_CAPABILITIES, IRRIGATOR_CAPABILITIES_MAPPING } from './TuyaIrrigatorConstants.js';
 
 export default class TuyaOAuth2DriverIrrigator extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [
+  protected TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.IRRIGATOR,
     DEVICE_CATEGORIES.UNDOCUMENTED.IRRIGATOR,
   ] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     this.homey.flow
@@ -23,7 +23,7 @@ export default class TuyaOAuth2DriverIrrigator extends TuyaOAuth2Driver {
       .registerRunListener((args: StandardDeviceFlowArgs) => args.device.getCapabilityValue('rain_sensor'));
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

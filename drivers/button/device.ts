@@ -2,11 +2,11 @@ import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
 import type { TuyaStatus } from '../../types/TuyaTypes.js';
 
 export default class TuyaOAuth2DeviceButton extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
   }
 
-  async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
     await super.onTuyaStatus(status, changed);
 
     for (const tuyaCapability in status) {

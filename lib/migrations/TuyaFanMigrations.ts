@@ -1,4 +1,4 @@
-import TuyaOAuth2DeviceFan from '../../drivers/fan/device.js';
+import type TuyaOAuth2DeviceFan from '../../drivers/fan/device.js';
 import { DEVICE_CATEGORIES } from '../TuyaOAuth2Constants.js';
 import { executeMigration } from './MigrationStore.js';
 

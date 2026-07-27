@@ -13,19 +13,19 @@ import type TuyaOAuth2Error from './TuyaOAuth2Error.js';
 import * as TuyaOAuth2Util from './TuyaOAuth2Util.js';
 
 export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
-  __status: TuyaStatus;
-  __syncInterval?: NodeJS.Timeout;
-  SETTING_LABELS!: Record<string, Translation>;
+  protected __status: TuyaStatus;
+  protected __syncInterval?: NodeJS.Timeout;
+  public SETTING_LABELS!: Record<string, Translation>;
 
   /**
    * Ensure migrations are finished before the device is used.
    * This barrier should only be lowered after all initialization is done.
    */
-  initBarrier = true;
+  protected initBarrier = true;
 
-  online: boolean | null = null;
+  protected online: boolean | null = null;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
     await this.performMigrations();
     this.initBarrier = false;
@@ -33,12 +33,12 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     this.log('Finished initialization of', this.getName());
   }
 
-  async performMigrations(): Promise<void> {
+  protected async performMigrations(): Promise<void> {
     await GeneralMigrations.performMigrations(this);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  constructor(...props: any) {
+  public constructor(...props: any) {
     super(...props);
 
     this.handleApiError = this.handleApiError.bind(this);
@@ -48,26 +48,26 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     this.onTuyaStatus = this.onTuyaStatus.bind(this);
   }
 
-  static SYNC_INTERVAL = null; // Set to number n to sync every n ms
+  protected static SYNC_INTERVAL = null; // Set to number n to sync every n ms
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  get data(): any {
+  public get data(): any {
     return super.getData();
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  get store(): any {
+  public get store(): any {
     return super.getStore();
   }
 
-  hasTuyaCapability(tuyaCapabilityId: string): boolean {
+  public hasTuyaCapability(tuyaCapabilityId: string): boolean {
     return this.store?.tuya_capabilities?.includes(tuyaCapabilityId) ?? false;
   }
 
   /*
    * OAuth2
    */
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
     await this.registerDevice();
   }
@@ -103,11 +103,11 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     await this.__sync();
   }
 
-  async onOAuth2Saved(): Promise<void> {
+  public async onOAuth2Saved(): Promise<void> {
     await this.registerDevice();
   }
 
-  async onOAuth2Uninit(): Promise<void> {
+  public async onOAuth2Uninit(): Promise<void> {
     await super.onOAuth2Uninit();
 
     if (this.__syncInterval) {
@@ -239,8 +239,7 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     await this.onTuyaStatus(this.__status, changedStatusCodes);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async onTuyaStatus(_status: TuyaStatus, _changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(_status: TuyaStatus, _changedStatusCodes: string[]): Promise<void> {
     // Overload Me
   }
 
@@ -263,7 +262,7 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
       });
   }
 
-  async sendCommands(commands: TuyaCommand[] = []): Promise<void> {
+  public async sendCommands(commands: TuyaCommand[] = []): Promise<void> {
     await this.oAuth2Client
       .sendCommands({
         commands,
@@ -272,7 +271,7 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
       .catch(this.handleApiError);
   }
 
-  async sendCommand({ code, value }: TuyaCommand): Promise<void> {
+  public async sendCommand({ code, value }: TuyaCommand): Promise<void> {
     await this.sendCommands([
       {
         code,
@@ -281,34 +280,34 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     ]);
   }
 
-  async getStatus(): Promise<TuyaStatusResponse> {
+  public async getStatus(): Promise<TuyaStatusResponse> {
     const { deviceId } = this.data;
     return this.oAuth2Client.getDeviceStatus({
       deviceId,
     });
   }
 
-  async queryDataPoints(): Promise<TuyaDeviceDataPointResponse> {
+  public async queryDataPoints(): Promise<TuyaDeviceDataPointResponse> {
     const { deviceId } = this.data;
     return this.oAuth2Client.queryDataPoints(deviceId);
   }
 
-  async setDataPoint(dataPointId: string, value: unknown): Promise<void> {
+  public async setDataPoint(dataPointId: string, value: unknown): Promise<void> {
     const { deviceId } = this.data;
     return this.oAuth2Client.setDataPoint(deviceId, dataPointId, value).catch(this.handleApiError);
   }
 
-  async getWebRTC(): Promise<TuyaWebRTC> {
+  public async getWebRTC(): Promise<TuyaWebRTC> {
     const { deviceId } = this.data;
     return this.oAuth2Client.getWebRTCConfiguration({ deviceId });
   }
 
-  async getStreamingLink(type: 'RTSP' | 'HLS' | 'FLV' | 'RTMP'): Promise<{ url: string }> {
+  public async getStreamingLink(type: 'RTSP' | 'HLS' | 'FLV' | 'RTMP'): Promise<{ url: string }> {
     const { deviceId } = this.data;
     return this.oAuth2Client.getStreamingLink(deviceId, type);
   }
 
-  async safeSetCapabilityValue(capabilityId: string | undefined | null, value: unknown): Promise<void> {
+  public async safeSetCapabilityValue(capabilityId: string | undefined | null, value: unknown): Promise<void> {
     if (!capabilityId || !this.hasCapability(capabilityId)) {
       return;
     }
@@ -316,21 +315,21 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     await this.setCapabilityValue(capabilityId, value).catch(this.error);
   }
 
-  async safeSetSettingValue(settingKey: string, value: unknown): Promise<void> {
+  public async safeSetSettingValue(settingKey: string, value: unknown): Promise<void> {
     await this.setSettings({
       [settingKey]: value,
     }).catch(this.error);
   }
 
-  log(...args: unknown[]): void {
+  public log(...args: unknown[]): void {
     super.log(`[tc:${this.getStoreValue('tuya_category')}]`, ...args);
   }
 
-  error(...args: unknown[]): void {
+  public error(...args: unknown[]): void {
     super.error(`[tc:${this.getStoreValue('tuya_category')}]`, ...args);
   }
 
-  handleApiError(err: TuyaOAuth2Error): void {
+  protected handleApiError(err: TuyaOAuth2Error): void {
     if (err.tuyaCode === 2001) {
       this.__status = {
         ...this.__status,

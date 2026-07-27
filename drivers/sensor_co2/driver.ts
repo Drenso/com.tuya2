@@ -10,9 +10,9 @@ import type {
 import { SENSOR_CO2_CAPABILITY_MAPPING } from './SensorCo2Constants.js';
 
 export default class TuyaOAuth2DriverSensorCO2 extends TuyaOAuth2DriverSensor {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.CO2_DETECTOR] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.CO2_DETECTOR] as const;
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

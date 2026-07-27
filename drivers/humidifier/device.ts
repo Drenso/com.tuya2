@@ -4,7 +4,7 @@ import type { TuyaStatus } from '../../types/TuyaTypes.js';
 import { HUMIDIFIER_CAPABILITIES, HUMIDIFIER_CAPABILITY_MAPPING } from './TuyaHumidifierConstants.js';
 
 export default class TuyaOAuth2DeviceHumidifier extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     for (const tuyaCapability of HUMIDIFIER_CAPABILITIES.read_write) {
@@ -20,7 +20,7 @@ export default class TuyaOAuth2DeviceHumidifier extends TuyaOAuth2Device {
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
     await super.onTuyaStatus(status, changed);
 
     for (const tuyaCapability in status) {

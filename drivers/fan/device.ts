@@ -13,9 +13,9 @@ import {
 } from './TuyaFanConstants.js';
 
 export default class TuyaOAuth2DeviceFan extends TuyaOAuth2DeviceWithLight {
-  LIGHT_DIM_CAPABILITY = 'dim';
+  protected LIGHT_DIM_CAPABILITY = 'dim';
 
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     // superclass handles light capabilities, except onoff.light
     await super.onOAuth2Init();
 
@@ -55,12 +55,12 @@ export default class TuyaOAuth2DeviceFan extends TuyaOAuth2DeviceWithLight {
     }
   }
 
-  async performMigrations(): Promise<void> {
+  protected async performMigrations(): Promise<void> {
     await super.performMigrations();
     await TuyaFanMigrations.performMigrations(this);
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     // superclass handles light capabilities, except onoff.light
     await super.onTuyaStatus(status, changedStatusCodes);
 
@@ -108,7 +108,7 @@ export default class TuyaOAuth2DeviceFan extends TuyaOAuth2DeviceWithLight {
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeyFanSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyFanSettings>): Promise<string | void> {
     if (event.changedKeys.includes('enable_light_support')) {
       if (event.newSettings['enable_light_support']) {
         for (const [tuyaCapability, homeyCapability] of Object.entries(FAN_LIGHT_CAPABILITIES_MAPPING)) {

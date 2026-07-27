@@ -28,15 +28,15 @@ type AutoCompleteArg = {
 };
 
 export default class TuyaOAuth2App extends OAuth2App {
-  static OAUTH2_CLIENT = TuyaHaClient;
-  static OAUTH2_DEBUG = process.env.DEBUG === '1';
-  static OAUTH2_MULTI_SESSION = false; // TODO: Enable this feature & make nice pairing UI
+  private static OAUTH2_CLIENT = TuyaHaClient;
+  private static OAUTH2_DEBUG = process.env.DEBUG === '1';
+  private static OAUTH2_MULTI_SESSION = false; // TODO: Enable this feature & make nice pairing UI
 
   private apiCache: NodeCache = new NodeCache({ stdTTL: CACHE_TTL });
 
-  homeyLog = new Log({ homey: this.homey });
+  public homeyLog = new Log({ homey: this.homey });
 
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     const sendCommandRunListener = async ({
@@ -283,7 +283,7 @@ export default class TuyaOAuth2App extends OAuth2App {
     this.log('Tuya started');
   }
 
-  getFirstSavedOAuth2Client(): TuyaHaClient {
+  public getFirstSavedOAuth2Client(): TuyaHaClient {
     const client = super.getFirstSavedOAuth2Client();
     if (!client) {
       throw new Error(this.homey.__('connection_failed'));

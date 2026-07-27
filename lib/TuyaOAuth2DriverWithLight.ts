@@ -10,9 +10,9 @@ import TuyaOAuth2Driver, { type ListDeviceProperties } from './TuyaOAuth2Driver.
  * Handles all light-related capabilities, except onoff
  */
 export default class TuyaOAuth2DriverWithLight extends TuyaOAuth2Driver {
-  LIGHT_DIM_CAPABILITY = 'dim';
+  protected LIGHT_DIM_CAPABILITY = 'dim';
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

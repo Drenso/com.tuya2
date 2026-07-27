@@ -9,7 +9,7 @@ import {
 } from './TuyaGarageDoorConstants.js';
 
 export default class TuyaOAuth2DeviceGarageDoor extends TuyaOAuth2Device {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     if (this.hasCapability('garagedoor_closed')) {
@@ -22,7 +22,7 @@ export default class TuyaOAuth2DeviceGarageDoor extends TuyaOAuth2Device {
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
     await super.onTuyaStatus(status, changed);
 
     for (const tuyaCapability in status) {
@@ -44,7 +44,7 @@ export default class TuyaOAuth2DeviceGarageDoor extends TuyaOAuth2Device {
     }
   }
 
-  onSettings(event: SettingsEvent<HomeyGarageDoorSettings>): Promise<string | void> {
+  public onSettings(event: SettingsEvent<HomeyGarageDoorSettings>): Promise<string | void> {
     return TuyaOAuth2Util.onSettings(this, event, this.SETTING_LABELS);
   }
 }

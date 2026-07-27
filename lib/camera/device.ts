@@ -11,9 +11,9 @@ import {
 } from './TuyaCameraConstants.js';
 
 abstract class TuyaOAuth2DeviceWithCamera extends TuyaTimeOutAlarmDevice {
-  abstract DOORBELL_TRIGGER_FLOW: string;
+  protected abstract DOORBELL_TRIGGER_FLOW: string;
 
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     // Video stream
@@ -64,7 +64,7 @@ abstract class TuyaOAuth2DeviceWithCamera extends TuyaTimeOutAlarmDevice {
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changed: string[]): Promise<void> {
     await super.onTuyaStatus(status, changed);
 
     for (const statusKey in status) {
@@ -141,7 +141,7 @@ abstract class TuyaOAuth2DeviceWithCamera extends TuyaTimeOutAlarmDevice {
     }
   }
 
-  async setAlarm(capability: string): Promise<void> {
+  public async setAlarm(capability: string): Promise<void> {
     await super.setAlarm(
       capability,
       async () => {
@@ -158,7 +158,7 @@ abstract class TuyaOAuth2DeviceWithCamera extends TuyaTimeOutAlarmDevice {
   }
 
   // Map from up/idle/down to commands so the ternary UI shows arrows
-  async ptzCapabilityListener(value: 'up' | 'idle' | 'down', up: string, down: string): Promise<void> {
+  public async ptzCapabilityListener(value: 'up' | 'idle' | 'down', up: string, down: string): Promise<void> {
     if (value === 'idle') {
       await this.sendCommand({ code: 'ptz_stop', value: true });
     } else {
@@ -166,7 +166,7 @@ abstract class TuyaOAuth2DeviceWithCamera extends TuyaTimeOutAlarmDevice {
     }
   }
 
-  async zoomCapabilityListener(value: 'up' | 'idle' | 'down'): Promise<void> {
+  public async zoomCapabilityListener(value: 'up' | 'idle' | 'down'): Promise<void> {
     if (value === 'idle') {
       await this.sendCommand({ code: 'zoom_stop', value: true });
     } else {
@@ -174,7 +174,7 @@ abstract class TuyaOAuth2DeviceWithCamera extends TuyaTimeOutAlarmDevice {
     }
   }
 
-  async onSettings(event: SettingsEvent<HomeyCameraSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeyCameraSettings>): Promise<string | void> {
     const tuyaSettingsEvent = TuyaOAuth2Util.filterTuyaSettings<HomeyCameraSettings, TuyaCameraSettings>(event, [
       'motion_switch',
       'motion_tracking',

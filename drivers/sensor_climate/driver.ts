@@ -6,9 +6,9 @@ import type { TuyaDeviceResponse, TuyaDeviceSpecificationResponse } from '../../
 import { CLIMATE_CAPABILITY_MAPPING, CLIMATE_SENSOR_CAPABILITIES } from './TuyaClimateSensorConstants.js';
 
 export default class TuyaOAuth2DriverSensorClimate extends TuyaOAuth2DriverSensor {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.TEMP_HUMI_SENSOR];
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.TEMP_HUMI_SENSOR];
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications: TuyaDeviceSpecificationResponse,
   ): ListDeviceProperties {

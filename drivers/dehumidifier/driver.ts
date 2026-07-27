@@ -11,9 +11,9 @@ import { DEHUMIDIFIER_CAPABILITIES, DEHUMIDIFIER_CAPABILITY_MAPPING } from './De
 import driver_compose from './driver.compose.json' with { type: 'json' };
 
 export default class TuyaOAuth2DriverDehumidifier extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.DEFUMIDIFIER] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.DEFUMIDIFIER] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     for (const tuyaCapability of ['child_lock', 'sleep', 'defrost', 'swing'] as const) {
@@ -31,7 +31,7 @@ export default class TuyaOAuth2DriverDehumidifier extends TuyaOAuth2Driver {
     }
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

@@ -2,13 +2,13 @@ import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor.js';
 import type { TuyaStatus } from '../../types/TuyaTypes.js';
 
 export default class TuyaOAuth2DeviceSensorContact extends TuyaOAuth2DeviceSensor {
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await this.initAlarm('alarm_contact').catch(this.error);
 
     return super.onOAuth2Init();
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     await super.onTuyaStatus(status, changedStatusCodes);
 
     // alarm_contact

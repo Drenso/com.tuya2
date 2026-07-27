@@ -1,13 +1,13 @@
 import { OAuth2Token } from 'homey-oauth2app';
 
 export default class TuyaHaToken extends OAuth2Token {
-  endpoint: string;
-  uid: string;
-  expire_time: number;
-  terminal_id: string;
-  username: string;
+  public endpoint: string;
+  public uid: string;
+  public expire_time: number;
+  public terminal_id: string;
+  public username: string;
 
-  constructor({
+  public constructor({
     endpoint,
     uid,
     expire_time,
@@ -32,7 +32,7 @@ export default class TuyaHaToken extends OAuth2Token {
     this.username = username;
   }
 
-  toJSON(): {
+  public toJSON(): {
     access_token: string;
     refresh_token: string;
     uid: string;

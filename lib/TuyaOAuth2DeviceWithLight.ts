@@ -7,17 +7,17 @@ import { hasJsonStructure } from './TuyaOAuth2Util.js';
  * Handles all light-related capabilities, except onoff
  */
 export default class TuyaOAuth2DeviceWithLight extends TuyaOAuth2Device {
-  LIGHT_DIM_CAPABILITY = 'dim';
+  protected LIGHT_DIM_CAPABILITY = 'dim';
 
-  LIGHT_DIM_TUYA_CAPABILITY = 'bright_value';
-  LIGHT_TEMP_TUYA_CAPABILITY = 'temp_value';
-  LIGHT_COLOR_TUYA_CAPABILITY = 'colour_data';
+  protected LIGHT_DIM_TUYA_CAPABILITY = 'bright_value';
+  protected LIGHT_TEMP_TUYA_CAPABILITY = 'temp_value';
+  protected LIGHT_COLOR_TUYA_CAPABILITY = 'colour_data';
 
-  LIGHT_DIM_TUYA_SPECS = 'tuya_brightness';
-  LIGHT_TEMP_TUYA_SPECS = 'tuya_temperature';
-  LIGHT_COLOR_TUYA_SPECS = 'tuya_colour';
+  protected LIGHT_DIM_TUYA_SPECS = 'tuya_brightness';
+  protected LIGHT_TEMP_TUYA_SPECS = 'tuya_temperature';
+  protected LIGHT_COLOR_TUYA_SPECS = 'tuya_colour';
 
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     // light capabilities
@@ -38,7 +38,7 @@ export default class TuyaOAuth2DeviceWithLight extends TuyaOAuth2Device {
     }
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     await super.onTuyaStatus(status, changedStatusCodes);
 
     // Light
@@ -87,7 +87,7 @@ export default class TuyaOAuth2DeviceWithLight extends TuyaOAuth2Device {
     }
   }
 
-  async onCapabilitiesLight(newValues: Record<string, unknown>): Promise<void> {
+  public async onCapabilitiesLight(newValues: Record<string, unknown>): Promise<void> {
     let light_mode = newValues['light_mode'] ?? this.getCapabilityValue('light_mode');
     const light_hue = newValues['light_hue'] ?? this.getCapabilityValue('light_hue') ?? 1.0;
     const light_saturation = newValues['light_saturation'] ?? this.getCapabilityValue('light_saturation') ?? 1.0;

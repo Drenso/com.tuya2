@@ -95,7 +95,7 @@ async function otherSwitchOnDimMigration(device: TuyaOAuth2DeviceLight): Promise
     let capabilityOptions;
     try {
       capabilityOptions = device.getCapabilityOptions('onoff');
-    } catch (err) {
+    } catch {
       capabilityOptions = {};
     }
 

@@ -13,9 +13,9 @@ type DeviceArgs = { device: TuyaOAuth2Device };
 type ValueArgs = { value: unknown };
 
 export default class TuyaOAuth2DriverAirco extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.LARGE_HOME_APPLIANCES.AIR_CONDITIONER] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.LARGE_HOME_APPLIANCES.AIR_CONDITIONER] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     this.homey.flow.getActionCard('airco_set_child_lock').registerRunListener(async (args: DeviceArgs & ValueArgs) => {
@@ -23,7 +23,7 @@ export default class TuyaOAuth2DriverAirco extends TuyaOAuth2Driver {
     });
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

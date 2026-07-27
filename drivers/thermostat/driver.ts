@@ -31,9 +31,9 @@ function generateThermostatModeTitles(values: string[]): {
 }
 
 export default class TuyaOAuth2DriverThermostat extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.THERMOSTAT] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.THERMOSTAT] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     for (const homeyCapability of THERMOSTAT_FLOWS.capability_action) {
@@ -43,7 +43,7 @@ export default class TuyaOAuth2DriverThermostat extends TuyaOAuth2Driver {
     }
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

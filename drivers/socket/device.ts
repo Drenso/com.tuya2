@@ -1,4 +1,4 @@
-import { Device, FlowCardTriggerDevice } from 'homey';
+import type { Device, FlowCardTriggerDevice } from 'homey';
 import * as SocketMigrations from '../../lib/migrations/SocketMigrations.js';
 import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
 import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
@@ -10,10 +10,10 @@ import type { HomeySocketSettings, TuyaSocketSettings } from './TuyaSocketConsta
  * Device Class for Tuya Sockets
  */
 export default class TuyaOAuth2DeviceSocket extends TuyaOAuth2Device {
-  turnedOnFlowCard!: FlowCardTriggerDevice;
-  turnedOffFlowCard!: FlowCardTriggerDevice;
+  private turnedOnFlowCard!: FlowCardTriggerDevice;
+  private turnedOffFlowCard!: FlowCardTriggerDevice;
 
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 
     this.turnedOnFlowCard = this.homey.flow.getDeviceTriggerCard('socket_sub_switch_turned_on');
@@ -33,12 +33,12 @@ export default class TuyaOAuth2DeviceSocket extends TuyaOAuth2Device {
     }
   }
 
-  async performMigrations(): Promise<void> {
+  protected async performMigrations(): Promise<void> {
     await super.performMigrations();
     await SocketMigrations.performMigrations(this);
   }
 
-  async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
+  public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
     await super.onTuyaStatus(status, changedStatusCodes);
 
     // onoff
@@ -125,7 +125,7 @@ export default class TuyaOAuth2DeviceSocket extends TuyaOAuth2Device {
     }
   }
 
-  async allOnOff(value: boolean): Promise<void> {
+  public async allOnOff(value: boolean): Promise<void> {
     const tuyaSwitches = this.getStore().tuya_switches;
     const commands = [];
 
@@ -139,14 +139,14 @@ export default class TuyaOAuth2DeviceSocket extends TuyaOAuth2Device {
     await this.sendCommands(commands);
   }
 
-  async switchOnOff(value: boolean, tuya_switch: string): Promise<void> {
+  public async switchOnOff(value: boolean, tuya_switch: string): Promise<void> {
     await this.sendCommand({
       code: tuya_switch,
       value: value,
     });
   }
 
-  async onSettings(event: SettingsEvent<HomeySocketSettings>): Promise<string | void> {
+  public async onSettings(event: SettingsEvent<HomeySocketSettings>): Promise<string | void> {
     for (const [settingKey, homeyCapability] of [
       ['power_scaling', 'measure_power'],
       ['meter_power_scaling', 'meter_power'],

@@ -11,9 +11,9 @@ import type { StandardDeviceFlowArgs } from '../../types/TuyaTypes.js';
 import { HUMAN_SENSOR_CAPABILITIES, HUMAN_SENSOR_FLOWS } from './TuyaHumanSensorConstants.js';
 
 export default class TuyaOAuth2DriverHuman extends TuyaOAuth2DriverSensor {
-  TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.PRESENCE_DETECTOR] as const;
+  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.PRESENCE_DETECTOR] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     for (const setting of HUMAN_SENSOR_FLOWS.setting) {
@@ -25,7 +25,7 @@ export default class TuyaOAuth2DriverHuman extends TuyaOAuth2DriverSensor {
       .registerRunListener((args: StandardDeviceFlowArgs) => args.device.getCapabilityValue('alarm_human'));
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

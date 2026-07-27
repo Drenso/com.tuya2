@@ -1,4 +1,4 @@
-import Homey from 'homey';
+import type Homey from 'homey';
 import { fetch, type OAuth2DeviceResult, OAuth2Driver, OAuth2Util } from 'homey-oauth2app';
 import type {
   TuyaDeviceDataPointResponse,
@@ -56,19 +56,19 @@ function parseSettingLabels(manifest: DriverManifest): Record<string, Translatio
 const USER_CODE_KEY = 'TUYA_USER_CODE';
 
 export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
-  TUYA_DEVICE_CATEGORIES: ReadonlyArray<string> = [];
-  SETTING_LABELS!: Record<string, Translation>;
+  protected TUYA_DEVICE_CATEGORIES: ReadonlyArray<string> = [];
+  public SETTING_LABELS!: Record<string, Translation>;
 
-  async onOAuth2Init(): Promise<void> {
+  public async onOAuth2Init(): Promise<void> {
     this.SETTING_LABELS = parseSettingLabels(this.manifest);
     await super.onOAuth2Init();
   }
 
-  async onRepair(session: Homey.Driver.PairSession, device?: TuyaOAuth2Device): Promise<void> {
+  public async onRepair(session: Homey.Driver.PairSession, device?: TuyaOAuth2Device): Promise<void> {
     return this.onPair(session, device);
   }
 
-  async onPair(session: Homey.Driver.PairSession, device?: TuyaOAuth2Device): Promise<void> {
+  public async onPair(session: Homey.Driver.PairSession, device?: TuyaOAuth2Device): Promise<void> {
     const OAuth2ConfigId = this.getOAuth2ConfigId();
     let OAuth2SessionId = '$new';
     let client: TuyaHaClient = this.homey.app.createOAuth2Client({
@@ -256,7 +256,7 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
     });
   }
 
-  async onPairListDevices({ oAuth2Client }: { oAuth2Client: TuyaHaClient }): Promise<OAuth2DeviceResult[]> {
+  public async onPairListDevices({ oAuth2Client }: { oAuth2Client: TuyaHaClient }): Promise<OAuth2DeviceResult[]> {
     const devices = await oAuth2Client.getDevices();
     const filteredDevices = devices.filter(device => {
       return !oAuth2Client.isRegistered(device.product_id, device.id) && this.onTuyaPairListDeviceFilter(device);
@@ -296,13 +296,13 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
     return listDevices;
   }
 
-  onTuyaPairListDeviceFilter(device: TuyaDeviceResponse): boolean {
+  protected onTuyaPairListDeviceFilter(device: TuyaDeviceResponse): boolean {
     return this.TUYA_DEVICE_CATEGORIES.includes(device.category);
   }
 
-  onTuyaPairListDeviceProperties(
-    device: TuyaDeviceResponse, // eslint-disable-line @typescript-eslint/no-unused-vars
-    specifications?: TuyaDeviceSpecificationResponse, // eslint-disable-line @typescript-eslint/no-unused-vars
+  protected onTuyaPairListDeviceProperties(
+    device: TuyaDeviceResponse,
+    specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,
   ): ListDeviceProperties {
     const combinedSpecification = {

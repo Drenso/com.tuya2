@@ -10,12 +10,12 @@ import type { StandardFlowArgs } from '../../types/TuyaTypes.js';
 import { DEFAULT_TUYA_HEATER_FAULTS, HEATER_CAPABILITIES_MAPPING } from './TuyaHeaterConstants.js';
 
 export default class TuyaOAuth2DriverHeater extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [
+  protected TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.HEATER,
     DEVICE_CATEGORIES.LARGE_HOME_APPLIANCES.HEATER,
   ] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     this.homey.flow.getActionCard('heater_set_child_lock').registerRunListener(async (args: StandardFlowArgs) => {
@@ -27,7 +27,7 @@ export default class TuyaOAuth2DriverHeater extends TuyaOAuth2Driver {
     });
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

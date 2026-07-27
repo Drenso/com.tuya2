@@ -15,12 +15,12 @@ type DeviceArgs = StandardDeviceFlowArgs<TuyaOAuth2DeviceDimmer>;
 type FlowArgs = StandardFlowArgs<TuyaOAuth2DeviceDimmer>;
 
 export default class TuyaOAuth2DriverDimmer extends TuyaOAuth2Driver {
-  TUYA_DEVICE_CATEGORIES = [
+  protected TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.LIGHTING.DIMMER,
     DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.DIMMER_SWITCH,
   ] as const;
 
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     for (let switch_i = 1; switch_i <= 3; switch_i++) {
@@ -48,7 +48,7 @@ export default class TuyaOAuth2DriverDimmer extends TuyaOAuth2Driver {
     }
   }
 
-  onTuyaPairListDeviceProperties(
+  protected onTuyaPairListDeviceProperties(
     device: TuyaDeviceResponse,
     specifications?: TuyaDeviceSpecificationResponse,
     dataPoints?: TuyaDeviceDataPointResponse,

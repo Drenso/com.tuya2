@@ -4,7 +4,7 @@ import type { TuyaDeviceResponse, TuyaIrRemoteKeysResponse, TuyaIrRemoteResponse
 import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util.js';
 import type { StandardDeviceFlowArgs } from '../../types/TuyaTypes.js';
 import type TuyaOAuth2DeviceIrController from './device.js';
-import TuyaHaClient from '../../lib/TuyaHaClient.js';
+import type TuyaHaClient from '../../lib/TuyaHaClient.js';
 import TuyaOAuth2Driver from '../../lib/TuyaOAuth2Driver.js';
 
 type PairingRemote = TuyaIrRemoteResponse & {
@@ -120,7 +120,7 @@ function generateKeys(remoteKeys: TuyaIrRemoteKeysResponse): Homey.FlowCard.Argu
 }
 
 export default class TuyaOAuth2DriverIrController extends TuyaOAuth2Driver {
-  async onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     await super.onInit();
 
     const buttonAutocompleteListener = (
@@ -167,7 +167,7 @@ export default class TuyaOAuth2DriverIrController extends TuyaOAuth2Driver {
     }
   }
 
-  async onPairListDevices({ oAuth2Client }: { oAuth2Client: TuyaHaClient }): Promise<OAuth2DeviceResult[]> {
+  public async onPairListDevices({ oAuth2Client }: { oAuth2Client: TuyaHaClient }): Promise<OAuth2DeviceResult[]> {
     const devices = await oAuth2Client.getDevices();
 
     const deviceIndex: Record<string, TuyaDeviceResponse> = {}; // ID to device

@@ -1,6 +1,11 @@
 import type { SimpleClass } from 'homey';
-import type { DeviceRegistration, TuyaIotCoreStatusUpdate, TuyaStatus, TuyaStatusUpdate } from '../../types/TuyaTypes';
-import { convertStatusArrayToStatusObject } from '../TuyaOAuth2Util';
+import type {
+  DeviceRegistration,
+  TuyaIotCoreStatusUpdate,
+  TuyaStatus,
+  TuyaStatusUpdate
+} from '../../types/TuyaTypes.js';
+import { convertStatusArrayToStatusObject } from '../TuyaOAuth2Util.js';
 
 type OnlineEvent = { event: 'online' };
 type OfflineEvent = { event: 'offline' };

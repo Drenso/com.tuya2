@@ -1,17 +1,17 @@
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import {
-  type TuyaDeviceDataPointResponse,
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import type { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import TuyaOAuth2DriverWithLight from '../../lib/TuyaOAuth2DriverWithLight.js';
+import { getFromMap, sendSetting } from '../../lib/TuyaOAuth2Util.js';
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import { getFromMap, sendSetting } from '../../lib/TuyaOAuth2Util';
-import { FAN_CAPABILITIES_MAPPING } from './TuyaFanConstants';
-import TuyaOAuth2DriverWithLight from '../../lib/TuyaOAuth2DriverWithLight';
-import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes';
-import TRANSLATIONS from './translations.json';
+  TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes.js';
+import TRANSLATIONS from './translations.json' with { type: 'json' };
+import { FAN_CAPABILITIES_MAPPING } from './TuyaFanConstants.js';
 
-module.exports = class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
+export default class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
   TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.FAN,
     DEVICE_CATEGORIES.LIGHTING.CEILING_FAN_LIGHT,

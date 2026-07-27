@@ -1,21 +1,21 @@
-import { fetch, OAuth2DeviceResult, OAuth2Driver, OAuth2Util } from 'homey-oauth2app';
-import {
+import Homey from 'homey';
+import { fetch, type OAuth2DeviceResult, OAuth2Driver, OAuth2Util } from 'homey-oauth2app';
+import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
   TuyaDeviceSpecificationResponse,
-} from '../types/TuyaApiTypes';
-import type { DriverManifest, Locale, SettingManifest, StandardFlowArgs, Translation } from '../types/TuyaTypes';
-import { getTuyaClientId } from './TuyaHaClientId';
-import * as TuyaOAuth2Util from './TuyaOAuth2Util';
-import { sendSetting } from './TuyaOAuth2Util';
-import PairSession from 'homey/lib/PairSession';
+} from '../types/TuyaApiTypes.js';
+import type { DriverManifest, Locale, SettingManifest, StandardFlowArgs, Translation } from '../types/TuyaTypes.js';
+import { getTuyaClientId } from './TuyaHaClientId.js';
+import * as TuyaOAuth2Util from './TuyaOAuth2Util.js';
+import { sendSetting } from './TuyaOAuth2Util.js';
 import { URL } from 'url';
-import { Response } from 'node-fetch';
-import { type TuyaQrCodeResponse } from '../types/TuyaHaApiTypes';
-import TuyaHaToken from './TuyaHaToken';
-import TuyaHaClient from './TuyaHaClient';
+import type { Response } from 'node-fetch';
+import type { TuyaQrCodeResponse } from '../types/TuyaHaApiTypes.js';
+import TuyaHaToken from './TuyaHaToken.js';
+import type TuyaHaClient from './TuyaHaClient.js';
 import QRCode from 'qrcode';
-import type TuyaOAuth2Device from './TuyaOAuth2Device';
+import type TuyaOAuth2Device from './TuyaOAuth2Device.js';
 
 export type ListDeviceProperties = {
   store: {
@@ -64,11 +64,11 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
     await super.onOAuth2Init();
   }
 
-  async onRepair(session: PairSession, device?: TuyaOAuth2Device): Promise<void> {
+  async onRepair(session: Homey.Driver.PairSession, device?: TuyaOAuth2Device): Promise<void> {
     return this.onPair(session, device);
   }
 
-  async onPair(session: PairSession, device?: TuyaOAuth2Device): Promise<void> {
+  async onPair(session: Homey.Driver.PairSession, device?: TuyaOAuth2Device): Promise<void> {
     const OAuth2ConfigId = this.getOAuth2ConfigId();
     let OAuth2SessionId = '$new';
     let client: TuyaHaClient = this.homey.app.createOAuth2Client({
@@ -351,5 +351,3 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
       );
   }
 }
-
-module.exports = TuyaOAuth2Driver;

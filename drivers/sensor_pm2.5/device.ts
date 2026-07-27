@@ -1,15 +1,15 @@
-import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import { HomeySensorSettings, SENSOR_SETTING_LABELS } from '../../lib/sensor/TuyaSensorConstants';
-import * as Util from '../../lib/TuyaOAuth2Util';
+import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor.js';
+import { type HomeySensorSettings, SENSOR_SETTING_LABELS } from '../../lib/sensor/TuyaSensorConstants.js';
+import * as Util from '../../lib/TuyaOAuth2Util.js';
+import { computeScaleFactor, constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import {
-  HomeyPM25SensorSettings,
+  type HomeyPM25SensorSettings,
   SENSOR_PM25_CAPABILITIES,
   SENSOR_PM25_CAPABILITY_MAPPING,
-} from './SensorPm25Constants';
-import { computeScaleFactor, constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util';
+} from './SensorPm25Constants.js';
 
-module.exports = class TuyaOAuth2DeviceSensorPM25 extends TuyaOAuth2DeviceSensor {
+export default class TuyaOAuth2DeviceSensorPM25 extends TuyaOAuth2DeviceSensor {
   async onOAuth2Init(): Promise<void> {
     await this.initAlarm('alarm_pm25').catch(this.error);
     return super.onOAuth2Init();

@@ -1,16 +1,16 @@
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import {
-  type TuyaDeviceDataPointResponse,
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util';
-import { DEHUMIDIFIER_CAPABILITIES, DEHUMIDIFIER_CAPABILITY_MAPPING } from './DehumidifierConstants';
-import { StandardFlowArgs } from '../../types/TuyaTypes';
-import driver_compose from './driver.compose.json';
+  TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import type { StandardFlowArgs } from '../../types/TuyaTypes.js';
+import { DEHUMIDIFIER_CAPABILITIES, DEHUMIDIFIER_CAPABILITY_MAPPING } from './DehumidifierConstants.js';
+import driver_compose from './driver.compose.json' with { type: 'json' };
 
-module.exports = class TuyaOAuth2DriverDehumidifier extends TuyaOAuth2Driver {
+export default class TuyaOAuth2DriverDehumidifier extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.DEFUMIDIFIER] as const;
 
   async onInit(): Promise<void> {

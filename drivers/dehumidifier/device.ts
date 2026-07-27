@@ -1,14 +1,14 @@
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import * as Util from '../../lib/TuyaOAuth2Util';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import * as Util from '../../lib/TuyaOAuth2Util.js';
+import { computeScaleFactor, constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import {
   DEHUMIDIFIER_CAPABILITIES,
   DEHUMIDIFIER_CAPABILITY_MAPPING,
-  HomeyDehumidifierSettings,
-} from './DehumidifierConstants';
-import { computeScaleFactor, constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util';
+  type HomeyDehumidifierSettings,
+} from './DehumidifierConstants.js';
 
-module.exports = class TuyaOAuth2DeviceDehumidifier extends TuyaOAuth2Device {
+export default class TuyaOAuth2DeviceDehumidifier extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 

@@ -1,9 +1,9 @@
-import TuyaOAuth2Driver from '../../lib/TuyaOAuth2Driver';
-import TuyaHaClient from '../../lib/TuyaHaClient';
-import { OAuth2DeviceResult } from 'homey-oauth2app';
-import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util';
+import type { OAuth2DeviceResult } from 'homey-oauth2app';
+import TuyaHaClient from '../../lib/TuyaHaClient.js';
+import TuyaOAuth2Driver from '../../lib/TuyaOAuth2Driver.js';
+import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util.js';
 
-module.exports = class TuyaOAuth2DriverOther extends TuyaOAuth2Driver {
+export default class TuyaOAuth2DriverOther extends TuyaOAuth2Driver {
   async onPairListDevices({ oAuth2Client }: { oAuth2Client: TuyaHaClient }): Promise<OAuth2DeviceResult[]> {
     const devices = await oAuth2Client.getDevices();
     const listDevices: OAuth2DeviceResult[] = [];

@@ -1,4 +1,4 @@
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
 
 export default class TuyaOAuth2DeviceIrController extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
@@ -34,5 +34,3 @@ export default class TuyaOAuth2DeviceIrController extends TuyaOAuth2Device {
     return this.oAuth2Client.sendAircoCommand(controllerId, deviceId, code, value);
   }
 }
-
-module.exports = TuyaOAuth2DeviceIrController;

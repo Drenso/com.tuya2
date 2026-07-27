@@ -1,4 +1,4 @@
-import { ScaledProperty } from '../../types/TuyaTypes';
+import type { ScaledProperty } from '../../types/TuyaTypes.js';
 
 export const DEHUMIDIFIER_CAPABILITY_MAPPING = {
   switch: 'onoff',

@@ -1,8 +1,7 @@
 import crypto from 'crypto';
-
-import { TuyaDeviceResponse, TuyaStatusResponse } from '../types/TuyaApiTypes';
-import { Locale, SettingsEvent, Translation, TuyaStatus } from '../types/TuyaTypes';
-import TuyaOAuth2Device from './TuyaOAuth2Device';
+import type { TuyaDeviceResponse, TuyaStatusResponse } from '../types/TuyaApiTypes.js';
+import type { Locale, SettingsEvent, Translation, TuyaStatus } from '../types/TuyaTypes.js';
+import type TuyaOAuth2Device from './TuyaOAuth2Device.js';
 
 /**
  * This method converts:

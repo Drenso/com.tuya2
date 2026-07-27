@@ -51,5 +51,3 @@ export default class TuyaHaToken extends OAuth2Token {
     };
   }
 }
-
-module.exports = TuyaHaToken;

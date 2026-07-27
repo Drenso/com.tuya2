@@ -1,3 +1,3 @@
-import TuyaDriverWithCamera from '../../lib/camera/driver';
+import TuyaDriverWithCamera from '../../lib/camera/driver.js';
 
-module.exports = class TuyaOAuth2DriverDoorbell extends TuyaDriverWithCamera {};
+export default class TuyaOAuth2DriverDoorbell extends TuyaDriverWithCamera {};

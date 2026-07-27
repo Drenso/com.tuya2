@@ -1,15 +1,15 @@
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import { getFromMap } from '../../lib/TuyaOAuth2Util';
-import {
-  type TuyaDeviceDataPointResponse,
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import { getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import type { StandardFlowArgs } from '../../types/TuyaTypes';
-import { DEFAULT_TUYA_HEATER_FAULTS, HEATER_CAPABILITIES_MAPPING } from './TuyaHeaterConstants';
+  TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import type { StandardFlowArgs } from '../../types/TuyaTypes.js';
+import { DEFAULT_TUYA_HEATER_FAULTS, HEATER_CAPABILITIES_MAPPING } from './TuyaHeaterConstants.js';
 
-module.exports = class TuyaOAuth2DriverHeater extends TuyaOAuth2Driver {
+export default class TuyaOAuth2DriverHeater extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.HEATER,
     DEVICE_CATEGORIES.LARGE_HOME_APPLIANCES.HEATER,

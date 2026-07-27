@@ -1,11 +1,10 @@
 import { Device, FlowCardTriggerDevice } from 'homey';
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import { HomeySocketSettings, TuyaSocketSettings } from './TuyaSocketConstants';
-import * as SocketMigrations from '../../lib/migrations/SocketMigrations';
+import * as SocketMigrations from '../../lib/migrations/SocketMigrations.js';
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
+import type { HomeySocketSettings, TuyaSocketSettings } from './TuyaSocketConstants.js';
 
 /**
  * Device Class for Tuya Sockets
@@ -184,5 +183,3 @@ export default class TuyaOAuth2DeviceSocket extends TuyaOAuth2Device {
     return await TuyaOAuth2Util.onSettings<TuyaSocketSettings>(this, tuyaSettingsEvent, this.SETTING_LABELS);
   }
 }
-
-module.exports = TuyaOAuth2DeviceSocket;

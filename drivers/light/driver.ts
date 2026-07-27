@@ -1,21 +1,21 @@
-import { DEVICE_CATEGORIES, TUYA_PERCENTAGE_SCALING } from '../../lib/TuyaOAuth2Constants';
-import { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import { constIncludes, sendSetting } from '../../lib/TuyaOAuth2Util';
-import {
-  type TuyaDeviceDataPointResponse,
+import { DEVICE_CATEGORIES, TUYA_PERCENTAGE_SCALING } from '../../lib/TuyaOAuth2Constants.js';
+import type { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import TuyaOAuth2DriverWithLight from '../../lib/TuyaOAuth2DriverWithLight.js';
+import { constIncludes, sendSetting } from '../../lib/TuyaOAuth2Util.js';
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes';
-import type TuyaOAuth2DeviceLight from './device';
-import { LIGHT_SETTING_LABELS, LightSettingCommand, PIR_CAPABILITIES } from './TuyaLightConstants';
-import TuyaOAuth2DriverWithLight from '../../lib/TuyaOAuth2DriverWithLight';
-import TRANSLATIONS from './translations.json';
+  TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes.js';
+import type TuyaOAuth2DeviceLight from './device.js';
+import TRANSLATIONS from './translations.json' with { type: 'json' };
+import { LIGHT_SETTING_LABELS, type LightSettingCommand, PIR_CAPABILITIES } from './TuyaLightConstants.js';
 
 type DeviceArgs = StandardDeviceFlowArgs<TuyaOAuth2DeviceLight>;
 type FlowArgs = StandardFlowArgs<TuyaOAuth2DeviceLight>;
 
-module.exports = class TuyaOAuth2DriverLight extends TuyaOAuth2DriverWithLight {
+export default class TuyaOAuth2DriverLight extends TuyaOAuth2DriverWithLight {
   TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.LIGHTING.LIGHT,
     DEVICE_CATEGORIES.LIGHTING.CEILING_LIGHT,

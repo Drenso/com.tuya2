@@ -1,4 +1,4 @@
-import TuyaOAuth2Device from './TuyaOAuth2Device';
+import TuyaOAuth2Device from './TuyaOAuth2Device.js';
 
 export default class TuyaTimeOutAlarmDevice extends TuyaOAuth2Device {
   alarmTimeouts: Record<string, NodeJS.Timeout | undefined> = {};

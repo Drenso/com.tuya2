@@ -1,14 +1,14 @@
+import type Homey from 'homey';
 import sourceMapSupport from 'source-map-support';
 sourceMapSupport.install();
 
 import { Log } from '@drenso/homey-log';
 import { OAuth2App } from 'homey-oauth2app';
 import NodeCache from 'node-cache';
-import * as TuyaOAuth2Util from './lib/TuyaOAuth2Util';
-import TuyaOAuth2Device from './lib/TuyaOAuth2Device';
-import type { TuyaDeviceDataPoint, TuyaDeviceDataPointResponse, TuyaStatusResponse } from './types/TuyaApiTypes';
-import { type ArgumentAutocompleteResults } from 'homey/lib/FlowCard';
-import TuyaHaClient from './lib/TuyaHaClient';
+import * as TuyaOAuth2Util from './lib/TuyaOAuth2Util.js';
+import type TuyaOAuth2Device from './lib/TuyaOAuth2Device.js';
+import type { TuyaDeviceDataPoint, TuyaDeviceDataPointResponse, TuyaStatusResponse } from './types/TuyaApiTypes.js';
+import TuyaHaClient from './lib/TuyaHaClient.js';
 
 const STATUS_CACHE_KEY = 'status';
 const DATAPOINT_CACHE_KEY = 'datapoint';
@@ -27,7 +27,7 @@ type AutoCompleteArg = {
   dataPoint: boolean;
 };
 
-module.exports = class TuyaOAuth2App extends OAuth2App {
+export default class TuyaOAuth2App extends OAuth2App {
   static OAUTH2_CLIENT = TuyaHaClient;
   static OAUTH2_DEBUG = process.env.DEBUG === '1';
   static OAUTH2_MULTI_SESSION = false; // TODO: Enable this feature & make nice pairing UI
@@ -59,11 +59,11 @@ module.exports = class TuyaOAuth2App extends OAuth2App {
       query: string | undefined,
       args: DeviceArgs,
       filter: ({ value }: { value: unknown }) => boolean,
-    ): Promise<ArgumentAutocompleteResults> => {
+    ): Promise<Homey.FlowCard.ArgumentAutocompleteResults> => {
       function convert(
         values: TuyaStatusResponse | Array<TuyaDeviceDataPoint>,
         dataPoints: boolean,
-      ): ArgumentAutocompleteResults {
+      ): Homey.FlowCard.ArgumentAutocompleteResults {
         values = values.filter(filter);
 
         const trimmedQuery = (query ?? '').trim();
@@ -112,7 +112,7 @@ module.exports = class TuyaOAuth2App extends OAuth2App {
       const dataPointOptions = dataPoints ? convert(dataPoints.properties, true) : [];
 
       // Remove duplicates, preferring status options
-      const combinedMap: Record<string, ArgumentAutocompleteResults[number]> = {};
+      const combinedMap: Record<string, Homey.FlowCard.ArgumentAutocompleteResults[number]> = {};
 
       for (const dataPointOption of dataPointOptions) {
         combinedMap[dataPointOption.name] = dataPointOption;

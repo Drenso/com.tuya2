@@ -1,5 +1,5 @@
-import TuyaDeviceWithCamera from '../../lib/camera/device';
+import TuyaDeviceWithCamera from '../../lib/camera/device.js';
 
-module.exports = class TuyaOAuth2DeviceDoorbell extends TuyaDeviceWithCamera {
+export default class TuyaOAuth2DeviceDoorbell extends TuyaDeviceWithCamera {
   DOORBELL_TRIGGER_FLOW = 'doorbell_rang';
 };

@@ -1,18 +1,18 @@
-import { DEVICE_CATEGORIES } from '../TuyaOAuth2Constants';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../TuyaOAuth2Driver';
-import { constIncludes, getFromMap } from '../TuyaOAuth2Util';
-import {
-  type TuyaDeviceDataPointResponse,
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
   TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import type { StandardFlowArgs } from '../../types/TuyaTypes';
+} from '../../types/TuyaApiTypes.js';
+import type { StandardFlowArgs } from '../../types/TuyaTypes.js';
+import { DEVICE_CATEGORIES } from '../TuyaOAuth2Constants.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../TuyaOAuth2Driver.js';
+import { constIncludes, getFromMap } from '../TuyaOAuth2Util.js';
 import {
   CAMERA_ALARM_CAPABILITIES,
   COMPLEX_CAMERA_CAPABILITIES,
   SIMPLE_CAMERA_CAPABILITIES,
   SIMPLE_CAMERA_FLOWS,
-} from './TuyaCameraConstants';
+} from './TuyaCameraConstants.js';
 
 class TuyaOAuth2DriverWithCamera extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [

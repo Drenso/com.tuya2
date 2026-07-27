@@ -1,10 +1,10 @@
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import { computeScaleFactor } from '../../lib/TuyaOAuth2Util';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import { HEATER_CAPABILITIES_MAPPING, HomeyHeaterSettings } from './TuyaHeaterConstants';
-import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util.js';
+import { computeScaleFactor } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
+import { HEATER_CAPABILITIES_MAPPING, type HomeyHeaterSettings } from './TuyaHeaterConstants.js';
 
-module.exports = class TuyaOAuth2DeviceHeater extends TuyaOAuth2Device {
+export default class TuyaOAuth2DeviceHeater extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 

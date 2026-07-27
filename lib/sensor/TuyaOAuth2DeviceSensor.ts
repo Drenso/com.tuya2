@@ -1,9 +1,9 @@
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import * as TuyaSensorMigrations from '../migrations/TuyaSensorMigrations';
-import TuyaTimeOutAlarmDevice from '../TuyaTimeOutAlarmDevice';
-import * as Util from '../TuyaOAuth2Util';
-import { HomeySensorSettings, SENSOR_CAPABILITIES, TuyaSensorSettings } from './TuyaSensorConstants';
-import { constIncludes, filterTuyaSettings } from '../TuyaOAuth2Util';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
+import * as TuyaSensorMigrations from '../migrations/TuyaSensorMigrations.js';
+import * as Util from '../TuyaOAuth2Util.js';
+import { constIncludes, filterTuyaSettings } from '../TuyaOAuth2Util.js';
+import TuyaTimeOutAlarmDevice from '../TuyaTimeOutAlarmDevice.js';
+import { type HomeySensorSettings, SENSOR_CAPABILITIES, type TuyaSensorSettings } from './TuyaSensorConstants.js';
 
 export default class TuyaOAuth2DeviceSensor extends TuyaTimeOutAlarmDevice {
   async onOAuth2Init(): Promise<void> {
@@ -82,5 +82,3 @@ export default class TuyaOAuth2DeviceSensor extends TuyaTimeOutAlarmDevice {
     return await Util.sendSettings(this, tuyaSettings);
   }
 }
-
-module.exports = TuyaOAuth2DeviceSensor;

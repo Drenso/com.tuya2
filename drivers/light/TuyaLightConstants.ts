@@ -1,4 +1,4 @@
-import TRANSLATIONS from './translations.json';
+import TRANSLATIONS from './translations.json' with { type: 'json' };
 
 export const PIR_CAPABILITIES = {
   read_write: [],

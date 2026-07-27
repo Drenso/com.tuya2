@@ -1,20 +1,20 @@
-import { DEVICE_CATEGORIES, TUYA_PERCENTAGE_SCALING } from '../../lib/TuyaOAuth2Constants';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import { constIncludes, fillTranslatableObject } from '../../lib/TuyaOAuth2Util';
-import {
-  type TuyaDeviceDataPointResponse,
+import { DEVICE_CATEGORIES, TUYA_PERCENTAGE_SCALING } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import { constIncludes, fillTranslatableObject } from '../../lib/TuyaOAuth2Util.js';
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes';
-import type TuyaOAuth2DeviceDimmer from './device';
-import { DIMMER_CAPABILITIES } from './TuyaDimmerConstants';
-import TRANSLATIONS from './translations.json';
+  TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes.js';
+import type TuyaOAuth2DeviceDimmer from './device.js';
+import TRANSLATIONS from './translations.json' with { type: 'json' };
+import { DIMMER_CAPABILITIES } from './TuyaDimmerConstants.js';
 
 type DeviceArgs = StandardDeviceFlowArgs<TuyaOAuth2DeviceDimmer>;
 type FlowArgs = StandardFlowArgs<TuyaOAuth2DeviceDimmer>;
 
-module.exports = class TuyaOAuth2DriverDimmer extends TuyaOAuth2Driver {
+export default class TuyaOAuth2DriverDimmer extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.LIGHTING.DIMMER,
     DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.DIMMER_SWITCH,

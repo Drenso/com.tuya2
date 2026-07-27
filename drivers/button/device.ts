@@ -1,7 +1,7 @@
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import { TuyaStatus } from '../../types/TuyaTypes';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import type { TuyaStatus } from '../../types/TuyaTypes.js';
 
-module.exports = class TuyaOAuth2DeviceButton extends TuyaOAuth2Device {
+export default class TuyaOAuth2DeviceButton extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
   }

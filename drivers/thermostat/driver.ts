@@ -1,13 +1,17 @@
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import {
-  type TuyaDeviceDataPointResponse,
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util';
-import { THERMOSTAT_CAPABILITIES, THERMOSTAT_CAPABILITIES_MAPPING, THERMOSTAT_FLOWS } from './TuyaThermostatConstants';
-import type { StandardFlowArgs } from '../../types/TuyaTypes';
+  TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import type { StandardFlowArgs } from '../../types/TuyaTypes.js';
+import {
+  THERMOSTAT_CAPABILITIES,
+  THERMOSTAT_CAPABILITIES_MAPPING,
+  THERMOSTAT_FLOWS
+} from './TuyaThermostatConstants.js';
 
 function generateThermostatModeTitles(values: string[]): {
   id: string;
@@ -26,7 +30,7 @@ function generateThermostatModeTitles(values: string[]): {
   });
 }
 
-module.exports = class TuyaOAuth2DriverThermostat extends TuyaOAuth2Driver {
+export default class TuyaOAuth2DriverThermostat extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SMALL_HOME_APPLIANCES.THERMOSTAT] as const;
 
   async onInit(): Promise<void> {

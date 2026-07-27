@@ -1,10 +1,10 @@
-import { TUYA_PERCENTAGE_SCALING } from '../../lib/TuyaOAuth2Constants';
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import { TuyaCommand } from '../../types/TuyaApiTypes';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import { DIMMER_CAPABILITIES, HomeyDimmerSettings, TuyaDimmerSettings } from './TuyaDimmerConstants';
-import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util';
-import { filterOutHomeySettings } from '../../lib/TuyaOAuth2Util';
+import { TUYA_PERCENTAGE_SCALING } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util.js';
+import { filterOutHomeySettings } from '../../lib/TuyaOAuth2Util.js';
+import type { TuyaCommand } from '../../types/TuyaApiTypes.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
+import { DIMMER_CAPABILITIES, type HomeyDimmerSettings, type TuyaDimmerSettings } from './TuyaDimmerConstants.js';
 
 export default class TuyaOAuth2DeviceDimmer extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
@@ -147,5 +147,3 @@ export default class TuyaOAuth2DeviceDimmer extends TuyaOAuth2Device {
     });
   }
 }
-
-module.exports = TuyaOAuth2DeviceDimmer;

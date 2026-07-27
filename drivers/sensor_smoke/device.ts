@@ -1,9 +1,9 @@
-import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import { HomeySensorSettings, SENSOR_SETTING_LABELS } from '../../lib/sensor/TuyaSensorConstants';
-import * as Util from '../../lib/TuyaOAuth2Util';
+import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor.js';
+import { type HomeySensorSettings, SENSOR_SETTING_LABELS } from '../../lib/sensor/TuyaSensorConstants.js';
+import * as Util from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 
-module.exports = class TuyaOAuth2DeviceSensorSmoke extends TuyaOAuth2DeviceSensor {
+export default class TuyaOAuth2DeviceSensorSmoke extends TuyaOAuth2DeviceSensor {
   async onOAuth2Init(): Promise<void> {
     await this.initAlarm('alarm_smoke').catch(this.error);
 

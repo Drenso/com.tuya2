@@ -1,14 +1,14 @@
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import { getFromMap } from '../../lib/TuyaOAuth2Util';
-import {
-  type TuyaDeviceDataPointResponse,
-  TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import { SIREN_CAPABILITIES_MAPPING, SIREN_FLOWS } from './TuyaSirenConstants';
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import { getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type {
+    TuyaDeviceDataPointResponse,
+    TuyaDeviceResponse,
+    TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import { SIREN_CAPABILITIES_MAPPING, SIREN_FLOWS } from './TuyaSirenConstants.js';
 
-module.exports = class TuyaOAuth2DriverSiren extends TuyaOAuth2Driver {
+export default class TuyaOAuth2DriverSiren extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.SIREN_ALARM] as const;
 
   async onInit(): Promise<void> {

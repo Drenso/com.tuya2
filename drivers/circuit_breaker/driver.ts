@@ -1,14 +1,14 @@
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util';
-import {
-  type TuyaDeviceDataPointResponse,
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import { CIRCUIT_BREAKER_CAPABILITIES, CIRCUIT_BREAKER_CAPABILITIES_MAPPING } from './TuyaCircuitBreakerConstants';
+  TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import { CIRCUIT_BREAKER_CAPABILITIES, CIRCUIT_BREAKER_CAPABILITIES_MAPPING } from './TuyaCircuitBreakerConstants.js';
 
-module.exports = class TuyaOAuth2DriverCircuitBreaker extends TuyaOAuth2Driver {
+export default class TuyaOAuth2DriverCircuitBreaker extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.ENERGY.CIRCUIT_BREAKER] as const;
 
   async onInit(): Promise<void> {

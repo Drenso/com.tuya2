@@ -1,7 +1,7 @@
-import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor';
-import { TuyaStatus } from '../../types/TuyaTypes';
+import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor.js';
+import type { TuyaStatus } from '../../types/TuyaTypes.js';
 
-module.exports = class TuyaOAuth2DeviceSensorContact extends TuyaOAuth2DeviceSensor {
+export default class TuyaOAuth2DeviceSensorContact extends TuyaOAuth2DeviceSensor {
   async onOAuth2Init(): Promise<void> {
     await this.initAlarm('alarm_contact').catch(this.error);
 

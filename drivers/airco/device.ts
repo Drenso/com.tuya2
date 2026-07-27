@@ -1,8 +1,8 @@
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import { computeScaleFactor } from '../../lib/TuyaOAuth2Util';
-import { TuyaStatus } from '../../types/TuyaTypes';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import { computeScaleFactor } from '../../lib/TuyaOAuth2Util.js';
+import type { TuyaStatus } from '../../types/TuyaTypes.js';
 
-module.exports = class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
+export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 

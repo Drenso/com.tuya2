@@ -1,9 +1,14 @@
-import * as TuyaLightMigrations from '../../lib/migrations/TuyaLightMigrations';
-import { DEVICE_CATEGORIES, TUYA_PERCENTAGE_SCALING } from '../../lib/TuyaOAuth2Constants';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import { HomeyLightSettings, LIGHT_SETTING_LABELS, PIR_CAPABILITIES, TuyaLightSettings } from './TuyaLightConstants';
-import TuyaOAuth2DeviceWithLight from '../../lib/TuyaOAuth2DeviceWithLight';
-import { filterTuyaSettings, reportUnsupportedSettings, sendSettings } from '../../lib/TuyaOAuth2Util';
+import * as TuyaLightMigrations from '../../lib/migrations/TuyaLightMigrations.js';
+import { DEVICE_CATEGORIES, TUYA_PERCENTAGE_SCALING } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2DeviceWithLight from '../../lib/TuyaOAuth2DeviceWithLight.js';
+import { filterTuyaSettings, reportUnsupportedSettings, sendSettings } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
+import {
+  type HomeyLightSettings,
+  LIGHT_SETTING_LABELS,
+  PIR_CAPABILITIES,
+  type TuyaLightSettings
+} from './TuyaLightConstants.js';
 
 export default class TuyaOAuth2DeviceLight extends TuyaOAuth2DeviceWithLight {
   async performMigrations(): Promise<void> {
@@ -195,5 +200,3 @@ export default class TuyaOAuth2DeviceLight extends TuyaOAuth2DeviceWithLight {
     return reportUnsupportedSettings(this, unsupportedSettings, unsupportedValues, LIGHT_SETTING_LABELS);
   }
 }
-
-module.exports = TuyaOAuth2DeviceLight;

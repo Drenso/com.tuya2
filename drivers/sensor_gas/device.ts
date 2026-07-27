@@ -1,11 +1,11 @@
-import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import { HomeySensorSettings, SENSOR_SETTING_LABELS } from '../../lib/sensor/TuyaSensorConstants';
-import * as Util from '../../lib/TuyaOAuth2Util';
-import { SENSOR_GAS_CAPABILITY_MAPPING } from './SensorGasConstants';
-import { getFromMap } from '../../lib/TuyaOAuth2Util';
+import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
+import { type HomeySensorSettings, SENSOR_SETTING_LABELS } from '../../lib/sensor/TuyaSensorConstants.js';
+import * as Util from '../../lib/TuyaOAuth2Util.js';
+import { SENSOR_GAS_CAPABILITY_MAPPING } from './SensorGasConstants.js';
+import { getFromMap } from '../../lib/TuyaOAuth2Util.js';
 
-module.exports = class TuyaOAuth2DeviceSensorGas extends TuyaOAuth2DeviceSensor {
+export default class TuyaOAuth2DeviceSensorGas extends TuyaOAuth2DeviceSensor {
   async onOAuth2Init(): Promise<void> {
     await this.initAlarm('alarm_gas').catch(this.error);
     await this.initAlarm('alarm_co').catch(this.error);

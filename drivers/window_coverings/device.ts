@@ -1,14 +1,14 @@
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import { getFromMap } from '../../lib/TuyaOAuth2Util';
-import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util.js';
+import { getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import {
+  type HomeyWindowCoveringsSettings,
+  type TuyaWindowCoveringsSettings,
   WINDOW_COVERINGS_CAPABILITY_MAPPING,
-  HomeyWindowCoveringsSettings,
-  TuyaWindowCoveringsSettings,
-} from './TuyaWindowCoveringsConstants';
+} from './TuyaWindowCoveringsConstants.js';
 
-module.exports = class TuyaOAuth2DeviceWindowCoverings extends TuyaOAuth2Device {
+export default class TuyaOAuth2DeviceWindowCoverings extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 

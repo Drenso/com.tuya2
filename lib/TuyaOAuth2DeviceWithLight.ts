@@ -1,7 +1,7 @@
-import TuyaOAuth2Device from './TuyaOAuth2Device';
-import { ParsedColourData, TuyaStatus } from '../types/TuyaTypes';
-import { TuyaCommand } from '../types/TuyaApiTypes';
-import { hasJsonStructure } from './TuyaOAuth2Util';
+import type { TuyaCommand } from '../types/TuyaApiTypes.js';
+import type { ParsedColourData, TuyaStatus } from '../types/TuyaTypes.js';
+import TuyaOAuth2Device from './TuyaOAuth2Device.js';
+import { hasJsonStructure } from './TuyaOAuth2Util.js';
 
 /**
  * Handles all light-related capabilities, except onoff

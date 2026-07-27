@@ -1,5 +1,5 @@
-import type TuyaOAuth2DeviceCircuitBreaker from '../../drivers/circuit_breaker/device';
-import { executeMigration } from './MigrationStore';
+import type TuyaOAuth2DeviceCircuitBreaker from '../../drivers/circuit_breaker/device.js';
+import { executeMigration } from './MigrationStore.js';
 
 export async function performMigrations(device: TuyaOAuth2DeviceCircuitBreaker): Promise<void> {
   await addMeterPowerCapability(device).catch(device.error);

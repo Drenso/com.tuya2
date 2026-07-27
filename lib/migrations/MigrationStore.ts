@@ -1,4 +1,4 @@
-import type TuyaOAuth2Device from '../TuyaOAuth2Device';
+import type TuyaOAuth2Device from '../TuyaOAuth2Device.js';
 
 const storeKey = '_migrations';
 

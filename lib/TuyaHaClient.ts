@@ -1,33 +1,32 @@
+import crypto from 'crypto';
 import { fetch, OAuth2Client } from 'homey-oauth2app';
+import mqtt from 'mqtt';
 import { nanoid } from 'nanoid';
-
 import { URL } from 'url';
-import {
+import type {
   TuyaCommand,
-  type TuyaDeviceDataPointResponse,
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
   TuyaDeviceSpecificationResponse,
   TuyaIrRemoteKeysResponse,
   TuyaIrRemoteResponse,
   TuyaStatusResponse,
   TuyaWebRTC,
-} from '../types/TuyaApiTypes';
-import { getTuyaClientId } from './TuyaHaClientId';
-import * as TuyaOAuth2Util from './TuyaOAuth2Util';
-import TuyaHaToken from './TuyaHaToken';
-import {
+} from '../types/TuyaApiTypes.js';
+import type {
   TuyaHaHome,
-  TuyaHasResponse,
   TuyaHaScenesResponse,
+  TuyaHasResponse,
   TuyaHaStatusResponse,
   TuyaMqttConfigResponse,
   TuyaMqttMessage,
   TuyaTokenRefreshResponse,
-} from '../types/TuyaHaApiTypes';
-import crypto from 'crypto';
-import TuyaOAuth2Error from './TuyaOAuth2Error';
-import { DeviceRegistration } from '../types/TuyaTypes';
-import mqtt from 'mqtt';
+} from '../types/TuyaHaApiTypes.js';
+import type { DeviceRegistration } from '../types/TuyaTypes.js';
+import { getTuyaClientId } from './TuyaHaClientId.js';
+import TuyaHaToken from './TuyaHaToken.js';
+import TuyaOAuth2Error from './TuyaOAuth2Error.js';
+import * as TuyaOAuth2Util from './TuyaOAuth2Util.js';
 
 type OAuth2SessionInformation = { id: string; title: string };
 
@@ -574,4 +573,3 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
 }
 
 TuyaHaClient.setMaxListeners(Infinity);
-module.exports = TuyaHaClient;

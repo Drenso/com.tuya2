@@ -1,4 +1,4 @@
-import { ScaledProperty } from '../../types/TuyaTypes';
+import type { ScaledProperty } from '../../types/TuyaTypes.js';
 
 export const THERMOSTAT_CAPABILITIES_MAPPING = {
   switch: 'onoff',

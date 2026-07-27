@@ -1,5 +1,5 @@
-import TuyaDriverWithCamera from '../../lib/camera/driver';
-import type { TuyaOAuth2DeviceCamera } from './device';
+import TuyaDriverWithCamera from '../../lib/camera/driver.js';
+import type TuyaOAuth2DeviceCamera from './device.js';
 
 type PtzControlFlowArgs = {
   device: TuyaOAuth2DeviceCamera;
@@ -7,7 +7,7 @@ type PtzControlFlowArgs = {
   duration: number;
 };
 
-module.exports = class TuyaOAuth2DriverCamera extends TuyaDriverWithCamera {
+export default class TuyaOAuth2DriverCamera extends TuyaDriverWithCamera {
   async onInit(): Promise<void> {
     await super.onInit();
 

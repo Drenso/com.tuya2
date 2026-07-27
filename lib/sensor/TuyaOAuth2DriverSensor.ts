@@ -1,11 +1,11 @@
-import {
-  type TuyaDeviceDataPointResponse,
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
   TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../TuyaOAuth2Driver';
-import { SENSOR_CAPABILITIES, SENSOR_CAPABILITY_MAPPING } from './TuyaSensorConstants';
-import { constIncludes, getFromMap } from '../TuyaOAuth2Util';
+} from '../../types/TuyaApiTypes.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../TuyaOAuth2Driver.js';
+import { SENSOR_CAPABILITIES, SENSOR_CAPABILITY_MAPPING } from './TuyaSensorConstants.js';
+import { constIncludes, getFromMap } from '../TuyaOAuth2Util.js';
 
 export default class TuyaOAuth2DriverSensor extends TuyaOAuth2Driver {
   onTuyaPairListDeviceProperties(
@@ -49,5 +49,3 @@ export default class TuyaOAuth2DriverSensor extends TuyaOAuth2Driver {
     return props;
   }
 }
-
-module.exports = TuyaOAuth2DriverSensor;

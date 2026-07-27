@@ -1,14 +1,14 @@
+import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor.js';
+import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util.js';
+import { computeScaleFactor, constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import {
-  HomeyClimateSensorSettings,
   CLIMATE_CAPABILITY_MAPPING,
   CLIMATE_SENSOR_CAPABILITIES,
-} from './TuyaClimateSensorConstants';
-import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor';
-import { computeScaleFactor, constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util';
+  type HomeyClimateSensorSettings,
+} from './TuyaClimateSensorConstants.js';
 
-module.exports = class TuyaOAuth2DeviceSensorClimate extends TuyaOAuth2DeviceSensor {
+export default class TuyaOAuth2DeviceSensorClimate extends TuyaOAuth2DeviceSensor {
   async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 

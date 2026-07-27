@@ -1,18 +1,18 @@
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import type TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import { getFromMap } from '../../lib/TuyaOAuth2Util';
-import {
-  type TuyaDeviceDataPointResponse,
-  TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import { AIRCO_CAPABILITIES_MAPPING } from './TuyaAircoConstants';
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import type TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import { getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type {
+    TuyaDeviceDataPointResponse,
+    TuyaDeviceResponse,
+    TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import { AIRCO_CAPABILITIES_MAPPING } from './TuyaAircoConstants.js';
 
 type DeviceArgs = { device: TuyaOAuth2Device };
 type ValueArgs = { value: unknown };
 
-module.exports = class TuyaOAuth2DriverAirco extends TuyaOAuth2Driver {
+export default class TuyaOAuth2DriverAirco extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.LARGE_HOME_APPLIANCES.AIR_CONDITIONER] as const;
 
   async onInit(): Promise<void> {

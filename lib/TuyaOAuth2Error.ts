@@ -9,5 +9,3 @@ export default class TuyaOAuth2Error extends OAuth2Error {
     this.tuyaCode = tuyaCode;
   }
 }
-
-module.exports = TuyaOAuth2Error;

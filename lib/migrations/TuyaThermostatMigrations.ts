@@ -1,6 +1,6 @@
-import { executeMigration } from './MigrationStore';
-import { computeScaleFactor } from '../TuyaOAuth2Util';
-import type TuyaOAuth2DeviceThermostat from '../../drivers/thermostat/device';
+import type TuyaOAuth2DeviceThermostat from '../../drivers/thermostat/device.js';
+import { computeScaleFactor } from '../TuyaOAuth2Util.js';
+import { executeMigration } from './MigrationStore.js';
 
 export async function performMigrations(device: TuyaOAuth2DeviceThermostat): Promise<void> {
   await thermostatCapabilitiesOptionsScalingMigration(device).catch(device.error);

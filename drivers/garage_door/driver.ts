@@ -1,14 +1,14 @@
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import {
-  type TuyaDeviceDataPointResponse,
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util';
-import { GARAGE_DOOR_CAPABILITIES, GRAGE_DOOR_CAPABILITIES_MAPPING } from './TuyaGarageDoorConstants';
+  TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import { GARAGE_DOOR_CAPABILITIES, GRAGE_DOOR_CAPABILITIES_MAPPING } from './TuyaGarageDoorConstants.js';
 
-module.exports = class TuyaOAuth2DriverGarageDoor extends TuyaOAuth2Driver {
+export default class TuyaOAuth2DriverGarageDoor extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.GARAGE_DOOR_OPEN] as const;
 
   async onInit(): Promise<void> {

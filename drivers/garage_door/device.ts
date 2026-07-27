@@ -1,14 +1,14 @@
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import { constIncludes } from '../../lib/TuyaOAuth2Util';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util.js';
+import { constIncludes } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import {
   GARAGE_DOOR_CAPABILITIES,
   GRAGE_DOOR_CAPABILITIES_MAPPING,
-  HomeyGarageDoorSettings,
-} from './TuyaGarageDoorConstants';
+  type HomeyGarageDoorSettings,
+} from './TuyaGarageDoorConstants.js';
 
-module.exports = class TuyaOAuth2DeviceGarageDoor extends TuyaOAuth2Device {
+export default class TuyaOAuth2DeviceGarageDoor extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 

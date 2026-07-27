@@ -1,14 +1,14 @@
-import * as TuyaOAuth2Util from '../TuyaOAuth2Util';
-import { constIncludes, getFromMap } from '../TuyaOAuth2Util';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
+import * as TuyaOAuth2Util from '../TuyaOAuth2Util.js';
+import { constIncludes, getFromMap } from '../TuyaOAuth2Util.js';
+import TuyaTimeOutAlarmDevice from '../TuyaTimeOutAlarmDevice.js';
+import type { EventEvent } from '../webhooks/TuyaWebhookParser.js';
 import {
   CAMERA_ALARM_EVENT_CAPABILITIES,
-  HomeyCameraSettings,
+  type HomeyCameraSettings,
   SIMPLE_CAMERA_CAPABILITIES,
-  TuyaCameraSettings,
-} from './TuyaCameraConstants';
-import TuyaTimeOutAlarmDevice from '../TuyaTimeOutAlarmDevice';
-import { EventEvent } from '../webhooks/TuyaWebhookParser';
+  type TuyaCameraSettings,
+} from './TuyaCameraConstants.js';
 
 abstract class TuyaOAuth2DeviceWithCamera extends TuyaTimeOutAlarmDevice {
   abstract DOORBELL_TRIGGER_FLOW: string;

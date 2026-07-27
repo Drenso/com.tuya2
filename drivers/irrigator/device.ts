@@ -1,13 +1,13 @@
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import { computeScaleFactor, constIncludes, getFromMap, handleScaleSetting } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import {
-  HomeyIrrigatorSettings,
+  type HomeyIrrigatorSettings,
   IRRIGATOR_CAPABILITIES,
   IRRIGATOR_CAPABILITIES_MAPPING,
-} from './TuyaIrrigatorConstants';
-import { computeScaleFactor, constIncludes, getFromMap, handleScaleSetting } from '../../lib/TuyaOAuth2Util';
+} from './TuyaIrrigatorConstants.js';
 
-module.exports = class TuyaOAuth2DeviceIrrigator extends TuyaOAuth2Device {
+export default class TuyaOAuth2DeviceIrrigator extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 

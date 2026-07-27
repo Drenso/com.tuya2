@@ -1,15 +1,15 @@
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import * as Util from '../../lib/TuyaOAuth2Util';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import { constIncludes, filterTuyaSettings, getFromMap, computeScaleFactor } from '../../lib/TuyaOAuth2Util';
+import * as TuyaThermostatMigrations from '../../lib/migrations/TuyaThermostatMigrations.js';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import * as Util from '../../lib/TuyaOAuth2Util.js';
+import { computeScaleFactor, constIncludes, filterTuyaSettings, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import {
-  HomeyThermostatSettings,
+  type HomeyThermostatSettings,
   THERMOSTAT_CAPABILITIES,
   THERMOSTAT_CAPABILITIES_MAPPING,
   THERMOSTAT_FLOWS,
-  TuyaThermostatSettings,
-} from './TuyaThermostatConstants';
-import * as TuyaThermostatMigrations from '../../lib/migrations/TuyaThermostatMigrations';
+  type TuyaThermostatSettings,
+} from './TuyaThermostatConstants.js';
 
 export default class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
@@ -112,5 +112,3 @@ export default class TuyaOAuth2DeviceThermostat extends TuyaOAuth2Device {
     return Util.onSettings(this, tuyaSettings, this.SETTING_LABELS);
   }
 }
-
-module.exports = TuyaOAuth2DeviceThermostat;

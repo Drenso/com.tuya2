@@ -1,14 +1,14 @@
-import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import { constIncludes, filterTuyaSettings } from '../../lib/TuyaOAuth2Util';
-import * as Util from '../../lib/TuyaOAuth2Util';
+import TuyaOAuth2DeviceSensor from '../../lib/sensor/TuyaOAuth2DeviceSensor.js';
+import * as Util from '../../lib/TuyaOAuth2Util.js';
+import { constIncludes, filterTuyaSettings } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import {
-  HomeyHumanSensorSettings,
+  type HomeyHumanSensorSettings,
   HUMAN_SENSOR_CAPABILITIES,
-  TuyaHumanSensorSettings,
-} from './TuyaHumanSensorConstants';
+  type TuyaHumanSensorSettings,
+} from './TuyaHumanSensorConstants.js';
 
-module.exports = class TuyaOAuth2DeviceSensorHuman extends TuyaOAuth2DeviceSensor {
+export default class TuyaOAuth2DeviceSensorHuman extends TuyaOAuth2DeviceSensor {
   async onOAuth2Init(): Promise<void> {
     await this.initAlarm('alarm_human').catch(this.error);
 

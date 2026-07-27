@@ -1,5 +1,5 @@
-import { HomeySensorSettings, TuyaSensorSettings } from '../../lib/sensor/TuyaSensorConstants';
-import { ScaledProperty } from '../../types/TuyaTypes';
+import type { HomeySensorSettings, TuyaSensorSettings } from '../../lib/sensor/TuyaSensorConstants.js';
+import type { ScaledProperty } from '../../types/TuyaTypes.js';
 
 export const SENSOR_PM25_CAPABILITY_MAPPING = {
   pm25_state: 'alarm_pm25',

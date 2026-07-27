@@ -1,11 +1,11 @@
-import { TuyaDeviceResponse, TuyaDeviceSpecificationResponse } from '../../types/TuyaApiTypes';
-import { CLIMATE_CAPABILITY_MAPPING, CLIMATE_SENSOR_CAPABILITIES } from './TuyaClimateSensorConstants';
-import { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import TuyaOAuth2DriverSensor from '../../lib/sensor/TuyaOAuth2DriverSensor';
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util';
+import TuyaOAuth2DriverSensor from '../../lib/sensor/TuyaOAuth2DriverSensor.js';
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import type { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type { TuyaDeviceResponse, TuyaDeviceSpecificationResponse } from '../../types/TuyaApiTypes.js';
+import { CLIMATE_CAPABILITY_MAPPING, CLIMATE_SENSOR_CAPABILITIES } from './TuyaClimateSensorConstants.js';
 
-module.exports = class TuyaOAuth2DriverSensorClimate extends TuyaOAuth2DriverSensor {
+export default class TuyaOAuth2DriverSensorClimate extends TuyaOAuth2DriverSensor {
   TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.TEMP_HUMI_SENSOR];
 
   onTuyaPairListDeviceProperties(

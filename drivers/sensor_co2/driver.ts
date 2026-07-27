@@ -1,15 +1,15 @@
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import TuyaOAuth2DriverSensor from '../../lib/sensor/TuyaOAuth2DriverSensor';
-import {
-  type TuyaDeviceDataPointResponse,
+import TuyaOAuth2DriverSensor from '../../lib/sensor/TuyaOAuth2DriverSensor.js';
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import type { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import { getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import { getFromMap } from '../../lib/TuyaOAuth2Util';
-import { SENSOR_CO2_CAPABILITY_MAPPING } from './SensorCo2Constants';
+  TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import { SENSOR_CO2_CAPABILITY_MAPPING } from './SensorCo2Constants.js';
 
-module.exports = class TuyaOAuth2DriverSensorCO2 extends TuyaOAuth2DriverSensor {
+export default class TuyaOAuth2DriverSensorCO2 extends TuyaOAuth2DriverSensor {
   TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.SECURITY_VIDEO_SURV.CO2_DETECTOR] as const;
 
   onTuyaPairListDeviceProperties(

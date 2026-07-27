@@ -1,16 +1,16 @@
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
+import * as TuyaFanMigrations from '../../lib/migrations/TuyaFanMigrations.js';
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2DeviceWithLight from '../../lib/TuyaOAuth2DeviceWithLight.js';
+import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util.js';
+import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import {
   FAN_CAPABILITIES,
   FAN_CAPABILITIES_MAPPING,
   FAN_LIGHT_CAPABILITIES_MAPPING,
-  HomeyFanSettings,
-  TuyaFanSettings,
-} from './TuyaFanConstants';
-import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util';
-import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util';
-import * as TuyaFanMigrations from '../../lib/migrations/TuyaFanMigrations';
-import TuyaOAuth2DeviceWithLight from '../../lib/TuyaOAuth2DeviceWithLight';
+  type HomeyFanSettings,
+  type TuyaFanSettings,
+} from './TuyaFanConstants.js';
 
 export default class TuyaOAuth2DeviceFan extends TuyaOAuth2DeviceWithLight {
   LIGHT_DIM_CAPABILITY = 'dim';
@@ -149,5 +149,3 @@ export default class TuyaOAuth2DeviceFan extends TuyaOAuth2DeviceWithLight {
     return TuyaOAuth2Util.onSettings<TuyaFanSettings>(this, tuyaSettingsEvent, this.SETTING_LABELS);
   }
 }
-
-module.exports = TuyaOAuth2DeviceFan;

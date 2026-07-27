@@ -1,4 +1,4 @@
-import TRANSLATIONS from './translations.json';
+import TRANSLATIONS from './translations.json' with { type: 'json' };
 
 export type HomeySensorSettings = {
   use_alarm_timeout: boolean;

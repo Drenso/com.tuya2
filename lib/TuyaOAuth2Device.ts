@@ -1,12 +1,16 @@
 import { OAuth2Device } from 'homey-oauth2app';
-import type { TuyaCommand, TuyaDeviceDataPointResponse, TuyaStatusResponse, TuyaWebRTC } from '../types/TuyaApiTypes';
-
-import type { Translation, TuyaStatus, TuyaStatusSource } from '../types/TuyaTypes';
-import * as TuyaOAuth2Util from './TuyaOAuth2Util';
-import * as GeneralMigrations from './migrations/GeneralMigrations';
-import TuyaHaClient from './TuyaHaClient';
-import TuyaOAuth2Driver from './TuyaOAuth2Driver';
-import TuyaOAuth2Error from './TuyaOAuth2Error';
+import type {
+  TuyaCommand,
+  TuyaDeviceDataPointResponse,
+  TuyaStatusResponse,
+  TuyaWebRTC
+} from '../types/TuyaApiTypes.js';
+import type { Translation, TuyaStatus, TuyaStatusSource } from '../types/TuyaTypes.js';
+import * as GeneralMigrations from './migrations/GeneralMigrations.js';
+import type TuyaHaClient from './TuyaHaClient.js';
+import type TuyaOAuth2Driver from './TuyaOAuth2Driver.js';
+import type TuyaOAuth2Error from './TuyaOAuth2Error.js';
+import * as TuyaOAuth2Util from './TuyaOAuth2Util.js';
 
 export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
   __status: TuyaStatus;
@@ -338,5 +342,3 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     }
   }
 }
-
-module.exports = TuyaOAuth2Device;

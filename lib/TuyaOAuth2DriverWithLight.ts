@@ -1,10 +1,10 @@
-import TuyaOAuth2Driver, { ListDeviceProperties } from './TuyaOAuth2Driver';
-import {
+import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
   TuyaDeviceSpecificationResponse,
-} from '../types/TuyaApiTypes';
-import { DEVICE_CATEGORIES } from './TuyaOAuth2Constants';
+} from '../types/TuyaApiTypes.js';
+import { DEVICE_CATEGORIES } from './TuyaOAuth2Constants.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from './TuyaOAuth2Driver.js';
 
 /**
  * Handles all light-related capabilities, except onoff

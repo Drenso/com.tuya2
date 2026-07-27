@@ -1,16 +1,16 @@
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import {
-  type TuyaDeviceDataPointResponse,
-  TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
 import { FlowCard } from 'homey';
-import { StandardDeviceFlowArgs, StandardValueFlowArgs } from '../../types/TuyaTypes';
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import type {
+  TuyaDeviceDataPointResponse,
+  TuyaDeviceResponse,
+  TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import type { StandardDeviceFlowArgs, StandardValueFlowArgs } from '../../types/TuyaTypes.js';
 
 type SwitchArgs = { switch: { id: string } };
 
-module.exports = class TuyaOAuth2DriverButton extends TuyaOAuth2Driver {
+export default class TuyaOAuth2DriverButton extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.WIRELESS_SWITCH] as const;
 
   async onInit(): Promise<void> {

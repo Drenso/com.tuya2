@@ -1,9 +1,9 @@
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import { TuyaStatus } from '../../types/TuyaTypes';
-import { HUMIDIFIER_CAPABILITIES, HUMIDIFIER_CAPABILITY_MAPPING } from './TuyaHumidifierConstants';
-import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type { TuyaStatus } from '../../types/TuyaTypes.js';
+import { HUMIDIFIER_CAPABILITIES, HUMIDIFIER_CAPABILITY_MAPPING } from './TuyaHumidifierConstants.js';
 
-module.exports = class TuyaOAuth2DeviceHumidifier extends TuyaOAuth2Device {
+export default class TuyaOAuth2DeviceHumidifier extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
     await super.onOAuth2Init();
 

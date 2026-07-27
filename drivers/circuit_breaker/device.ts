@@ -1,14 +1,14 @@
-import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device';
-import { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes';
-import { constIncludes, filterTuyaSettings, getFromMap } from '../../lib/TuyaOAuth2Util';
-import * as Util from '../../lib/TuyaOAuth2Util';
+import * as CircuitBreakerMigrations from '../../lib/migrations/CircuitBreakerMigrations.js';
+import TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
+import * as Util from '../../lib/TuyaOAuth2Util.js';
+import { constIncludes, filterTuyaSettings, getFromMap } from '../../lib/TuyaOAuth2Util.js';
+import type { SettingsEvent, TuyaStatus } from '../../types/TuyaTypes.js';
 import {
   CIRCUIT_BREAKER_CAPABILITIES,
   CIRCUIT_BREAKER_CAPABILITIES_MAPPING,
-  HomeyCircuitBreakerSettings,
-  TuyaCircuitBreakerSettings,
-} from './TuyaCircuitBreakerConstants';
-import * as CircuitBreakerMigrations from '../../lib/migrations/CircuitBreakerMigrations';
+  type HomeyCircuitBreakerSettings,
+  type TuyaCircuitBreakerSettings,
+} from './TuyaCircuitBreakerConstants.js';
 
 export default class TuyaOAuth2DeviceCircuitBreaker extends TuyaOAuth2Device {
   async onOAuth2Init(): Promise<void> {
@@ -74,5 +74,3 @@ export default class TuyaOAuth2DeviceCircuitBreaker extends TuyaOAuth2Device {
     return Util.onSettings(this, tuyaSettings, this.SETTING_LABELS);
   }
 }
-
-module.exports = TuyaOAuth2DeviceCircuitBreaker;

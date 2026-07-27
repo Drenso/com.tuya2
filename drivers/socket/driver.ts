@@ -1,21 +1,21 @@
 import { FlowCard } from 'homey';
-import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants';
-import TuyaOAuth2Driver, { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver';
-import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util';
-import {
-  type TuyaDeviceDataPointResponse,
+import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
+import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
+import * as TuyaOAuth2Util from '../../lib/TuyaOAuth2Util.js';
+import { fillTranslatableObject } from '../../lib/TuyaOAuth2Util.js';
+import type {
+  TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse,
-} from '../../types/TuyaApiTypes';
-import type TuyaOAuth2DeviceSocket from './device';
-import { fillTranslatableObject } from '../../lib/TuyaOAuth2Util';
-import TRANSLATIONS from './translations.json';
+  TuyaDeviceSpecificationResponse
+} from '../../types/TuyaApiTypes.js';
+import type TuyaOAuth2DeviceSocket from './device.js';
+import TRANSLATIONS from './translations.json' with { type: 'json' };
 
 type DeviceArgs = { device: TuyaOAuth2DeviceSocket };
 type SwitchArgs = { switch: { name: string; id: string } };
 type TuyaCapabilityState = { tuyaCapability: string };
 
-module.exports = class TuyaOAuth2DriverSocket extends TuyaOAuth2Driver {
+export default class TuyaOAuth2DriverSocket extends TuyaOAuth2Driver {
   TUYA_DEVICE_CATEGORIES = [
     DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.SOCKET,
     DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.POWER_STRIP,

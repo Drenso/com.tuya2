@@ -135,7 +135,7 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
       url.searchParams.append('usercode', userCode);
 
       const wait = async (ms: number): Promise<void> => {
-        return new Promise(resolve => setTimeout(resolve, ms));
+        return new Promise(resolve => this.homey.setTimeout(resolve, ms));
       };
 
       while (waitingForQrScan) {

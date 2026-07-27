@@ -123,8 +123,13 @@ export default class TuyaOAuth2DriverIrController extends TuyaOAuth2Driver {
   async onInit(): Promise<void> {
     await super.onInit();
 
-    const buttonAutocompleteListener = (query: string, args: StandardDeviceFlowArgs): Homey.FlowCard.ArgumentAutocompleteResults => {
-      const results = (args.device.getStoreValue('tuya_remote_keys') as Homey.FlowCard.ArgumentAutocompleteResults).filter(result => {
+    const buttonAutocompleteListener = (
+      query: string,
+      args: StandardDeviceFlowArgs,
+    ): Homey.FlowCard.ArgumentAutocompleteResults => {
+      const results = (
+        args.device.getStoreValue('tuya_remote_keys') as Homey.FlowCard.ArgumentAutocompleteResults
+      ).filter(result => {
         const searchString = result.name.toLowerCase();
         const queryWords = query.toLowerCase().split(' ');
         // Return false if any query word is not included
@@ -335,4 +340,4 @@ export default class TuyaOAuth2DriverIrController extends TuyaOAuth2Driver {
 
     return listDevices;
   }
-};
+}

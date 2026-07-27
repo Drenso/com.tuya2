@@ -2,9 +2,9 @@ import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
 import type { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
 import TuyaOAuth2DriverSensor from '../../lib/sensor/TuyaOAuth2DriverSensor.js';
 import type {
-    TuyaDeviceDataPointResponse,
-    TuyaDeviceResponse,
-    TuyaDeviceSpecificationResponse
+  TuyaDeviceDataPointResponse,
+  TuyaDeviceResponse,
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 
 export default class TuyaOAuth2DriverSensorMotion extends TuyaOAuth2DriverSensor {
@@ -40,4 +40,4 @@ export default class TuyaOAuth2DriverSensorMotion extends TuyaOAuth2DriverSensor
 
     return props;
   }
-};
+}

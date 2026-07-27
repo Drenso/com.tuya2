@@ -35,4 +35,4 @@ export default class TuyaOAuth2DeviceHumidifier extends TuyaOAuth2Device {
       }
     }
   }
-};
+}

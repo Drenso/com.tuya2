@@ -6,4 +6,4 @@ export default class TuyaOAuth2DeviceOther extends TuyaOAuth2Device {
     await super.performMigrations();
     await OtherMigrations.performMigrations(this);
   }
-};
+}

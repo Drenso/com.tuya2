@@ -44,4 +44,4 @@ export default class TuyaOAuth2DeviceSiren extends TuyaOAuth2Device {
   async onSettings(event: SettingsEvent<HomeSirenSettings>): Promise<string | void> {
     return await TuyaOAuth2Util.onSettings<TuyaSirenSettings>(this, event, this.SETTING_LABELS);
   }
-};
+}

@@ -4,7 +4,7 @@ import type { ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 
 export default class TuyaOAuth2DriverSensorVibration extends TuyaOAuth2DriverSensor {
@@ -42,4 +42,4 @@ export default class TuyaOAuth2DriverSensorVibration extends TuyaOAuth2DriverSen
 
     return props;
   }
-};
+}

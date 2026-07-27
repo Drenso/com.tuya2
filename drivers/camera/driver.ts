@@ -23,4 +23,4 @@ export default class TuyaOAuth2DriverCamera extends TuyaDriverWithCamera {
       });
     });
   }
-};
+}

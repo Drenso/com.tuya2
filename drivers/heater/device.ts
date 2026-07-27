@@ -131,4 +131,4 @@ export default class TuyaOAuth2DeviceHeater extends TuyaOAuth2Device {
       );
     }
   }
-};
+}

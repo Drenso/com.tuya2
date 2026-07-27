@@ -19,4 +19,4 @@ export default class TuyaOAuth2DeviceSensorContact extends TuyaOAuth2DeviceSenso
       this.setAlarmCapabilityValue('alarm_contact', status['doorcontact_state']).catch(this.error);
     }
   }
-};
+}

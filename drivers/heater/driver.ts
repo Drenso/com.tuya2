@@ -4,7 +4,7 @@ import { getFromMap } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import type { StandardFlowArgs } from '../../types/TuyaTypes.js';
 import { DEFAULT_TUYA_HEATER_FAULTS, HEATER_CAPABILITIES_MAPPING } from './TuyaHeaterConstants.js';
@@ -85,4 +85,4 @@ export default class TuyaOAuth2DriverHeater extends TuyaOAuth2Driver {
 
     return props;
   }
-};
+}

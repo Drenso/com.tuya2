@@ -2,9 +2,9 @@ import { DEVICE_CATEGORIES } from '../../lib/TuyaOAuth2Constants.js';
 import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
 import { getFromMap } from '../../lib/TuyaOAuth2Util.js';
 import type {
-    TuyaDeviceDataPointResponse,
-    TuyaDeviceResponse,
-    TuyaDeviceSpecificationResponse
+  TuyaDeviceDataPointResponse,
+  TuyaDeviceResponse,
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import { SIREN_CAPABILITIES_MAPPING, SIREN_FLOWS } from './TuyaSirenConstants.js';
 
@@ -43,4 +43,4 @@ export default class TuyaOAuth2DriverSiren extends TuyaOAuth2Driver {
 
     return props;
   }
-};
+}

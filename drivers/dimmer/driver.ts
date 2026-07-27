@@ -4,7 +4,7 @@ import { constIncludes, fillTranslatableObject } from '../../lib/TuyaOAuth2Util.
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes.js';
 import type TuyaOAuth2DeviceDimmer from './device.js';
@@ -147,4 +147,4 @@ export default class TuyaOAuth2DriverDimmer extends TuyaOAuth2Driver {
 
     return props;
   }
-};
+}

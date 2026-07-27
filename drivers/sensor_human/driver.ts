@@ -5,7 +5,7 @@ import { constIncludes } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import type { StandardDeviceFlowArgs } from '../../types/TuyaTypes.js';
 import { HUMAN_SENSOR_CAPABILITIES, HUMAN_SENSOR_FLOWS } from './TuyaHumanSensorConstants.js';
@@ -62,4 +62,4 @@ export default class TuyaOAuth2DriverHuman extends TuyaOAuth2DriverSensor {
 
     return props;
   }
-};
+}

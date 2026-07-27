@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@drenso/eslint-config-homey-mts": "1.2.0",
+    "@drenso/prettier-config-homey-mts": "1.2.0",
     "@tsconfig/node20": "20.1.9",
     "@types/homey": "npm:homey-apps-sdk-v3-types@0.3.12",
     "@types/node": "20.14.1",

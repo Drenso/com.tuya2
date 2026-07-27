@@ -103,4 +103,4 @@ export default class TuyaOAuth2DeviceWindowCoverings extends TuyaOAuth2Device {
 
     return TuyaOAuth2Util.onSettings(this, tuyaSettings, this.SETTING_LABELS);
   }
-};
+}

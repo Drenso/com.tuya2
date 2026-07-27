@@ -4,7 +4,7 @@ import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import { GARAGE_DOOR_CAPABILITIES, GRAGE_DOOR_CAPABILITIES_MAPPING } from './TuyaGarageDoorConstants.js';
 
@@ -40,4 +40,4 @@ export default class TuyaOAuth2DriverGarageDoor extends TuyaOAuth2Driver {
 
     return props;
   }
-};
+}

@@ -3,7 +3,7 @@ import type {
   TuyaCommand,
   TuyaDeviceDataPointResponse,
   TuyaStatusResponse,
-  TuyaWebRTC
+  TuyaWebRTC,
 } from '../types/TuyaApiTypes.js';
 import type { Translation, TuyaStatus, TuyaStatusSource } from '../types/TuyaTypes.js';
 import * as GeneralMigrations from './migrations/GeneralMigrations.js';

@@ -53,4 +53,4 @@ export default class TuyaOAuth2DeviceSensorPM25 extends TuyaOAuth2DeviceSensor {
     );
     return Util.reportUnsupportedSettings(this, unsupportedSettings, unsupportedValues, SENSOR_SETTING_LABELS);
   }
-};
+}

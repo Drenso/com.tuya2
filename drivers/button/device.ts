@@ -34,4 +34,4 @@ export default class TuyaOAuth2DeviceButton extends TuyaOAuth2Device {
       }
     }
   }
-};
+}

@@ -4,7 +4,7 @@ import { getFromMap } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes.js';
 import driver_compose from './driver.compose.json' with { type: 'json' };
@@ -97,4 +97,4 @@ export default class TuyaOAuth2DriverHumidifier extends TuyaOAuth2Driver {
 
     return props;
   }
-};
+}

@@ -4,7 +4,7 @@ import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import { CIRCUIT_BREAKER_CAPABILITIES, CIRCUIT_BREAKER_CAPABILITIES_MAPPING } from './TuyaCircuitBreakerConstants.js';
 
@@ -68,4 +68,4 @@ export default class TuyaOAuth2DriverCircuitBreaker extends TuyaOAuth2Driver {
 
     return props;
   }
-};
+}

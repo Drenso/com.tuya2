@@ -36,4 +36,4 @@ export default class TuyaOAuth2DeviceSensorCO2 extends TuyaOAuth2DeviceSensor {
     const [unsupportedSettings, unsupportedValues] = await super.onAlarmSettings(event);
     return Util.reportUnsupportedSettings(this, unsupportedSettings, unsupportedValues, SENSOR_SETTING_LABELS);
   }
-};
+}

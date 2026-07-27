@@ -4,7 +4,7 @@ import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import type { StandardDeviceFlowArgs, StandardValueFlowArgs } from '../../types/TuyaTypes.js';
 
@@ -75,4 +75,4 @@ export default class TuyaOAuth2DriverButton extends TuyaOAuth2Driver {
 
     return props;
   }
-};
+}

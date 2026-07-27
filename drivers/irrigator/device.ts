@@ -62,4 +62,4 @@ export default class TuyaOAuth2DeviceIrrigator extends TuyaOAuth2Device {
       await handleScaleSetting(this, event, `${homeyCapability}_scaling`, homeyCapability).catch(this.error);
     }
   }
-};
+}

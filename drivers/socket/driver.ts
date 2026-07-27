@@ -6,7 +6,7 @@ import { fillTranslatableObject } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import type TuyaOAuth2DeviceSocket from './device.js';
 import TRANSLATIONS from './translations.json' with { type: 'json' };
@@ -214,4 +214,4 @@ export default class TuyaOAuth2DriverSocket extends TuyaOAuth2Driver {
 
     return props;
   }
-};
+}

@@ -44,4 +44,4 @@ export default class TuyaOAuth2DeviceSensorHuman extends TuyaOAuth2DeviceSensor 
 
     return Util.onSettings(this, tuyaSettings, this.SETTING_LABELS);
   }
-};
+}

@@ -7,7 +7,7 @@ import {
   type HomeyLightSettings,
   LIGHT_SETTING_LABELS,
   PIR_CAPABILITIES,
-  type TuyaLightSettings
+  type TuyaLightSettings,
 } from './TuyaLightConstants.js';
 
 export default class TuyaOAuth2DeviceLight extends TuyaOAuth2DeviceWithLight {

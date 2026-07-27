@@ -3,7 +3,7 @@ import type {
   DeviceRegistration,
   TuyaIotCoreStatusUpdate,
   TuyaStatus,
-  TuyaStatusUpdate
+  TuyaStatusUpdate,
 } from '../../types/TuyaTypes.js';
 import { convertStatusArrayToStatusObject } from '../TuyaOAuth2Util.js';
 

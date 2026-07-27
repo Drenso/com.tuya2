@@ -84,4 +84,4 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
       value: value,
     });
   }
-};
+}

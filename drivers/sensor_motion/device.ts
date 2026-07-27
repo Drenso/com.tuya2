@@ -19,4 +19,4 @@ export default class TuyaOAuth2DeviceSensorMotion extends TuyaOAuth2DeviceSensor
       this.setAlarmCapabilityValue('alarm_motion', status['pir'] === 'pir').catch(this.error);
     }
   }
-};
+}

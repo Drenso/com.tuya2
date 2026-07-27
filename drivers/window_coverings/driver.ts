@@ -4,7 +4,7 @@ import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import { WINDOW_COVERINGS_CAPABILITIES, WINDOW_COVERINGS_CAPABILITY_MAPPING } from './TuyaWindowCoveringsConstants.js';
 
@@ -34,4 +34,4 @@ export default class TuyaOAuth2DriverWindowCoverings extends TuyaOAuth2Driver {
 
     return props;
   }
-};
+}

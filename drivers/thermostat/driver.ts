@@ -4,13 +4,13 @@ import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import type { StandardFlowArgs } from '../../types/TuyaTypes.js';
 import {
   THERMOSTAT_CAPABILITIES,
   THERMOSTAT_CAPABILITIES_MAPPING,
-  THERMOSTAT_FLOWS
+  THERMOSTAT_FLOWS,
 } from './TuyaThermostatConstants.js';
 
 function generateThermostatModeTitles(values: string[]): {
@@ -173,4 +173,4 @@ export default class TuyaOAuth2DriverThermostat extends TuyaOAuth2Driver {
 
     return props;
   }
-};
+}

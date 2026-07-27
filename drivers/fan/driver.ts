@@ -5,7 +5,7 @@ import { getFromMap, sendSetting } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes.js';
 import TRANSLATIONS from './translations.json' with { type: 'json' };
@@ -178,4 +178,4 @@ export default class TuyaOAuth2DriverFan extends TuyaOAuth2DriverWithLight {
 
     return props;
   }
-};
+}

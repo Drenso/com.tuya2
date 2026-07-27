@@ -5,7 +5,7 @@ import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import { CLIMATE_SENSOR_CAPABILITIES } from '../sensor_climate/TuyaClimateSensorConstants.js';
 import { SENSOR_PM25_CAPABILITY_MAPPING } from './SensorPm25Constants.js';
@@ -59,4 +59,4 @@ export default class TuyaOAuth2DriverSensorPM25 extends TuyaOAuth2DriverSensor {
 
     return props;
   }
-};
+}

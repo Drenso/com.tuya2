@@ -5,7 +5,7 @@ import { getFromMap } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import { SENSOR_GAS_CAPABILITY_MAPPING } from './SensorGasConstants.js';
 
@@ -50,4 +50,4 @@ export default class TuyaOAuth2DriverSensorGas extends TuyaOAuth2DriverSensor {
 
     return props;
   }
-};
+}

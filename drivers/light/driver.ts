@@ -5,7 +5,7 @@ import { constIncludes, sendSetting } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import type { StandardDeviceFlowArgs, StandardFlowArgs } from '../../types/TuyaTypes.js';
 import type TuyaOAuth2DeviceLight from './device.js';
@@ -168,4 +168,4 @@ export default class TuyaOAuth2DriverLight extends TuyaOAuth2DriverWithLight {
 
     return props;
   }
-};
+}

@@ -59,4 +59,4 @@ export default class TuyaOAuth2DeviceSensorClimate extends TuyaOAuth2DeviceSenso
       );
     }
   }
-};
+}

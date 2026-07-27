@@ -48,4 +48,4 @@ export default class TuyaOAuth2DriverSensorClimate extends TuyaOAuth2DriverSenso
 
     return props;
   }
-};
+}

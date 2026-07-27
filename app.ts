@@ -291,4 +291,4 @@ export default class TuyaOAuth2App extends OAuth2App {
 
     return client as TuyaHaClient;
   }
-};
+}

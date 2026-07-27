@@ -21,4 +21,4 @@ export default class TuyaOAuth2DeviceSensorVibration extends TuyaOAuth2DeviceSen
       }
     }
   }
-};
+}

@@ -3,9 +3,9 @@ import type TuyaOAuth2Device from '../../lib/TuyaOAuth2Device.js';
 import TuyaOAuth2Driver, { type ListDeviceProperties } from '../../lib/TuyaOAuth2Driver.js';
 import { getFromMap } from '../../lib/TuyaOAuth2Util.js';
 import type {
-    TuyaDeviceDataPointResponse,
-    TuyaDeviceResponse,
-    TuyaDeviceSpecificationResponse
+  TuyaDeviceDataPointResponse,
+  TuyaDeviceResponse,
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import { AIRCO_CAPABILITIES_MAPPING } from './TuyaAircoConstants.js';
 
@@ -80,4 +80,4 @@ export default class TuyaOAuth2DriverAirco extends TuyaOAuth2Driver {
     }
     return props;
   }
-};
+}

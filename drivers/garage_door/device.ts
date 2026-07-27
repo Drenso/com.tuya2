@@ -47,4 +47,4 @@ export default class TuyaOAuth2DeviceGarageDoor extends TuyaOAuth2Device {
   onSettings(event: SettingsEvent<HomeyGarageDoorSettings>): Promise<string | void> {
     return TuyaOAuth2Util.onSettings(this, event, this.SETTING_LABELS);
   }
-};
+}

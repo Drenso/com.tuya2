@@ -4,7 +4,7 @@ import { constIncludes, getFromMap } from '../../lib/TuyaOAuth2Util.js';
 import type {
   TuyaDeviceDataPointResponse,
   TuyaDeviceResponse,
-  TuyaDeviceSpecificationResponse
+  TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
 import type { StandardDeviceFlowArgs } from '../../types/TuyaTypes.js';
 import { IRRIGATOR_CAPABILITIES, IRRIGATOR_CAPABILITIES_MAPPING } from './TuyaIrrigatorConstants.js';
@@ -61,4 +61,4 @@ export default class TuyaOAuth2DriverIrrigator extends TuyaOAuth2Driver {
 
     return props;
   }
-};
+}

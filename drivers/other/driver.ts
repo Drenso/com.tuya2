@@ -33,4 +33,4 @@ export default class TuyaOAuth2DriverOther extends TuyaOAuth2Driver {
 
     return listDevices;
   }
-};
+}

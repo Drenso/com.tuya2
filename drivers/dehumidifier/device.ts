@@ -42,4 +42,4 @@ export default class TuyaOAuth2DeviceDehumidifier extends TuyaOAuth2Device {
       await Util.handleScaleSetting(this, event, `${homeyCapability}_scaling`, homeyCapability).catch(this.error);
     }
   }
-};
+}

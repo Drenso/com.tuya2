@@ -7,13 +7,16 @@ import type {
   TuyaDeviceResponse,
   TuyaDeviceSpecificationResponse,
 } from '../../types/TuyaApiTypes.js';
-import { AIRCO_CAPABILITIES_MAPPING } from './TuyaAircoConstants.js';
+import { AIRCO_CAPABILITIES_MAPPING, AIRCO_MODE_LABEL_MAPPING } from './TuyaAircoConstants.js';
 
 type DeviceArgs = { device: TuyaOAuth2Device };
 type ValueArgs = { value: unknown };
 
 export default class TuyaOAuth2DriverAirco extends TuyaOAuth2Driver {
-  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.LARGE_HOME_APPLIANCES.AIR_CONDITIONER] as const;
+  protected TUYA_DEVICE_CATEGORIES = [
+    DEVICE_CATEGORIES.LARGE_HOME_APPLIANCES.AIR_CONDITIONER,
+    DEVICE_CATEGORIES.LARGE_HOME_APPLIANCES.AIR_CONDITIONER_CONTROLLER,
+  ] as const;
 
   public async onInit(): Promise<void> {
     await super.onInit();

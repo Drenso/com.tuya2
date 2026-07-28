@@ -45,6 +45,32 @@ export default class TuyaOAuth2DriverAirco extends TuyaOAuth2Driver {
       if (tuyaCapability === 'lock' || tuyaCapability === 'child_lock') {
         props.store['tuya_child_lock_capability'] = tuyaCapability;
       }
+
+      if (tuyaCapability === 'fan_speed_enum') {
+        props.store['tuya_fan_speed_capability'] = tuyaCapability;
+        props.capabilitiesOptions['legacy_fan_speed'] = {
+          values: [
+            { id: 'level_1', title: '1' },
+            { id: 'level_2', title: '2' },
+            { id: 'level_3', title: '3' },
+            { id: 'level_4', title: '4' },
+          ],
+        };
+      }
+
+      if (tuyaCapability === 'windspeed') {
+        props.store['tuya_fan_speed_capability'] = tuyaCapability;
+        props.capabilitiesOptions['legacy_fan_speed'] = {
+          values: [
+            { id: '1', title: '1' },
+            { id: '2', title: '2' },
+            { id: '3', title: '3' },
+            { id: '4', title: '4' },
+            { id: '5', title: '5' },
+            { id: '6', title: '6' },
+          ],
+        };
+      }
     }
 
     const defaultThermostatModes = [];
@@ -130,6 +156,25 @@ export default class TuyaOAuth2DriverAirco extends TuyaOAuth2Driver {
 
         props.capabilitiesOptions['thermostat_mode'] = {
           values: thermostatModes,
+        };
+      }
+
+      if (tuyaCapability === 'fan_speed_enum' || tuyaCapability === 'windspeed') {
+        const fanRange = values.range as string[];
+        if (!Array.isArray(fanRange) || fanRange.length <= 1) {
+          continue;
+        }
+
+        const fanSpeeds = [];
+        for (const speed of fanRange) {
+          const label = speed.charAt(speed.length - 1);
+          fanSpeeds.push({
+            id: speed,
+            title: label,
+          });
+        }
+        props.capabilitiesOptions['legacy_fan_speed'] = {
+          values: fanSpeeds,
         };
       }
     }

@@ -21,6 +21,10 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
     if (this.hasCapability('child_lock')) {
       this.registerCapabilityListener('child_lock', value => this.childLockCapabilityListener(value));
     }
+
+    if (this.hasCapability('legacy_fan_speed')) {
+      this.registerCapabilityListener('legacy_fan_speed', value => this.fanSpeedCapabilityListener(value));
+    }
   }
 
   public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
@@ -57,6 +61,14 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
     if (typeof status['child_lock'] === 'boolean') {
       this.setCapabilityValue('child_lock', status['child_lock']).catch(this.error);
     }
+
+    if (status['windspeed'] !== undefined) {
+      await this.setCapabilityValue('legacy_fan_speed', status['windspeed']).catch(this.error);
+    }
+
+    if (status['fan_speed_enum'] !== undefined) {
+      await this.setCapabilityValue('legacy_fan_speed', status['fan_speed_enum']).catch(this.error);
+    }
   }
 
   public async onOffCapabilityListener(value: boolean): Promise<void> {
@@ -85,6 +97,13 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
   public async childLockCapabilityListener(value: boolean): Promise<void> {
     await this.sendCommand({
       code: this.getStoreValue('tuya_child_lock_capability') ?? 'lock',
+      value: value,
+    });
+  }
+
+  public async fanSpeedCapabilityListener(value: string): Promise<void> {
+    await this.sendCommand({
+      code: this.getStoreValue('tuya_fan_speed_capability'),
       value: value,
     });
   }

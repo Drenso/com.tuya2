@@ -7,6 +7,8 @@ export const AIRCO_CAPABILITIES_MAPPING = {
   lock: 'child_lock',
   child_lock: 'child_lock',
   // `mode` is handled based on the amount of modes
+  fan_speed_enum: 'legacy_fan_speed',
+  windspeed: 'legacy_fan_speed',
 } as const;
 
 export type HomeySocketSettings = {

@@ -43,7 +43,24 @@ export default class TuyaOAuth2DriverAirco extends TuyaOAuth2Driver {
       }
     }
 
+    const defaultThermostatModes = [];
+    for (const mode in AIRCO_MODE_LABEL_MAPPING) {
+      defaultThermostatModes.push({
+        id: mode,
+        title: AIRCO_MODE_LABEL_MAPPING[mode as keyof typeof AIRCO_MODE_LABEL_MAPPING],
+      });
+    }
+
+    props.capabilitiesOptions['thermostat_mode'] = {
+      values: defaultThermostatModes,
+    };
+
     if (!specifications || !specifications.status) {
+      for (const status of device.status) {
+        if (status.code === 'mode') {
+          props.capabilities.push('thermostat_mode');
+        }
+      }
       return props;
     }
 
@@ -79,6 +96,37 @@ export default class TuyaOAuth2DriverAirco extends TuyaOAuth2Driver {
         } else {
           this.error(`Unsupported ${tuyaCapability} scale:`, values.scale);
         }
+      }
+
+      if (tuyaCapability === 'mode') {
+        const modeRange = values.range as string[];
+        if (!Array.isArray(modeRange)) {
+          props.capabilities.push('thermostat_mode');
+          continue;
+        }
+
+        // Do not add capability if we cannot actually switch modes
+        if (modeRange.length <= 1) {
+          continue;
+        }
+
+        props.capabilities.push('thermostat_mode');
+
+        const thermostatModes = [];
+        for (const mode of modeRange) {
+          let label = AIRCO_MODE_LABEL_MAPPING[mode as never] as object | string | undefined;
+          if (label === undefined) {
+            label = mode.charAt(0).toUpperCase() + mode.slice(1);
+          }
+          thermostatModes.push({
+            id: mode,
+            title: label,
+          });
+        }
+
+        props.capabilitiesOptions['thermostat_mode'] = {
+          values: thermostatModes,
+        };
       }
     }
     return props;

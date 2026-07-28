@@ -5,5 +5,5 @@
     "en": "Air Conditioning",
     "nl": "Airconditioning"
   },
-  "capabilities": ["onoff", "target_temperature", "measure_temperature"]
+  "capabilities": ["onoff", "target_temperature", "measure_temperature", "thermostat_mode"]
 }

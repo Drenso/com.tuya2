@@ -28,9 +28,9 @@ type AutoCompleteArg = {
 };
 
 export default class TuyaOAuth2App extends OAuth2App {
-  private static OAUTH2_CLIENT = TuyaHaClient;
-  private static OAUTH2_DEBUG = process.env.DEBUG === '1';
-  private static OAUTH2_MULTI_SESSION = false; // TODO: Enable this feature & make nice pairing UI
+  protected static OAUTH2_CLIENT = TuyaHaClient;
+  protected static OAUTH2_DEBUG = process.env.DEBUG === '1';
+  protected static OAUTH2_MULTI_SESSION = false; // TODO: Enable this feature & make nice pairing UI
 
   private apiCache: NodeCache = new NodeCache({ stdTTL: CACHE_TTL });
 

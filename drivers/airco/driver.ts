@@ -41,6 +41,10 @@ export default class TuyaOAuth2DriverAirco extends TuyaOAuth2Driver {
         props.store.tuya_capabilities.push(tuyaCapability);
         props.capabilities.push(homeyCapability);
       }
+
+      if (tuyaCapability === 'lock' || tuyaCapability === 'child_lock') {
+        props.store['tuya_child_lock_capability'] = tuyaCapability;
+      }
     }
 
     const defaultThermostatModes = [];

@@ -53,6 +53,10 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
     if (typeof status['lock'] === 'boolean') {
       this.setCapabilityValue('child_lock', status['lock']).catch(this.error);
     }
+
+    if (typeof status['child_lock'] === 'boolean') {
+      this.setCapabilityValue('child_lock', status['child_lock']).catch(this.error);
+    }
   }
 
   public async onOffCapabilityListener(value: boolean): Promise<void> {
@@ -80,7 +84,7 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
 
   public async childLockCapabilityListener(value: boolean): Promise<void> {
     await this.sendCommand({
-      code: 'lock',
+      code: this.getStoreValue('tuya_child_lock_capability') ?? 'lock',
       value: value,
     });
   }

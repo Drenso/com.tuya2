@@ -5,6 +5,7 @@ export const AIRCO_CAPABILITIES_MAPPING = {
   humidity_set: 'target_humidity',
   humidity_current: 'measure_humidity',
   lock: 'child_lock',
+  child_lock: 'child_lock',
   // `mode` is handled based on the amount of modes
 } as const;
 

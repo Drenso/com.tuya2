@@ -3,6 +3,19 @@
 Tuya devices are placed into categories, based on which we can add device support.
 All defined categories can be found at https://developer.tuya.com/en/docs/iot/standarddescription?id=K9i5ql6waswzq.
 
+## Release 1.5.0
+
+  - ktkzq - Air conditioner controller
+    - W'eau heat pump
+    - Ikaro AC controller
+    - Ventilconvettore
+
+## Release 1.3.0
+No new devices added
+
+## Release 1.2.0
+No new devices added
+
 ## Release 1.2.0
 
   - xktyd - Not documented

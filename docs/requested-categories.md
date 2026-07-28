@@ -91,11 +91,6 @@ All defined categories can be found at https://developer.tuya.com/en/docs/iot/st
     - Proscenic A9
     - Zedar L600
 
-  - ktkzq - Air conditioner controller
-    - W'eau heat pump
-    - Ikaro AC controller
-    - Ventilconvettore
-
   - ldcg - Luminance Sensor
     - Generic light sensor
 

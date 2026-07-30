@@ -23,6 +23,17 @@
   },
   {
     "$extends": "scaledProperty",
+    "id": "humidity_value_scaling",
+    "label": {
+      "en": "Measured Humidity Scale"
+    },
+    "hint": {
+      "en": "By how much the humidity measured by the device is scaled."
+    },
+    "value": "0"
+  },
+  {
+    "$extends": "scaledProperty",
     "id": "bright_value_scaling",
     "label": {
       "en": "Measured Brightness Scale"

@@ -27,7 +27,7 @@
     "typescript-eslint": "8.8.1"
   },
   "dependencies": {
-    "@drenso/homey-log": "10.6800.0",
+    "@drenso/homey-log": "10.6900.0",
     "homey-oauth2app": "3.7.2",
     "mqtt": "5.15.2",
     "nanoid": "6.0.0",

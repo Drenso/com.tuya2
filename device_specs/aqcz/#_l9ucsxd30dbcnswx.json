@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1763644497,
+    "biz_type": 0,
+    "category": "aqcz",
+    "create_time": 1763644497,
+    "icon": "smart/icon/ay1562830083757AoBrF/3e20004c8763223a7e587fd34c6e6df4.png",
+    "id": "bf462deecb2d8facec1kvy",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "PV1kWPh2",
+    "online": true,
+    "owner_id": "",
+    "product_id": "l9ucsxd30dbcnswx",
+    "product_name": "计量断路器",
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1763644497,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [ ],
+    "status": [ ]
+  },
+  "data_points": [ ]
+}

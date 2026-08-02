@@ -1,0 +1,90 @@
+{
+  "device": {
+    "active_time": 1779552696,
+    "biz_type": 0,
+    "category": "clkg",
+    "create_time": 1779552696,
+    "icon": "smart/icon/ay1504535816017oOfFp/842e43840a808827df425296c90f82f7.png",
+    "id": "bf4f50931434fd979chzxg",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Store Auvent",
+    "online": true,
+    "owner_id": "",
+    "product_id": "busn9n4imwtir99p",
+    "product_name": "1CH WiFi Curtain Module+RF433",
+    "status": [
+      {
+        "code": "control",
+        "value": "stop"
+      },
+      {
+        "code": "percent_control",
+        "value": 95
+      },
+      {
+        "code": "control_back_mode",
+        "value": "forward"
+      },
+      {
+        "code": "tr_timecon",
+        "value": 53
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1779552696,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "clkg",
+    "functions": [
+      {
+        "code": "control",
+        "type": "Enum",
+        "values": "{\"range\":[\"open\",\"stop\",\"close\"]}"
+      },
+      {
+        "code": "percent_control",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":10}"
+      },
+      {
+        "code": "control_back_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"back\"]}"
+      },
+      {
+        "code": "tr_timecon",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":5,\"max\":600,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "control",
+        "type": "Enum",
+        "values": "{\"range\":[\"open\",\"stop\",\"close\"]}"
+      },
+      {
+        "code": "percent_control",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":10}"
+      },
+      {
+        "code": "control_back_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"back\"]}"
+      },
+      {
+        "code": "tr_timecon",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":5,\"max\":600,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [ ]
+}

@@ -1,0 +1,30 @@
+{
+  "device": {
+    "active_time": 1780393932,
+    "biz_type": 0,
+    "category": "kg",
+    "create_time": 1780393932,
+    "icon": "smart/icon/ay1573546958261faWcj/47d05d65c4dbcfd7e8efb4d858d2df53.png",
+    "id": "bf6817ea75591eb79despa",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Human Presence Sensor",
+    "online": true,
+    "owner_id": "",
+    "product_id": "wzp9yjsobanavsut",
+    "product_name": "Human Presence Sensor",
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1780393932,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "",
+    "functions": [ ],
+    "status": [ ]
+  },
+  "data_points": [ ]
+}

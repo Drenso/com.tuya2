@@ -1,0 +1,57 @@
+{
+  "device": {
+    "active_time": 1777991202,
+    "biz_type": 0,
+    "category": "sos",
+    "create_time": 1777991202,
+    "icon": "smart/icon/ay1562583874631k02Aw/99f18734409b36d0403a96db1e0ba997.png",
+    "id": "bfd31e1a6dd23f62beka3a",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Barrière Portail",
+    "online": true,
+    "owner_id": "",
+    "product_id": "rblm6upod5efjjoy",
+    "product_name": "SOS button",
+    "status": [
+      {
+        "code": "battery_percentage",
+        "value": 100
+      },
+      {
+        "code": "sos_state",
+        "value": true
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1777991202,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "sos",
+    "functions": [
+      {
+        "code": "sos_state",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "sos_state",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "data_points": []
+  }
+}

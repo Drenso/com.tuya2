@@ -1,0 +1,311 @@
+{
+  "device": {
+    "active_time": 1763900439,
+    "biz_type": 0,
+    "category": "qxj",
+    "create_time": 1763900439,
+    "icon": "smart/icon/bay16148256503824wwj/196e406b56b065f1ee1a4627f266205f.jpg",
+    "id": "bf8e4b5ab4a63437e1cxao",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Station météo",
+    "online": true,
+    "owner_id": "",
+    "product_id": "6cwineqz1ndjmuee",
+    "product_name": "Weather2-2",
+    "status": [
+      {
+        "code": "temp_current",
+        "value": 223
+      },
+      {
+        "code": "humidity_value",
+        "value": 47
+      },
+      {
+        "code": "battery_percentage",
+        "value": 0
+      },
+      {
+        "code": "temp_unit_convert",
+        "value": "c"
+      },
+      {
+        "code": "windspeed_unit_convert",
+        "value": "kmph"
+      },
+      {
+        "code": "pressure_unit_convert",
+        "value": "hpa"
+      },
+      {
+        "code": "rain_unit_convert",
+        "value": "mm"
+      },
+      {
+        "code": "bright_unit_convert",
+        "value": "wm2"
+      },
+      {
+        "code": "temp_current_external",
+        "value": 295
+      },
+      {
+        "code": "humidity_outdoor",
+        "value": 36
+      },
+      {
+        "code": "temp_current_external_1",
+        "value": -600
+      },
+      {
+        "code": "humidity_outdoor_1",
+        "value": 0
+      },
+      {
+        "code": "temp_current_external_2",
+        "value": -600
+      },
+      {
+        "code": "humidity_outdoor_2",
+        "value": 0
+      },
+      {
+        "code": "temp_current_external_3",
+        "value": -600
+      },
+      {
+        "code": "humidity_outdoor_3",
+        "value": 0
+      },
+      {
+        "code": "atmospheric_pressture",
+        "value": 973
+      },
+      {
+        "code": "pressure_drop",
+        "value": 973
+      },
+      {
+        "code": "windspeed_avg",
+        "value": 43
+      },
+      {
+        "code": "windspeed_gust",
+        "value": 133
+      },
+      {
+        "code": "rain_1h",
+        "value": 0
+      },
+      {
+        "code": "rain_24h",
+        "value": 0
+      },
+      {
+        "code": "rain_rate",
+        "value": 0
+      },
+      {
+        "code": "uv_index",
+        "value": 0
+      },
+      {
+        "code": "dew_point_temp",
+        "value": 128
+      },
+      {
+        "code": "feellike_temp",
+        "value": 298
+      },
+      {
+        "code": "heat_index",
+        "value": 288
+      },
+      {
+        "code": "windchill_index",
+        "value": 72
+      }
+    ],
+    "sub": false,
+    "time_zone": "+01:00",
+    "uid": "",
+    "update_time": 1763900439,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "qxj",
+    "functions": [
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "windspeed_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"kmph\",\"mph\",\"mps\"]}"
+      },
+      {
+        "code": "pressure_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"hpa\",\"inhg\",\"mmhg\"]}"
+      },
+      {
+        "code": "rain_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"mm\",\"inch\"]}"
+      },
+      {
+        "code": "bright_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"wm2\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-600,\"max\":2550,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "humidity_value",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "battery_percentage",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "windspeed_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"kmph\",\"mph\",\"mps\"]}"
+      },
+      {
+        "code": "pressure_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"hpa\",\"inhg\",\"mmhg\"]}"
+      },
+      {
+        "code": "rain_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"mm\",\"inch\"]}"
+      },
+      {
+        "code": "bright_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"wm2\"]}"
+      },
+      {
+        "code": "temp_current_external",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-600,\"max\":2550,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "humidity_outdoor",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current_external_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-600,\"max\":2550,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "humidity_outdoor_1",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current_external_2",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-600,\"max\":2550,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "humidity_outdoor_2",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current_external_3",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-600,\"max\":2550,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "humidity_outdoor_3",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "atmospheric_pressture",
+        "type": "Integer",
+        "values": "{\"unit\":\"hPa\",\"min\":300,\"max\":1200,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "pressure_drop",
+        "type": "Integer",
+        "values": "{\"unit\":\"hPa\",\"min\":300,\"max\":1200,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "windspeed_avg",
+        "type": "Integer",
+        "values": "{\"unit\":\"km/h\",\"min\":0,\"max\":2500,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "windspeed_gust",
+        "type": "Integer",
+        "values": "{\"unit\":\"km/h\",\"min\":0,\"max\":2500,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "rain_1h",
+        "type": "Integer",
+        "values": "{\"unit\":\"mm\",\"min\":0,\"max\":5000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "rain_24h",
+        "type": "Integer",
+        "values": "{\"unit\":\"mm\",\"min\":0,\"max\":25000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "rain_rate",
+        "type": "Integer",
+        "values": "{\"unit\":\"mm\",\"min\":0,\"max\":5000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "uv_index",
+        "type": "Integer",
+        "values": "{\"unit\":\"\",\"min\":0,\"max\":300,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "dew_point_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-400,\"max\":2000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "feellike_temp",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-400,\"max\":2000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "heat_index",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-400,\"max\":2000,\"scale\":1,\"step\":1}"
+      },
+      {
+        "code": "windchill_index",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-400,\"max\":2000,\"scale\":1,\"step\":1}"
+      }
+    ],
+    "data_points": []
+  }
+}

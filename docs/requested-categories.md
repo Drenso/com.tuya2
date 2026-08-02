@@ -55,6 +55,9 @@ No new devices added
 
 ## Not yet planned
 
+  - aqcz - undocumented
+    - PV1kWPh2
+
   - bh - Smart kettle
     - WeeKett kettle
     - Kogan Smart kettle
@@ -70,6 +73,7 @@ No new devices added
 
   - clkg - Curtain switch
     - Curtain switch
+    - 1CH WiFi Curtain Module+RF433
 
   - cwwsq - Pet feeder
     - Cleverio PF100 smart pet feeder
@@ -111,6 +115,7 @@ No new devices added
     - Supplement Staniot Security Panel 3
     - Houseguard Luma hub
     - Staniot Alarm Panel 7
+    - Smart Security Panel
 
   - mc - Door and Window Controller
     - Window Opener (Chain Actuator)
@@ -133,6 +138,9 @@ No new devices added
     - Water sensor
     - Flood sensor
 
+  - sos - Emergency Button
+    - SOS button
+
   - szjcy - Not documented
     - Pool monitor
 
@@ -142,6 +150,7 @@ No new devices added
 
   - qxj - Not documented
     - T & H Sensor with external probe
+    - Weather2-2
 
   - wkcz - Not documented
     - Socket Thermostat

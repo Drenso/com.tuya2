@@ -1,0 +1,31 @@
+{
+  "device": {
+    "active_time": 1783479936,
+    "biz_type": 0,
+    "category": "fsd",
+    "create_time": 1783479936,
+    "icon": "smart/icon/ay1537337121670ivmiu/e3f9a1b6de6778ca0f9b83df7dcd3cf9.png",
+    "id": "bf1f1c58229a084a34mbqn",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Master Bedroom",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "r5qkmy3olgnrbjpz",
+    "product_name": "Milano Slider Ceiling fan",
+    "sub": false,
+    "time_zone": "+10:00",
+    "uid": "<redacted>",
+    "update_time": 1783479936,
+    "uuid": "<redacted>",
+    "status": [ ]
+  },
+  "specifications": {
+    "category": "",
+    "functions": [ ],
+    "status": [ ]
+  },
+  "data_points": [ ]
+}

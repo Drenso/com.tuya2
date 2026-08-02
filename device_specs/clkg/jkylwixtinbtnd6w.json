@@ -1,0 +1,104 @@
+{
+  "device": {
+    "active_time": 1752347285,
+    "biz_type": 0,
+    "category": "clkg",
+    "create_time": 1752347285,
+    "icon": "smart/icon/bay1677202381249G53c/0660dfe99112eb578b89eb702bf55434.png",
+    "id": "bf63f35d1a47459266huz5",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "VR Garage",
+    "online": true,
+    "owner_id": "",
+    "product_id": "jkylwixtinbtnd6w",
+    "product_name": "Curtain switch",
+    "status": [
+      {
+        "code": "control",
+        "value": "stop"
+      },
+      {
+        "code": "percent_control",
+        "value": 0
+      },
+      {
+        "code": "cur_calibration",
+        "value": "start"
+      },
+      {
+        "code": "control_back_mode",
+        "value": "forward"
+      },
+      {
+        "code": "light_mode",
+        "value": "relay"
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1752347285,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "clkg",
+    "functions": [
+      {
+        "code": "control",
+        "type": "Enum",
+        "values": "{\"range\":[\"open\",\"stop\",\"close\"]}"
+      },
+      {
+        "code": "percent_control",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "cur_calibration",
+        "type": "Enum",
+        "values": "{\"range\":[\"start\",\"end\"]}"
+      },
+      {
+        "code": "control_back_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"back\"]}"
+      },
+      {
+        "code": "light_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"relay\",\"pos\",\"none\"]}"
+      }
+    ],
+    "status": [
+      {
+        "code": "control",
+        "type": "Enum",
+        "values": "{\"range\":[\"open\",\"stop\",\"close\"]}"
+      },
+      {
+        "code": "percent_control",
+        "type": "Integer",
+        "values": "{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "cur_calibration",
+        "type": "Enum",
+        "values": "{\"range\":[\"start\",\"end\"]}"
+      },
+      {
+        "code": "control_back_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"forward\",\"back\"]}"
+      },
+      {
+        "code": "light_mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"relay\",\"pos\",\"none\"]}"
+      }
+    ]
+  },
+  "data_points": [ ]
+}

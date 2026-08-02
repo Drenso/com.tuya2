@@ -20,12 +20,12 @@
     "uid": "<redacted>",
     "update_time": 1783479936,
     "uuid": "<redacted>",
-    "status": [ ]
+    "status": []
   },
   "specifications": {
     "category": "",
-    "functions": [ ],
-    "status": [ ]
+    "functions": [],
+    "status": []
   },
-  "data_points": [ ]
+  "data_points": []
 }

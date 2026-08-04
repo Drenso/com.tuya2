@@ -464,30 +464,32 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     if (this.mqttPromise !== undefined) {
       return this.mqttPromise;
     }
+
     let resolveMqttPromise: () => void = () => {
       return;
     };
-    this.mqttPromise = new Promise<void>(resolve => {
-      resolveMqttPromise = resolve;
-    });
-    this.log('Connecting to MQTT');
-
-    let mqttConfig: TuyaMqttConfigResponse;
     try {
-      this.requestingMqttConfig = true;
-      mqttConfig = await this.getMqttConfig();
-    } finally {
-      this.requestingMqttConfig = false;
-    }
+      this.mqttPromise = new Promise<void>(resolve => {
+        resolveMqttPromise = resolve;
+      });
+      this.log('Connecting to MQTT');
 
-    this.log('MQTT config:', JSON.stringify(mqttConfig));
-    this.mqttConfig = mqttConfig;
-    this.mqttClient = await mqtt.connectAsync(mqttConfig.url, {
-      clientId: mqttConfig.clientId,
-      username: mqttConfig.username,
-      password: mqttConfig.password,
-    });
-    this.mqttClient.on('message', async (topic, message) => {
+      let mqttConfig: TuyaMqttConfigResponse;
+      try {
+        this.requestingMqttConfig = true;
+        mqttConfig = await this.getMqttConfig();
+      } finally {
+        this.requestingMqttConfig = false;
+      }
+
+      this.log('MQTT config:', JSON.stringify(mqttConfig));
+      this.mqttConfig = mqttConfig;
+      this.mqttClient = await mqtt.connectAsync(mqttConfig.url, {
+        clientId: mqttConfig.clientId,
+        username: mqttConfig.username,
+        password: mqttConfig.password,
+      });
+      this.mqttClient.on('message', async (topic, message) => {
       const json = JSON.parse(message.toString()) as TuyaMqttMessage;
 
       this.log('Incoming MQTT:', JSON.stringify(json.data));
@@ -536,7 +538,9 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
         await registeredOtherDevice.onStatus('status', status, changedStatusCodes).catch(this.error);
       }
     });
-    resolveMqttPromise();
+    } finally {
+      resolveMqttPromise();
+    }
   }
 
   public async subscribeToMqtt(deviceId: string): Promise<void> {

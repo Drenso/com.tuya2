@@ -40,6 +40,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   private mqttPromise?: Promise<void>;
   private mqttConfig?: TuyaMqttConfigResponse;
   private mqttClient?: mqtt.MqttClient;
+  private requestingMqttConfig = false;
 
   private resolveReadyPromise!: () => void;
   private readyPromise = new Promise<void>(resolve => {
@@ -206,14 +207,15 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
           refresh_token: res.refreshToken,
         });
         this.setToken({ token: newToken });
+
+        this.log('Refreshed token:', JSON.stringify(newToken));
+
         // Otherwise, the token is not stored in the store!
         this.save();
 
         // Store last token save and expire time for automated refresh
         this.lastTokenSave = Date.now();
         this.tokenExpireTime = token.expire_time ?? 7200;
-
-        this.log('Refreshed token:', JSON.stringify(newToken));
       })
       .finally(() => {
         this._refreshingToken = null;
@@ -447,6 +449,12 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   public resetMqtt(): void {
+    if (this.requestingMqttConfig) {
+      // Do not reset MQTT while requesting config
+      return;
+    }
+
+    this.log('Resetting MQTT');
     this.mqttClient?.end(true);
     this.mqttClient = undefined;
     this.mqttPromise = undefined;
@@ -463,7 +471,16 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       resolveMqttPromise = resolve;
     });
     this.log('Connecting to MQTT');
-    const mqttConfig = await this.getMqttConfig();
+
+    let mqttConfig: TuyaMqttConfigResponse;
+    try {
+      this.requestingMqttConfig = true;
+      mqttConfig = await this.getMqttConfig();
+    } finally {
+      this.requestingMqttConfig = false;
+    }
+
+    this.log('MQTT config:', JSON.stringify(mqttConfig));
     this.mqttConfig = mqttConfig;
     this.mqttClient = await mqtt.connectAsync(mqttConfig.url, {
       clientId: mqttConfig.clientId,

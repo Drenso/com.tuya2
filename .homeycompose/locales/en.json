@@ -20,10 +20,16 @@
     },
     "usercode": {
       "title": "Enter User Code",
-      "body": "Open the <b>Tuya Smart</b> or <b>Smart Life</b> app.<br />\n<br />\nTap <b>Me</b> in the bottom right corner.<br />\n<br />\nTap the cog icon in the top right corner.<br />\n<br />\nThen tap <b>Account and Security</b>.<br />\n<br />\nFind your <b>User Code</b> at the bottom, and enter it here."
+      "body": "Open the <b>Tuya Smart</b> or <b>Smart Life</b> app.<br />\n<br />\nTap <b>Me</b> in the bottom right corner.<br />\n<br />\nTap the cog icon in the top right corner.<br />\n<br />\nThen tap <b>Account and Security</b>.<br />\n<br />\nFind your <b>User Code</b> at the bottom, and enter it here.",
+      "submit": "Submit"
     },
     "loading_devices": "Getting device information from Tuya...",
-    "submit": "Submit"
+    "submit": "Submit",
+    "welcome": {
+      "title": "Before you proceed...",
+      "text": "To connect a Tuya device to Homey, add the device to the Tuya Smart or Smart Life app for Android or iOS first.",
+      "link": "Learn more"
+    }
   },
   "tuya_error": {
     "undefined": "Unknown Tuya error",

@@ -563,7 +563,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   private refreshApiToken(): void {
-    if (Date.now() - this.lastTokenSave < (this.tokenExpireTime - 100) * 1000) {
+    if (Date.now() - this.lastTokenSave < (this.tokenExpireTime - 600) * 1000) {
       // No need to refresh
       return;
     }

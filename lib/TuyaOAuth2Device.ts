@@ -268,22 +268,21 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
   }
 
   private async __sync(): Promise<void> {
-    Promise.resolve()
-      .then(async () => {
-        this.log('Syncing...');
-        const { deviceId } = this.data;
-        const device = await this.oAuth2Client.getDevice({ deviceId });
+    try {
+      this.log('Syncing...');
+      const { deviceId } = this.data;
+      const device = await this.oAuth2Client.getDevice({ deviceId });
 
-        const status = TuyaOAuth2Util.convertStatusArrayToStatusObject(device.status);
-        await this.__onTuyaStatus('sync', {
-          ...status,
-          online: device.online,
-        });
-      })
-      .catch(err => {
-        this.error(`Error Syncing: ${err.message}; ${err.stack}`);
-        this.setUnavailable(err).catch(this.error);
+      const status = TuyaOAuth2Util.convertStatusArrayToStatusObject(device.status);
+      await this.__onTuyaStatus('sync', {
+        ...status,
+        online: device.online,
       });
+    } catch (err) {
+      const error = err as Error;
+      this.error(`Error Syncing: ${error.message}; ${error.stack}`);
+      this.setUnavailable(error.message).catch(this.error);
+    }
   }
 
   public async sendCommands(commands: TuyaCommand[] = []): Promise<void> {

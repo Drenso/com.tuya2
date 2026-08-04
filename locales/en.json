@@ -1,22 +1,4 @@
 {
-  "pair": {
-    "welcome": {
-      "title": "Before you proceed...",
-      "text": "To connect a Tuya device to Homey, add the device to the Tuya Smart or Smart Life app for Android or iOS first.",
-      "link": "Learn more"
-    },
-    "qrcode": {
-      "title": "Scan QR Code",
-      "body": "Open the <b>Tuya Smart</b> or <b>Smart Life</b> app.<br />\n<br />\nTap <b>Me</b> in the bottom right corner.<br />\n<br />\nTap the scan icon in the top-right corner.<br />\n<br />\nScan the QR Code."
-    },
-    "usercode": {
-      "title": "Enter User Code",
-      "body": "Open the <b>Tuya Smart</b> or <b>Smart Life</b> app.<br />\n<br />\nTap <b>Me</b> in the bottom right corner.<br />\n<br />\nTap the cog icon in the top right corner.<br />\n<br />\nThen tap <b>Account and Security</b>.<br />\n<br />\nFind your <b>User Code</b> at the bottom, and enter it here.",
-      "submit": "Submit"
-    },
-    "submit": "Submit",
-    "loading_devices": "Getting device information from Tuya..."
-  },
   "connection_failed": "Connection failed",
   "device_offline": "The device seems to be offline. Is it powered on, and connected to the internet?",
   "switch": "Switch __number__",
@@ -24,12 +6,25 @@
   "setting_values_unsupported": "Some of the changed values are not supported by the device:",
   "setting_unsupported": "__label__ is not supported by the device",
   "setting_value_unsupported": "Value is not supported for __label__ by the device",
+  "error_retrieving_codes": "No available codes found.",
   "error_retrieving_scenes": "Could not retrieve Tuya scenes.",
   "error_setting_switch": "Failed to set switch state.",
   "error_min_max_brightness": "The minimum brightness must be less than the maximum.",
-  "error_retrieving_codes": "No available codes found.",
-  "error_refreshing_token": "Could not refresh login. Try repairing one of your devices.",
   "error_no_token": "Token not found. Try repairing one of your devices.",
+  "error_refreshing_token_access": "Could not refresh token. Try repairing one of your devices.",
+  "error_refreshing_token_refresh": "Could not refresh login. Try repairing one of your devices.",
+  "pair": {
+    "qrcode": {
+      "title": "Scan QR Code",
+      "body": "Open the <b>Tuya Smart</b> or <b>Smart Life</b> app.<br />\n<br />\nTap <b>Me</b> in the bottom right corner.<br />\n<br />\nTap the scan icon in the top-right corner.<br />\n<br />\nScan the QR Code."
+    },
+    "usercode": {
+      "title": "Enter User Code",
+      "body": "Open the <b>Tuya Smart</b> or <b>Smart Life</b> app.<br />\n<br />\nTap <b>Me</b> in the bottom right corner.<br />\n<br />\nTap the cog icon in the top right corner.<br />\n<br />\nThen tap <b>Account and Security</b>.<br />\n<br />\nFind your <b>User Code</b> at the bottom, and enter it here."
+    },
+    "loading_devices": "Getting device information from Tuya...",
+    "submit": "Submit"
+  },
   "tuya_error": {
     "500": "Tuya system error",
     "1000": "Tuya error: The required data does not exist",

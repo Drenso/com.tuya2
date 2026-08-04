@@ -1,4 +1,4 @@
-import type Homey from 'homey';
+import Homey from 'homey';
 import sourceMapSupport from 'source-map-support';
 sourceMapSupport.install();
 
@@ -29,7 +29,7 @@ type AutoCompleteArg = {
 
 export default class TuyaOAuth2App extends OAuth2App {
   protected static OAUTH2_CLIENT = TuyaHaClient;
-  protected static OAUTH2_DEBUG = process.env.DEBUG === '1';
+  protected static OAUTH2_DEBUG = Homey.env.DEBUG === '1';
   protected static OAUTH2_MULTI_SESSION = false; // TODO: Enable this feature & make nice pairing UI
 
   private apiCache: NodeCache = new NodeCache({ stdTTL: CACHE_TTL });

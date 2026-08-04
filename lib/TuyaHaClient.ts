@@ -157,14 +157,18 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       // 1004 (signature invalid) means the access token is expired
       // 1010 (expired token) means the refresh token is also expired
       if (code === -9999999 || code === 1004) {
+        this.log('Access token expired');
         if (didRefreshToken) {
-          throw new TuyaOAuth2Error(this.homey.__('error_refreshing_token'));
+          this.error('Access token expired, but refresh failed as well');
+          throw new TuyaOAuth2Error(this.homey.__('error_refreshing_token_access'));
         }
 
         await this.refreshToken();
+        this.log('Token refreshed, retrying request...');
         return this._executeRequest({ method, path, json, query, headers }, true);
       } else if (code === 1010) {
-        throw new TuyaOAuth2Error(this.homey.__('error_refreshing_token'));
+        this.log('Refresh token expired');
+        throw new TuyaOAuth2Error(this.homey.__('error_refreshing_token_refresh'));
       }
       this.error(requestUrl.toString(), ':', responseBodyJson);
       throw new TuyaOAuth2Error(this.homey.__(`tuya_error.${code}`), response.status, code);
@@ -179,9 +183,10 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   public async refreshToken(): Promise<void> {
-    if (this._refreshingToken) {
-      return await this._refreshingToken;
-    }
+    await (this._refreshingToken ??= this.executeTokenRefresh());
+  }
+
+  private async executeTokenRefresh(): Promise<void> {
     this.log('Refreshing token...');
     const token = this.getToken();
     if (!token) {
@@ -189,7 +194,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       return;
     }
 
-    this._refreshingToken = this._executeRequest<TuyaTokenRefreshResponse>({
+    await this._executeRequest<TuyaTokenRefreshResponse>({
       method: 'GET',
       path: `/v1.0/m/token/${token.refresh_token}`,
       isTokenRefresh: true,
@@ -213,7 +218,6 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       .finally(() => {
         this._refreshingToken = null;
       });
-    return this._refreshingToken;
   }
 
   /*
@@ -228,10 +232,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   public async getHomeDevices({ ownerId }: { ownerId: string }): Promise<TuyaDeviceResponse[]> {
-    return this.get({
-      path: `/v1.0/m/life/ha/home/devices`,
-      query: { homeId: ownerId },
-    });
+    return this._get(`/v1.0/m/life/ha/home/devices`, { homeId: ownerId });
   }
 
   public async getHasHomes(): Promise<TuyaHaHome[]> {
@@ -250,20 +251,12 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   public async getDevice({ deviceId }: { deviceId: string }): Promise<TuyaDeviceResponse> {
-    const devices = await this.get<TuyaDeviceResponse[]>({
-      path: '/v1.0/m/life/ha/devices/detail',
-      query: {
-        devIds: deviceId,
-      },
-    });
+    const devices = await this._get<TuyaDeviceResponse[]>('/v1.0/m/life/ha/devices/detail', { devIds: deviceId });
     return devices[0];
   }
 
   public async getHasScenes(spaceId: string | number): Promise<TuyaHaScenesResponse> {
-    return this.get({
-      path: '/v1.0/m/scene/ha/home/scenes',
-      query: { homeId: spaceId },
-    });
+    return this._get('/v1.0/m/scene/ha/home/scenes', { homeId: spaceId });
   }
 
   public async triggerHasScene(ownerId: string, sceneId: string): Promise<boolean> {
@@ -271,9 +264,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   public async getSpecification(deviceId: string): Promise<TuyaDeviceSpecificationResponse> {
-    return this.get({
-      path: `/v1.1/m/life/${deviceId}/specifications`,
-    });
+    return this._get(`/v1.1/m/life/${deviceId}/specifications`);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -285,9 +276,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   public async queryDataPointsSpecification(deviceId: string): Promise<TuyaDeviceDataPointResponse> {
-    const response = await this.get<TuyaHaStatusResponse>({
-      path: `/v1.0/m/life/devices/${deviceId}/status`,
-    });
+    const response = await this._get<TuyaHaStatusResponse>(`/v1.0/m/life/devices/${deviceId}/status`);
     return {
       properties: response.dpStatusRelationDTOS.map(item => ({
         code: item.dpCode,
@@ -339,10 +328,10 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     });
   }
 
-  private async _get<T>(path: string): Promise<T> {
+  private async _get<T>(path: string, query?: Record<string, unknown>): Promise<T> {
     const requestId = nanoid();
     this.log('GET', requestId, path);
-    return await this.get<T>({ path }).then(result => {
+    return await this.get<T>({ path, query }).then(result => {
       this.log('GET Response', requestId, JSON.stringify(result));
       return result;
     });

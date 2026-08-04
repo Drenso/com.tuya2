@@ -25,6 +25,8 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
 
   protected online: boolean | null = null;
 
+  private tokenErrorHandler?: (value: TuyaOAuth2Error) => void;
+
   public async onInit(): Promise<void> {
     await super.onInit();
     await this.performMigrations();
@@ -83,13 +85,14 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
       isOtherDevice,
     );
 
-    this.oAuth2Client.on('token_error', value => {
+    this.tokenErrorHandler = (value): void => {
       if (value) {
         this.setUnavailable(this.homey.__('error_refreshing_token')).catch(this.error);
       } else {
         this.setAvailable().catch(this.error);
       }
-    });
+    };
+    this.oAuth2Client.on('token_error', this.tokenErrorHandler);
 
     const statusSourceUpdateCodes = this.getStoreValue('status_source_update_codes');
     if (Array.isArray(statusSourceUpdateCodes)) {
@@ -107,17 +110,31 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     await this.registerDevice();
   }
 
+  public async onOAuth2Deleted(): Promise<void> {
+    await super.onOAuth2Deleted();
+    await this.cleanup();
+  }
+
   public async onOAuth2Uninit(): Promise<void> {
     await super.onOAuth2Uninit();
+    await this.cleanup();
+  }
 
+  private async cleanup(): Promise<void> {
     if (this.__syncInterval) {
       this.homey.clearInterval(this.__syncInterval);
+      delete this.__syncInterval;
     }
 
     if (this.oAuth2Client) {
       const isOtherDevice = this.driver.id === 'other';
 
       this.oAuth2Client.unregisterDevice({ ...this.data }, isOtherDevice);
+
+      if (this.tokenErrorHandler) {
+        this.oAuth2Client.off('token_error', this.tokenErrorHandler);
+        delete this.tokenErrorHandler;
+      }
     }
   }
 

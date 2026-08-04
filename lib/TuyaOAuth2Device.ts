@@ -12,6 +12,7 @@ import type TuyaOAuth2Driver from './TuyaOAuth2Driver.js';
 import type TuyaOAuth2Error from './TuyaOAuth2Error.js';
 import * as TuyaOAuth2Util from './TuyaOAuth2Util.js';
 
+const TUYA_INIT_BACKOFF = 5000;
 const TUYA_SYNC_BACKOFF = 10000;
 
 export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
@@ -31,6 +32,7 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
 
   public async onInit(): Promise<void> {
     await super.onInit();
+    await new Promise(resolve => this.homey.setTimeout(resolve, Math.round(Math.random() * TUYA_INIT_BACKOFF)));
     await this.performMigrations();
     this.initBarrier = false;
     this.SETTING_LABELS = (this.driver as unknown as TuyaOAuth2Driver).SETTING_LABELS;

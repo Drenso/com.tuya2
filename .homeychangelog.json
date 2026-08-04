@@ -67,5 +67,8 @@
   },
   "1.5.1": {
     "en": "Improve token refresh resiliency"
+  },
+  "1.5.2": {
+    "en": "Resolve MQTT reconnect loop"
   }
 }

@@ -12,6 +12,8 @@ import type TuyaOAuth2Driver from './TuyaOAuth2Driver.js';
 import type TuyaOAuth2Error from './TuyaOAuth2Error.js';
 import * as TuyaOAuth2Util from './TuyaOAuth2Util.js';
 
+const TUYA_SYNC_BACKOFF = 10000;
+
 export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
   protected __status: TuyaStatus;
   protected __syncInterval?: NodeJS.Timeout;
@@ -101,9 +103,14 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     }
 
     if (typeof TuyaOAuth2Device.SYNC_INTERVAL === 'number') {
-      this.__syncInterval = this.homey.setInterval(this.__sync, TuyaOAuth2Device.SYNC_INTERVAL);
+      this.__syncInterval = this.homey.setInterval(
+        this.__sync,
+        TuyaOAuth2Device.SYNC_INTERVAL + Math.round(Math.random() * TUYA_SYNC_BACKOFF),
+      );
     }
-    await this.__sync();
+
+    // Use random backoff for initial sync
+    this.homey.setTimeout(this.__sync, Math.round(Math.random() * TUYA_SYNC_BACKOFF));
   }
 
   public async onOAuth2Saved(): Promise<void> {

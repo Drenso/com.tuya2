@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import Homey from 'homey';
 import { fetch, OAuth2Client } from 'homey-oauth2app';
 import mqtt from 'mqtt';
 import { nanoid } from 'nanoid';
@@ -30,6 +31,8 @@ import * as TuyaOAuth2Util from './TuyaOAuth2Util.js';
 
 type OAuth2SessionInformation = { id: string; title: string };
 
+const noop = (): void => {};
+
 export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   protected static TOKEN = TuyaHaToken;
   protected static API_URL = '<dummy>';
@@ -42,11 +45,12 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   private mqttClient?: mqtt.MqttClient;
   private requestingMqttConfig = false;
 
-  private resolveReadyPromise!: () => void;
+  private resolveReadyPromise: () => void = noop;
   private readyPromise = new Promise<void>(resolve => {
     this.resolveReadyPromise = resolve;
   });
 
+  private tokenRefreshPromise?: Promise<void>;
   private tokenRefresher?: NodeJS.Timeout;
   private lastTokenSave = 0; // This default will ensure an automated refresh 30 seconds after app start
   private tokenExpireTime = 7200; // 2 hours in seconds
@@ -100,14 +104,15 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     didRefreshToken = false,
   ): Promise<T> {
     await this.readyPromise;
-    if (!isTokenRefresh) {
-      await this._refreshingToken;
+    if (!isTokenRefresh && !didRefreshToken && this.tokenRefreshPromise) {
+      await this.tokenRefreshPromise;
     }
 
     const token = this.getToken();
     if (!token) {
       throw new TuyaOAuth2Error(this.homey.__('error_no_token'));
     }
+    this.debug('[executeRequest]', JSON.stringify({ method, path, json, query, headers, token }));
 
     const requestUrl = new URL(`${token.endpoint}${path}`);
     const requestOptions = {
@@ -163,10 +168,19 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
           throw new TuyaOAuth2Error(this.homey.__('error_refreshing_token_access'), response.status, code);
         }
 
-        this.log('Access token expired', code);
-        await this.refreshToken();
-        this.log('Token refreshed, retrying request...');
-        return this._executeRequest({ method, path, json, query, headers }, true);
+        this.tokenRefreshPromise = (async (): Promise<void> => {
+          this.log('Access token expired', code);
+          await this.executeTokenRefresh();
+          // Wait a little bit to give the refresh token time to propagate
+          await new Promise(resolve => this.homey.setTimeout(resolve, 500));
+          this.log('Token refreshed, retrying request...');
+          return this._executeRequest({ method, path, json, query, headers }, true);
+        })();
+        try {
+          await this.tokenRefreshPromise;
+        } finally {
+          delete this.tokenRefreshPromise;
+        }
       } else if (code === 1010) {
         this.log('Refresh token expired', code);
         throw new TuyaOAuth2Error(this.homey.__('error_refreshing_token_refresh'), response.status, code);
@@ -184,10 +198,10 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   public async refreshToken(): Promise<void> {
-    await (this._refreshingToken ??= this.executeTokenRefresh());
+    this.error('The refreshToken method should not be called');
   }
 
-  private async executeTokenRefresh(): Promise<void> {
+  public async executeTokenRefresh(): Promise<void> {
     this.log('Refreshing token...');
     const token = this.getToken();
     if (!token) {
@@ -195,31 +209,27 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       return;
     }
 
-    await this._executeRequest<TuyaTokenRefreshResponse>({
+    const res = await this._executeRequest<TuyaTokenRefreshResponse>({
       method: 'GET',
       path: `/v1.0/m/token/${token.refresh_token}`,
       isTokenRefresh: true,
-    })
-      .then(res => {
-        const newToken = new TuyaHaToken({
-          ...token.toJSON(),
-          access_token: res.accessToken,
-          refresh_token: res.refreshToken,
-        });
-        this.setToken({ token: newToken });
+    });
 
-        this.log('Refreshed token:', JSON.stringify(newToken));
+    const newToken = new TuyaHaToken({
+      ...token.toJSON(),
+      access_token: res.accessToken,
+      refresh_token: res.refreshToken,
+    });
+    this.setToken({ token: newToken });
 
-        // Otherwise, the token is not stored in the store!
-        this.save();
+    this.log('Refreshed token:', JSON.stringify(newToken));
 
-        // Store last token save and expire time for automated refresh
-        this.lastTokenSave = Date.now();
-        this.tokenExpireTime = token.expire_time ?? 7200;
-      })
-      .finally(() => {
-        this._refreshingToken = null;
-      });
+    // Otherwise, the token is not stored in the store!
+    this.save();
+
+    // Store last token save and expire time for automated refresh
+    this.lastTokenSave = Date.now();
+    this.tokenExpireTime = token.expire_time ?? 7200;
   }
 
   /*
@@ -465,9 +475,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       return this.mqttPromise;
     }
 
-    let resolveMqttPromise: () => void = () => {
-      return;
-    };
+    let resolveMqttPromise: () => void = noop;
     try {
       this.mqttPromise = new Promise<void>(resolve => {
         resolveMqttPromise = resolve;
@@ -490,54 +498,54 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
         password: mqttConfig.password,
       });
       this.mqttClient.on('message', async (topic, message) => {
-      const json = JSON.parse(message.toString()) as TuyaMqttMessage;
+        const json = JSON.parse(message.toString()) as TuyaMqttMessage;
 
-      this.log('Incoming MQTT:', JSON.stringify(json.data));
+        this.log('Incoming MQTT:', JSON.stringify(json.data));
 
-      const deviceId = json.data.devId ?? json.data.bizData.devId;
-      const dataPoints = json.data.status ?? [];
+        const deviceId = json.data.devId ?? json.data.bizData.devId;
+        const dataPoints = json.data.status ?? [];
 
-      const status: { [key: string]: unknown } = {};
-      const changedStatusCodes: string[] = [];
+        const status: { [key: string]: unknown } = {};
+        const changedStatusCodes: string[] = [];
 
-      for (const dataPoint of dataPoints) {
-        const unknownDatapoint = dataPoint as Record<`${number}`, unknown>;
-        if (
-          typeof unknownDatapoint === 'object' &&
-          Object.keys(unknownDatapoint).length === 1 &&
-          Number.isInteger(Object.keys(unknownDatapoint)[0])
-        ) {
-          // When in form of `{"4":"low"}`, skip.
-          continue;
+        for (const dataPoint of dataPoints) {
+          const unknownDatapoint = dataPoint as Record<`${number}`, unknown>;
+          if (
+            typeof unknownDatapoint === 'object' &&
+            Object.keys(unknownDatapoint).length === 1 &&
+            Number.isInteger(Object.keys(unknownDatapoint)[0])
+          ) {
+            // When in form of `{"4":"low"}`, skip.
+            continue;
+          }
+
+          if (dataPoint.code === undefined) {
+            this.error('Malformed datapoint:', JSON.stringify(dataPoint));
+            continue;
+          }
+          status[dataPoint.code] = dataPoint.value;
+          changedStatusCodes.push(dataPoint.code);
         }
 
-        if (dataPoint.code === undefined) {
-          this.error('Malformed datapoint:', JSON.stringify(dataPoint));
-          continue;
+        if (['online', 'offline'].includes(json.data.bizCode)) {
+          status['online'] = json.data.bizCode === 'online';
+          changedStatusCodes.push('online');
         }
-        status[dataPoint.code] = dataPoint.value;
-        changedStatusCodes.push(dataPoint.code);
-      }
 
-      if (['online', 'offline'].includes(json.data.bizCode)) {
-        status['online'] = json.data.bizCode === 'online';
-        changedStatusCodes.push('online');
-      }
+        const registeredDevice = this.registeredDevices.get(deviceId);
+        const registeredOtherDevice = this.registeredOtherDevices.get(deviceId);
+        if (registeredDevice === undefined && registeredOtherDevice === undefined) {
+          this.log('No matching devices found for MQTT data');
+          return;
+        }
 
-      const registeredDevice = this.registeredDevices.get(deviceId);
-      const registeredOtherDevice = this.registeredOtherDevices.get(deviceId);
-      if (registeredDevice === undefined && registeredOtherDevice === undefined) {
-        this.log('No matching devices found for MQTT data');
-        return;
-      }
-
-      if (registeredDevice !== undefined) {
-        await registeredDevice.onStatus('status', status, changedStatusCodes).catch(this.error);
-      }
-      if (registeredOtherDevice !== undefined) {
-        await registeredOtherDevice.onStatus('status', status, changedStatusCodes).catch(this.error);
-      }
-    });
+        if (registeredDevice !== undefined) {
+          await registeredDevice.onStatus('status', status, changedStatusCodes).catch(this.error);
+        }
+        if (registeredOtherDevice !== undefined) {
+          await registeredOtherDevice.onStatus('status', status, changedStatusCodes).catch(this.error);
+        }
+      });
     } finally {
       resolveMqttPromise();
     }
@@ -577,16 +585,33 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       return;
     }
 
+    if (this.tokenRefreshPromise) {
+      // Refresh already in progress
+      return;
+    }
+
     this.log('Automatic token refresh');
-    this.refreshToken()
+    this.tokenRefreshPromise = this.executeTokenRefresh()
       .then(() => this.setTokenError(false))
       .catch(e => this.setTokenError(true, e))
-      .catch(e => this.setTokenError(false, e));
+      .catch(e => this.setTokenError(false, e))
+      .finally(() => {
+        this.debug('Cleared token refresh promise (automated refresh)');
+        delete this.tokenRefreshPromise;
+      });
   }
 
   private setTokenError(value: boolean, warning?: unknown): void {
     this.log('Token error state updated', value, warning);
     this.emit('token_error', value);
+  }
+
+  private debug(...args: unknown[]): void {
+    if (Homey.env.DEBUG !== '1') {
+      return;
+    }
+
+    super.log('[dbg]', ...args);
   }
 }
 

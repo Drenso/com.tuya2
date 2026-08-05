@@ -26,6 +26,8 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
    */
   protected initBarrier = true;
 
+  protected syncTimeout?: number;
+
   protected online: boolean | null = null;
 
   private tokenErrorHandler?: (value: TuyaOAuth2Error) => void;
@@ -79,6 +81,11 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
   }
 
   private async registerDevice(): Promise<void> {
+    if (this.syncTimeout) {
+      this.homey.clearTimeout(this.syncTimeout);
+      delete this.syncTimeout;
+    }
+
     const isOtherDevice = this.driver.id === 'other';
 
     this.oAuth2Client.registerDevice(
@@ -112,7 +119,10 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     }
 
     // Use random backoff for initial sync
-    this.homey.setTimeout(this.__sync, Math.round(Math.random() * TUYA_SYNC_BACKOFF));
+    this.syncTimeout = this.homey.setTimeout(() => {
+      this.__sync();
+      delete this.syncTimeout;
+    }, Math.round(Math.random() * TUYA_SYNC_BACKOFF));
   }
 
   public async onOAuth2Saved(): Promise<void> {

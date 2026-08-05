@@ -70,5 +70,8 @@
   },
   "1.5.2": {
     "en": "Resolve MQTT reconnect loop"
+  },
+  "1.5.3": {
+    "en": "Prevent multiple scheduled sync calls during startup"
   }
 }

@@ -33,6 +33,16 @@ type OAuth2SessionInformation = { id: string; title: string };
 
 const noop = (): void => {};
 
+// Backoff times in seconds
+const TOKEN_REFRESH_INTERVAL = 30;
+const TOKEN_REFRESH_BACK_OFF = {
+  1: 31,
+  2: 61,
+  3: 121,
+  4: 241,
+  5: 481,
+};
+
 export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   protected static TOKEN = TuyaHaToken;
   protected static API_URL = '<dummy>';
@@ -52,6 +62,9 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
 
   private tokenRefreshPromise?: Promise<void>;
   private tokenRefresher?: NodeJS.Timeout;
+  private autoTokenRefreshEnabled = true;
+  private autoTokenRefreshFailedCount = 0;
+  private autoTokenRefreshBackOff = 0;
   private lastTokenSave = 0; // This default will ensure an automated refresh 30 seconds after app start
   private tokenExpireTime = 7200; // 2 hours in seconds
   private randomRefreshOffset = Math.round(Math.random() * 900) + 300; // Randomise the time the app tries to start its automated refresh
@@ -76,7 +89,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     this.resolveReadyPromise();
 
     // Automatic token refresher as this app relies on MQTT data, which doesn't refresh the token automatically
-    this.tokenRefresher = this.homey.setInterval(() => this.refreshApiToken(), 30 * 1000);
+    this.tokenRefresher = this.homey.setInterval(() => this.refreshApiToken(), TOKEN_REFRESH_INTERVAL * 1000);
   }
 
   public async onUninit(): Promise<void> {
@@ -465,6 +478,10 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
 
     // Execute original save, which will store the token in the app store
     super.save();
+
+    // Allow automated token refresh to continue
+    this.autoTokenRefreshEnabled = true;
+    this.autoTokenRefreshBackOff = 0;
   }
 
   public resetMqtt(): void {
@@ -565,7 +582,12 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       await this.connectToMqtt();
     }
 
-    const topicTemplate = this.mqttConfig!.topic.devId.sub;
+    if (!this.mqttConfig) {
+      this.error('MQTT configuration not available, could not subscribe', deviceId);
+      return;
+    }
+
+    const topicTemplate = this.mqttConfig.topic.devId.sub;
     const topic = topicTemplate.replace('{devId}', deviceId);
 
     await this.mqttClient!.subscribeAsync(topic);
@@ -577,20 +599,35 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       return;
     }
 
-    const topicTemplate = this.mqttConfig!.topic.devId.sub;
+    if (!this.mqttConfig) {
+      this.error('MQTT configuration not available, could not unsubscribe', deviceId);
+      return;
+    }
+
+    const topicTemplate = this.mqttConfig.topic.devId.sub;
     const topic = topicTemplate.replace('{devId}', deviceId);
     await this.mqttClient.unsubscribeAsync(topic);
     this.log('Unsubscribed from MQTT channel for device:', deviceId);
   }
 
   private refreshApiToken(): void {
-    if (Date.now() - this.lastTokenSave < (this.tokenExpireTime - this.randomRefreshOffset) * 1000) {
+    const now = Date.now();
+    if (now - this.lastTokenSave < (this.tokenExpireTime - this.randomRefreshOffset) * 1000) {
       // No need to refresh
       return;
     }
 
     if (!this.getToken()) {
       // No token? No automatic refresh!
+      return;
+    }
+
+    if (!this.autoTokenRefreshEnabled) {
+      return;
+    }
+
+    if (now <= this.autoTokenRefreshBackOff) {
+      this.log('Automatic token refresh backoff in effect', new Date(this.autoTokenRefreshBackOff).toISOString());
       return;
     }
 
@@ -601,8 +638,30 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
 
     this.log('Automatic token refresh');
     this.tokenRefreshPromise = this.executeTokenRefresh()
-      .then(() => this.setTokenError(false))
-      .catch(e => this.setTokenError(true, e))
+      .then(() => {
+        this.debug('Automatic token refresh succeeded');
+        this.autoTokenRefreshFailedCount = 0;
+        this.setTokenError(false);
+      })
+      .catch(e => {
+        this.autoTokenRefreshFailedCount++;
+        this.debug('Automatic token refresh failed', this.autoTokenRefreshFailedCount, e);
+        switch (this.autoTokenRefreshFailedCount) {
+          case 1:
+          case 2:
+          case 3:
+          case 4:
+          case 5:
+            this.autoTokenRefreshBackOff = Date.now() + TOKEN_REFRESH_BACK_OFF[this.autoTokenRefreshFailedCount] * 1000;
+            this.log('Automatic token refresh backoff set to', new Date(this.autoTokenRefreshBackOff).toISOString());
+            break;
+          default:
+            this.error('Automated refresh disabled to to continued failures');
+            this.autoTokenRefreshEnabled = false;
+            break;
+        }
+        this.setTokenError(true, e);
+      })
       .finally(() => {
         this.debug('Cleared token refresh promise (automated refresh)');
         delete this.tokenRefreshPromise;

@@ -235,7 +235,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
 
     // Store last token save and expire time for automated refresh
     this.lastTokenSave = Date.now();
-    this.tokenExpireTime = token.expire_time ?? 7200;
+    this.tokenExpireTime = newToken.expire_time ?? 7200;
 
     // Wait a little bit to give the refresh token time to propagate
     await new Promise(resolve => this.homey.setTimeout(resolve, 2000));

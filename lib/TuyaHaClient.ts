@@ -54,7 +54,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   private tokenRefresher?: NodeJS.Timeout;
   private lastTokenSave = 0; // This default will ensure an automated refresh 30 seconds after app start
   private tokenExpireTime = 7200; // 2 hours in seconds
-  private randomRefreshOffset = Math.round(Math.random() * 900) - 300; // Randomise the time the app tries to start its automated refresh
+  private randomRefreshOffset = Math.round(Math.random() * 900) + 300; // Randomise the time the app tries to start its automated refresh
 
   // We save this information to eventually enable OAUTH2_MULTI_SESSION.
   // We can then list all authenticated users by name, e-mail and country flag.

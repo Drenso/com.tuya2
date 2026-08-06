@@ -168,16 +168,21 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
           throw new TuyaOAuth2Error(this.homey.__('error_refreshing_token_access'), response.status, code);
         }
 
-        this.tokenRefreshPromise = (async (): Promise<void> => {
-          this.log('Access token expired', code);
-          await this.executeTokenRefresh();
-          this.log('Token refreshed, retrying request...');
-          return this._executeRequest({ method, path, json, query, headers }, true);
-        })();
-        try {
+        if (this.tokenRefreshPromise) {
+          // Token refresh already running (due to automatic renewal)
           await this.tokenRefreshPromise;
-        } finally {
-          delete this.tokenRefreshPromise;
+        } else {
+          this.tokenRefreshPromise = (async (): Promise<void> => {
+            this.log('Access token expired', code);
+            await this.executeTokenRefresh();
+            this.log('Token refreshed, retrying request...');
+            return this._executeRequest({ method, path, json, query, headers }, true);
+          })();
+          try {
+            await this.tokenRefreshPromise;
+          } finally {
+            delete this.tokenRefreshPromise;
+          }
         }
       } else if (code === 1010) {
         this.log('Refresh token expired', code);

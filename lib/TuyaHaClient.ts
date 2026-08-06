@@ -217,8 +217,10 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
 
     const newToken = new TuyaHaToken({
       ...token.toJSON(),
+      uid: res.uid ?? token.uid,
       access_token: res.accessToken,
       refresh_token: res.refreshToken,
+      expire_time: res.expireTime ?? token.expire_time,
     });
     this.setToken({ token: newToken });
 

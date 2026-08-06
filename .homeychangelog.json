@@ -76,5 +76,8 @@
   },
   "1.5.4": {
     "en": "Token refresh tweaks"
+  },
+  "1.5.5": {
+    "en": "Add automatic back off to automated token refresh"
   }
 }

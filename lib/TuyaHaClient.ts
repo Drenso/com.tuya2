@@ -171,8 +171,6 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
         this.tokenRefreshPromise = (async (): Promise<void> => {
           this.log('Access token expired', code);
           await this.executeTokenRefresh();
-          // Wait a little bit to give the refresh token time to propagate
-          await new Promise(resolve => this.homey.setTimeout(resolve, 500));
           this.log('Token refreshed, retrying request...');
           return this._executeRequest({ method, path, json, query, headers }, true);
         })();
@@ -232,6 +230,9 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     // Store last token save and expire time for automated refresh
     this.lastTokenSave = Date.now();
     this.tokenExpireTime = token.expire_time ?? 7200;
+
+    // Wait a little bit to give the refresh token time to propagate
+    await new Promise(resolve => this.homey.setTimeout(resolve, 500));
   }
 
   /*
@@ -596,7 +597,6 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     this.tokenRefreshPromise = this.executeTokenRefresh()
       .then(() => this.setTokenError(false))
       .catch(e => this.setTokenError(true, e))
-      .catch(e => this.setTokenError(false, e))
       .finally(() => {
         this.debug('Cleared token refresh promise (automated refresh)');
         delete this.tokenRefreshPromise;

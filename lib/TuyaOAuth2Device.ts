@@ -119,10 +119,13 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     }
 
     // Use random backoff for initial sync
-    this.syncTimeout = this.homey.setTimeout(() => {
-      this.__sync();
-      delete this.syncTimeout;
-    }, Math.round(Math.random() * TUYA_SYNC_BACKOFF));
+    this.syncTimeout = this.homey.setTimeout(
+      () => {
+        this.__sync();
+        delete this.syncTimeout;
+      },
+      Math.round(Math.random() * TUYA_SYNC_BACKOFF),
+    );
   }
 
   public async onOAuth2Saved(): Promise<void> {

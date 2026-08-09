@@ -1,0 +1,76 @@
+{
+  "device": {
+    "active_time": 1727196240,
+    "biz_type": 0,
+    "category": "fs",
+    "create_time": 1727196240,
+    "icon": "smart/icon/ay1496817426256Ai7Np/7a1e9be60b423559b370b2d8d0088234.png",
+    "id": "bf8b95b858b61396eacdsn",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "Kontor Takfläkt",
+    "online": true,
+    "owner_id": "",
+    "product_id": "3xjahkw4iruede2x",
+    "product_name": "Ceiling Fan With Light",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "fan_speed_percent",
+        "value": 1
+      },
+      {
+        "code": "light",
+        "value": false
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1727196240,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "fs",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fan_speed_percent",
+        "type": "Integer",
+        "values": "{\"min\":\"1\",\"max\":\"6\",\"scale\":\"0\",\"step\":\"1\"}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "fan_speed_percent",
+        "type": "Integer",
+        "values": "{\"min\":\"1\",\"max\":\"6\",\"scale\":\"0\",\"step\":\"1\"}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": []
+}

@@ -1,0 +1,76 @@
+{
+  "device": {
+    "active_time": 1785953973,
+    "biz_type": 18,
+    "category": "tdq",
+    "create_time": 1785953973,
+    "icon": "smart/icon/bay1669863773544vjP7/d8ca0ee1dcf764478617d976bfbf61c4.png",
+    "id": "bf8e1957bc4e7aa8d0s3pk",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "garasjeport",
+    "online": true,
+    "owner_id": "",
+    "product_id": "3jff3nhklrftvnlp",
+    "product_name": "2-433",
+    "status": [
+      {
+        "code": "switch_1",
+        "value": false
+      },
+      {
+        "code": "switch_2",
+        "value": false
+      },
+      {
+        "code": "countdown_1",
+        "value": 0
+      },
+      {
+        "code": "countdown_2",
+        "value": 0
+      },
+      {
+        "code": "relay_status",
+        "value": "0"
+      },
+      {
+        "code": "random_time",
+        "value": ""
+      },
+      {
+        "code": "cycle_time",
+        "value": ""
+      },
+      {
+        "code": "switch_inching",
+        "value": "AAACAgAC"
+      },
+      {
+        "code": "switch_type",
+        "value": "sync"
+      },
+      {
+        "code": "switch_interlock",
+        "value": "AAAAAAAAAAA="
+      },
+      {
+        "code": "remote_add",
+        "value": ""
+      },
+      {
+        "code": "remote_list",
+        "value": "AA=="
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1785953973,
+    "uuid": ""
+  },
+  "specifications": "",
+  "data_points": ""
+}

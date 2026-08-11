@@ -12,7 +12,7 @@
     "prettier-check": "prettier . --check"
   },
   "devDependencies": {
-    "@drenso/eslint-config-homey-mts": "1.2.0",
+    "@drenso/eslint-config-homey-mts": "1.2.1",
     "@drenso/prettier-config-homey-mts": "1.2.0",
     "@tsconfig/node20": "20.1.9",
     "@types/homey": "npm:homey-apps-sdk-v3-types@0.3.12",

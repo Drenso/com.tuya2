@@ -24,7 +24,10 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
    * Ensure migrations are finished before the device is used.
    * This barrier should only be lowered after all initialization is done.
    */
-  protected initBarrier = true;
+  private resolveReadyPromise: () => void = () => {};
+  protected readyPromise = new Promise<void>(resolve => {
+    this.resolveReadyPromise = resolve;
+  });
 
   protected syncTimeout?: number;
 
@@ -36,7 +39,7 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     await super.onInit();
     await new Promise(resolve => this.homey.setTimeout(resolve, Math.round(Math.random() * TUYA_INIT_BACKOFF)));
     await this.performMigrations();
-    this.initBarrier = false;
+    this.resolveReadyPromise();
     this.SETTING_LABELS = (this.driver as unknown as TuyaOAuth2Driver).SETTING_LABELS;
     this.log('Finished initialization of', this.getName());
   }
@@ -170,10 +173,8 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     status: TuyaStatus,
     changedStatusCodes: string[] = [],
   ): Promise<void> {
-    // Wait at least 100ms for initialization before trying to pass the barrier again
-    while (this.initBarrier) {
-      await new Promise(resolve => this.homey.setTimeout(resolve, 100));
-    }
+    // Wait for initialization before trying to pass the barrier again
+    await this.readyPromise;
 
     // Filter duplicated data
     if (source === 'status') {

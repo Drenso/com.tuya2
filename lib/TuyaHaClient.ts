@@ -3,7 +3,6 @@ import Homey from 'homey';
 import { fetch, OAuth2Client } from 'homey-oauth2app';
 import mqtt from 'mqtt';
 import { nanoid } from 'nanoid';
-import { URL } from 'url';
 import type {
   TuyaCommand,
   TuyaDeviceDataPointResponse,
@@ -21,11 +20,10 @@ import type {
   TuyaHaStatusResponse,
   TuyaMqttConfigResponse,
   TuyaMqttMessage,
-  TuyaTokenRefreshResponse,
 } from '../types/TuyaHaApiTypes.js';
 import type { DeviceRegistration } from '../types/TuyaTypes.js';
-import { getTuyaClientId } from './TuyaHaClientId.js';
 import TuyaHaToken from './TuyaHaToken.js';
+import TuyaHaTokenManager from './TuyaHaTokenManager.js';
 import TuyaOAuth2Error from './TuyaOAuth2Error.js';
 import * as TuyaOAuth2Util from './TuyaOAuth2Util.js';
 
@@ -35,13 +33,6 @@ const noop = (): void => {};
 
 // Backoff times in seconds
 const TOKEN_REFRESH_INTERVAL = 30;
-const TOKEN_REFRESH_BACK_OFF = {
-  1: 31,
-  2: 61,
-  3: 121,
-  4: 241,
-  5: 481,
-};
 
 export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   protected static TOKEN = TuyaHaToken;
@@ -60,14 +51,8 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     this.resolveReadyPromise = resolve;
   });
 
-  private tokenRefreshPromise?: Promise<void>;
+  private tokenManager?: TuyaHaTokenManager;
   private tokenRefresher?: NodeJS.Timeout;
-  private autoTokenRefreshEnabled = true;
-  private autoTokenRefreshFailedCount = 0;
-  private autoTokenRefreshBackOff = 0;
-  private lastTokenSave = 0; // This default will ensure an automated refresh 30 seconds after app start
-  private tokenExpireTime = 7200; // 2 hours in seconds
-  private randomRefreshOffset = Math.round(Math.random() * 900) + 300; // Randomise the time the app tries to start its automated refresh
 
   // We save this information to eventually enable OAUTH2_MULTI_SESSION.
   // We can then list all authenticated users by name, e-mail and country flag.
@@ -86,10 +71,14 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
 
   public async onInit(): Promise<void> {
     this.error = this.error.bind(this);
+    this.tokenManager = new TuyaHaTokenManager(this.homey, this);
     this.resolveReadyPromise();
 
     // Automatic token refresher as this app relies on MQTT data, which doesn't refresh the token automatically
-    this.tokenRefresher = this.homey.setInterval(() => this.refreshApiToken(), TOKEN_REFRESH_INTERVAL * 1000);
+    this.tokenRefresher = this.homey.setInterval(
+      () => this.tokenManager!.refreshApiToken(),
+      TOKEN_REFRESH_INTERVAL * 1000,
+    );
   }
 
   public async onUninit(): Promise<void> {
@@ -99,74 +88,26 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   // Sign the request
-  private async _executeRequest<T>(
-    {
-      method,
-      path,
-      json,
-      query = {},
-      headers = {},
-      isTokenRefresh = false,
-    }: {
-      method: string;
-      path: string;
-      json?: object;
-      query?: object;
-      headers?: object;
-      isTokenRefresh?: boolean;
-    },
-    didRefreshToken = false,
-  ): Promise<T> {
+  private async _executeRequest<T>({
+    method,
+    path,
+    json,
+    query = {},
+    headers = {},
+  }: {
+    method: string;
+    path: string;
+    json?: object;
+    query?: object;
+    headers?: object;
+  }): Promise<T> {
     await this.readyPromise;
-    if (!isTokenRefresh && !didRefreshToken && this.tokenRefreshPromise) {
-      await this.tokenRefreshPromise;
-    }
+    await this.tokenManager!.waitForRefresh();
 
-    const token = this.getToken();
-    if (!token) {
-      throw new TuyaOAuth2Error(this.homey.__('error_no_token'));
-    }
-    this.debug('[executeRequest]', JSON.stringify({ method, path, json, query, headers, token }));
+    const { requestUrl, requestOptions, secret } = await this.tokenManager!.getHeaders({ method, path, query, json });
 
-    const requestUrl = new URL(`${token.endpoint}${path}`);
-    const requestOptions = {
-      method,
-      headers,
-      body: undefined as string | undefined,
-    };
-
-    const t = Date.now(); // Timestamp in milliseconds
-    const rid = crypto.randomUUID(); // Request ID
-    const sid = ''; // Session ID
-    const hashKey = crypto.createHash('md5').update(`${rid}${token.refresh_token}`).digest('hex');
-    const secret = TuyaOAuth2Util.secretGenerating(rid, sid, hashKey);
-
-    let queryEncdata = '';
-    if (Object.keys(query).length > 0) {
-      queryEncdata = JSON.stringify(query);
-      queryEncdata = TuyaOAuth2Util.aesGcmEncrypt(queryEncdata, secret);
-      requestUrl.searchParams.append('encdata', queryEncdata);
-    }
-
-    let bodyEncdata = '';
-    if (json && Object.keys(json).length > 0) {
-      bodyEncdata = JSON.stringify(json);
-      bodyEncdata = TuyaOAuth2Util.aesGcmEncrypt(bodyEncdata, secret);
-      requestOptions.body = JSON.stringify({ encdata: bodyEncdata });
-    }
-
-    const requestHeaders = {
-      'X-appKey': getTuyaClientId(),
-      'X-requestId': rid,
-      'X-sid': sid,
-      'X-time': `${t}`,
-      'X-token': token.access_token,
-    };
-    requestOptions.headers = {
-      ...requestHeaders,
-      'X-sign': TuyaOAuth2Util.restfulSign(hashKey, queryEncdata, bodyEncdata, requestHeaders),
-      'Content-Type': 'application/json',
-    };
+    // Add custom headers if any
+    Object.assign(requestOptions.headers, headers);
 
     const response = await fetch(requestUrl.toString(), requestOptions);
     const responseBodyJson = (await response.json()) as TuyaHasResponse<string>;
@@ -177,31 +118,18 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       // 1004 (signature invalid) means the access token is expired
       // 1010 (expired token) means the refresh token is also expired
       if (code === -9999999 || code === 1004) {
-        if (didRefreshToken) {
-          this.error('Access token expired, but refresh failed as well', code);
-          throw new TuyaOAuth2Error(this.homey.__('error_refreshing_token_access'), response.status, code);
-        }
+        this.log('Access token expired, triggering refresh...', code);
+        await this.tokenManager!.refreshToken();
 
-        if (this.tokenRefreshPromise) {
-          // Token refresh already running (due to automatic renewal)
-          await this.tokenRefreshPromise;
-        } else {
-          this.tokenRefreshPromise = (async (): Promise<void> => {
-            this.log('Access token expired', code);
-            await this.executeTokenRefresh();
-            this.log('Token refreshed, retrying request...');
-            return this._executeRequest({ method, path, json, query, headers }, true);
-          })();
-          try {
-            await this.tokenRefreshPromise;
-          } finally {
-            delete this.tokenRefreshPromise;
-          }
-        }
-      } else if (code === 1010) {
+        this.log('Token refreshed, retrying request...');
+        return this._executeRequest({ method, path, json, query, headers });
+      }
+
+      if (code === 1010) {
         this.log('Refresh token expired', code);
         throw new TuyaOAuth2Error(this.homey.__('error_refreshing_token_refresh'), response.status, code);
       }
+
       this.error(requestUrl.toString(), ':', responseBodyJson);
       throw new TuyaOAuth2Error(this.homey.__(`tuya_error.${code}`), response.status, code);
     }
@@ -219,39 +147,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   public async executeTokenRefresh(): Promise<void> {
-    this.log('Refreshing token...');
-    const token = this.getToken();
-    if (!token) {
-      // No token? No refresh possible
-      return;
-    }
-
-    const res = await this._executeRequest<TuyaTokenRefreshResponse>({
-      method: 'GET',
-      path: `/v1.0/m/token/${token.refresh_token}`,
-      isTokenRefresh: true,
-    });
-
-    const newToken = new TuyaHaToken({
-      ...token.toJSON(),
-      uid: res.uid ?? token.uid,
-      access_token: res.accessToken,
-      refresh_token: res.refreshToken,
-      expire_time: res.expireTime ?? token.expire_time,
-    });
-    this.setToken({ token: newToken });
-
-    this.log('Refreshed token:', JSON.stringify(newToken));
-
-    // Otherwise, the token is not stored in the store!
-    this.save();
-
-    // Store last token save and expire time for automated refresh
-    this.lastTokenSave = Date.now();
-    this.tokenExpireTime = newToken.expire_time ?? 7200;
-
-    // Wait a little bit to give the refresh token time to propagate
-    await new Promise(resolve => this.homey.setTimeout(resolve, 2000));
+    return this.tokenManager!.refreshToken();
   }
 
   /*
@@ -480,8 +376,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     super.save();
 
     // Allow automated token refresh to continue
-    this.autoTokenRefreshEnabled = true;
-    this.autoTokenRefreshBackOff = 0;
+    this.tokenManager?.resetAutoRefresh();
   }
 
   public resetMqtt(): void {
@@ -610,70 +505,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     this.log('Unsubscribed from MQTT channel for device:', deviceId);
   }
 
-  private refreshApiToken(): void {
-    const now = Date.now();
-    if (now - this.lastTokenSave < (this.tokenExpireTime - this.randomRefreshOffset) * 1000) {
-      // No need to refresh
-      return;
-    }
-
-    if (!this.getToken()) {
-      // No token? No automatic refresh!
-      return;
-    }
-
-    if (!this.autoTokenRefreshEnabled) {
-      return;
-    }
-
-    if (now <= this.autoTokenRefreshBackOff) {
-      this.log('Automatic token refresh backoff in effect', new Date(this.autoTokenRefreshBackOff).toISOString());
-      return;
-    }
-
-    if (this.tokenRefreshPromise) {
-      // Refresh already in progress
-      return;
-    }
-
-    this.log('Automatic token refresh');
-    this.tokenRefreshPromise = this.executeTokenRefresh()
-      .then(() => {
-        this.debug('Automatic token refresh succeeded');
-        this.autoTokenRefreshFailedCount = 0;
-        this.setTokenError(false);
-      })
-      .catch(e => {
-        this.autoTokenRefreshFailedCount++;
-        this.debug('Automatic token refresh failed', this.autoTokenRefreshFailedCount, e);
-        switch (this.autoTokenRefreshFailedCount) {
-          case 1:
-          case 2:
-          case 3:
-          case 4:
-          case 5:
-            this.autoTokenRefreshBackOff = Date.now() + TOKEN_REFRESH_BACK_OFF[this.autoTokenRefreshFailedCount] * 1000;
-            this.log('Automatic token refresh backoff set to', new Date(this.autoTokenRefreshBackOff).toISOString());
-            break;
-          default:
-            this.error('Automated refresh disabled to to continued failures');
-            this.autoTokenRefreshEnabled = false;
-            break;
-        }
-        this.setTokenError(true, e);
-      })
-      .finally(() => {
-        this.debug('Cleared token refresh promise (automated refresh)');
-        delete this.tokenRefreshPromise;
-      });
-  }
-
-  private setTokenError(value: boolean, warning?: unknown): void {
-    this.log('Token error state updated', value, warning);
-    this.emit('token_error', value);
-  }
-
-  private debug(...args: unknown[]): void {
+  public debug(...args: unknown[]): void {
     if (Homey.env.DEBUG !== '1') {
       return;
     }

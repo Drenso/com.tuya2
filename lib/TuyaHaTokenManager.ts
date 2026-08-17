@@ -103,13 +103,6 @@ export default class TuyaHaTokenManager {
     return { requestUrl, requestOptions, secret };
   }
 
-  private async refreshToken(): Promise<void> {
-    if (!this.tokenRefreshPromise) {
-      this.tokenRefreshPromise = this.executeTokenRefresh();
-    }
-    return this.tokenRefreshPromise;
-  }
-
   private async executeTokenRefresh(): Promise<void> {
     try {
       this.log('Refreshing token...');
@@ -156,9 +149,6 @@ export default class TuyaHaTokenManager {
 
       // Wait a little bit to give the refresh token time to propagate
       await new Promise(resolve => this.homey.setTimeout(resolve, 2000));
-    } catch (err) {
-      this.error('Error while refreshing token', err);
-      throw err;
     } finally {
       this.tokenRefreshPromise = null;
     }
@@ -191,7 +181,7 @@ export default class TuyaHaTokenManager {
     }
 
     this.log('Automatic token refresh');
-    this.refreshToken()
+    this.tokenRefreshPromise = this.executeTokenRefresh()
       .then(() => {
         this.debug('Automatic token refresh succeeded');
         this.autoTokenRefreshFailedCount = 0;

@@ -10,6 +10,7 @@ import type { TuyaHasResponse, TuyaTokenRefreshResponse } from '../types/TuyaHaA
 
 // Backoff times in seconds
 const TOKEN_REFRESH_INTERVAL = 30;
+const INITIAL_TOKEN_REFRESH_DELAY = 10;
 const TOKEN_REFRESH_BACK_OFF: Record<number, number> = {
   1: 31,
   2: 61,
@@ -32,6 +33,7 @@ export default class TuyaHaTokenManager {
   private readonly randomRefreshOffset = Math.round(Math.random() * 900) + 300; // Randomise the time the app tries to start its automated refresh
   private readonly homey: Homey;
   private readonly tokenRefresher: NodeJS.Timeout;
+  private readonly initialTokenRefresher: NodeJS.Timeout;
 
   private tokenExpireTimestamp: number;
 
@@ -40,12 +42,6 @@ export default class TuyaHaTokenManager {
 
   public constructor(private readonly client: TuyaHaClient) {
     this.homey = client.homey;
-    // Automatic token refresher as this app relies on MQTT data, which doesn't refresh the token automatically
-    this.tokenRefresher = this.homey.setInterval(() => {
-      this.refreshApiToken();
-      this.resolveInitialRefresh?.();
-    }, TOKEN_REFRESH_INTERVAL * 1000);
-
     // Use 0 if there is no stored deadline, so the first interval refreshes the token
     this.tokenExpireTimestamp = this.homey.settings.get(TOKEN_REFRESH_DEADLINE_KEY) ?? 0;
     this.log('Access token expires at', new Date(this.tokenExpireTimestamp));
@@ -53,9 +49,21 @@ export default class TuyaHaTokenManager {
     this.initialRefresh = new Promise(resolve => {
       this.resolveInitialRefresh = resolve;
     });
+
+    // Automatic token refresher as this app relies on MQTT data, which doesn't refresh the token automatically
+    this.tokenRefresher = this.homey.setInterval(() => {
+      this.refreshApiToken();
+      this.resolveInitialRefresh?.();
+    }, TOKEN_REFRESH_INTERVAL * 1000);
+
+    this.initialTokenRefresher = this.homey.setTimeout(() => {
+      this.refreshApiToken();
+      this.resolveInitialRefresh?.();
+    }, INITIAL_TOKEN_REFRESH_DELAY * 1000);
   }
 
   public stopTokenRefresher(): void {
+    this.homey.clearTimeout(this.initialTokenRefresher);
     this.homey.clearInterval(this.tokenRefresher);
   }
 

@@ -118,11 +118,8 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       // 1004 (signature invalid) means the access token is expired
       // 1010 (expired token) means the refresh token is also expired
       if (code === -9999999 || code === 1004) {
-        this.log('Access token expired, triggering refresh...', code);
-        await this.tokenManager!.refreshToken();
-
-        this.log('Token refreshed, retrying request...');
-        return this._executeRequest({ method, path, json, query, headers });
+        this.log('Access token expired', code);
+        throw new TuyaOAuth2Error(this.homey.__('error_refreshing_token_access'), response.status, code);
       }
 
       if (code === 1010) {

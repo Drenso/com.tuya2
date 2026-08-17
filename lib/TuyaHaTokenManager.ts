@@ -18,22 +18,31 @@ const TOKEN_REFRESH_BACK_OFF: Record<number, number> = {
   5: 481,
 };
 
+const DEFAULT_TOKEN_EXPIRE_S = 7200; // 2 hours in seconds
+
+const TOKEN_REFRESH_DEADLINE_KEY = 'tuya_token_refresh_deadline';
+
 export default class TuyaHaTokenManager {
   private tokenRefreshPromise: Promise<void> | null = null;
 
   private autoTokenRefreshEnabled = true;
   private autoTokenRefreshFailedCount = 0;
   private autoTokenRefreshBackOff = 0;
-  private lastTokenSave = 0; // This default will ensure an automated refresh 30 seconds after app start
-  private tokenExpireTime = 7200; // 2 hours in seconds
+
   private readonly randomRefreshOffset = Math.round(Math.random() * 900) + 300; // Randomise the time the app tries to start its automated refresh
   private readonly homey: Homey;
   private readonly tokenRefresher: NodeJS.Timeout;
+
+  private tokenExpireTimestamp: number;
 
   public constructor(private readonly client: TuyaHaClient) {
     this.homey = client.homey;
     // Automatic token refresher as this app relies on MQTT data, which doesn't refresh the token automatically
     this.tokenRefresher = this.homey.setInterval(() => this.refreshApiToken(), TOKEN_REFRESH_INTERVAL * 1000);
+
+    // Use 0 if there is no stored deadline, so the first interval refreshes the token
+    this.tokenExpireTimestamp = this.homey.settings.get(TOKEN_REFRESH_DEADLINE_KEY) ?? 0;
+    this.log('Access token expires at', new Date(this.tokenExpireTimestamp));
   }
 
   public stopTokenRefresher(): void {
@@ -143,9 +152,10 @@ export default class TuyaHaTokenManager {
       // Save the token to the app store
       this.client.save();
 
-      // Store last token save and expire time for automated refresh
-      this.lastTokenSave = Date.now();
-      this.tokenExpireTime = newToken.expire_time ?? 7200;
+      // Unix epoch timestamp of when the token expires, in ms
+      this.tokenExpireTimestamp = Date.now() + (newToken.expire_time ?? DEFAULT_TOKEN_EXPIRE_S) * 1000;
+      this.homey.settings.set(TOKEN_REFRESH_DEADLINE_KEY, this.tokenExpireTimestamp);
+      this.log('New access token expires at', new Date(this.tokenExpireTimestamp));
 
       // Wait a little bit to give the refresh token time to propagate
       await new Promise(resolve => this.homey.setTimeout(resolve, 2000));
@@ -156,7 +166,10 @@ export default class TuyaHaTokenManager {
 
   public refreshApiToken(): void {
     const now = Date.now();
-    if (now - this.lastTokenSave < (this.tokenExpireTime - this.randomRefreshOffset) * 1000) {
+
+    // Shorten the deadline by a fixed random amount
+    const tokenExpireDeadline = this.tokenExpireTimestamp - this.randomRefreshOffset * 1000;
+    if (now < tokenExpireDeadline) {
       // No need to refresh
       return;
     }

@@ -79,5 +79,8 @@
   },
   "1.5.5": {
     "en": "Add automatic back off to automated token refresh"
+  },
+  "1.5.6": {
+    "en": "Resolve app lockup issue"
   }
 }

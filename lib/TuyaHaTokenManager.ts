@@ -35,14 +35,24 @@ export default class TuyaHaTokenManager {
 
   private tokenExpireTimestamp: number;
 
+  private initialRefresh: Promise<void>;
+  private resolveInitialRefresh?: () => void;
+
   public constructor(private readonly client: TuyaHaClient) {
     this.homey = client.homey;
     // Automatic token refresher as this app relies on MQTT data, which doesn't refresh the token automatically
-    this.tokenRefresher = this.homey.setInterval(() => this.refreshApiToken(), TOKEN_REFRESH_INTERVAL * 1000);
+    this.tokenRefresher = this.homey.setInterval(() => {
+      this.refreshApiToken();
+      this.resolveInitialRefresh?.();
+    }, TOKEN_REFRESH_INTERVAL * 1000);
 
     // Use 0 if there is no stored deadline, so the first interval refreshes the token
     this.tokenExpireTimestamp = this.homey.settings.get(TOKEN_REFRESH_DEADLINE_KEY) ?? 0;
     this.log('Access token expires at', new Date(this.tokenExpireTimestamp));
+
+    this.initialRefresh = new Promise(resolve => {
+      this.resolveInitialRefresh = resolve;
+    });
   }
 
   public stopTokenRefresher(): void {
@@ -222,6 +232,7 @@ export default class TuyaHaTokenManager {
   }
 
   public async waitForRefresh(): Promise<void> {
+    await this.initialRefresh;
     await this.tokenRefreshPromise;
   }
 

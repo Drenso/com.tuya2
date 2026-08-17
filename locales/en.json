@@ -69,5 +69,6 @@
     "2014": "Tuya error: No scheduled tasks found",
     "2015": "Tuya error: Unsupported device category",
     "undefined": "Unknown Tuya error"
-  }
+  },
+  "device_init_failed": "Device initialisation failed."
 }

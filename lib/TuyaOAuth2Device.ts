@@ -37,9 +37,16 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
 
   public async onInit(): Promise<void> {
     await super.onInit();
-    await new Promise(resolve => this.homey.setTimeout(resolve, Math.round(Math.random() * TUYA_INIT_BACKOFF)));
-    await this.performMigrations();
-    this.resolveReadyPromise();
+    try {
+      await new Promise(resolve => this.homey.setTimeout(resolve, Math.round(Math.random() * TUYA_INIT_BACKOFF)));
+      await this.performMigrations();
+    } catch (e) {
+      this.error('Error during initialization', e);
+      await this.setUnavailable(this.homey.__('device_init_failed')).catch(this.error);
+    } finally {
+      // Make sure to resolve the ready barrier to prevent deadlock
+      this.resolveReadyPromise();
+    }
     this.SETTING_LABELS = (this.driver as unknown as TuyaOAuth2Driver).SETTING_LABELS;
     this.log('Finished initialization of', this.getName());
   }
@@ -175,6 +182,11 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
   ): Promise<void> {
     // Wait for initialization before trying to pass the barrier again
     await this.readyPromise;
+
+    if (!this.getAvailable()) {
+      // Skip update when device is not available
+      return;
+    }
 
     // Filter duplicated data
     if (source === 'status') {

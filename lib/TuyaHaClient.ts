@@ -461,7 +461,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
       await this.connectToMqtt();
     }
 
-    if (!this.mqttConfig) {
+    if (!this.mqttClient || !this.mqttConfig) {
       this.error('MQTT configuration not available, could not subscribe', deviceId);
       return;
     }
@@ -469,7 +469,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     const topicTemplate = this.mqttConfig.topic.devId.sub;
     const topic = topicTemplate.replace('{devId}', deviceId);
 
-    await this.mqttClient!.subscribeAsync(topic);
+    await this.mqttClient.subscribeAsync(topic);
     this.log('Subscribed to MQTT channel for device:', deviceId);
   }
 

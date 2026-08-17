@@ -164,7 +164,7 @@ export default class TuyaHaTokenManager {
     }
   }
 
-  public refreshApiToken(): void {
+  private refreshApiToken(): void {
     const now = Date.now();
 
     // Shorten the deadline by a fixed random amount

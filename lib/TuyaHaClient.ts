@@ -48,7 +48,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     this.resolveReadyPromise = resolve;
   });
 
-  private tokenManager?: TuyaHaTokenManager;
+  private tokenManager!: TuyaHaTokenManager;
 
   // We save this information to eventually enable OAUTH2_MULTI_SESSION.
   // We can then list all authenticated users by name, e-mail and country flag.
@@ -72,7 +72,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   }
 
   public async onUninit(): Promise<void> {
-    this.tokenManager?.stopTokenRefresher();
+    this.tokenManager.stopTokenRefresher();
   }
 
   // Sign the request
@@ -90,9 +90,9 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     headers?: object;
   }): Promise<T> {
     await this.readyPromise;
-    await this.tokenManager!.waitForRefresh();
+    await this.tokenManager.waitForRefresh();
 
-    const { requestUrl, requestOptions, secret } = this.tokenManager!.getHeaders(method, path, query, json);
+    const { requestUrl, requestOptions, secret } = this.tokenManager.getHeaders(method, path, query, json);
 
     // Add custom headers if any
     Object.assign(requestOptions.headers, headers);
@@ -357,7 +357,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     super.save();
 
     // Allow automated token refresh to continue
-    this.tokenManager?.resetAutoRefresh();
+    this.tokenManager.resetAutoRefresh();
   }
 
   public resetMqtt(): void {

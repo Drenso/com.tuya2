@@ -73,6 +73,9 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
 
   public async onUninit(): Promise<void> {
     this.tokenManager.stopTokenRefresher();
+
+    // Close the MQTT connection
+    this.resetMqtt();
   }
 
   // Sign the request

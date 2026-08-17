@@ -31,9 +31,6 @@ type OAuth2SessionInformation = { id: string; title: string };
 
 const noop = (): void => {};
 
-// Backoff times in seconds
-const TOKEN_REFRESH_INTERVAL = 30;
-
 export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   protected static TOKEN = TuyaHaToken;
   protected static API_URL = '<dummy>';
@@ -52,7 +49,6 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
   });
 
   private tokenManager?: TuyaHaTokenManager;
-  private tokenRefresher?: NodeJS.Timeout;
 
   // We save this information to eventually enable OAUTH2_MULTI_SESSION.
   // We can then list all authenticated users by name, e-mail and country flag.
@@ -71,20 +67,12 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
 
   public async onInit(): Promise<void> {
     this.error = this.error.bind(this);
-    this.tokenManager = new TuyaHaTokenManager(this.homey, this);
+    this.tokenManager = new TuyaHaTokenManager(this);
     this.resolveReadyPromise();
-
-    // Automatic token refresher as this app relies on MQTT data, which doesn't refresh the token automatically
-    this.tokenRefresher = this.homey.setInterval(
-      () => this.tokenManager!.refreshApiToken(),
-      TOKEN_REFRESH_INTERVAL * 1000,
-    );
   }
 
   public async onUninit(): Promise<void> {
-    if (this.tokenRefresher) {
-      this.homey.clearInterval(this.tokenRefresher);
-    }
+    this.tokenManager?.stopTokenRefresher();
   }
 
   // Sign the request
@@ -104,7 +92,7 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
     await this.readyPromise;
     await this.tokenManager!.waitForRefresh();
 
-    const { requestUrl, requestOptions, secret } = await this.tokenManager!.getHeaders({ method, path, query, json });
+    const { requestUrl, requestOptions, secret } = this.tokenManager!.getHeaders(method, path, query, json);
 
     // Add custom headers if any
     Object.assign(requestOptions.headers, headers);
@@ -141,10 +129,6 @@ export default class TuyaHaClient extends OAuth2Client<TuyaHaToken> {
 
   public async refreshToken(): Promise<void> {
     this.error('The refreshToken method should not be called');
-  }
-
-  public async executeTokenRefresh(): Promise<void> {
-    return this.tokenManager!.refreshToken();
   }
 
   /*

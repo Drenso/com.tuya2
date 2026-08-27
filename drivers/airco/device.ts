@@ -25,6 +25,10 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
     if (this.hasCapability('legacy_fan_speed')) {
       this.registerCapabilityListener('legacy_fan_speed', value => this.fanSpeedCapabilityListener(value));
     }
+
+    if (this.hasCapability('thermostat_mode')) {
+      this.registerCapabilityListener('thermostat_mode', value => this.thermostatModeCapabilityListener(value));
+    }
   }
 
   public async onTuyaStatus(status: TuyaStatus, changedStatusCodes: string[]): Promise<void> {
@@ -104,6 +108,13 @@ export default class TuyaOAuth2DeviceAirco extends TuyaOAuth2Device {
   public async fanSpeedCapabilityListener(value: string): Promise<void> {
     await this.sendCommand({
       code: this.getStoreValue('tuya_fan_speed_capability'),
+      value: value,
+    });
+  }
+
+  public async thermostatModeCapabilityListener(value: string): Promise<void> {
+    await this.sendCommand({
+      code: 'mode',
       value: value,
     });
   }

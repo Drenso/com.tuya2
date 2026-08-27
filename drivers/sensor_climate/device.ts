@@ -38,6 +38,11 @@ export default class TuyaOAuth2DeviceSensorClimate extends TuyaOAuth2DeviceSenso
         await this.safeSetCapabilityValue(homeyCapability, (status[tuyaCapability] as number) / scaling);
       }
 
+      if (constIncludes(CLIMATE_SENSOR_CAPABILITIES.humidity_capabilities, tuyaCapability) && homeyCapability) {
+        const scaling = computeScaleFactor(this.getSetting('va_humidity_scaling'));
+        await this.safeSetCapabilityValue(homeyCapability, (status[tuyaCapability] as number) / scaling);
+      }
+
       // Battery
       if (tuyaCapability === 'battery_value' && homeyCapability) {
         const scaledValue = (value as number) / 300;

@@ -44,6 +44,14 @@ export default class TuyaOAuth2DriverSensorClimate extends TuyaOAuth2DriverSenso
           this.error(`Unsupported ${tuyaCapability} scale:`, values.scale);
         }
       }
+
+      if (constIncludes(CLIMATE_SENSOR_CAPABILITIES.humidity_capabilities, tuyaCapability)) {
+        if ([0, 1, 2, 3].includes(values.scale)) {
+          props.settings[`va_humidity_scaling`] = `${values.scale}`;
+        } else {
+          this.error(`Unsupported ${tuyaCapability} scale:`, values.scale);
+        }
+      }
     }
 
     return props;

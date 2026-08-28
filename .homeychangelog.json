@@ -82,5 +82,8 @@
   },
   "1.5.6": {
     "en": "Resolve app lockup issue"
+  },
+  "1.5.7": {
+    "en": "Fix missing listener for airco thermostat mode. Parse additional humidity property for climate sensors."
   }
 }

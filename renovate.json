@@ -1,4 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>intern/renovate-config:homey"]
+  "extends": ["local>intern/renovate-config:homey-mts"]
 }

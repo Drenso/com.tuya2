@@ -85,5 +85,8 @@
   },
   "1.5.7": {
     "en": "Fix missing listener for airco thermostat mode. Parse additional humidity property for climate sensors."
+  },
+  "1.5.8": {
+    "en": "Resolve issue where offline device were not marked as online again"
   }
 }

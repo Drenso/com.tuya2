@@ -183,11 +183,6 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     // Wait for initialization before trying to pass the barrier again
     await this.readyPromise;
 
-    if (!this.getAvailable()) {
-      // Skip update when device is not available
-      return;
-    }
-
     // Filter duplicated data
     if (source === 'status') {
       changedStatusCodes.forEach(c => {
@@ -224,6 +219,21 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
       ...this.__status,
       ...status,
     };
+
+    if (status.online === true) {
+      await this.setAvailable().catch(this.error);
+
+      if (this.online === false) {
+        await this.homey.flow.getDeviceTriggerCard('device_online').trigger(this).catch(this.error);
+      }
+
+      this.online = true;
+    }
+
+    if (!this.getAvailable()) {
+      // Skip update when device is not available
+      return;
+    }
 
     this.log('onTuyaStatus', source, JSON.stringify(this.__status));
 
@@ -265,18 +275,8 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
         .catch(this.error);
     }
 
-    if (status.online === true) {
-      this.setAvailable().catch(this.error);
-
-      if (this.online === false) {
-        await this.homey.flow.getDeviceTriggerCard('device_online').trigger(this).catch(this.error);
-      }
-
-      this.online = true;
-    }
-
     if (status.online === false) {
-      this.setUnavailable(this.homey.__('device_offline')).catch(this.error);
+      await this.setUnavailable(this.homey.__('device_offline')).catch(this.error);
 
       if (this.online === true) {
         await this.homey.flow.getDeviceTriggerCard('device_offline').trigger(this).catch(this.error);

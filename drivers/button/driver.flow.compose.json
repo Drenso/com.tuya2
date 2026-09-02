@@ -54,6 +54,23 @@
       ]
     },
     {
+      "id": "button_sub_switch_long_pressed",
+      "title": {
+        "en": "Long pressed switch"
+      },
+      "titleFormatted": {
+        "en": "Long pressed [[switch]]"
+      },
+      "args": [
+        {
+          "name": "switch",
+          "type": "autocomplete",
+          "title": { "en": "Switch" },
+          "placeholder": { "en": "Switch 1" }
+        }
+      ]
+    },
+    {
       "id": "button_knob_turned",
       "$filter": "capabilities=hidden.knob_switch_mode_1",
       "title": {

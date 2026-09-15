@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@drenso/homey-log": "10.7400.1",
-    "homey-oauth2app": "3.7.2",
+    "homey-oauth2app": "3.7.4",
     "mqtt": "5.15.2",
     "nanoid": "6.0.1",
     "node-cache": "5.1.2",

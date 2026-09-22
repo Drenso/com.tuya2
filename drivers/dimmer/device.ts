@@ -47,7 +47,7 @@ export default class TuyaOAuth2DeviceDimmer extends TuyaOAuth2Device {
       const brightnessStatus = status[tuyaBrightnessCapability];
       const brightnessMin = status[tuyaBrightnessMin];
       const brightnessMax = status[tuyaBrightnessMax];
-      const lampType = status[tuyaLampType];
+      const lampType = status[tuyaLampType] as string | undefined;
 
       if (typeof switchStatus === 'boolean') {
         anySwitchOn = anySwitchOn || switchStatus;
@@ -71,7 +71,7 @@ export default class TuyaOAuth2DeviceDimmer extends TuyaOAuth2Device {
       }
 
       if (lampType !== undefined) {
-        await this.safeSetSettingValue(tuyaLampType, lampType);
+        await this.safeSetSettingValue(tuyaLampType, lampType.toLowerCase());
       }
 
       if (typeof brightnessStatus === 'number') {

@@ -88,5 +88,8 @@
   },
   "1.5.8": {
     "en": "Resolve issue where offline device were not marked as online again"
+  },
+  "1.5.9": {
+    "en": "Solve issue with certain dimmer devices where the type wasn't handled correctly"
   }
 }

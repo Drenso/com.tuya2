@@ -7,7 +7,7 @@ function parseJSON(json: string, throwError = false): object | false {
     return JSON.parse(json);
   } catch (e) {
     if (e instanceof Error && throwError) {
-      console.error(e.message);
+      console.error(e.message); // eslint-disable-line -- no-restricted-syntax Allowed for local tools
     }
 
     // Invalid JSON, need fix
@@ -16,7 +16,7 @@ function parseJSON(json: string, throwError = false): object | false {
 }
 
 function printJSON(json: object): void {
-  console.log(JSON.stringify(json, undefined, 2));
+  console.log(JSON.stringify(json, undefined, 2)); // eslint-disable-line -- no-restricted-syntax Allowed for local tools
   process.exit(0);
 }
 
@@ -36,5 +36,5 @@ if (result) {
   printJSON(result);
 }
 
-console.error('Fix failed...', spec);
+console.error('Fix failed...', spec); // eslint-disable-line -- no-restricted-syntax Allowed for local tools
 parseJSON(spec, true);

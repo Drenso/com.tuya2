@@ -2,6 +2,7 @@ import { OAuth2Device } from 'homey-oauth2app';
 import type {
   TuyaCommand,
   TuyaDeviceDataPointResponse,
+  TuyaDeviceSpecificationResponse,
   TuyaStatusResponse,
   TuyaWebRTC,
 } from '../types/TuyaApiTypes.js';
@@ -336,6 +337,10 @@ export default class TuyaOAuth2Device extends OAuth2Device<TuyaHaClient> {
     return this.oAuth2Client.getDeviceStatus({
       deviceId,
     });
+  }
+
+  public async getSpecification(): Promise<TuyaDeviceSpecificationResponse> {
+    return this.oAuth2Client.getSpecification(this.data.deviceId);
   }
 
   public async queryDataPoints(): Promise<TuyaDeviceDataPointResponse> {

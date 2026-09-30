@@ -11,7 +11,10 @@ import type { StandardDeviceFlowArgs, StandardValueFlowArgs } from '../../types/
 type SwitchArgs = { switch: { id: string } };
 
 export default class TuyaOAuth2DriverButton extends TuyaOAuth2Driver {
-  protected TUYA_DEVICE_CATEGORIES = [DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.WIRELESS_SWITCH] as const;
+  protected TUYA_DEVICE_CATEGORIES = [
+    DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.WIRELESS_SWITCH,
+    DEVICE_CATEGORIES.ELECTRICAL_PRODUCTS.SCENE_SWITCH,
+  ] as const;
 
   public async onInit(): Promise<void> {
     await super.onInit();
@@ -32,7 +35,7 @@ export default class TuyaOAuth2DriverButton extends TuyaOAuth2Driver {
       });
     };
 
-    for (const trigger of ['pressed', 'clicked', 'double_clicked']) {
+    for (const trigger of ['pressed', 'clicked', 'double_clicked', 'long_pressed']) {
       this.homey.flow
         .getDeviceTriggerCard(`button_sub_switch_${trigger}`)
         .registerArgumentAutocompleteListener('switch', (query: string, args: StandardDeviceFlowArgs) =>
@@ -57,7 +60,7 @@ export default class TuyaOAuth2DriverButton extends TuyaOAuth2Driver {
     for (const status of device.status) {
       const tuyaCapability = status.code;
 
-      if (tuyaCapability.startsWith('switch_mode')) {
+      if (tuyaCapability.startsWith('switch_mode') || tuyaCapability.match(/^switch\d_value$/)) {
         props.store.tuya_switches.push(tuyaCapability);
         props.store.tuya_capabilities.push(tuyaCapability);
       }

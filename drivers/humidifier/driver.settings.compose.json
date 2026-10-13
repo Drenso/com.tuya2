@@ -1,5 +1,15 @@
 [
   {
+    "$extends": "scaledProperty",
+    "id": "target_humidity_scaling",
+    "label": {
+      "en": "Target Humidity Scale"
+    },
+    "hint": {
+      "en": "By how much the humidity targeted by the device is scaled."
+    }
+  },
+  {
     "$extends": "deviceSpecification"
   }
 ]

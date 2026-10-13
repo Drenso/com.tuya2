@@ -68,6 +68,8 @@ export default class TuyaOAuth2DriverHumidifier extends TuyaOAuth2Driver {
     // Defaults enum values
     props.capabilitiesOptions = { ...props.capabilitiesOptions, ...driver_compose.capabilitiesOptions };
 
+    props.store['_migrations'] = ['humidifier_target_humidity_scaling'];
+
     if (!specifications || !specifications.status) {
       return props;
     }
@@ -92,6 +94,25 @@ export default class TuyaOAuth2DriverHumidifier extends TuyaOAuth2Driver {
             };
           }),
         };
+      }
+
+      if (tuyaCapability === 'humidity_set') {
+        const { min = 0, max = 100, step = 1, scale = 0 } = values as Record<string, number | undefined>;
+        props.store['humidity_set_scale'] = { min, max, step, scale };
+
+        const scaleFactor = 10 ** scale;
+
+        props.capabilitiesOptions[homeyCapability!] = {
+          min: min / scaleFactor / 100,
+          max: max / scaleFactor / 100,
+          step: step / scaleFactor / 100,
+        };
+
+        if ([0, 1, 2, 3].includes(values.scale)) {
+          props.settings[`${homeyCapability}_scaling`] = `${values.scale}`;
+        } else {
+          this.error(`Unsupported ${tuyaCapability} scale:`, values.scale);
+        }
       }
     }
 

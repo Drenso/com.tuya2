@@ -13,8 +13,9 @@ export const HUMIDIFIER_CAPABILITY_MAPPING = {
 } as const;
 
 export const HUMIDIFIER_CAPABILITIES = {
-  read_write: ['switch', 'switch_spray', 'mode', 'spray_mode', 'level', 'temp_set', 'humidity_set', 'sleep'],
+  read_write: ['switch', 'switch_spray', 'mode', 'spray_mode', 'level', 'temp_set', 'sleep'],
   read_only: ['temp_current', 'humidity_current', 'level_current'],
+  read_write_scaled: ['humidity_set'],
 } as const;
 
 export const HUMIDIFIER_FLOWS = {
@@ -22,3 +23,7 @@ export const HUMIDIFIER_FLOWS = {
   boolean: ['night_mode'],
   enum: ['enum.spray_mode', 'enum.spray_level'],
 } as const;
+
+export type HomeyHumidifierSettings = {
+  target_humidity_scaling: '0' | '1' | '2' | '3';
+};

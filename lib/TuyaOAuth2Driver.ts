@@ -272,10 +272,10 @@ export default class TuyaOAuth2Driver extends OAuth2Driver<TuyaHaClient> {
           .getSpecification(device.id)
           .catch(e => this.log('Device specification retrieval failed', e))) ?? undefined;
       const dataPoints = undefined;
-        // Disabled as data points are currently not used in this app
-        // (await oAuth2Client
-        //   .queryDataPointsSpecification(device.id)
-        //   .catch(e => this.log('Device properties retrieval failed', e))) ?? undefined;
+      // Disabled as data points are currently not used in this app
+      // (await oAuth2Client
+      //   .queryDataPointsSpecification(device.id)
+      //   .catch(e => this.log('Device properties retrieval failed', e))) ?? undefined;
 
       // GitHub #178: Some device do not have the status property at all.
       // Make sure to populate it with an empty array instead.

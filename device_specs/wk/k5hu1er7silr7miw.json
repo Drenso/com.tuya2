@@ -1,0 +1,113 @@
+{
+  "device": {
+    "active_time": 1789926551,
+    "biz_type": 0,
+    "category": "wk",
+    "create_time": 1789926551,
+    "icon": "smart/icon/ay1555980033059u7AZh/a269946fc7938e1f6f7137ff40891058.png",
+    "id": "bf848e2c006976397am2aj",
+    "ip": "",
+    "lat": "",
+    "local_key": "",
+    "lon": "",
+    "name": "SCALDASALVIETTE",
+    "online": true,
+    "owner_id": "",
+    "product_id": "k5hu1er7silr7miw",
+    "product_name": "Mini Thermostat",
+    "status": [
+      {
+        "code": "switch",
+        "value": true
+      },
+      {
+        "code": "mode",
+        "value": "comf"
+      },
+      {
+        "code": "temp_set",
+        "value": 16
+      },
+      {
+        "code": "temp_current",
+        "value": 23
+      },
+      {
+        "code": "temp_correction",
+        "value": 0
+      },
+      {
+        "code": "child_lock",
+        "value": true
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "",
+    "update_time": 1789926551,
+    "uuid": ""
+  },
+  "specifications": {
+    "category": "wk",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"eco\"]}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":7,\"max\":30,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_correction",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-5,\"max\":5,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"eco\"]}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":7,\"max\":30,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":0,\"max\":99,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_correction",
+        "type": "Integer",
+        "values": "{\"unit\":\"℃\",\"min\":-5,\"max\":5,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "child_lock",
+        "type": "Boolean",
+        "values": "{}"
+      }
+    ]
+  },
+  "data_points": ""
+}

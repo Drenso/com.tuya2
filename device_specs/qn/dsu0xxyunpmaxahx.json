@@ -1,0 +1,240 @@
+{
+  "device": {
+    "active_time": 1775498339,
+    "biz_type": 0,
+    "category": "qn",
+    "create_time": 1775498339,
+    "icon": "smart/icon/ay1546486440791XsSOl/69bd03572bc13b0cf2e320c8f4b1cb94.png",
+    "id": "bf32b088094b1b8af3xhtw",
+    "ip": "<redacted>",
+    "lat": "<redacted>",
+    "local_key": "<redacted>",
+    "lon": "<redacted>",
+    "name": "Luminosa",
+    "online": true,
+    "owner_id": "<redacted>",
+    "product_id": "dsu0xxyunpmaxahx",
+    "product_name": "Luminosa",
+    "status": [
+      {
+        "code": "switch",
+        "value": false
+      },
+      {
+        "code": "temp_set",
+        "value": 40
+      },
+      {
+        "code": "temp_current",
+        "value": 22
+      },
+      {
+        "code": "mode",
+        "value": "manual_high"
+      },
+      {
+        "code": "lock",
+        "value": false
+      },
+      {
+        "code": "light",
+        "value": false
+      },
+      {
+        "code": "temp_unit_convert",
+        "value": "c"
+      },
+      {
+        "code": "temp_set_f",
+        "value": 104
+      },
+      {
+        "code": "temp_current_f",
+        "value": 71
+      },
+      {
+        "code": "countdown_left",
+        "value": 0
+      }
+    ],
+    "sub": false,
+    "time_zone": "+02:00",
+    "uid": "<redacted>",
+    "update_time": 1775498339,
+    "uuid": "<redacted>"
+  },
+  "specifications": {
+    "category": "qn",
+    "functions": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"°C\",\"min\":5,\"max\":40,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\"]}"
+      },
+      {
+        "code": "lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":41,\"max\":104,\"scale\":0,\"step\":1}"
+      }
+    ],
+    "status": [
+      {
+        "code": "switch",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_set",
+        "type": "Integer",
+        "values": "{\"unit\":\"°C\",\"min\":5,\"max\":40,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current",
+        "type": "Integer",
+        "values": "{\"unit\":\"°C\",\"min\":0,\"max\":50,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "mode",
+        "type": "Enum",
+        "values": "{\"range\":[\"auto\"]}"
+      },
+      {
+        "code": "lock",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "light",
+        "type": "Boolean",
+        "values": "{}"
+      },
+      {
+        "code": "temp_unit_convert",
+        "type": "Enum",
+        "values": "{\"range\":[\"c\",\"f\"]}"
+      },
+      {
+        "code": "temp_set_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":41,\"max\":104,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "temp_current_f",
+        "type": "Integer",
+        "values": "{\"unit\":\"℉\",\"min\":32,\"max\":122,\"scale\":0,\"step\":1}"
+      },
+      {
+        "code": "countdown_left",
+        "type": "Integer",
+        "values": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+      }
+    ]
+  },
+  "data_points": [
+    {
+      "code": "switch",
+      "custom_name": "",
+      "dp_id": 1,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "temp_set",
+      "custom_name": "",
+      "dp_id": 2,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"°C\",\"min\":5,\"max\":40,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "temp_current",
+      "custom_name": "",
+      "dp_id": 3,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"°C\",\"min\":0,\"max\":50,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "mode",
+      "custom_name": "",
+      "dp_id": 4,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"auto\"]}"
+    },
+    {
+      "code": "child_lock",
+      "custom_name": "",
+      "dp_id": 7,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "light",
+      "custom_name": "",
+      "dp_id": 10,
+      "time": 0,
+      "type": "Boolean",
+      "value": "{}"
+    },
+    {
+      "code": "temp_unit_convert",
+      "custom_name": "",
+      "dp_id": 13,
+      "time": 0,
+      "type": "Enum",
+      "value": "{\"range\":[\"c\",\"f\"]}"
+    },
+    {
+      "code": "temp_set_f",
+      "custom_name": "",
+      "dp_id": 14,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℉\",\"min\":41,\"max\":104,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "temp_current_f",
+      "custom_name": "",
+      "dp_id": 15,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"℉\",\"min\":32,\"max\":122,\"scale\":0,\"step\":1}"
+    },
+    {
+      "code": "countdown_left",
+      "custom_name": "",
+      "dp_id": 20,
+      "time": 0,
+      "type": "Integer",
+      "value": "{\"unit\":\"s\",\"min\":0,\"max\":86400,\"scale\":0,\"step\":1}"
+    }
+  ]
+}

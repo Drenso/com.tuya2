@@ -97,5 +97,8 @@
   },
   "1.5.11": {
     "en": "Lower amount of requests sent during pairing procedure"
+  },
+  "1.5.12": {
+    "en": "Fix humidifier humidity setpoint scaling"
   }
 }

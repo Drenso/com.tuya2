@@ -7,11 +7,12 @@ import { OAuth2App } from 'homey-oauth2app';
 import NodeCache from 'node-cache';
 import * as TuyaOAuth2Util from './lib/TuyaOAuth2Util.js';
 import type TuyaOAuth2Device from './lib/TuyaOAuth2Device.js';
-import type { TuyaDeviceDataPoint, TuyaDeviceDataPointResponse, TuyaStatusResponse } from './types/TuyaApiTypes.js';
+import type { TuyaDeviceDataPoint, TuyaDeviceSpecificationResponse, TuyaStatusResponse } from './types/TuyaApiTypes.js';
 import TuyaHaClient from './lib/TuyaHaClient.js';
 
 const STATUS_CACHE_KEY = 'status';
 const DATAPOINT_CACHE_KEY = 'datapoint';
+const SPECIFICATION_CACHE_KEY = 'specification';
 const SCENE_CACHE_KEY = 'scenes';
 const CACHE_TTL = 30;
 
@@ -59,21 +60,13 @@ export default class TuyaOAuth2App extends OAuth2App {
       query: string | undefined,
       args: DeviceArgs,
       filter: ({ value }: { value: unknown }) => boolean,
+      commandTypes?: string[],
     ): Promise<Homey.FlowCard.ArgumentAutocompleteResults> => {
       function convert(
         values: TuyaStatusResponse | Array<TuyaDeviceDataPoint>,
         dataPoints: boolean,
-      ): Homey.FlowCard.ArgumentAutocompleteResults {
-        values = values.filter(filter);
-
-        const trimmedQuery = (query ?? '').trim();
-        if (trimmedQuery) {
-          values = values.filter(({ code }: { code: string }) =>
-            code.toLowerCase().includes(trimmedQuery.toLowerCase()),
-          );
-        }
-
-        return values.map(value => ({
+      ): AutoCompleteArg[] {
+        return values.filter(filter).map(value => ({
           name: value.code,
           id: value.code,
           title: value.code,
@@ -82,52 +75,54 @@ export default class TuyaOAuth2App extends OAuth2App {
       }
 
       const deviceId = args.device.getData().deviceId;
-      const statusCacheKey = `${STATUS_CACHE_KEY}_${deviceId}`;
-      const datapointCacheKey = `${DATAPOINT_CACHE_KEY}_${deviceId}`;
+      let retrievalFailed = false;
+      const readCached = async <T>(key: string, read: () => Promise<T>): Promise<T | undefined> => {
+        if (this.apiCache.has(key)) return this.apiCache.get<T>(key);
+        try {
+          const result = await read();
+          this.apiCache.set(key, result);
+          return result;
+        } catch (error) {
+          this.error(error);
+          retrievalFailed = true;
+          // A failed request must be retried, not cached as an empty response.
+          return undefined;
+        }
+      };
 
-      if (!this.apiCache.has(statusCacheKey)) {
-        this.apiCache.set<TuyaStatusResponse | null>(
-          statusCacheKey,
-          await args.device.getStatus().catch(e => {
-            this.error(e);
-            return null;
-          }),
+      const status = await readCached(`${STATUS_CACHE_KEY}_${deviceId}`, () => args.device.getStatus());
+      const dataPoints = await readCached(`${DATAPOINT_CACHE_KEY}_${deviceId}`, () => args.device.queryDataPoints());
+      const combinedMap = new Map<string, AutoCompleteArg>();
+
+      // Preserve the existing preference for standard status codes over data points.
+      for (const option of dataPoints ? convert(dataPoints.properties, true) : []) {
+        combinedMap.set(option.id, option);
+      }
+      for (const option of status ? convert(status, false) : []) {
+        combinedMap.set(option.id, option);
+      }
+
+      // Sending cards can also use commands that have no current status value.
+      // Never offer write-only functions as receiving/trigger codes.
+      if (commandTypes) {
+        const specification = await readCached<TuyaDeviceSpecificationResponse>(
+          `${SPECIFICATION_CACHE_KEY}_${deviceId}`,
+          () => args.device.getSpecification(),
         );
+        for (const { code, type } of specification?.functions ?? []) {
+          if (!commandTypes.includes(type.toLowerCase())) continue;
+          combinedMap.set(code, { id: code, name: code, title: code, dataPoint: false });
+        }
       }
 
-      const status = this.apiCache.get<TuyaStatusResponse | null>(statusCacheKey);
-      const statusOptions = status ? convert(status, false) : [];
-
-      if (!this.apiCache.has(datapointCacheKey)) {
-        this.apiCache.set<TuyaDeviceDataPointResponse | null>(
-          datapointCacheKey,
-          await args.device.queryDataPoints().catch(e => {
-            this.error(e);
-            return null;
-          }),
-        );
-      }
-
-      const dataPoints = this.apiCache.get<TuyaDeviceDataPointResponse | null>(datapointCacheKey);
-      const dataPointOptions = dataPoints ? convert(dataPoints.properties, true) : [];
-
-      // Remove duplicates, preferring status options
-      const combinedMap: Record<string, Homey.FlowCard.ArgumentAutocompleteResults[number]> = {};
-
-      for (const dataPointOption of dataPointOptions) {
-        combinedMap[dataPointOption.name] = dataPointOption;
-      }
-
-      for (const statusOption of statusOptions) {
-        combinedMap[statusOption.name] = statusOption;
-      }
-
-      const possibleValues = Object.values(combinedMap);
+      const possibleValues = [...combinedMap.values()];
       if (possibleValues.length === 0) {
-        throw new Error(this.homey.__('error_retrieving_codes'));
+        throw new Error(this.homey.__(retrievalFailed ? 'error_retrieving_code_sources' : 'error_retrieving_codes'));
       }
 
-      return possibleValues;
+      // An unmatched search is not an API error or an empty device specification.
+      const trimmedQuery = (query ?? '').trim().toLowerCase();
+      return possibleValues.filter(({ id }) => id.toLowerCase().includes(trimmedQuery));
     };
 
     // Register Tuya Web API Flow Cards
@@ -140,6 +135,7 @@ export default class TuyaOAuth2App extends OAuth2App {
           query,
           args,
           ({ value }) => typeof value === 'string' && !TuyaOAuth2Util.hasJsonStructure(value),
+          ['string', 'enum'],
         ),
       );
 
@@ -147,14 +143,14 @@ export default class TuyaOAuth2App extends OAuth2App {
       .getActionCard('send_command_number')
       .registerRunListener(sendCommandRunListener)
       .registerArgumentAutocompleteListener('code', async (query: string, args: DeviceArgs) =>
-        autocompleteListener(query, args, ({ value }) => typeof value === 'number'),
+        autocompleteListener(query, args, ({ value }) => typeof value === 'number', ['integer']),
       );
 
     this.homey.flow
       .getActionCard('send_command_boolean')
       .registerRunListener(sendCommandRunListener)
       .registerArgumentAutocompleteListener('code', async (query: string, args: DeviceArgs) =>
-        autocompleteListener(query, args, ({ value }) => typeof value === 'boolean'),
+        autocompleteListener(query, args, ({ value }) => typeof value === 'boolean', ['boolean']),
       );
 
     this.homey.flow
@@ -174,6 +170,7 @@ export default class TuyaOAuth2App extends OAuth2App {
           query,
           args,
           ({ value }) => typeof value === 'object' || TuyaOAuth2Util.hasJsonStructure(value),
+          ['json'],
         ),
       );
 
